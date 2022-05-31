@@ -1,0 +1,5821 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Game0105r Review</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45585</md:content-id>
+  <md:title>Game0105r Review</md:title>
+  <md:abstract>This module contains review questions and answers keyed to the module titled GAME 2302-0105: Getting Started.</md:abstract>
+  <md:uuid>c75877d4-7196-422c-8306-84088e3c9506</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1001">
+<link id="a1001" target-id="Questions">
+
+Questions
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="question01">
+
+1
+
+</link>
+
+, 
+
+<link id="a1003" target-id="question02">
+
+2
+
+</link>
+
+,
+		
+
+<link id="a1004" target-id="question03">
+
+3
+
+</link>
+
+, 
+
+<link id="a1005" target-id="question04">
+
+4
+
+</link>
+
+,
+		
+
+<link id="a1006" target-id="question05">
+
+5
+
+</link>
+
+, 
+
+<link id="a1007" target-id="question06">
+
+6
+
+</link>
+
+,
+		
+
+<link id="a1008" target-id="question07">
+
+7
+
+</link>
+
+, 
+
+<link id="a1009" target-id="question08">
+
+8
+
+</link>
+
+,
+		
+
+<link id="a1010" target-id="question09">
+
+9
+
+</link>
+
+, 
+
+<link id="a1011" target-id="question10">
+
+10
+
+</link>
+
+, 
+		
+
+<link id="a1012" target-id="question11">
+
+11
+
+</link>
+
+, 
+
+<link id="a1013" target-id="answer12">
+
+12
+
+</link>
+
+, 
+		
+
+<link id="a1014" target-id="question13">
+
+13
+
+</link>
+
+, 
+		
+
+<link id="a1015" target-id="question14">
+
+14
+
+</link>
+
+, 
+		
+
+<link id="a1016" target-id="question15">
+
+15
+
+</link>
+
+,
+		
+
+<link id="a1017" target-id="question16">
+
+16
+
+</link>
+
+,
+		
+
+<link id="a1018" target-id="question17">
+
+17
+
+</link>
+
+, 
+		
+
+<link id="a1019" target-id="question18">
+
+18
+
+</link>
+
+,
+		
+
+<link id="a1020" target-id="question19">
+
+19
+
+</link>
+
+,
+		
+
+<link id="a1021" target-id="question20">
+
+20
+
+</link>
+
+,
+		
+
+<link id="a1022" target-id="question21">
+
+21
+
+</link>
+
+,
+		
+
+<link id="a1023" target-id="question22">
+
+22
+
+</link>
+
+,
+		
+
+<link id="a1024" target-id="question23">
+
+23
+
+</link>
+
+,
+		
+
+<link id="a1025" target-id="question24">
+
+24
+
+</link>
+
+,
+		
+
+<link id="a1026" target-id="question25">
+
+25
+
+</link>
+
+,
+		
+
+<link id="a1027" target-id="question26">
+
+26
+
+</link>
+
+,
+		
+
+<link id="a1028" target-id="question27">
+
+27
+
+</link>
+
+,
+		
+
+<link id="a1029" target-id="question28">
+
+28
+
+</link>
+
+,
+		
+
+<link id="a1030" target-id="question29">
+
+29
+
+</link>
+
+,
+		
+
+<link id="a1031" target-id="question30">
+
+30
+
+</link>
+
+,
+		
+
+<link id="a1032" target-id="question31">
+
+31
+
+</link>
+
+,
+		
+
+<link id="a1033" target-id="question32">
+
+32
+
+</link>
+
+,
+		
+
+<link id="a1034" target-id="question33">
+
+33
+
+</link>
+
+,
+		
+
+<link id="a1035" target-id="question34">
+
+34
+
+</link>
+
+,
+		
+
+<link id="a1036" target-id="question35">
+
+35
+
+</link>
+
+,
+		
+
+<link id="a1037" target-id="question36">
+
+36
+
+</link>
+
+,
+		
+
+<link id="a1038" target-id="question37">
+
+37
+
+</link>
+
+,
+		
+
+<link id="a1039" target-id="question38">
+
+38
+
+</link>
+
+,
+		
+
+<link id="a1040" target-id="question39">
+
+39
+
+</link>
+
+,
+		
+
+<link id="a1041" target-id="question40">
+
+40
+
+</link>
+
+,
+		
+
+<link id="a1042" target-id="question41">
+
+41
+
+</link>
+
+,
+		
+
+<link id="a1043" target-id="question42">
+
+42
+
+</link>
+
+,
+		
+
+<link id="a1044" target-id="question43">
+
+43
+
+</link>
+
+,
+		
+
+<link id="a1045" target-id="question44">
+
+44
+
+</link>
+
+,
+		
+
+<link id="a1046" target-id="question45">
+
+45
+
+</link>
+
+,
+		
+
+<link id="a1047" target-id="question46">
+
+46
+
+</link>
+
+,
+		
+
+<link id="a1048" target-id="question47">
+
+47
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1003">
+<link id="a1049" target-id="Answers">
+
+Answers
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1050" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1000">
+This module contains review questions and answers keyed to the module titled 
+
+
+<link id="a1051" url="http://cnx.org/content/m44990">
+
+GAME 2302-0105: Getting Started
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1001">
+The questions and the answers are connected by hyperlinks to make it easy for 
+you to navigate from the question to the answer and back again.
+
+</para>
+
+
+
+
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Questions" effect="bold">
+
+Questions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="question01" effect="bold">
+
+Question 1
+
+</emphasis>
+
+
+<emphasis id="strong1000" effect="bold">
+. 
+
+</emphasis>
+ 
+
+</title>
+
+
+
+
+<para id="p1002">
+Successful game programmers don't need good math skills. 
+
+</para>
+
+
+
+
+<para id="p1003">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1004">
+<link id="a1052" target-id="answer01">
+
+Answer 1
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="question02" effect="bold">
+
+Question 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1005">
+This set of modules relies strictly on procedural programming. 
+
+</para>
+
+
+
+
+<para id="p1006">
+<link id="a1053" target-id="answer02">
+
+Answer 2
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="question03" effect="bold">
+
+Question 3
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1007">
+You will need skills in the mathematical areas that are required for success 
+in 2D and 3D graphics programming. 
+
+</para>
+
+
+
+
+<para id="p1008">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1009">
+<link id="a1054" target-id="answer03">
+
+Answer 3
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="question04" effect="bold">
+
+Question 4
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+As a minimum, you will need skills in: 
+
+</para>
+
+
+
+
+<para id="p1011">
+Select the correct answers
+
+</para>
+
+
+
+
+<para id="p1012">
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1005">
+Geometry
+
+</item>
+
+
+	
+
+<item id="li1006">
+Trigonometry
+
+</item>
+
+
+	
+
+<item id="li1007">
+Vectors
+
+</item>
+
+
+	
+
+<item id="li1008">
+Matrices
+
+</item>
+
+
+	
+
+<item id="li1009">
+2D and 3D transforms
+
+</item>
+
+
+	
+
+<item id="li1010">
+Transformations between coordinate systems
+
+</item>
+
+
+	
+
+<item id="li1011">
+Projections 
+
+</item>
+
+
+	
+
+<item id="li1012">
+All of the above
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1013">
+<link id="a1055" target-id="answer04">
+
+Answer 4
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="question05" effect="bold">
+
+Question 5
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+A column matrix can be used to represent a point in a given coordinate frame.
+
+</para>
+
+
+
+
+<para id="p1015">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1016">
+<link id="a1056" target-id="answer05">
+
+Answer 5
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="question06" effect="bold">
+
+Question 6
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+When representing a point with a column matrix, the same point will have the 
+same representation in different coordinate frames.
+
+</para>
+
+
+
+
+<para id="p1018">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1019">
+<link id="a1057" target-id="answer06">
+
+Answer 6
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="question07" effect="bold">
+
+Question 7
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+You must use an IDE such as Eclipse or NetBeans to create Java source code. 
+
+</para>
+
+
+
+
+<para id="p1021">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1022">
+<link id="a1058" target-id="answer07">
+
+Answer 7
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="question08" effect="bold">
+
+Question 8
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1023">
+There is no relationship between the name of the source code file and the 
+name of the class defined in the file. 
+
+</para>
+
+
+
+
+<para id="p1024">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1025">
+<link id="a1059" target-id="answer08">
+
+Answer 8
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="question09" effect="bold">
+
+Question 9
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1026">
+The name of the Java compiler program is java.exe. 
+
+</para>
+
+
+
+
+<para id="p1027">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1028">
+<link id="a1060" target-id="answer09">
+
+Answer 9
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="question10" effect="bold">
+
+Question 10
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+<emphasis id="em1000" effect="italics">
+The class named 
+
+<emphasis id="strong1001" effect="bold">
+Point2D.Double
+
+</emphasis>
+ is a class in the 
+standard Java library.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1031">
+<link id="a1061" target-id="answer10">
+
+Answer 10
+
+</link>
+
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21010">
+<title>
+<emphasis id="question11" effect="bold">
+
+Question 11
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+The following is the correct syntax for the 
+
+<emphasis id="strong1002" effect="bold">
+main
+
+</emphasis>
+ method in a 
+Java application.
+
+</para>
+
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+
+				
+
+<code id="pre1000" display="block">  public static void main(){
+    GUI guiObj = new GUI();
+  }//end main</code>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1033">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1034">
+<link id="a1062" target-id="answer11">
+
+Answer 11
+
+</link>
+
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21011">
+<title>
+<emphasis id="question12" effect="bold">
+
+Question 12
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+The following Java code instantiates a new object of a class named 
+
+<emphasis id="strong1003" effect="bold">
+GUI
+
+</emphasis>
+ 
+and saves that object's reference in the variable named 
+
+<emphasis id="strong1004" effect="bold">
+guiObj.
+
+</emphasis>
+</para>
+
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+
+				
+
+<code id="pre1001" display="block">class PointLine01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class PointLine01</code>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1036">
+<link id="a1063" target-id="answer12">
+
+Answer 12
+
+</link>
+
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21012">
+<title>
+<emphasis id="question13" effect="bold">
+
+Question 13
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1037">
+The class named 
+
+<emphasis id="strong1005" effect="bold">
+GUI
+
+</emphasis>
+ is a class in the Java 7 Standard 
+Edition library.
+
+</para>
+
+
+
+
+<para id="p1038">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1039">
+<link id="a1064" target-id="answer13">
+
+Answer 13
+
+</link>
+
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21013">
+<title>
+<emphasis id="question14" effect="bold">
+
+Question 14
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1040">
+The name of the constructor for a Java class must match the name of the 
+class. 
+
+</para>
+
+
+
+
+<para id="p1041">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1042">
+<link id="a1065" target-id="answer14">
+
+Answer 14
+
+</link>
+
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21014">
+<title>
+<emphasis id="question15" effect="bold">
+
+Question 15
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+The method named 
+
+<emphasis id="strong1006" effect="bold">
+setDefaultCloseOperation
+
+</emphasis>
+ can be called 
+on a Java 
+
+<emphasis id="strong1007" effect="bold">
+JFrame
+
+</emphasis>
+ object to establish the behavior of the button 
+with the X in the upper-right corner of the visual manifestation of the 
+
+<emphasis id="strong1008" effect="bold">
+
+JFrame
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1044">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1045">
+<link id="a1066" target-id="answer15">
+
+Answer 15
+
+</link>
+
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21015">
+<title>
+<emphasis id="question16" effect="bold">
+
+Question 16
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1046">
+A 
+
+<emphasis id="strong1009" effect="bold">
+Canvas
+
+</emphasis>
+ object's overridden 
+
+<emphasis id="strong1010" effect="bold">
+paint
+
+</emphasis>
+ method will be executed 
+whenever the 
+
+<emphasis id="strong1011" effect="bold">
+JFrame
+
+</emphasis>
+ containing the 
+
+<emphasis id="strong1012" effect="bold">
+Canvas
+
+</emphasis>
+ is displayed on the 
+computer screen, whenever that portion of the screen needs to be repainted, or 
+whenever the 
+
+<emphasis id="strong1013" effect="bold">
+repaint
+
+</emphasis>
+ method is called on the canvas. 
+
+</para>
+
+
+
+
+<para id="p1047">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1048">
+<link id="a1067" target-id="answer16">
+
+Answer 16
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21016">
+<title>
+<emphasis id="question17" effect="bold">
+
+Question 17
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1049">
+A 
+
+<emphasis id="strong1014" effect="bold">
+Canvas
+
+</emphasis>
+ object's overridden 
+
+<emphasis id="strong1015" effect="bold">
+paint
+
+</emphasis>
+ method always 
+receives an incoming parameter as type 
+
+<emphasis id="strong1016" effect="bold">
+Button
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1050">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1051">
+<link id="a1068" target-id="answer17">
+
+Answer 17
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21017">
+<title>
+<emphasis id="question18" effect="bold">
+
+Question 18
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1052">
+The class named 
+
+<emphasis id="strong1017" effect="bold">
+Graphics2D
+
+</emphasis>
+ is a superclass of the class 
+named 
+
+<emphasis id="strong1018" effect="bold">
+Graphics
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1053">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1054">
+<link id="a1069" target-id="answer18">
+
+Answer 18
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21018">
+<title>
+<emphasis id="question19" effect="bold">
+
+Question 19
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+Translating the origin from the default position at the upper-left corner of 
+a 
+
+<emphasis id="strong1019" effect="bold">
+Canvas
+
+</emphasis>
+ object to the center of the 
+
+<emphasis id="strong1020" effect="bold">
+Canvas
+
+</emphasis>
+ 
+object is equivalent to creating a new 
+
+<emphasis id="em1001" effect="italics">
+coordinate frame
+
+</emphasis>
+ as explained by Kjell. 
+
+</para>
+
+
+
+
+<para id="p1056">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1057">
+<link id="a1070" target-id="answer19">
+
+Answer 19
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21019">
+<title>
+<emphasis id="question20" effect="bold">
+
+Question 20
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1058">
+The default direction for increasing vertical coordinate values in a 
+
+<emphasis id="strong1021" effect="bold">
+
+Canvas
+
+</emphasis>
+ object is down the screen. 
+
+</para>
+
+
+
+
+<para id="p1059">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1060">
+<link id="a1071" target-id="answer20">
+
+Answer 20
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21020">
+<title>
+<emphasis id="question21" effect="bold">
+
+Question 21
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1061">
+The default direction for increasing horizontal coordinate values in a
+
+
+<emphasis id="strong1022" effect="bold">
+Canvas
+
+</emphasis>
+ object is from right to left across the screen.
+
+</para>
+
+
+
+
+<para id="p1062">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1063">
+<link id="a1072" target-id="answer21">
+
+Answer 21
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21021">
+<title>
+<emphasis id="question22" effect="bold">
+
+Question 22
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1064">
+According to Kjell, a line drawn on the screen using an object of the 
+
+<emphasis id="strong1023" effect="bold">
+
+Line2D.Double
+
+</emphasis>
+ 
+class is a true line segment. 
+
+</para>
+
+
+
+
+<para id="p1065">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1066">
+<link id="a1073" target-id="answer22">
+
+Answer 22
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21022">
+<title>
+<emphasis id="question23" effect="bold">
+
+Question 23
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1067">
+Objects instantiated from the classes named 
+
+<emphasis id="strong1024" effect="bold">
+Point2D.Double
+
+</emphasis>
+ 
+and 
+
+<emphasis id="strong1025" effect="bold">
+Line2D.Double
+
+</emphasis>
+ are well suited for inclusion in mathematical 
+operations. 
+
+</para>
+
+
+
+
+<para id="p1068">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1069">
+<link id="a1074" target-id="answer23">
+
+Answer 23
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21023">
+<title>
+<emphasis id="question24" effect="bold">
+
+Question 24
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1070">
+Creation of 2D and 3D graphics requires that you always display the points. 
+
+</para>
+
+
+
+
+<para id="p1071">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1072">
+<link id="a1075" target-id="answer24">
+
+Answer 24
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21024">
+<title>
+<emphasis id="question25" effect="bold">
+
+Question 25
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1073">
+A vector is a geometrical object that has two properties: length and 
+direction." He also tells us, "A vector does not have a position.
+
+</para>
+
+
+
+
+<para id="p1074">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1075">
+<link id="a1076" target-id="answer25">
+
+Answer 25
+
+</link>
+
+
+</para>
+
+
+
+
+
+
+
+</section>
+<section id="h21025">
+<title>
+<emphasis id="question26" effect="bold">
+
+Question 26
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1076">
+A vector must always specify a position. 
+
+</para>
+
+
+
+
+<para id="p1077">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1078">
+<link id="a1077" target-id="answer26">
+
+Answer 26
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21026">
+<title>
+<emphasis id="question27" effect="bold">
+
+Question 27
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1079">
+Three real numbers are required to represent a vector in a 2D system. 
+
+</para>
+
+
+
+
+<para id="p1080">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1081">
+<link id="a1078" target-id="answer27">
+
+Answer 27
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21027">
+<title>
+<emphasis id="question28" effect="bold">
+
+Question 28
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1082">
+A column matrix can be used to represent a point and can also be used to 
+represent a vector. 
+
+</para>
+
+
+
+
+<para id="p1083">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1084">
+<link id="a1079" target-id="answer28">
+
+Answer 28
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21028">
+<title>
+<emphasis id="question29" effect="bold">
+
+Question 29
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1085">
+Different column matrices can be used to represent the same vector in 
+different reference frames, in which case, the contents of the matrices will be 
+different. 
+
+</para>
+
+
+
+
+<para id="p1086">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1087">
+<link id="a1080" target-id="answer29">
+
+Answer 29
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21029">
+<title>
+<emphasis id="question30" effect="bold">
+
+Question 30
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1088">
+The two 
+
+<emphasis id="em1002" effect="italics">
+(or three)
+
+</emphasis>
+ real number values contained in a column matrix to 
+represent a point specify an absolute location in space relative to the current 
+coordinate frame.
+
+</para>
+
+
+
+
+<para id="p1089">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1090">
+<link id="a1081" target-id="answer30">
+
+Answer 30
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21030">
+<title>
+<emphasis id="question31" effect="bold">
+
+Question 31
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1091">
+The two 
+
+<emphasis id="em1003" effect="italics">
+(or three)
+
+</emphasis>
+ real number values contained in a column matrix to 
+represent a vector 
+
+<emphasis id="em1004" effect="italics">
+(in 2D or 3D)
+
+</emphasis>
+ specify a 
+
+<emphasis id="em1005" effect="italics">
+displacement
+
+</emphasis>
+ of a 
+specific distance from an arbitrary point in an arbitrary direction.
+
+</para>
+
+
+
+
+<para id="p1092">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1093">
+<link id="a1082" target-id="answer31">
+
+Answer 31
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21031">
+<title>
+<emphasis id="question32" effect="bold">
+
+Question 32
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1094">
+With regard to a vector, in 2D, the two values contained in a column matrix 
+represent the displacements along three orthogonal axes.
+
+</para>
+
+
+
+
+<para id="p1095">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1096">
+<link id="a1083" target-id="answer32">
+
+Answer 32
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21032">
+<title>
+<emphasis id="question33" effect="bold">
+
+Question 33
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1097">
+In the case of 2D, the length of the vector is the length of the hypotenuse 
+of a right triangle formed by the x and y displacement values. 
+
+</para>
+
+
+
+
+<para id="p1098">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1099">
+<link id="a1084" target-id="answer33">
+
+Answer 33
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21033">
+<title>
+<emphasis id="question34" effect="bold">
+
+Question 34
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1100">
+In 2D, the direction of a vector can be determined from the angle formed by 
+the x-displacement and the line segment that represents the hypotenuse of a 
+right triangle formed by the x, y, and z displacements.
+
+</para>
+
+
+
+
+<para id="p1101">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1102">
+<link id="a1085" target-id="answer34">
+
+Answer 34
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21034">
+<title>
+<emphasis id="question35" effect="bold">
+
+Question 35
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1103">
+A point is an 
+
+<emphasis id="em1006" effect="italics">
+absolute location
+
+</emphasis>
+, but a vector is a 
+
+<emphasis id="em1007" effect="italics">
+
+displacement
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1104">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1105">
+<link id="a1086" target-id="answer35">
+
+Answer 35
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21035">
+<title>
+<emphasis id="question36" effect="bold">
+
+Question 36
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1106">
+This program instantiates objects from the following non-static top-level 
+classes belonging to the class named 
+
+<emphasis id="strong1026" effect="bold">
+GM2D01
+
+</emphasis>
+:
+
+</para>
+
+
+
+
+<list id="ul1002" list-type="bulleted">
+
+	
+
+<item id="li1013">
+GM2D01.ColMatrix
+
+</item>
+
+
+	
+
+<item id="li1014">
+GM2D01.Line
+
+</item>
+
+
+	
+
+<item id="li1015">
+GM2D01.Point
+
+</item>
+
+
+	
+
+<item id="li1016">
+GM2D01.Vector
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1107">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1108">
+<link id="a1087" target-id="answer36">
+
+Answer 36
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21036">
+<title>
+<emphasis id="question37" effect="bold">
+
+Question 37
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1109">
+Type 
+
+<emphasis id="strong1027" effect="bold">
+int
+
+</emphasis>
+ is the default representation for literal real 
+numbers in Java.
+
+</para>
+
+
+
+
+<para id="p1110">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1111">
+<link id="a1088" target-id="answer37">
+
+Answer 37
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21037">
+<title>
+<emphasis id="question38" effect="bold">
+
+Question 38
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1112">
+<emphasis id="em1008" effect="italics">
+When an object's reference is passed as a parameter to the 
+
+<emphasis id="strong1028" effect="bold">
+
+System.out.println 
+
+</emphasis>
+method, the 
+
+<emphasis id="strong1029" effect="bold">
+getClass
+
+</emphasis>
+ method 
+belonging to the object is executed automatically.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1113">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1114">
+<link id="a1089" target-id="answer38">
+
+Answer 38
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21038">
+<title>
+<emphasis id="question39" effect="bold">
+
+Question 39
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1115">
+The 
+
+<emphasis id="strong1030" effect="bold">
+toString
+
+</emphasis>
+ method is overloaded in the 
+
+<emphasis id="strong1031" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+class. 
+
+</para>
+
+
+
+
+<para id="p1116">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1117">
+<link id="a1090" target-id="answer39">
+
+Answer 39
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21039">
+<title>
+<emphasis id="question40" effect="bold">
+
+Question 40
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1118">
+If you call the 
+
+<emphasis id="strong1032" effect="bold">
+getData
+
+</emphasis>
+ method belonging to an object of the
+
+
+<emphasis id="strong1033" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+ class 
+and pass a parameter value of 2, the program will throw an 
+
+<emphasis id="strong1034" effect="bold">
+
+IndexOutOfBoundsException
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1119">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1120">
+<link id="a1091" target-id="answer40">
+
+Answer 40
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21040">
+<title>
+<emphasis id="question41" effect="bold">
+
+Question 41
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1121">
+The constructor for the 
+
+<emphasis id="strong1035" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+ class requires 
+three incoming parameters of type 
+
+<emphasis id="strong1036" effect="bold">
+double
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1122">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1123">
+<link id="a1092" target-id="answer41">
+
+Answer 41
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21041">
+<title>
+<emphasis id="question42" effect="bold">
+
+Question 42
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1124">
+The constructor for the 
+
+<emphasis id="strong1037" effect="bold">
+GM2D01.Point
+
+</emphasis>
+ class requires a single incoming 
+parameter, which is a reference to an object of the class 
+
+<emphasis id="strong1038" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1125">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1126">
+<link id="a1093" target-id="answer42">
+
+Answer 42
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21042">
+<title>
+<emphasis id="question43" effect="bold">
+
+Question 43
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1127">
+<emphasis id="strong1039" effect="bold">
+GM2D01.Vector 
+
+</emphasis>
+and 
+
+<emphasis id="strong1040" effect="bold">
+java.util.Vector
+
+</emphasis>
+ are 
+simply different names for the same class.
+
+</para>
+
+
+
+
+<para id="p1128">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1129">
+<link id="a1094" target-id="answer43">
+
+Answer 43
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21043">
+<title>
+<emphasis id="question44" effect="bold">
+
+Question 44
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1130">
+The constructor for the 
+
+<emphasis id="strong1041" effect="bold">
+GM2D01.Vector
+
+</emphasis>
+ class requires two incoming 
+parameters, which are references to objects of the class 
+
+<emphasis id="strong1042" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1131">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1132">
+<link id="a1095" target-id="answer44">
+
+Answer 44
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21044">
+<title>
+<emphasis id="question45" effect="bold">
+
+Question 45
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1133">
+A line segment is the straight path between two points. It has no thickness 
+and therefore cannot be seen by the human eye.
+
+</para>
+
+
+
+
+<para id="p1134">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1135">
+<link id="a1096" target-id="answer45">
+
+Answer 45
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21045">
+<title>
+<emphasis id="question46" effect="bold">
+
+Question 46
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1136">
+The constructor for the 
+
+<emphasis id="strong1043" effect="bold">
+GM2D01.Line
+
+</emphasis>
+ class requires two incoming 
+parameters, which are references to objects of the class 
+
+<emphasis id="strong1044" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1137">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1138">
+<link id="a1097" target-id="answer46">
+
+Answer 46
+
+</link>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21046">
+<title>
+<emphasis id="question47" effect="bold">
+
+Question 47
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1139">
+The 
+
+<emphasis id="strong1045" effect="bold">
+GM2D01
+
+</emphasis>
+ library provides methods for rendering objects of 
+the 
+
+<emphasis id="strong1046" effect="bold">
+ColMatrix
+
+</emphasis>
+, 
+
+<emphasis id="strong1047" effect="bold">
+Line
+
+</emphasis>
+, 
+
+<emphasis id="strong1048" effect="bold">
+Point
+
+</emphasis>
+, or 
+
+<emphasis id="strong1049" effect="bold">
+
+Vector
+
+</emphasis>
+ classes in a visual graphics context.
+
+</para>
+
+
+
+
+<para id="p1140">
+True or False?
+
+</para>
+
+
+
+
+<para id="p1141">
+<link id="a1098" target-id="answer47">
+
+Answer 47
+
+</link>
+
+
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1050" effect="bold">
+What is the meaning of the following two images?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+This image was inserted here simply to insert some space between the 
+questions and the answers to keep them from being visible on the screen at the 
+same time.
+
+</para>
+
+
+
+
+
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/Spacer01.jpg" width="339" height="290"/>
+</media>
+
+
+
+
+
+<para id="p1144">
+This image was also inserted for the purpose of inserting space between the questions and the answers.
+
+</para>
+
+
+
+
+<para id="p1145">
+
+
+
+<media id="media1001" alt="Missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/Spacer02.jpg" width="374" height="308"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Answers" effect="bold">
+
+Answers
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<section id="h21047">
+<title>
+<emphasis id="answer47" effect="bold">
+
+Answer 47
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1146">
+False. The library named 
+
+<emphasis id="strong1051" effect="bold">
+GM2D01
+
+</emphasis>
+ is purely mathematical. The 
+library doesn't provide any mechanism for rendering objects of the 
+
+<emphasis id="strong1052" effect="bold">
+
+ColMatrix
+
+</emphasis>
+, 
+
+<emphasis id="strong1053" effect="bold">
+Line
+
+</emphasis>
+, 
+
+<emphasis id="strong1054" effect="bold">
+Point
+
+</emphasis>
+, 
+or 
+
+<emphasis id="strong1055" effect="bold">
+Vector
+
+</emphasis>
+ classes in a visual graphics context.
+
+</para>
+
+
+
+
+<para id="p1147">
+<link id="a1099" target-id="question47">
+
+Back to Question 47
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21048">
+<title>
+<emphasis id="answer46" effect="bold">
+
+Answer 46
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1148">
+False. The constructor for the 
+
+<emphasis id="strong1056" effect="bold">
+GM2D01.Line
+
+</emphasis>
+ class requires two incoming 
+parameters, which are references to objects of the class 
+
+<emphasis id="strong1057" effect="bold">
+GM2D01.Point
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1149">
+<link id="a1100" target-id="question46">
+
+Back to Question 46
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21049">
+<title>
+<emphasis id="answer45" effect="bold">
+
+Answer 45
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1150">
+True 
+
+</para>
+
+
+
+
+<para id="p1151">
+<link id="a1101" target-id="question45">
+
+Back to Question 45
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21050">
+<title>
+<emphasis id="answer44" effect="bold">
+
+Answer 44
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1152">
+False. The constructor for the 
+
+<emphasis id="strong1058" effect="bold">
+GM2D01.Vector
+
+</emphasis>
+ class requires a single incoming 
+parameter, which is a reference to an object of the class 
+
+<emphasis id="strong1059" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1153">
+<link id="a1102" target-id="question44">
+
+Back to Question 44
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21051">
+<title>
+<emphasis id="answer43" effect="bold">
+
+Answer 43
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1154">
+False. 
+
+<emphasis id="strong1060" effect="bold">
+GM2D01.Vector
+
+</emphasis>
+ is a different class from the class named 
+
+<emphasis id="strong1061" effect="bold">
+java.util.Vector
+
+</emphasis>
+ 
+in the standard Java library.
+
+</para>
+
+
+
+
+<para id="p1155">
+<link id="a1103" target-id="question43">
+
+Back to Question 43
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21052">
+<title>
+<emphasis id="answer42" effect="bold">
+
+Answer 42
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1156">
+True 
+
+</para>
+
+
+
+
+<para id="p1157">
+<link id="a1104" target-id="question42">
+
+Back to Question 42
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21053">
+<title>
+<emphasis id="answer41" effect="bold">
+
+Answer 41
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1158">
+False. The constructor for the 
+
+<emphasis id="strong1062" effect="bold">
+GM2D01.ColMatrix
+
+</emphasis>
+ class requires 
+two incoming parameters of type 
+
+<emphasis id="strong1063" effect="bold">
+double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1159">
+<link id="a1105" target-id="question41">
+
+Back to Question 41
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21054">
+<title>
+<emphasis id="answer40" effect="bold">
+
+Answer 40
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1160">
+True 
+
+</para>
+
+
+
+
+<para id="p1161">
+<link id="a1106" target-id="question40">
+
+Back to Question 40
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21055">
+<title>
+<emphasis id="answer39" effect="bold">
+
+Answer 39
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1162">
+False. The 
+
+<emphasis id="strong1064" effect="bold">
+toString
+
+</emphasis>
+ method is 
+
+<emphasis id="strong1065" effect="bold">
+<emphasis id="em1009" effect="italics">
+overridden
+
+</emphasis>
+</emphasis>
+ 
+in the 
+
+<emphasis id="strong1066" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+class.
+
+</para>
+
+
+
+
+<para id="p1163">
+<link id="a1107" target-id="question39">
+
+Back to Question 39
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21056">
+<title>
+<emphasis id="answer38" effect="bold">
+
+Answer 38
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1164">
+False. 
+
+<emphasis id="em1010" effect="italics">
+When an object's reference is passed as a parameter to the 
+
+<emphasis id="strong1067" effect="bold">
+
+System.out.println 
+
+</emphasis>
+method, the 
+
+<emphasis id="strong1068" effect="bold">
+toString
+
+</emphasis>
+ method 
+belonging to the object is executed automatically.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1165">
+<link id="a1108" target-id="question38">
+
+Back to Question 38
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21057">
+<title>
+<emphasis id="answer37" effect="bold">
+
+Answer 37
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1166">
+False. Type 
+
+<emphasis id="strong1069" effect="bold">
+<emphasis id="em1011" effect="italics">
+double
+
+</emphasis>
+</emphasis>
+ is the default representation 
+for literal real numbers in Java.
+
+</para>
+
+
+
+
+<para id="p1167">
+<link id="a1109" target-id="question37">
+
+Back to Question 37
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21058">
+<title>
+<emphasis id="answer36" effect="bold">
+
+Answer 36
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1168">
+False. 
+
+</para>
+
+
+
+
+<para id="p1169">
+This program instantiates objects from the following 
+
+<emphasis id="strong1070" effect="bold">
+<emphasis id="em1012" effect="italics">
+static
+
+</emphasis>
+</emphasis>
+ 
+top-level classes belonging to the class named 
+
+<emphasis id="strong1071" effect="bold">
+GM2D01
+
+</emphasis>
+:
+
+</para>
+
+
+
+
+<list id="ul1003" list-type="bulleted">
+
+	
+
+<item id="li1017">
+GM2D01.ColMatrix
+
+</item>
+
+
+	
+
+<item id="li1018">
+GM2D01.Line
+
+</item>
+
+
+	
+
+<item id="li1019">
+GM2D01.Point
+
+</item>
+
+
+	
+
+<item id="li1020">
+GM2D01.Vector
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1170">
+<link id="a1110" target-id="question36">
+
+Back to Question 36
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21059">
+<title>
+<emphasis id="answer35" effect="bold">
+
+Answer 35
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1171">
+True 
+
+</para>
+
+
+
+
+<para id="p1172">
+<link id="a1111" target-id="question35">
+
+Back to Question 35
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21060">
+<title>
+<emphasis id="answer34" effect="bold">
+
+Answer 34
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1173">
+False. In 2D, the direction of a vector can be determined from the angle 
+formed by the x-displacement and the line segment that represents the hypotenuse 
+of a right triangle formed 
+
+<emphasis id="strong1072" effect="bold">
+<emphasis id="em1013" effect="italics">
+by the x and y
+
+</emphasis>
+</emphasis>
+ 
+displacements.
+
+</para>
+
+
+
+
+<para id="p1174">
+<link id="a1112" target-id="question34">
+
+Back to Question 34
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21061">
+<title>
+<emphasis id="answer33" effect="bold">
+
+Answer 33
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1175">
+True 
+
+</para>
+
+
+
+
+<para id="p1176">
+<link id="a1113" target-id="question33">
+
+Back to Question 33
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21062">
+<title>
+<emphasis id="answer32" effect="bold">
+
+Answer 32
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1177">
+False. With regard to a vector, in 2D, the two values contained in a column 
+matrix represent the displacements along 
+
+<emphasis id="strong1073" effect="bold">
+<emphasis id="em1014" effect="italics">
+a pair
+
+</emphasis>
+</emphasis>
+ of 
+orthogonal axes.
+
+</para>
+
+
+
+
+<para id="p1178">
+<link id="a1114" target-id="question32">
+
+Back to Question 32
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21063">
+<title>
+<emphasis id="answer31" effect="bold">
+
+Answer 31
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1179">
+False. Kjell tells us that the two 
+
+<emphasis id="em1015" effect="italics">
+(or three)
+
+</emphasis>
+ real number values 
+contained in the matrix to represent a vector 
+
+<emphasis id="em1016" effect="italics">
+(in 2D or 3D)
+
+</emphasis>
+ specify a 
+
+<emphasis id="em1017" effect="italics">
+
+displacement
+
+</emphasis>
+ of a specific distance from an arbitrary point in a 
+
+<emphasis id="strong1074" effect="bold">
+
+
+
+<emphasis id="em1018" effect="italics">
+specific
+
+</emphasis>
+</emphasis>
+ direction.
+
+</para>
+
+
+
+
+<para id="p1180">
+<link id="a1115" target-id="question31">
+
+Back to Question 31
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21064">
+<title>
+<emphasis id="answer30" effect="bold">
+
+Answer 30
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1181">
+True 
+
+</para>
+
+
+
+
+<para id="p1182">
+<link id="a1116" target-id="question30">
+
+Back to Question 30
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21065">
+<title>
+<emphasis id="answer29" effect="bold">
+
+Answer 29
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1183">
+True 
+
+</para>
+
+
+
+
+<para id="p1184">
+<link id="a1117" target-id="question29">
+
+Back to Question 29
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21066">
+<title>
+<emphasis id="answer28" effect="bold">
+
+Answer 28
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1185">
+True 
+
+</para>
+
+
+
+
+<para id="p1186">
+<link id="a1118" target-id="question28">
+
+Back to Question 28
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21067">
+<title>
+<emphasis id="answer27" effect="bold">
+
+Answer 27
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1187">
+False. Kjell tells us that we can represent a vector with two real numbers in 
+a 2D system and with three real numbers in a 3D system. 
+
+</para>
+
+
+
+
+<para id="p1188">
+<link id="a1119" target-id="question27">
+
+Back to Question 27
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21068">
+<title>
+<emphasis id="answer26" effect="bold">
+
+Answer 26
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1189">
+False. According to Kjell, 
+
+<emphasis id="em1019" effect="italics">
+"A vector does not have a position."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1190">
+<link id="a1120" target-id="question26">
+
+Back to Question 26
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+
+
+</section>
+<section id="h21069">
+<title>
+<emphasis id="answer25" effect="bold">
+
+Answer 25
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1191">
+True. According to Kjell, 
+
+<emphasis id="em1020" effect="italics">
+"A vector is a geometrical object that has two 
+properties: length and direction."
+
+</emphasis>
+ He also tells us, 
+
+<emphasis id="em1021" effect="italics">
+"A vector does not 
+have a position."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1192">
+<link id="a1121" target-id="question25">
+
+Back to Question 25
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21070">
+<title>
+<emphasis id="answer24" effect="bold">
+
+Answer 24
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1193">
+False. There will be many occasions when you, as a game programmer, will need 
+to define the coordinate values for a point 
+
+<emphasis id="em1022" effect="italics">
+(or a set of points)
+
+</emphasis>
+ that you 
+have no intention of displaying on the screen. Instead, you will use those 
+points for various mathematical operations to produce something else that may or 
+may not be displayed on the screen.
+
+</para>
+
+
+
+
+<para id="p1194">
+<link id="a1122" target-id="question24">
+
+Back to Question 24
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21071">
+<title>
+<emphasis id="answer23" effect="bold">
+
+Answer 23
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1195">
+False. Objects instantiated from the classes named 
+
+<emphasis id="strong1075" effect="bold">
+Point2D.Double
+
+</emphasis>
+ 
+and 
+
+<emphasis id="strong1076" effect="bold">
+Line2D.Double
+
+</emphasis>
+ are intended primarily for rendering graphics 
+on the screen and are 
+
+<emphasis id="strong1077" effect="bold">
+not
+
+</emphasis>
+ well suited for inclusion in 
+mathematical operations. That is part of the rationale behind the development of 
+the game-math library: 
+
+<emphasis id="em1023" effect="italics">
+separation of data objects that are suitable for 
+mathematical operations from graphics objects
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1196">
+<link id="a1123" target-id="question23">
+
+Back to Question 23
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21072">
+<title>
+<emphasis id="answer22" effect="bold">
+
+Answer 22
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1197">
+False. According to Kjell, the true line segment has no width, and therefore 
+is not visible to the human eye. This is typically not the case with a line 
+drawn on the screen using an object of the 
+
+<emphasis id="strong1078" effect="bold">
+Line2D.Double
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<para id="p1198">
+<link id="a1124" target-id="question22">
+
+Back to Question 22
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21073">
+<title>
+<emphasis id="answer21" effect="bold">
+
+Answer 21
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1199">
+False. The default direction for increasing horizontal coordinate values in a
+
+
+<emphasis id="strong1079" effect="bold">
+Canvas
+
+</emphasis>
+ object is from 
+
+<emphasis id="em1024" effect="italics">
+left to right
+
+</emphasis>
+ across the screen.
+
+</para>
+
+
+
+
+<para id="p1200">
+<link id="a1125" target-id="question21">
+
+Back to Question 21
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21074">
+<title>
+<emphasis id="answer20" effect="bold">
+
+Answer 20
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1201">
+True 
+
+</para>
+
+
+
+
+<para id="p1202">
+<link id="a1126" target-id="question20">
+
+Back to Question 20
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21075">
+<title>
+<emphasis id="answer19" effect="bold">
+
+Answer 19
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1203">
+True 
+
+</para>
+
+
+
+
+<para id="p1204">
+<link id="a1127" target-id="question19">
+
+Back to Question 19
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21076">
+<title>
+<emphasis id="answer18" effect="bold">
+
+Answer 18
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1205">
+False. The class named 
+
+<emphasis id="strong1080" effect="bold">
+Graphics2D
+
+</emphasis>
+ is a 
+
+<emphasis id="em1025" effect="italics">
+subclass 
+
+</emphasis>
+of
+
+<emphasis id="em1026" effect="italics">
+(inherits 
+from or is derived from)
+
+</emphasis>
+ the class named 
+
+<emphasis id="strong1081" effect="bold">
+Graphics
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1206">
+<link id="a1128" target-id="question18">
+
+Back to Question 18
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21077">
+<title>
+<emphasis id="answer17" effect="bold">
+
+Answer 17
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1207">
+False. A 
+
+<emphasis id="strong1082" effect="bold">
+Canvas
+
+</emphasis>
+ object's overridden 
+
+<emphasis id="strong1083" effect="bold">
+paint
+
+</emphasis>
+ method 
+always receives an incoming parameter as type 
+
+<emphasis id="strong1084" effect="bold">
+Graphics
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1208">
+<link id="a1129" target-id="question17">
+
+Back to Question 17
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21078">
+<title>
+<emphasis id="answer16" effect="bold">
+
+Answer 16
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1209">
+True 
+
+</para>
+
+
+
+
+<para id="p1210">
+<link id="a1130" target-id="question16">
+
+Back to Question 16
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+
+</section>
+<section id="h21079">
+<title>
+<emphasis id="answer15" effect="bold">
+
+Answer 15
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1211">
+True 
+
+</para>
+
+
+
+
+<para id="p1212">
+<link id="a1131" target-id="question15">
+
+Back to Question 15
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21080">
+<title>
+<emphasis id="answer14" effect="bold">
+
+Answer 14
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1213">
+True 
+
+</para>
+
+
+
+
+<para id="p1214">
+<link id="a1132" target-id="question14">
+
+Back to Question 14
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21081">
+<title>
+<emphasis id="answer13" effect="bold">
+
+Answer 13
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1215">
+False. There is no class named 
+
+<emphasis id="strong1085" effect="bold">
+GUI
+
+</emphasis>
+ in the Java 7 Standard 
+Edition library. It is a name that I often use for custom classes that present a 
+Graphical User Interface.
+
+</para>
+
+
+
+
+<para id="p1216">
+<link id="a1133" target-id="question13">
+
+Back to Question 13
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21082">
+<title>
+<emphasis id="answer12" effect="bold">
+
+Answer 12
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1217">
+True 
+
+</para>
+
+
+
+
+<para id="p1218">
+<link id="a1134" target-id="question12">
+
+Back to Question 12
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21083">
+<title>
+<emphasis id="answer11" effect="bold">
+
+Answer 11
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1219">
+False. The correct syntax is shown below. Note the formal argument list of 
+the 
+
+<emphasis id="strong1086" effect="bold">
+main
+
+</emphasis>
+ method.
+
+</para>
+
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+
+				
+
+<code id="pre1002" display="block">  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main</code>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1220">
+<link id="a1135" target-id="question11">
+
+Back to Question 11
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21084">
+<title>
+<emphasis id="answer10" effect="bold">
+
+Answer 10
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1221">
+True 
+
+</para>
+
+
+
+
+<para id="p1222">
+<link id="a1136" target-id="question10">
+
+Back to Question 10
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+
+</section>
+<section id="h21085">
+<title>
+<emphasis id="answer09" effect="bold">
+
+Answer 9
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1223">
+False. The name of the Java compiler program is 
+
+<emphasis id="strong1087" effect="bold">
+javac.exe
+
+</emphasis>
+. 
+The file named 
+
+<emphasis id="strong1088" effect="bold">
+java.exe
+
+</emphasis>
+ is the Java virtual machine.
+
+</para>
+
+
+
+
+<para id="p1224">
+<link id="a1137" target-id="question09">
+
+Back to Question 9
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h21086">
+<title>
+<emphasis id="answer08" effect="bold">
+
+Answer 8
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1225">
+False. The class having the 
+
+<emphasis id="strong1089" effect="bold">
+main
+
+</emphasis>
+ method must be contained in 
+a file having the same name as the class with an extension of .java. Good 
+programming practice dictates that even for other classes, the name of each 
+source code file should match the name of the Java class defined in the file.
+
+</para>
+
+
+
+
+<para id="p1226">
+<link id="a1138" target-id="question08">
+
+Back to Question 8
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h21087">
+<title>
+<emphasis id="answer07" effect="bold">
+
+Answer 7
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1227">
+False. You can use just about any text editor to create your Java source code 
+files as text files with an extension of .java.
+
+</para>
+
+
+
+
+<para id="p1228">
+<link id="a1139" target-id="question07">
+
+Back to Question 7
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21088">
+<title>
+<emphasis id="answer06" effect="bold">
+
+Answer 6
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1229">
+False. The same point will have different representations in different 
+coordinate frames.
+
+</para>
+
+
+
+
+<para id="p1230">
+<link id="a1140" target-id="question06">
+
+Back to Question 6
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21089">
+<title>
+<emphasis id="answer05" effect="bold">
+
+Answer 5
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1231">
+True 
+
+</para>
+
+
+
+
+<para id="p1232">
+<link id="a1141" target-id="question05">
+
+Back to Question 5
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h21090">
+<title>
+<emphasis id="answer04" effect="bold">
+
+Answer 4
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1233">
+8. All of the above 
+
+</para>
+
+
+
+
+<para id="p1234">
+<link id="a1142" target-id="question04">
+
+Back to Question 4
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h21091">
+<title>
+<emphasis id="answer03" effect="bold">
+
+Answer 3
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1235">
+True 
+
+</para>
+
+
+
+
+<para id="p1236">
+<link id="a1143" target-id="question03">
+
+Back to Question 3
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h21092">
+<title>
+<emphasis id="answer02" effect="bold">
+
+Answer 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1237">
+False. In addition to helping you with your math skills, I will also teach 
+you how to incorporate those skills into object-oriented programming using Java.
+
+</para>
+
+
+
+
+<para id="p1238">
+<link id="a1144" target-id="question02">
+
+Back to Question 2
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21093">
+<title>
+<emphasis id="answer01" effect="bold">
+
+Answer 1
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1239">
+False. In order to be a successful game programmer you must be skilled in 
+technologies other than simply programming. Those technologies include 
+mathematics.
+
+</para>
+
+
+
+
+<para id="p1240">
+<link id="a1145" target-id="question01">
+
+Back to Question 1
+
+</link>
+
+ 
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1241">
+This section contains a variety of miscellaneous information. 
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1003" type="">
+
+
+		
+
+
+			
+
+<emphasis id="strong1090" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+			
+
+<list id="ul1004" list-type="bulleted">
+
+				
+
+<item id="li1021">
+Module name: Game0105r Review: Getting Started
+
+</item>
+
+
+				
+
+<item id="li1022">
+File: Game0105r.htm 
+
+</item>
+
+
+				
+
+<item id="li1023">
+Published: 12/31/12
+
+</item>
+
+
+				
+
+<item id="li1024">
+Revised: 12/27/14
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</note>
+
+		
+
+
+
+
+
+
+
+
+
+	
+
+<note id="note1004" type="">
+
+
+		
+
+
+			
+
+<emphasis id="strong1091" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1242">
+<emphasis id="strong1092" effect="bold">
+Financial
+
+</emphasis>
+: 
+			Although the Connexions site makes it possible for you to download a 
+			PDF file for this module at no charge, and also makes it possible 
+			for you to purchase a pre-printed version of the PDF file, you 
+			should be aware that some of the HTML elements in this module may 
+			not translate well into PDF.
+
+</para>
+
+
+			
+
+<para id="p1243">
+I also want you to know that, I receive no financial compensation 
+			from the Connexions website even if you purchase the PDF version of 
+			the module.
+
+</para>
+
+
+			
+
+<para id="p1244">
+In the past, unknown individuals have copied my modules from 
+			cnx.org, converted them to Kindle books, and placed them for sale on 
+			Amazon.com showing me as the author. I neither receive compensation 
+			for those sales nor do I know who does receive compensation. If you 
+			purchase such a book, please be aware that it is a copy of a module 
+			that is freely available on cnx.org and that it was made and 
+			published without my prior knowledge.
+
+</para>
+
+
+			
+
+<para id="p1245">
+<emphasis id="strong1093" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer 
+			Information Technology at Austin Community College in Austin, TX.
+			
+
+</para>
+
+
+			
+
+</note>
+
+		
+
+
+
+
+
+
+
+
+
+<para id="p1246">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,5682 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0115: Working with Column Matrices, Points, and Vectors</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45010</md:content-id>
+  <md:title>GAME 2302-0115: Working with Column Matrices, Points, and Vectors</md:title>
+  <md:abstract>Learn how to compare column matrices for equality, compare two points for equality, compare two vectors for equality, add one column matrix to another, subtract one column matrix from another, and get a displacement vector from one point to another.</md:abstract>
+  <md:uuid>237ea217-0ae1-47d9-b27f-3b819c75c8b2</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_game_math_library_named_GM2D03">
+
+The game-math library named GM2D03
+    	
+
+</link>
+
+
+    
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_sample_program_named_ColMatrixEquals01">
+
+The sample program named ColMatrixEquals01
+    	
+
+</link>
+
+
+    
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_sample_program_named_DisplacementVector01">
+
+The sample program named DisplacementVector01
+
+</link>
+
+
+    
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_sample_program_named_ColMatrixAddSubtract01">
+
+The sample program named ColMatrixAddSubtract01
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1010">
+<link id="a1010" target-id="Documentation_for_the_GM2D03_library">
+
+Documentation for the GM2D03 library
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Homework_study_assignment">
+
+Homework assignment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Summary">
+
+Summary
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Whats_next">
+
+What's next?
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Exercises">
+
+Exercises
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1018">
+<link id="a1018" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="Exercise_2">
+
+Exercise 2
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="Exercise_3">
+
+Exercise 3
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1000">
+This module is one in a series of modules designed for teaching 
+
+<emphasis id="em1000" effect="italics">
+
+	GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX.
+
+</para>
+
+
+
+
+<para id="p1001">
+<emphasis id="strong1000" effect="bold">
+What you have learned
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1002">
+In the previous module, you learned how to update the game-math library to 
+provide new capabilities including the addition of graphics and 
+
+<emphasis id="strong1001" effect="bold">
+set
+
+</emphasis>
+ methods for 
+column matrices, points, vectors, and lines. You also learned how to draw on 
+off-screen images.
+
+</para>
+
+
+
+
+<para id="p1003">
+<emphasis id="strong1002" effect="bold">
+What you will learn
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+In this module, you will learn how to compare column matrices for equality, 
+compare two points for equality, compare two vectors for equality, add one 
+column matrix to another, subtract one column matrix from another, and get a 
+displacement vector from one point to another.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1005">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1021">
+<link id="a1021" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Screen output from the program named ColMatrixEquals01.
+
+</item>
+
+
+		
+
+<item id="li1022">
+<link id="a1022" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Screen output from the program named DisplacementVector01. 
+
+</item>
+
+
+		
+
+<item id="li1023">
+<link id="a1023" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Screen output from the program named ColMatrixAddSubtract01. 
+
+</item>
+
+
+		
+
+<item id="li1024">
+<link id="a1024" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Text output from Exercise 1.
+
+</item>
+
+
+		
+
+<item id="li1025">
+<link id="a1025" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Text output from Exercise 2.
+
+</item>
+
+
+		
+
+<item id="li1026">
+<link id="a1026" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Text output from Exercise 3.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Overridden equals method of the GM2D03.ColMatrix class. 
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Overridden equals method of the GM2D03.Point class. 
+
+</item>
+
+
+		
+
+<item id="li1029">
+<link id="a1029" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. The getColMatrix method of the GM2D03.Point class. 
+
+</item>
+
+
+		
+
+<item id="li1030">
+<link id="a1030" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Beginning of the ColMatrixEquals01 class. 
+
+</item>
+
+
+		
+
+<item id="li1031">
+<link id="a1031" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Remainder of the ColMatrixEquals01 class. 
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1032" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. The getDisplacementVector method of the GM2D03.Point class. 
+
+</item>
+
+
+		
+
+<item id="li1033">
+<link id="a1033" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. The program named DisplacementVector01. 
+
+</item>
+
+
+		
+
+<item id="li1034">
+<link id="a1034" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Source code for the program named ColMatrixAddSubtract01.
+
+</item>
+
+
+		
+
+<item id="li1035">
+<link id="a1035" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Source code for the add method of the GM2D03.ColMatrix class. 
+
+</item>
+
+
+		
+
+<item id="li1036">
+<link id="a1036" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Source code for the subtract method of the GM2D03.ColMatrix class. 
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1037" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Source code for game-math library named GM2D03. 
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1038" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Source code for the program named ColMatrixEquals01. 
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. Source code for the program named DisplacementVector01.
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1040" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. Source code for the program named ColMatrixAddSubtract01. 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1006">
+As mentioned earlier, in this module you will learn how to:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1041">
+Compare two column matrices for equality.
+
+</item>
+
+
+	
+
+<item id="li1042">
+Compare two points for equality.
+
+</item>
+
+
+	
+
+<item id="li1043">
+Compare two vectors for equality.
+
+</item>
+
+
+	
+
+<item id="li1044">
+Add one column matrix to another.
+
+</item>
+
+
+	
+
+<item id="li1045">
+Subtract one column matrix from another.
+
+</item>
+
+
+	
+
+<item id="li1046">
+Get a displacement vector from one point to another.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1007">
+To assist you in this quest, I will present and explain modifications that 
+were made to update the game-math library that you learned about in the previous 
+two modules. In addition, I will present and explain three sample programs 
+that illustrate the new features of the game-math library.
+
+</para>
+
+
+
+
+<para id="p1008">
+I will also provide exercises for you to complete on your own at the end of 
+the module. The exercises will concentrate on the material that you have learned 
+in this module and previous modules.
+
+</para>
+
+
+	
+
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1009">
+Much of the code in the library remains unchanged. I explained that code 
+	in previous modules and I won't repeat that explanation in this module. 
+	Rather, in this module, I will concentrate on explaining the modifications 
+	that I made to the library.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_game_math_library_named_GM2D03" effect="bold">
+
+The game-math library named 
+GM2D03
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+A complete listing of the library program is provided in 
+
+<link id="a1041" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ near the 
+end of the module.
+
+</para>
+
+
+
+
+<para id="p1011">
+This update added the following new capabilities:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1047">
+Compare two 
+
+<emphasis id="strong1003" effect="bold">
+ColMatrix
+
+</emphasis>
+ objects for equality by implementing 
+	Kjell's rules for equality given in his Chapter 1, topic 
+
+<emphasis id="em1001" effect="italics">
+"Column Matrix 
+	Equality."
+
+</emphasis>
+ The equality test does not test for absolute equality. 
+	Rather, It compares the values stored in two matrices and returns true if 
+	the values are 
+
+<emphasis id="em1002" effect="italics">
+equal or almost equal
+
+</emphasis>
+ and returns false otherwise.
+
+</item>
+
+
+	
+
+<item id="li1048">
+Get a reference to the 
+
+<emphasis id="strong1004" effect="bold">
+ColMatrix
+
+</emphasis>
+ object that defines a 
+
+<emphasis id="strong1005" effect="bold">
+Point
+
+</emphasis>
+ 
+	object.
+
+</item>
+
+
+	
+
+<item id="li1049">
+Compare two 
+
+<emphasis id="strong1006" effect="bold">
+Point
+
+</emphasis>
+ objects for equality based on a comparison of 
+	the 
+
+<emphasis id="strong1007" effect="bold">
+ColMatrix
+
+</emphasis>
+ objects that define them.
+
+</item>
+
+
+	
+
+<item id="li1050">
+Get a reference to the 
+
+<emphasis id="strong1008" effect="bold">
+ColMatrix
+
+</emphasis>
+ object that defines a 
+
+<emphasis id="strong1009" effect="bold">
+Vector
+
+</emphasis>
+ 
+	object.
+
+</item>
+
+
+	
+
+<item id="li1051">
+Compare two 
+
+<emphasis id="strong1010" effect="bold">
+Vector
+
+</emphasis>
+ objects for equality based on a comparison of 
+	the 
+
+<emphasis id="strong1011" effect="bold">
+ColMatrix
+
+</emphasis>
+ objects that define them.
+
+</item>
+
+
+	
+
+<item id="li1052">
+Add one 
+
+<emphasis id="strong1012" effect="bold">
+ColMatrix
+
+</emphasis>
+ object to a second 
+
+<emphasis id="strong1013" effect="bold">
+ColMatrix
+
+</emphasis>
+ object, 
+	returning a 
+
+<emphasis id="strong1014" effect="bold">
+ColMatrix
+
+</emphasis>
+ object.
+
+</item>
+
+
+	
+
+<item id="li1053">
+Subtract one 
+
+<emphasis id="strong1015" effect="bold">
+ColMatrix
+
+</emphasis>
+ object from a second 
+
+<emphasis id="strong1016" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+	object, returning a 
+
+<emphasis id="strong1017" effect="bold">
+ColMatrix
+
+</emphasis>
+ object.
+
+</item>
+
+
+	
+
+<item id="li1054">
+Get a displacement vector from one 
+
+<emphasis id="strong1018" effect="bold">
+Point
+
+</emphasis>
+ object to a second 
+
+<emphasis id="strong1019" effect="bold">
+
+	Point
+
+</emphasis>
+ object. The vector points from the object on which the 
+
+<emphasis id="strong1020" effect="bold">
+
+	getDisplacementVector
+
+</emphasis>
+ method is called to the object passed as a 
+	parameter to the method.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1012">
+I will explain these updates in conjunction with the discussions of the 
+programs that follow.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_sample_program_named_ColMatrixEquals01" effect="bold">
+
+The sample program 
+named ColMatrixEquals01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1013">
+A complete listing of this program is provided in 
+
+<link id="a1042" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ near the end of 
+the module. I will explain the program in fragments. In selecting 
+the portions of the program that I will explain, I will skip over material that 
+is very similar to code that I have previously explained.
+
+</para>
+
+
+
+
+
+<para id="p1014">
+
+The purpose of this program is to confirm the behavior of the 
+
+<emphasis id="strong1021" effect="bold">
+equals
+
+</emphasis>
+ 
+methods of the 
+
+<emphasis id="strong1022" effect="bold">
+GM2D03.ColMatrix
+
+</emphasis>
+, 
+
+<emphasis id="strong1023" effect="bold">
+Point
+
+</emphasis>
+, and 
+
+<emphasis id="strong1024" effect="bold">
+Vector
+
+</emphasis>
+ classes.
+
+</para>
+
+
+
+
+<para id="p1015">
+<emphasis id="strong1025" effect="bold">
+Overridden 
+
+<emphasis id="em1003" effect="italics">
+equals
+
+</emphasis>
+ method of the GM2D03.ColMatrix class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1016">
+I will begin by explaining some of the 
+
+<emphasis id="strong1026" effect="bold">
+equals
+
+</emphasis>
+ methods in the updated
+
+
+<emphasis id="strong1027" effect="bold">
+GM2D03
+
+</emphasis>
+ game-math library.
+
+</para>
+
+
+
+
+<para id="p1017">
+The first fragment in 
+
+<link id="a1043" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows the new 
+
+<emphasis id="strong1028" effect="bold">
+equals
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1029" effect="bold">
+
+ColMatrix
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Overridden equals method of the GM2D03.ColMatrix class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">    public boolean equals(Object obj){
+      if(obj instanceof GM2D03.ColMatrix &amp;&amp;
+         Math.abs(((GM2D03.ColMatrix)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM2D03.ColMatrix)obj).getData(1) - 
+                                  getData(1)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1018">
+This method overrides the 
+
+<emphasis id="strong1030" effect="bold">
+equals
+
+</emphasis>
+ method inherited from the 
+
+<emphasis id="strong1031" effect="bold">
+
+	Object
+
+</emphasis>
+ class. It compares the 
+
+<emphasis id="strong1032" effect="bold">
+double
+
+</emphasis>
+ values stored in two 
+	matrices and returns true if the values are 
+
+<emphasis id="em1004" effect="italics">
+equal or almost equal
+
+</emphasis>
+ and 
+	returns false otherwise.
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1033" effect="bold">
+An 
+
+<emphasis id="inherent" effect="bold">
+
+inherent
+
+</emphasis>
+
+ problem when comparing doubles and 
+floats
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+There is always a problem when comparing two 
+
+<emphasis id="strong1034" effect="bold">
+double
+
+</emphasis>
+ or 
+
+<emphasis id="strong1035" effect="bold">
+float
+
+</emphasis>
+ 
+values for equality. If you perform a series of computations twice, using 
+a different computational order for each set of computations, you are likely to 
+end up with two values that are not absolutely equal even if they should be 
+equal. 
+Arithmetic inaccuracies along the way may cause the two results to differ ever 
+so slightly. However, they may be equal from a practical viewpoint.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1036" effect="bold">
+An example of the problem:
+
+</emphasis>
+
+				
+
+<para id="p1021">
+See 
+
+<link id="a1044" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ where the a value that should be 0.0 is actually given by 
+-1.7763568394002505E-15 
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1022">
+Therefore, when comparing two 
+
+<emphasis id="strong1037" effect="bold">
+double
+
+</emphasis>
+ or 
+
+<emphasis id="strong1038" effect="bold">
+float
+
+</emphasis>
+ values for 
+equality, it is customary to subtract one from the other, convert the difference 
+to an absolute value, and compare that absolute value with an arbitrarily small 
+positive value. If the difference is less than that the test value, the 
+two original values are declared to be equal. Otherwise, they are declared 
+to be unequal.
+
+</para>
+
+
+
+
+<para id="p1023">
+This is the logic that is implemented in 
+
+<link id="a1045" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+, which shouldn't require 
+further explanation.
+
+</para>
+
+
+
+
+<para id="p1024">
+<emphasis id="strong1039" effect="bold">
+Overridden 
+
+<emphasis id="em1005" effect="italics">
+equals
+
+</emphasis>
+ method of the GM2D03.Point class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1025">
+<link id="a1046" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ presents the overridden equals method of the GM2D03.Point class.
+
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Overridden equals method of the GM2D03.Point class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">    public boolean equals(Object obj){
+      if(point.equals(((GM2D03.Point)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1026">
+This method also overrides the 
+
+<emphasis id="strong1040" effect="bold">
+equals
+
+</emphasis>
+ method inherited from the 
+
+<emphasis id="strong1041" effect="bold">
+
+	Object
+
+</emphasis>
+ class. It compares the values stored in the 
+
+<emphasis id="strong1042" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+	objects that define two 
+
+<emphasis id="strong1043" effect="bold">
+Point
+
+</emphasis>
+ objects and returns true if they are 
+	equal and false otherwise.
+
+</para>
+
+
+
+
+<para id="p1027">
+<emphasis id="strong1044" effect="bold">
+One possible point of confusion
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1028">
+The one thing that can be confusing in 
+
+<link id="a1047" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ has to do with the variable 
+named 
+
+<emphasis id="strong1045" effect="bold">
+point
+
+</emphasis>
+. This is a reference to an object of type 
+
+<emphasis id="strong1046" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+that defines the location of the 
+
+<emphasis id="strong1047" effect="bold">
+Point
+
+</emphasis>
+ object. 
+
+<link id="a1048" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls 
+another new method named 
+
+<emphasis id="strong1048" effect="bold">
+getColMatrix
+
+</emphasis>
+ to get access to the 
+
+<emphasis id="strong1049" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+object that defines the incoming 
+
+<emphasis id="strong1050" effect="bold">
+Point
+
+</emphasis>
+ object, and uses that object for 
+the comparison. In effect, this method actually compares two objects of 
+the 
+
+<emphasis id="strong1051" effect="bold">
+ColMatrix
+
+</emphasis>
+ class by calling the method that I explained in 
+
+<link id="a1049" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. 
+This illustrates the advantages of building up the library classes using objects 
+of the fundamental 
+
+<emphasis id="strong1052" effect="bold">
+ColMatrix
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<para id="p1029">
+<emphasis id="strong1053" effect="bold">
+The getColMatrix method of the GM2D03.Point class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+This extremely simple new method, which is called by the code in 
+
+<link id="a1050" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, 
+is presented in 
+
+<link id="a1051" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. The getColMatrix method of the GM2D03.Point class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">    //Returns a reference to the ColMatrix object that
+    // defines this Point object.
+    public GM2D03.ColMatrix getColMatrix(){
+      return point;
+    }//end getColMatrix
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1031">
+<link id="a1052" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shouldn't require any explanation beyond the embedded comments.
+
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="strong1054" effect="bold">
+Overridden 
+
+<emphasis id="em1006" effect="italics">
+equals
+
+</emphasis>
+ method of the GM2D03.Vector class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1033">
+The overridden 
+
+<emphasis id="strong1055" effect="bold">
+equals
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1056" effect="bold">
+GM2D03.Vector
+
+</emphasis>
+ class is 
+essentially the same as the code shown for the 
+
+<emphasis id="strong1057" effect="bold">
+Point
+
+</emphasis>
+ class in 
+
+<link id="a1053" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ 
+so I won't bother to show and explain it. You van view this new method in 
+
+
+<link id="a1054" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1034">
+<emphasis id="strong1058" effect="bold">
+Beginning of the ColMatrixEquals01 program class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1035">
+At this point, I will put the discussion of the updated 
+
+<emphasis id="strong1059" effect="bold">
+GM2D03 
+
+</emphasis>
+ 
+library on hold and explain the 
+
+<emphasis id="strong1060" effect="bold">
+ColMatrixEquals01
+
+</emphasis>
+ program.
+
+</para>
+
+
+
+
+<para id="p1036">
+<link id="a1055" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ presents the beginning of the 
+
+<emphasis id="strong1061" effect="bold">
+ColMatrixEquals01
+
+</emphasis>
+ program 
+class including the beginning of the 
+
+<emphasis id="strong1062" effect="bold">
+main
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Beginning of the ColMatrixEquals01 class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">public class ColMatrixEquals01{
+  public static void main(String[] args){
+    GM2D03.ColMatrix matA = 
+                           new GM2D03.ColMatrix(1.5,-2.6);
+    GM2D03.ColMatrix matB = 
+                           new GM2D03.ColMatrix(1.5,-2.6);
+    GM2D03.ColMatrix matC = 
+                 new GM2D03.ColMatrix(1.500001,-2.600001);
+    GM2D03.ColMatrix matD = 
+                   new GM2D03.ColMatrix(1.50001,-2.60001);
+    System.out.println(matA.equals(matA));
+    System.out.println(matA.equals(matB));
+    System.out.println(matA.equals(matC));
+    System.out.println(matA.equals(matD));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1037">
+<link id="a1056" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ instantiates four different 
+
+<emphasis id="strong1063" effect="bold">
+ColMatrix
+
+</emphasis>
+ objects and then 
+	compares them in different ways, displaying the results of the comparisons 
+	on the command-line screen.
+
+</para>
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1064" effect="bold">
+Screen output from the program named ColMatrixEquals01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+The first four lines of text in 
+
+<link id="a1057" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ were produced by the code in Listing 
+4. 
+
+<emphasis id="em1007" effect="italics">
+(The remaining output shown in 
+
+<link id="a1058" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ was produced by the code in 
+
+
+<link id="a1059" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+, which I will explain shortly.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Screen output from the program named ColMatrixEquals01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">true
+true
+true
+false
+
+true
+true
+false
+
+true
+true
+false
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1040">
+Because of the simplicity of the code in 
+
+<link id="a1060" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+, you shouldn't need 
+	any help in understanding why the code in 
+
+<link id="a1061" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ produced the first four 
+	lines of output in 
+
+<link id="a1062" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1041">
+The third and fourth lines of output in 
+
+<link id="a1063" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ are the result of comparing 
+two matrices whose values are almost equal but not absolutely equal.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="strong1065" effect="bold">
+Remainder of the ColMatrixEquals01 class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+The remainder of the program named 
+
+<emphasis id="strong1066" effect="bold">
+ColMatrixEquals01 
+
+</emphasis>
+is shown in 
+
+
+<link id="a1064" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. The output produced by this code is shown in the last six lines 
+of text in 
+
+<link id="a1065" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Remainder of the ColMatrixEquals01 class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">    GM2D03.Point pointA = new GM2D03.Point(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Point pointB = new GM2D03.Point(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Point pointC = new GM2D03.Point(
+                       new GM2D03.ColMatrix(-15.6,10.11));
+    System.out.println(/*Blank line*/);
+    System.out.println(pointA.equals(pointA));
+    System.out.println(pointA.equals(pointB));
+    System.out.println(pointA.equals(pointC));
+    
+    GM2D03.Vector vecA = new GM2D03.Vector(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Vector vecB = new GM2D03.Vector(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Vector vecC = new GM2D03.Vector(
+                       new GM2D03.ColMatrix(-15.6,10.11));
+    System.out.println(/*Blank line*/);
+    System.out.println(vecA.equals(vecA));
+    System.out.println(vecA.equals(vecB));
+    System.out.println(vecA.equals(vecC));
+
+  }//end main
+}//end ColMatrixEquals01 class
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1044">
+Once again, the code in 
+
+<link id="a1066" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ is very straightforward and shouldn't 
+	require further explanation. The screen output shown in 
+
+<link id="a1067" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ 
+	verifies that the library methods called by this program behave 
+	appropriately.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_sample_program_named_DisplacementVector01" effect="bold">
+
+The sample program 
+named DisplacementVector01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1045">
+A 
+
+<emphasis id="em1008" effect="italics">
+displacement vector
+
+</emphasis>
+ describes the distance and direction that you 
+would have to move to get from one point in space to another point in space.
+
+</para>
+
+
+
+
+<para id="p1046">
+<emphasis id="strong1067" effect="bold">
+The getDisplacementVector method of the GM2D03.Point class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1047">
+Returning to the discussion of the updated 
+
+<emphasis id="strong1068" effect="bold">
+GM2D03
+
+</emphasis>
+ library, 
+
+<link id="a1068" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ 
+presents the new 
+
+<emphasis id="strong1069" effect="bold">
+getDisplacementVector
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1070" effect="bold">
+GM2D03.Point
+
+</emphasis>
+ 
+class
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. The getDisplacementVector method of the GM2D03.Point class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">    public GM2D03.Vector getDisplacementVector(
+                                      GM2D03.Point point){
+      return new GM2D03.Vector(new GM2D03.ColMatrix(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1)));
+    }//end getDisplacementVector
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1048">
+This method gets and returns a displacement vector from one 
+
+<emphasis id="strong1071" effect="bold">
+Point
+
+</emphasis>
+ object to a 
+	second 
+
+<emphasis id="strong1072" effect="bold">
+Point
+
+</emphasis>
+ object and returns the result as a reference to a new 
+	object of the class 
+
+<emphasis id="strong1073" effect="bold">
+GM2D03.Vector
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1049">
+<emphasis id="strong1074" effect="bold">
+The direction of the vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1050">
+The displacement vector points from the 
+
+<emphasis id="strong1075" effect="bold">
+Point
+
+</emphasis>
+ object on which the 
+method is called to the 
+
+<emphasis id="strong1076" effect="bold">
+Point
+
+</emphasis>
+ object passed as a parameter to the method. 
+Kjell describes the component parts of the new vector as the distance you would 
+have to walk, first along the x-axis and then along the y-axis to get from the 
+first point to the second point. Of course, you could take the short cut 
+and walk directly from the first point to the second point but that's often not 
+how we do it in programming.
+
+</para>
+
+
+
+
+<para id="p1051">
+The code in 
+
+<link id="a1069" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ is straightforward and shouldn't require further 
+explanation.
+
+</para>
+
+
+
+
+<para id="p1052">
+<emphasis id="strong1077" effect="bold">
+The program named DisplacementVector01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1053">
+Once again, I will put the discussion of the updated 
+
+<emphasis id="strong1078" effect="bold">
+GM2D03
+
+</emphasis>
+ library on 
+hold and explain the program named 
+
+<emphasis id="strong1079" effect="bold">
+DisplacementVector01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1054">
+<link id="a1070" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ shows the program named 
+
+<emphasis id="strong1080" effect="bold">
+DisplacementVector01 
+
+</emphasis>
+in its 
+entirety.
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="em1009" effect="italics">
+(For convenience, a second copy of this program is provided in 
+
+<link id="a1071" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ 
+near the end of the module along with the other three programs discussed in this 
+module.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. The program named DisplacementVector01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">public class DisplacementVector01{
+  public static void main(String[] args){
+    GM2D03.Point pointA = new GM2D03.Point(
+                          new GM2D03.ColMatrix(6.5,-9.7));
+    GM2D03.Point pointB = new GM2D03.Point(
+                          new GM2D03.ColMatrix(-6.0,9.0));
+    
+    System.out.println(pointA.getDisplacementVector(
+                                                 pointB));
+    System.out.println(pointB.getDisplacementVector(
+                                                 pointA));
+
+  }//end main
+}//end DisplacementVector01 class
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1056">
+The purpose of this program is to confirm the behavior of the 
+
+<emphasis id="strong1081" effect="bold">
+
+	getDisplacementVector
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1082" effect="bold">
+GM2D03.Point
+
+</emphasis>
+ class. The 
+	screen output shown in 
+
+<link id="a1072" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ provides that confirmation.
+
+</para>
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1083" effect="bold">
+Screen output from the program named DisplacementVector01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+The screen output from the program named 
+
+<emphasis id="strong1084" effect="bold">
+DisplacementVector01
+
+</emphasis>
+ is shown 
+in 
+
+<link id="a1073" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Screen output from the program named DisplacementVector01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">-12.5,18.7
+12.5,-18.7
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1059">
+You should be able to correlate the results shown in 
+
+<link id="a1074" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ with the 
+	code in 
+
+<link id="a1075" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ and 
+
+<link id="a1076" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ without further explanation.
+
+</para>
+
+
+
+
+<para id="p1060">
+<emphasis id="strong1085" effect="bold">
+Very simple methods
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1061">
+By now you may be thinking that the code in the game-math library is very 
+simple and easy to understand. I hope that is the case. I went to 
+great lengths to modularize the library into a set of simple and easily 
+understood methods. Taken as a whole, however, the library is becoming 
+quite powerful, and will become even more powerful as we progress through 
+additional modules in this collection.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_sample_program_named_ColMatrixAddSubtract01" effect="bold">
+
+The sample program 
+named ColMatrixAddSubtract01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1062">
+The source code for this program is shown in its entirety in 
+
+<link id="a1077" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+.
+
+
+</para>
+
+
+
+
+<para id="p1063">
+<emphasis id="em1010" effect="italics">
+(The source code is also provided in 
+
+<link id="a1078" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ near the end of the module 
+for convenience.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Source code for the program named ColMatrixAddSubtract01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">public class ColMatrixAddSubtract01{
+  public static void main(String[] args){
+  
+    GM2D03.ColMatrix matrixA = 
+                         new GM2D03.ColMatrix(3.14,-6.01);
+    GM2D03.ColMatrix matrixB = 
+                        new GM2D03.ColMatrix(-14.0,-12.2);
+    
+    GM2D03.ColMatrix matrixC = matrixA.add(matrixB);
+    GM2D03.ColMatrix matrixD = matrixC.subtract(matrixA);
+    GM2D03.ColMatrix matrixE = matrixD.subtract(matrixB);
+    
+    System.out.println(matrixC);
+    System.out.println(matrixD);
+    System.out.println(matrixE);
+  }//end main
+
+}//end class ColMatrixAddSubtract01
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1064">
+The purpose of this program is to confirm the behavior of the new 
+
+<emphasis id="strong1086" effect="bold">
+add
+
+</emphasis>
+ 
+	and 
+
+<emphasis id="strong1087" effect="bold">
+subtract
+
+</emphasis>
+ methods of the GM2D03.ColMatrix class.
+
+</para>
+
+
+
+
+<para id="p1065">
+<emphasis id="strong1088" effect="bold">
+Source code for the add method of the GM2D03.ColMatrix class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1066">
+Returning once more to a discussion of the updated 
+
+<emphasis id="strong1089" effect="bold">
+GM2D03 
+
+</emphasis>
+library, the 
+source code for this method is shown in 
+
+<link id="a1079" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. The method adds one 
+
+<emphasis id="strong1090" effect="bold">
+
+ColMatrix
+
+</emphasis>
+ object to another 
+
+<emphasis id="strong1091" effect="bold">
+ColMatrix
+
+</emphasis>
+ object, returning a 
+
+<emphasis id="strong1092" effect="bold">
+
+ColMatrix
+
+</emphasis>
+ object. As you should have learned from your studies of 
+the Kjell tutorial, the order in which the two objects are added doesn't 
+matter. The result is the same either way.
+
+</para>
+
+
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Source code for the add method of the GM2D03.ColMatrix class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">    public GM2D03.ColMatrix add(GM2D03.ColMatrix matrix){
+      return new GM2D03.ColMatrix(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1));
+    }//end add
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1067">
+The code in the method is straightforward and shouldn't require an 
+	explanation.
+
+</para>
+
+
+
+
+<para id="p1068">
+<emphasis id="strong1093" effect="bold">
+Source code for the subtract method of the GM2D03.ColMatrix class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1069">
+Continuing with the discussion of the updated 
+
+<emphasis id="strong1094" effect="bold">
+GM2D03 
+
+</emphasis>
+library, the 
+source code for this method is shown in 
+
+<link id="a1080" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. This method subtracts 
+one 
+
+<emphasis id="strong1095" effect="bold">
+ColMatrix
+
+</emphasis>
+ object from another 
+
+<emphasis id="strong1096" effect="bold">
+ColMatrix
+
+</emphasis>
+ object, 
+returning a 
+
+<emphasis id="strong1097" effect="bold">
+ColMatrix
+
+</emphasis>
+ object. Also as you should have learned from 
+the Kjell tutorial, in this case, the order of the operation does matter. 
+The object that is received as an incoming parameter is subtracted from the 
+object on which the method is called. Reversing the order of operations produces 
+different results.
+
+</para>
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Source code for the subtract method of the GM2D03.ColMatrix class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1011" display="block">    public GM2D03.ColMatrix subtract(
+                                 GM2D03.ColMatrix matrix){
+      return new GM2D03.ColMatrix(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1));
+    }//end subtract
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1070">
+Once again, the code in the method is straightforward and shouldn't 
+	require an explanation.
+
+</para>
+
+
+
+
+<para id="p1071">
+<emphasis id="strong1098" effect="bold">
+Program output for program named ColMatrixAddSubtract01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1072">
+Now, lets get back to the program named 
+
+<emphasis id="strong1099" effect="bold">
+ColMatrixAddSubtract01 
+
+</emphasis>
+that is 
+shown in 
+
+<link id="a1081" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. This program produces the output shown in 
+
+<link id="a1082" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Screen output from the program named ColMatrixAddSubtract01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1012" display="block">-10.86,-18.21
+-14.0,-12.200000000000001
+0.0,-1.7763568394002505E-15
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1073">
+By now, you should have no difficulty understanding how the output shown 
+	in 
+
+<link id="a1083" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ was produced by the code shown in 
+
+<link id="a1084" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Note, however, 
+	that the last value on the third row should be 0.0 instead of the extremely 
+	small value shown. This is an example of an 
+
+<link id="a1085" url="Java1704.htm#inherent">
+
+
+	inherent
+
+</link>
+
+ problem having to do with comparing 
+
+<emphasis id="strong1100" effect="bold">
+double
+
+</emphasis>
+ or 
+
+<emphasis id="strong1101" effect="bold">
+float
+
+</emphasis>
+ 
+	values with other 
+
+<emphasis id="strong1102" effect="bold">
+double
+
+</emphasis>
+ or 
+
+<emphasis id="strong1103" effect="bold">
+float 
+
+</emphasis>
+values for absolute 
+	equality.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Documentation_for_the_GM2D03_library" effect="bold">
+
+Documentation for the GM2D03 library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1074">
+Click 
+
+<link id="a1086" url="GM2D03docs.zip">
+
+here
+
+</link>
+
+ to download a zip file 
+containing standard javadoc documentation for the library named 
+
+<emphasis id="strong1104" effect="bold">
+GM2D03
+
+</emphasis>
+. 
+Extract the contents of the zip file into an empty folder and open the file 
+named 
+
+<emphasis id="strong1105" effect="bold">
+index.html
+
+</emphasis>
+ in your browser to view the documentation.
+
+</para>
+
+
+
+
+<para id="p1075">
+Although the documentation doesn't provide much in the way of explanatory 
+text 
+
+<emphasis id="em1011" effect="italics">
+(see 
+
+</emphasis>
+<link id="a1087" target-id="Listing_11">
+
+
+<emphasis id="em1012" effect="italics">
+Listing 11
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1013" effect="italics">
+ and the explanations given above)
+
+</emphasis>
+, the 
+documentation does provide a good overview of the organization and structure of 
+the library. You may find it helpful in that regard. 
+
+</para>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Homework_study_assignment" effect="bold">
+
+Homework assignment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1076">
+Your homework assignment for this module was to study Kjell's tutorial 
+through Chapter 2 - 
+
+<emphasis id="em1014" effect="italics">
+Column and Row Matrix Addition
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1077">
+The homework assignment for the next module is to study the Kjell tutorial 
+through Chapter 3 - 
+
+<emphasis id="em1015" effect="italics">
+Vector Addition
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1078">
+In addition to studying the Kjell material, you should read at least the 
+next two modules in this collection and bring your questions about that 
+material to the next classroom session.
+
+</para>
+
+
+
+
+<para id="p1079">
+Finally, you should have begun studying the
+
+
+<link id="a1088" url="http://cnx.org/content/m44992/latest/">
+
+physics material
+
+</link>
+
+ at the 
+beginning of the semester and you should continue studying one physics module 
+per week thereafter. You should also feel free to bring your questions about 
+that material to the classroom for discussion. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1080">
+I encourage you to copy the code from 
+
+<link id="a1089" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+, 
+
+<link id="a1090" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+, and 
+
+<link id="a1091" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. 
+Compile the code and execute it in conjunction with the game-math library 
+provided in 
+
+<link id="a1092" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Experiment with the code, making changes, and observing 
+the results of your changes. Make certain that you can explain why your changes 
+behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Summary" effect="bold">
+
+Summary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1081">
+In this module, you learned how to compare column matrices for equality, 
+compare two points for equality, compare two vectors for equality, add one 
+column matrix to another, subtract one column matrix from another, and get a 
+displacement vector from one point to another.
+
+</para>
+
+
+
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Whats_next" effect="bold">
+
+What's next?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1082">
+The next module in the collection will show one way for you to visualize 
+column matrices in graphical form.
+
+</para>
+
+
+
+
+<para id="p1083">
+In the module following that one, you will learn:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1055">
+How to add two or more vectors.
+
+</item>
+
+
+	
+
+<item id="li1056">
+About the head-to-tail rule in vector addition.
+
+</item>
+
+
+	
+
+<item id="li1057">
+About the vector addition parallelogram.
+
+</item>
+
+
+	
+
+<item id="li1058">
+About the relationship between the length of the sum of vectors and the 
+	sum of the lengths of the vectors.
+
+</item>
+
+
+	
+
+<item id="li1059">
+How to add a vector to a point.
+
+</item>
+
+
+	
+
+<item id="li1060">
+How to get the length of a vector.
+
+</item>
+
+
+	
+
+<item id="li1061">
+How to represent an object in different coordinate frames.
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1084">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1106" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1010" list-type="bulleted">
+
+					
+
+<item id="li1062">
+Module name: GAME2302-0115: Working with Column Matrices, Points, and Vectors
+
+</item>
+
+
+					
+
+<item id="li1063">
+File: Game0115.htm
+
+
+</item>
+
+
+					
+
+<item id="li1064">
+Published: 10/14/12
+
+</item>
+
+
+					
+
+<item id="li1065">
+Revised: 02/01/16 
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1107" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1085">
+<emphasis id="strong1108" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1086">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1087">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1088">
+<emphasis id="strong1109" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1089">
+Complete listings of the programs discussed in this module are shown in 
+
+
+<link id="a1093" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ through 
+
+<link id="a1094" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ below.
+
+</para>
+
+
+
+
+
+<para id="p1090">
+<emphasis id="strong1110" effect="bold">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Source code for game-math library named GM2D03.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1013" display="block">/*GM2D03.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/10/08
+
+The name GM2Dnn is an abbreviation for GameMath2Dnn.
+
+See the file named GM2D01.java for a general description 
+of this game-math library file. This file is an update of 
+GM2D02.
+
+This update added the following new capabilities:
+
+Compare two ColMatrix objects for equality by implementing
+Kjell's rules for equality given in his Chapter 1, topic
+"Column Matrix Equality." The equality test does not test 
+for absolute equality.  Rather, It compares the values 
+stored in two matrices and returns true if the values are 
+equal or almost equal and returns false otherwise.
+
+Get a reference to the ColMatrix object that defines
+a Point object.
+
+Compare two Point objects for equality based on a 
+comparison of the ColMatrix objects that define them.
+
+Get a reference to the ColMatrix object that defines
+a Vector object.
+
+Compare two Vector objects for equality based on a 
+comparison of the ColMatrix objects that define them.
+
+Add one ColMatrix object to a second ColMatrix object, 
+returning a ColMatrix object.
+
+Subtract one ColMatrix object from a second ColMatrix 
+object, returning a ColMatrix object.
+
+Get a displacement vector from one Point object to a 
+second Point object. The vector points from the object
+on which the getDisplacementVector method is called to the
+object passed as a parameter to the method.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.geom.*;
+import java.awt.*;
+
+public class GM2D03{
+
+  //An object of this class represents a 2D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix{
+    double[] data = new double[2];
+    
+    public ColMatrix(double data0,double data1){
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    public String toString(){
+      return data[0] + "," + data[1];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+    
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in two matrices and returns true if the
+    // values are equal or almost equal and returns false
+    // otherwise. 
+    public boolean equals(Object obj){
+      if(obj instanceof GM2D03.ColMatrix &amp;&amp;
+         Math.abs(((GM2D03.ColMatrix)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM2D03.ColMatrix)obj).getData(1) - 
+                                  getData(1)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Adds one ColMatrix object to another ColMatrix
+    // object, returning a ColMatrix object.
+    public GM2D03.ColMatrix add(GM2D03.ColMatrix matrix){
+      return new GM2D03.ColMatrix(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Subtracts one ColMatrix object from another
+    // ColMatrix object, returning a ColMatrix object. The
+    // object that is received as an incoming parameter 
+    // is subtracted from the object on which the method
+    // is called.
+    public GM2D03.ColMatrix subtract(
+                                 GM2D03.ColMatrix matrix){
+      return new GM2D03.ColMatrix(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1));
+    }//end subtract
+    //--------------------------------------------------//
+  }//end class ColMatrix
+  //====================================================//
+  
+  public static class Point{
+    GM2D03.ColMatrix point;
+    
+    public Point(GM2D03.ColMatrix point){//constructor
+      //Create and save a clone of the ColMatrix object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColVector object
+      // through use of its set method.
+      this.point = 
+         new ColMatrix(point.getData(0),point.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      Ellipse2D.Double circle = 
+                        new Ellipse2D.Double(getData(0)-3,
+                                             getData(1)-3,
+                                             6,
+                                             6);
+      g2D.draw(circle);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix object that
+    // defines this Point object.
+    public GM2D03.ColMatrix getColMatrix(){
+      return point;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix objects that define two
+    // Point objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(point.equals(((GM2D03.Point)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Gets a displacement vector from one Point object to
+    // a second Point object. The vector points from the
+    // object on which the method is called to the object
+    // passed as a parameter to the method. Kjell
+    // describes this as the distance you would have to
+    // walk along the x and then the y axes to get from
+    // the first point to the second point.
+    public GM2D03.Vector getDisplacementVector(
+                                      GM2D03.Point point){
+      return new GM2D03.Vector(new GM2D03.ColMatrix(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1)));
+    }//end getDisplacementVector
+    //--------------------------------------------------//
+  }//end class Point
+  //====================================================//
+  
+  public static class Vector{
+    GM2D03.ColMatrix vector;
+    
+    public Vector(GM2D03.ColMatrix vector){//constructor
+      //Create and save a clone of the ColMatrix object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColVector object.
+      this.vector = new ColMatrix(
+                     vector.getData(0),vector.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small circle at the
+    // head.
+    public void draw(Graphics2D g2D,GM2D03.Point tail){
+      Line2D.Double line = new Line2D.Double(
+                       tail.getData(0),
+                       tail.getData(1),
+                       tail.getData(0)+vector.getData(0),
+                       tail.getData(1)+vector.getData(1));
+
+    //Draw a small circle to identify the head.
+      Ellipse2D.Double circle = new Ellipse2D.Double(
+                      tail.getData(0)+vector.getData(0)-2,
+                      tail.getData(1)+vector.getData(1)-2,
+                      4,
+                      4);
+      g2D.draw(circle);
+      g2D.draw(line);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix object that
+    // defines this Vector object.
+    public GM2D03.ColMatrix getColMatrix(){
+      return vector;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix objects that define two
+    // Vector objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(vector.equals((
+                     (GM2D03.Vector)obj).getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+  }//end class Vector
+  //====================================================//
+  
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line{
+    GM2D03.Point[] line = new GM2D03.Point[2];
+    
+    public Line(GM2D03.Point tail,GM2D03.Point head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point(new GM2D03.ColMatrix(
+                        tail.getData(0),tail.getData(1)));
+      this.line[1] = new Point(new GM2D03.ColMatrix(
+                        head.getData(0),head.getData(1)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM2D03.Point getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM2D03.Point getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+    
+    public void setTail(GM2D03.Point newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point(new GM2D03.ColMatrix(
+              newPoint.getData(0),newPoint.getData(1)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM2D03.Point newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point(new GM2D03.ColMatrix(
+              newPoint.getData(0),newPoint.getData(1)));
+    }//end setHead
+    //--------------------------------------------------//
+    
+    public void draw(Graphics2D g2D){
+      Line2D.Double line = new Line2D.Double(
+                                    getTail().getData(0),
+                                    getTail().getData(1),
+                                    getHead().getData(0),
+                                    getHead().getData(1));
+      g2D.draw(line);
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line
+  //====================================================//
+
+}//end class GM2D03
+</code>
+
+
+	
+
+
+
+<para id="p1091">
+<emphasis id="strong1111" effect="bold">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. Source code for the program named ColMatrixEquals01.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1014" display="block">/*ColMatrixEquals01.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/08/08
+
+The purpose of this program is to confirm the behavior of
+the equals methods of the GM2D03.ColMatrix, Point, and
+Vector classes.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+
+public class ColMatrixEquals01{
+  public static void main(String[] args){
+    GM2D03.ColMatrix matA = 
+                           new GM2D03.ColMatrix(1.5,-2.6);
+    GM2D03.ColMatrix matB = 
+                           new GM2D03.ColMatrix(1.5,-2.6);
+    GM2D03.ColMatrix matC = 
+                 new GM2D03.ColMatrix(1.500001,-2.600001);
+    GM2D03.ColMatrix matD = 
+                   new GM2D03.ColMatrix(1.50001,-2.60001);
+    System.out.println(matA.equals(matA));
+    System.out.println(matA.equals(matB));
+    System.out.println(matA.equals(matC));
+    System.out.println(matA.equals(matD));
+    
+    GM2D03.Point pointA = new GM2D03.Point(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Point pointB = new GM2D03.Point(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Point pointC = new GM2D03.Point(
+                       new GM2D03.ColMatrix(-15.6,10.11));
+    System.out.println(/*Blank line*/);
+    System.out.println(pointA.equals(pointA));
+    System.out.println(pointA.equals(pointB));
+    System.out.println(pointA.equals(pointC));
+    
+    GM2D03.Vector vecA = new GM2D03.Vector(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Vector vecB = new GM2D03.Vector(
+                       new GM2D03.ColMatrix(15.6,-10.11));
+    GM2D03.Vector vecC = new GM2D03.Vector(
+                       new GM2D03.ColMatrix(-15.6,10.11));
+    System.out.println(/*Blank line*/);
+    System.out.println(vecA.equals(vecA));
+    System.out.println(vecA.equals(vecB));
+    System.out.println(vecA.equals(vecC));
+
+  }//end main
+}//end ColMatrixEquals01 class
+</code>
+
+
+
+	
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. Source code for the program named DisplacementVector01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1015" display="block">/*DisplacementVector01.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/08/08
+
+The purpose of this program is to confirm the behavior of
+the getDisplacementVector method of the GM2D03.Point
+class.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+
+public class DisplacementVector01{
+  public static void main(String[] args){
+    GM2D03.Point pointA = new GM2D03.Point(
+                          new GM2D03.ColMatrix(6.5,-9.7));
+    GM2D03.Point pointB = new GM2D03.Point(
+                          new GM2D03.ColMatrix(-6.0,9.0));
+    
+    System.out.println(pointA.getDisplacementVector(
+                                                 pointB));
+    System.out.println(pointB.getDisplacementVector(
+                                                 pointA));
+
+  }//end main
+}//end DisplacementVector01 class
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. Source code for the program named ColMatrixAddSubtract01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1016" display="block">/*ColMatrixAddSubtract01.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/08/08
+
+The purpose of this program is to confirm the behavior of
+the add and subtract methods of the GM2D03.ColMatrix 
+class.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+
+public class ColMatrixAddSubtract01{
+  public static void main(String[] args){
+  
+    GM2D03.ColMatrix matrixA = 
+                         new GM2D03.ColMatrix(3.14,-6.01);
+    GM2D03.ColMatrix matrixB = 
+                        new GM2D03.ColMatrix(-14.0,-12.2);
+    
+    GM2D03.ColMatrix matrixC = matrixA.add(matrixB);
+    GM2D03.ColMatrix matrixD = matrixC.subtract(matrixA);
+    GM2D03.ColMatrix matrixE = matrixD.subtract(matrixB);
+    
+    System.out.println(matrixC);
+    System.out.println(matrixD);
+    System.out.println(matrixE);
+  }//end main
+
+}//end class ColMatrixAddSubtract01
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h11011">
+<title>
+<emphasis id="Exercises" effect="bold">
+
+Exercises
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21005">
+<title>
+<emphasis id="Exercise_1" effect="bold">
+
+Exercise 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1092">
+Using Java and the game-math library named 
+
+<emphasis id="strong1112" effect="bold">
+GM2D03
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that creates 
+four column matrix objects using the following names and values:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1066">
+matA = (1.5,-2.6)
+
+</item>
+
+
+	
+
+<item id="li1067">
+matB = (1.5,-2.6)
+
+</item>
+
+
+	
+
+<item id="li1068">
+matC = (8.5,-13.4)
+
+</item>
+
+
+	
+
+<item id="li1069">
+matD = (5.5,-8.2)
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1093">
+Then use matrix addition and subtraction to compute and display the values of 
+the following matrices:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1070">
+matE = matA + matB
+
+</item>
+
+
+	
+
+<item id="li1071">
+matF = matC - matD
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1094">
+Finally, test matE and matF for equality and display the result, replacing 
+the question mark with either true or false..
+
+</para>
+
+
+
+
+<para id="p1095">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1096">
+My version of the program produces the text output shown in 
+
+
+<link id="a1095" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, and you should use that as a display template.
+
+</para>
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+ Text output from Exercise 
+				1.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1017" display="block">
+Prof. Baldwin
+matE = 3.0,-5.2
+matF = 3.0,-5.200000000000001
+matE equals matF: ?
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Exercise_2" effect="bold">
+
+Exercise 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1097">
+Using Java and the game-math library named 
+
+<emphasis id="strong1113" effect="bold">
+GM2D03
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that creates 
+and displays 
+
+<emphasis id="em1016" effect="italics">
+(in text form)
+
+</emphasis>
+ 
+three vectors having the names and values shown in 
+
+<link id="a1096" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1098">
+Cause your program to test 
+
+<emphasis id="strong1114" effect="bold">
+vecA
+
+</emphasis>
+ for equality, first against
+
+
+<emphasis id="strong1115" effect="bold">
+vecB
+
+</emphasis>
+, and then against 
+
+<emphasis id="strong1116" effect="bold">
+vecC
+
+</emphasis>
+, and display the 
+results of the tests in place of the question marks shown in 
+
+<link id="a1097" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1016" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1016">
+
+			
+
+<row id="tr1032">
+
+				
+
+<entry id="th1016">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Text output from Exercise 
+				2.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1016">
+
+			
+
+<row id="tr1033">
+
+				
+
+<entry id="td1016">
+
+
+
+<code id="pre1018" display="block">
+Prof. Baldwin
+vecA = -1.5,2.6
+vecB = -1.5,2.6
+vecC = 8.5,-13.4
+vecA equals vecB: ?
+vecA equals vecC: ?
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Exercise_3" effect="bold">
+
+Exercise 3
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1099">
+Using Java and the game-math library named 
+
+<emphasis id="strong1117" effect="bold">
+GM2D03
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that creates 
+and displays four column matrices having the names and values shown in
+
+
+<link id="a1098" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1100">
+Use the first two matrices to create a displacement vector named 
+
+<emphasis id="strong1118" effect="bold">
+
+dispVecE
+
+</emphasis>
+ and display its value in place of the question marks in
+
+
+<link id="a1099" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1101">
+Use the last two matrices to create another displacement vector named 
+
+<emphasis id="strong1119" effect="bold">
+
+dispVecF
+
+</emphasis>
+ and display its value in place of the question marks in
+
+
+<link id="a1100" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1102">
+Test 
+
+<emphasis id="strong1120" effect="bold">
+dispVecE
+
+</emphasis>
+ and 
+
+<emphasis id="strong1121" effect="bold">
+dispVecF
+
+</emphasis>
+ for equality and 
+display the result of the test in place of the final question mark in
+
+
+<link id="a1101" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1017" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1017">
+
+			
+
+<row id="tr1034">
+
+				
+
+<entry id="th1017">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Text output from Exercise 3. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1017">
+
+			
+
+<row id="tr1035">
+
+				
+
+<entry id="td1017">
+
+
+
+<code id="pre1019" display="block">
+Prof. Baldwin
+matA = 1.5,-2.6
+matB = -1.5,2.6
+dispVecE = ?,?
+matC = 8.5,-13.4
+matD = 5.5,-8.2
+dispVecF = ?,?
+dispVecE equals dispVecF: ?
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+
+
+<para id="p1103">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</content>
+
+
+
+
+</document>

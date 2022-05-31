@@ -1,0 +1,5617 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0310 JavaScript</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45001</md:content-id>
+  <md:title>GAME 2302-0310 JavaScript</md:title>
+  <md:abstract>This module provides an introductory JavaScript programming tutorial.</md:abstract>
+  <md:uuid>dc60f5b5-4220-4b96-954d-a29fcbb270c1</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion">
+
+Discussion
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Why_did_I_select_JavaScript">
+
+Why I chose JavaScript
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Facilities_required">
+
+Facilities required
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="A_minimal_JavaScript_script">
+
+A minimal JavaScript script
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Strings">
+
+Strings
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="Screen_output">
+
+Screen output
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="Structured_programming">
+
+Structured programming
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="Functions">
+
+Functions
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="Arithmetic_operators">
+
+Arithmetic operators
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="Sequence">
+
+Sequence
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Selection">
+
+Selection
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Relational_and_logical_operators">
+
+Relational and 
+			logical operators
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Variables">
+
+Variables
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="The_string_concatenation_operator">
+
+The string concatenation operator
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="Repetition">
+
+Repetition
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="Programming_errors">
+
+Programming errors
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Assistance_using_Google_Chrome">
+
+Assistance using 
+			Google Chrome
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="Assistance_using_Firefox">
+
+Assistance using Firefox
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1023" target-id="Run_the_script">
+
+Run the scripts
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1024" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This module is part of a series of modules designed for teaching the physics 
+component of 
+
+<emphasis id="em1000" effect="italics">
+GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ 
+at Austin Community College in Austin, TX. 
+
+<emphasis id="em1001" effect="italics">
+(See
+
+
+<link id="a1025" url="http://cnx.org/content/m44983/latest">
+
+GAME 2302-0100: Introduction
+
+</link>
+
+ 
+for the first module in the course along with a description of the course, 
+course resources, homework assignments, etc.) 
+
+</emphasis>
+</para>
+
+
+	
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1025">
+<link id="a1026" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Output from script in Listing 1. 
+
+</item>
+
+
+	
+
+<item id="li1026">
+<link id="a1027" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Output from script in Listing 2. 
+
+</item>
+
+
+	
+
+<item id="li1027">
+<link id="a1028" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Binary arithmetic operators.
+
+</item>
+
+
+	
+
+<item id="li1028">
+<link id="a1029" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. General syntax for selection 
+	statement. 
+
+</item>
+
+
+	
+
+<item id="li1029">
+<link id="a1030" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Real-world analogy of a selection statement. 
+
+</item>
+
+
+	
+
+<item id="li1030">
+<link id="a1031" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Output from script in Listing 3. 
+
+</item>
+
+
+	
+
+<item id="li1031">
+<link id="a1032" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Relational operators. 
+
+</item>
+
+
+	
+
+<item id="li1032">
+<link id="a1033" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Output from script in Listing 4. 
+
+</item>
+
+
+	
+
+<item id="li1033">
+<link id="a1034" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. General syntax for a while loop. 
+
+</item>
+
+
+	
+
+<item id="li1034">
+<link id="a1035" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+. Output from script in Listing 5. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1035">
+<link id="a1036" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. A minimal JavaScript script.
+
+</item>
+
+
+	
+
+<item id="li1036">
+<link id="a1037" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. An example function named getHalf. 
+
+</item>
+
+
+	
+
+<item id="li1037">
+<link id="a1038" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. A selection script example. 
+
+</item>
+
+
+	
+
+<item id="li1038">
+<link id="a1039" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. A sample script that uses variables. 
+
+</item>
+
+
+	
+
+<item id="li1039">
+<link id="a1040" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. A simple while loop.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="Discussion" effect="bold">
+
+Discussion
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1002">
+The goal of this module is to provide an introductory JavaScript programming 
+tutorial for students with no programming experience.
+
+</para>
+
+
+
+
+<section id="h21002">
+<title>
+<emphasis id="Why_did_I_select_JavaScript" effect="bold">
+
+Why I chose JavaScript
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+I chose JavaScript for use in these physics modules for several reasons.  
+
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1000" effect="bold">
+Free
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1005">
+First, JavaScript is free.  The capability to program in JavaScript is available to anyone who has a 
+modern browser installed on their computer.  Therefore, cost is not an excuse for not learning to program with JavaScript.  
+
+</para>
+
+
+
+
+<para id="p1006">
+If you are reading this module using a modern browser, you have the ability to program using JavaScript immediately.  You don't have to go out and buy anything, so that isn't an excuse for putting it off until tomorrow.
+
+</para>
+
+
+
+
+<para id="p1007">
+If you don't have a modern browser, you can download a free copy of the 
+Firefox browser at 
+
+<link id="a1041" url="http://www.mozilla.com/en-US/firefox/firefox.html">
+
+
+http://www.mozilla.com/en-US/firefox/firefox.html
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1001" effect="bold">
+Fun
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+Also, programming with JavaScript can be fun.  There are a lot of really 
+interesting things that 
+you can do with JavaScript such as playing sound files (see
+
+
+<link id="a1042" url="http://www.javascripter.net/faq/sound/play.htm">
+
+
+http://www.javascripter.net/faq/sound/play.htm
+
+</link>
+
+).
+
+</para>
+
+
+
+
+<para id="p1010">
+<emphasis id="strong1002" effect="bold">
+OOP
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1011">
+JavaScript encompasses modern programming concepts.  For example, JavaScript is based on the concept of objects.  Object-Oriented Programming (OOP) is here to stay.  (For an extensive discussion of OOP, see the early lessons in my online programming tutorials 
+at 
+
+<link id="a1043" url="http://www.dickbaldwin.com/toc.htm">
+
+
+http://www.dickbaldwin.com/toc.htm
+
+</link>
+
+.)
+
+</para>
+
+
+
+
+<para id="p1012">
+<emphasis id="strong1003" effect="bold">
+A free audible, tactile scientific calculator
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1013">
+I also chose JavaScript because you will be able to use it to create your own scientific 
+calculator. You can use JavaScript to create solutions to many of the exercises 
+in the modules in this collection of physics concepts. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Facilities_required" effect="bold">
+
+Facilities required
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+To use JavaScript for its intended purpose in the modules in this collection, 
+you will need the following:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1040">
+Access to the Internet.
+
+</item>
+
+
+	
+
+<item id="li1041">
+A modern browser such as Firefox 3.6 (see
+	
+
+<link id="a1044" url="http://www.mozilla.com/en-US/firefox/firefox.html">
+
+
+	http://www.mozilla.com/en-US/firefox/firefox.html
+
+</link>
+
+).
+
+</item>
+
+
+	
+
+<item id="li1042">
+A plain text editor such as Windows notepad, or my favorite, 
+	Arachnophilia, which can be downloaded for free at
+	
+
+<link id="a1045" url="http://www.arachnoid.com/arachnophilia/">
+
+
+	http://www.arachnoid.com/arachnophilia/
+
+</link>
+
+. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="A_minimal_JavaScript_script" effect="bold">
+
+A minimal JavaScript script
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1015">
+<link id="a1046" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows a minimal JavaScript script.
+
+</para>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+
+
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. A minimal JavaScript script.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">&lt;!-- File JavaScript01.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+document.write("Insert JavaScript between script tags.","&lt;br/&gt;")
+document.write("Hello from JavaScript")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1004" effect="bold">
+Run the script
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+To run this JavaScript script:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1043">
+Copy all of the text from the body of 
+
+<link id="a1047" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ into your 
+	plain text editor and save the file with an extension of .html (test.html for 
+	example).
+
+</item>
+
+
+	
+
+<item id="li1044">
+Open that file in your browser. (In most cases, you should be able to 
+	simply drag the file and drop it onto an open browser page to open it. If 
+	that doesn't work, open it from the browser's 
+
+<emphasis id="strong1005" effect="bold">
+File
+
+</emphasis>
+ menu.)
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1018">
+<emphasis id="strong1006" effect="bold">
+And the result is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1019">
+When you do that, the text shown in 
+
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ should appear in the browser 
+window.
+
+</para>
+
+
+
+	
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Output from script in Listing 1.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">Insert JavaScript between script tags.
+Hello from JavaScript</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1020">
+<emphasis id="strong1007" effect="bold">
+That's all there is to it
+
+</emphasis>
+</para>
+
+
+	
+
+
+<para id="p1021">
+All you have to do to write and run a JavaScript script is to:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1045">
+Copy the text (often referred to as code or source code) from 
+
+<link id="a1049" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ 
+	into your plain text editor.
+
+</item>
+
+
+	
+
+<item id="li1046">
+Replace the code between the two lines containing the word 
+
+<emphasis id="strong1008" effect="bold">
+
+	script
+
+</emphasis>
+ with the code for your new script, leaving the two lines 
+	containing the word 
+
+<emphasis id="strong1009" effect="bold">
+script
+
+</emphasis>
+ intact.
+
+</item>
+
+
+	
+
+<item id="li1047">
+Save the file with an extension of .html. (The file can have any legal 
+	file name so long as the extension is .html.)
+
+</item>
+
+
+	
+
+<item id="li1048">
+Open the new html file in your browser.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1022">
+When you do that, the script code will be executed.
+
+</para>
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1010" effect="bold">
+Display results in the browser window
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1024">
+If your script code contains statements that begin with 
+
+<emphasis id="strong1011" effect="bold">
+
+document.write
+
+</emphasis>
+, followed by a pair of matching parentheses, (as shown 
+in 
+
+<link id="a1050" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+), the code in the parentheses will be evaluated and the results of 
+that evaluation will appear in your browser window.
+
+</para>
+
+
+
+
+<para id="p1025">
+At that point, you will have 
+access to your script code as well as the results of running your script.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Strings" effect="bold">
+
+Strings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1026">
+In programming, we often refer to a group of sequential characters (such as 
+your first name) as a 
+
+<emphasis id="strong1012" effect="bold">
+string
+
+</emphasis>
+. In JavaScript format (often 
+called syntax), such groups of characters are surrounded by matching quotation 
+marks to cause the group to be recognized as a single string.
+
+</para>
+
+
+
+
+<para id="p1027">
+<emphasis id="The_following_strings" effect="bold">
+
+The following strings
+
+</emphasis>
+
+ appear in the JavaScript code in 
+
+<link id="a1051" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1049">
+"Insert JavaScript between script tags."
+
+</item>
+
+
+	
+
+<item id="li1050">
+<code id="pre1002" display="block">"&lt;br/&gt;"</code>
+
+
+</item>
+
+
+	
+
+<item id="li1051">
+"Hello from JavaScript"
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1028">
+The first two strings appear, separated by a comma, inside the matching parentheses 
+following the first occurrence of 
+
+<emphasis id="strong1013" effect="bold">
+document.write
+
+</emphasis>
+. (We often 
+call the items inside the matching parentheses the argument list.)
+
+</para>
+
+
+
+
+<para id="p1029">
+The last item in the above list appears in the argument list following the 
+second occurrence of 
+
+<emphasis id="strong1014" effect="bold">
+document.write
+
+</emphasis>
+ in 
+
+<link id="a1052" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Screen_output" effect="bold">
+
+Screen output
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1030">
+If you examine 
+
+<link id="a1053" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, you will see that the first and third items from the 
+
+
+<link id="a1054" target-id="The_following_strings">
+
+above list
+
+</link>
+
+ appear, without their quotation marks, in the browser window. 
+However, the second item does not appear in the browser window.
+
+</para>
+
+
+
+
+<para id="p1031">
+<emphasis id="strong1015" effect="bold">
+Purpose of document.write
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1032">
+Although this is a simplification, for purposes of the modules in this 
+collection, it will suffice to say that the purpose of the 
+
+<emphasis id="strong1016" effect="bold">
+
+document.write
+
+</emphasis>
+ command is to cause the items in its argument list to be 
+displayed in the browser window. You can place one or more items in the argument 
+list. If there is more than one item in the argument list, the items must be 
+separated by a comma as shown in 
+
+<link id="a1055" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1017" effect="bold">
+Displaying strings
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1034">
+With some exceptions, items that appear in the argument list surrounded by 
+matching quotation marks (strings) will be displayed in the browser window.
+
+</para>
+
+
+
+
+<para id="p1035">
+The exceptions include the second item in the 
+
+
+<link id="a1056" target-id="The_following_strings">
+
+above list
+
+</link>
+
+. This item is a 
+special command to the browser, commonly known as a 
+
+<emphasis id="strong1018" effect="bold">
+break
+
+</emphasis>
+ 
+tag. The occurrence of a
+
+<emphasis id="strong1019" effect="bold">
+ break
+
+</emphasis>
+ tag tells the browser to go down 
+to the next line before displaying any additional material. 
+
+</para>
+
+
+
+
+<para id="p1036">
+Such browser commands usually begin with a left angle bracket as shown in 
+
+
+<link id="a1057" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Because of this, it is usually wise to avoid displaying strings that 
+begin with left angle brackets unless you know for sure that your string won't 
+be interpreted as a command to the browser.
+
+</para>
+
+
+
+
+<para id="p1037">
+<emphasis id="strong1020" effect="bold">
+Displaying material other than strings
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1038">
+I will show you how to display material other than strings in a later section 
+titled 
+
+<link id="a1058" target-id="The_string_concatenation_operator">
+
+The string concatenation 
+operator
+
+</link>
+
+. 
+Before getting into that, however, I will discuss several other topics.
+
+</para>
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Structured_programming" effect="bold">
+
+Structured programming
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+When a student enrolls in the Object-Oriented Programming course that I teach 
+at Austin Community College, I expect that student to have knowledge of something called 
+structured programming, which is generally defined as including the following 
+topics:
+
+</para>
+
+
+
+
+<list id="ol1001" list-type="enumerated">
+
+	
+
+<item id="li1052">
+Functions with parameter passing
+
+</item>
+
+
+	
+
+<item id="li1053">
+Sequence
+
+</item>
+
+
+	
+
+<item id="li1054">
+Selection (if-else)
+
+</item>
+
+
+	
+
+<item id="li1055">
+Repetition (for, while, and do-while loops)
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1040">
+I also expect them to know how to use variables and how to use operators 
+(add, subtract, multiply, divide, etc.).
+
+</para>
+
+
+
+
+<para id="p1041">
+You will need to have an introductory knowledge of these topics to understand 
+the JavaScript scripts that I will use to explain physics concepts in later 
+modules. I will briefly explain these topics in this module and will discuss 
+them further in later modules where they are used.
+
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Functions" effect="bold">
+
+Functions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1042">
+Functions, or procedures as they are called in some languages, provide a 
+fundamental building block for virtually every programming language. The purpose 
+of a function is to encapsulate the ability to perform a task into a 
+single set of code and to be able to execute that code from a variety of 
+different locations within the script. This can eliminate the requirement to 
+repeat the same code over and over when the same task is required at multiple 
+points in the script.
+
+</para>
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1021" effect="bold">
+The surface area of a sphere
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1044">
+For example, if you write a script that frequently needs to calculate the 
+surface area of a sphere, you can encapsulate those calculations in a function. 
+Then, whenever your script needs to know the surface area of a sphere, it can 
+simply call the function and provide the radius of the sphere as a parameter. 
+The function will perform the calculation and return the answer to be used by 
+the script at that point.
+
+</para>
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1022" effect="bold">
+A JavaScript function definition
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1046">
+A JavaScript function definition has the following basic parts as shown in 
+
+
+<link id="a1059" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<list id="ol1002" list-type="enumerated">
+
+	
+
+<item id="li1056">
+The 
+
+<emphasis id="strong1023" effect="bold">
+function
+
+</emphasis>
+ keyword.
+
+</item>
+
+
+	
+
+<item id="li1057">
+The function name.
+
+</item>
+
+
+	
+
+<item id="li1058">
+A comma-separated list of arguments enclosed in 
+	parentheses. (If there are no arguments, which is perfectly legal, the 
+	parentheses must still follow the function name but they will be empty.)
+
+</item>
+
+
+	
+
+<item id="li1059">
+The statements in the body of the function enclosed in curly brackets.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1024" effect="bold">
+Two sides to every function
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1048">
+There are two sides to the use of every function:
+
+</para>
+
+
+
+
+<list id="ol1003" list-type="enumerated">
+
+	
+
+<item id="li1060">
+The function definition.
+
+</item>
+
+
+	
+
+<item id="li1061">
+The function call.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1049">
+The definition names the function and specifies how it will behave when it is 
+called.
+
+</para>
+
+
+
+
+<para id="p1050">
+The call to the function temporarily passes control to the 
+statements in the function causing them to behave as previously defined.
+
+</para>
+
+
+
+
+<para id="p1051">
+Once the statements have been executed, control is returned to the point in 
+the script where the call was made. The function may, or may not return a value 
+when it returns control.
+
+</para>
+
+
+
+
+<para id="p1052">
+<emphasis id="strong1025" effect="bold">
+The argument list
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1053">
+As in the sphere example discussed above, it is often useful to pass 
+information to the function for it to use in doing whatever it is supposed to do 
+(but this is not always required). When we call the function, we include 
+parameters in the call to the function that match up with the argument list 
+mentioned above. That is the mechanism used to pass information to a function. 
+(This will probably make more sense when you see an example. Again, in some 
+cases, no arguments are required.)
+
+</para>
+
+
+
+
+<para id="p1054">
+<emphasis id="strong1026" effect="bold">
+The purpose of a function
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+Usually (but not always), the purpose of a function is to calculate or 
+otherwise determine some value and return it. In the sphere example mentioned 
+earlier, the purpose of the function would be to calculate and return the 
+surface area of the sphere. Returning a value is accomplished using the 
+
+<emphasis id="strong1027" effect="bold">
+return
+
+</emphasis>
+ 
+keyword in the body of the function.
+
+</para>
+
+
+
+
+<para id="p1056">
+Sometimes, the purpose of a function is not to return a value, but instead to 
+cause some action to occur, such as displaying information in the browser 
+window. In that case, a 
+
+<emphasis id="strong1028" effect="bold">
+return
+
+</emphasis>
+ statement is not required. 
+However, it doesn't cause any problem to put a 
+
+<emphasis id="strong1029" effect="bold">
+return
+
+</emphasis>
+ statement 
+at the end of the function's body with nothing to the right of the word 
+
+<emphasis id="em1002" effect="italics">
+return
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1030" effect="bold">
+An example function named getHalf
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+The code in 
+
+<link id="a1060" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ defines a function named 
+
+<emphasis id="strong1031" effect="bold">
+getHalf
+
+</emphasis>
+ and 
+then calls that function from two different locations in a script, passing a 
+different parameter value with each call.
+
+</para>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+
+
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. An example function named getHalf.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1003" display="block">&lt;!-- File JavaScript02.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//This is the syntax for a comment.
+
+//Define the function named getHalf()
+function getHalf(incomingParameter) {
+  return incomingParameter/2;
+}//end function getHalf()
+
+document.write("Call getHalf for 10.6","&lt;br/&gt;")
+document.write("Half is: ", getHalf(10.6),"&lt;br/&gt;");
+
+document.write("Call getHalf again for 12.3","&lt;br/&gt;")
+document.write("Half is: ", getHalf(12.3));
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+	
+
+<para id="p1059">
+<emphasis id="strong1032" effect="bold">
+A note about comments
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+Note the line of code immediately following the first
+
+<emphasis id="strong1033" effect="bold">
+ script
+
+</emphasis>
+ tag 
+that begins with //. Whenever JavaScript code contains such a pair of slash 
+marks (that are not inside of a quoted string), everything from that point to the end of 
+the line is treated as a comment. A comment is intended for human consumption 
+only and is completely ignored when the script is run.
+
+</para>
+
+
+	
+
+<para id="p1061">
+<emphasis id="strong1034" effect="bold">
+The function definition
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+The function definition in 
+
+<link id="a1061" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ consists of the three lines of code 
+following the comment that begins with "//Define the function..."
+
+</para>
+
+
+
+
+<para id="p1063">
+As explained earlier, this function definition contains:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1062">
+The 
+
+<emphasis id="strong1035" effect="bold">
+function
+
+</emphasis>
+ keyword
+
+</item>
+
+
+	
+
+<item id="li1063">
+The function name: 
+
+<emphasis id="strong1036" effect="bold">
+getHalf
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1064">
+An argument list containing a single parameter named 
+
+<emphasis id="strong1037" effect="bold">
+
+	incomingParameter
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1065">
+A function body enclosed in a pair of matching curly brackets
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1064">
+<emphasis id="strong1038" effect="bold">
+Simpler than the surface area of a sphere
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1065">
+The function named
+
+<emphasis id="strong1039" effect="bold">
+ getHalf 
+
+</emphasis>
+is somewhat simpler than one that 
+could be used to calculate the surface area of a sphere, but the basic concept 
+is the same. This function expects to receive one parameter.
+
+</para>
+
+
+
+
+<para id="p1066">
+The code in the body of the function uses the division operator, "/", to 
+divide the value of the incoming parameter by 2. Then it returns the result of 
+that calculation. When the function returns, the return value will replace the 
+call to the function in the calling script.
+
+</para>
+
+
+
+
+<para id="p1067">
+<emphasis id="strong1040" effect="bold">
+Two calls to the function
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1068">
+The function is called twice in the body of the script in 
+
+<link id="a1062" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, passing a different 
+value for the parameter during each call.
+
+</para>
+
+
+
+
+<para id="p1069">
+Each call to the function named 
+
+<emphasis id="strong1041" effect="bold">
+getHalf
+
+</emphasis>
+ is embedded as one 
+of the elements in the 
+argument list following 
+
+<emphasis id="strong1042" effect="bold">
+document.write
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1070">
+<emphasis id="strong1043" effect="bold">
+write is also a function
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+Although I didn't 
+mention this earlier because you weren't ready for it yet, 
+
+<emphasis id="strong1044" effect="bold">
+write
+
+</emphasis>
+ is also the name of a function. 
+However, the 
+
+<emphasis id="strong1045" effect="bold">
+write
+
+</emphasis>
+ function is predefined in JavaScript and we 
+can use it to display information in the browser window without having to define 
+it first.
+
+</para>
+
+
+
+
+<para id="p1072">
+(Actually, 
+
+<emphasis id="strong1046" effect="bold">
+write
+
+</emphasis>
+ is a special kind of a function that we call a 
+
+
+<emphasis id="strong1047" effect="bold">
+method
+
+</emphasis>
+, but 
+you don't need to worry about that unless you want to dig much deeper into the 
+object-oriented aspects of JavaScript.)
+
+</para>
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1048" effect="bold">
+Two calls to the getHalf function
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+The script in 
+
+<link id="a1063" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls the function named 
+
+<emphasis id="strong1049" effect="bold">
+getHalf
+
+</emphasis>
+ 
+twice in two different locations, each of which is embedded in the argument list 
+of a call to the
+
+<emphasis id="strong1050" effect="bold">
+ write
+
+</emphasis>
+ method. Each call passes a different 
+parameter value to the 
+
+<emphasis id="strong1051" effect="bold">
+getHalf
+
+</emphasis>
+ function.
+
+</para>
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1052" effect="bold">
+The order of operations
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+When a call to a function or method (such as the call to the 
+
+<emphasis id="strong1053" effect="bold">
+write
+
+</emphasis>
+ 
+method) includes a call to another function or method in its argument list, the 
+call to the function in the argument list must be completed before the call can be 
+made to the function having the argument list. Therefore in each of these two 
+cases, the call 
+to the 
+
+<emphasis id="strong1054" effect="bold">
+getHalf
+
+</emphasis>
+ function must be completed before the call to 
+the 
+
+<emphasis id="strong1055" effect="bold">
+write
+
+</emphasis>
+ method can be executed.
+
+</para>
+
+
+
+
+<para id="p1077">
+<emphasis id="strong1056" effect="bold">
+Output from script in 
+
+<link id="a1064" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1078">
+Each call to the 
+
+<emphasis id="strong1057" effect="bold">
+getHalf
+
+</emphasis>
+ function returns a value that is half 
+the value of its incoming parameter.
+
+</para>
+
+
+
+
+<para id="p1079">
+As I mentioned earlier, when the function 
+returns, the returned value replaces the call to the function. Therefore, in 
+each case, the returned value from the call to the 
+
+<emphasis id="strong1058" effect="bold">
+getHalf
+
+</emphasis>
+ 
+function becomes part of the argument list for the 
+
+<emphasis id="strong1059" effect="bold">
+write
+
+</emphasis>
+ method 
+before that method is called. This causes the two calls to the 
+
+<emphasis id="strong1060" effect="bold">
+write
+
+</emphasis>
+ 
+method in 
+
+<link id="a1065" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ to display the values returned from the calls to the 
+
+<emphasis id="strong1061" effect="bold">
+getHalf
+
+</emphasis>
+ 
+function as shown in 
+
+<link id="a1066" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1003">
+<row id="tr1006">
+<entry id="th1003">
+
+
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Output from script in Listing 2.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1004" display="block">Call getHalf for 10.6
+Half is: 5.3
+Call getHalf again for 12.3
+Half is: 6.15</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1080">
+<emphasis id="strong1062" effect="bold">
+Good programming design
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1081">
+It is a principle of good programming design that each function should 
+perform only one task, and should perform it well. The task performed by the 
+function named 
+
+<emphasis id="strong1063" effect="bold">
+getHalf
+
+</emphasis>
+ is to calculate and return half the 
+value that it receives, and it does that task very well.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Arithmetic_operators" effect="bold">
+
+Arithmetic operators
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1082">
+The division operation in 
+
+<link id="a1067" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ introduced the use of arithmetic 
+operators.
+
+</para>
+
+
+
+
+<para id="p1083">
+In computer programming jargon, we speak of operators and operands. Operators 
+operate on operands.
+
+</para>
+
+
+
+
+<para id="p1084">
+As a real-world example, if you were to go to the hospital for knee surgery, 
+the surgeon would be the 
+
+<emphasis id="strong1064" effect="bold">
+operator
+
+</emphasis>
+ and you would be the 
+
+<emphasis id="strong1065" effect="bold">
+
+operand
+
+</emphasis>
+. The surgeon would operate on you.
+
+</para>
+
+
+
+
+<para id="p1085">
+<emphasis id="strong1066" effect="bold">
+Binary operators
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1086">
+The operators that we will use in the modules in this collection will 
+usually be restricted to those that have two operands, a 
+
+<emphasis id="strong1067" effect="bold">
+left operand
+
+</emphasis>
+ 
+and a 
+
+<emphasis id="strong1068" effect="bold">
+right operand
+
+</emphasis>
+. (Operators with two operands are commonly 
+called 
+
+<emphasis id="strong1069" effect="bold">
+binary operators
+
+</emphasis>
+.)
+
+</para>
+
+
+
+
+<para id="p1087">
+In the function named 
+
+<emphasis id="strong1070" effect="bold">
+getHalf
+
+</emphasis>
+ in 
+
+<link id="a1068" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, the "/" 
+character is the division operator. The left operand is 
+
+<emphasis id="strong1071" effect="bold">
+incomingParameter
+
+</emphasis>
+ 
+and the right operand is 
+
+<emphasis id="strong1072" effect="bold">
+2
+
+</emphasis>
+. The result is that the incoming 
+parameter 
+is divided by the right operand (2).
+
+</para>
+
+
+
+
+<para id="p1088">
+<emphasis id="strong1073" effect="bold">
+Binary arithmetic operators
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1089">
+The binary arithmetic operators supported by JavaScript are shown in 
+
+
+<link id="a1069" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1004">
+<row id="tr1008">
+<entry id="th1004">
+
+
+
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Binary arithmetic operators.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1005" display="block">
++ Addition:        Adds the operands
+- Subtraction:     Subtracts the right operand from the left operand
+* Multiplication:  Multiplies the operands
+/ Division:        Divides the left operand by the right operand
+% Modulus:         Returns integer remainder of dividing the left operand 
+                   by the right operand
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1090">
+We will use these operators extensively as we work through the physics 
+	exercises in future modules.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Sequence" effect="bold">
+
+Sequence
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1091">
+Of the four items listed under 
+
+<link id="a1070" target-id="Structured_programming">
+
+Structured 
+programming
+
+</link>
+
+ earlier, the simplest one is 
+
+<emphasis id="strong1074" effect="bold">
+sequence
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1092">
+The concept of sequence in structured programming simply means that code 
+statements can be executed in sequential order. 
+
+<link id="a1071" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ provides a good 
+example of the sequential execution of statements. The code in 
+
+<link id="a1072" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows 
+four sequential statements that begin with 
+
+<emphasis id="strong1075" effect="bold">
+document.write.
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Selection" effect="bold">
+
+Selection
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1093">
+The next item that we will discuss from the list under 
+
+<link id="a1073" target-id="Structured_programming">
+
+Structured 
+programming
+
+</link>
+
+ is 
+
+<emphasis id="strong1076" effect="bold">
+selection
+
+</emphasis>
+. While not as simple as 
+
+<emphasis id="strong1077" effect="bold">
+
+sequence
+
+</emphasis>
+, selection is something that you probably do many times each day 
+without even thinking about it. Therefore, once you understand it, it isn't 
+complicated.
+
+</para>
+
+
+
+
+<para id="p1094">
+<emphasis id="strong1078" effect="bold">
+General syntax for selection statement
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1095">
+The general syntax for a selection statement (often called an 
+
+<emphasis id="strong1079" effect="bold">
+if-else
+
+</emphasis>
+ 
+statement) is shown in 
+
+<link id="a1074" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1005">
+<row id="tr1010">
+<entry id="th1005">
+
+
+
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. General syntax for selection statement.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1006" display="block">
+if(conditional expression is true){
+  execute code
+}else{//optional
+  execute alternative code
+}//end selection statement
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1096">
+A selection statement performs a logical test that returns either true or 
+	false. Depending on the result, specific code is executed to control the 
+	behavior of the script.
+
+</para>
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1080" effect="bold">
+A real-world analogy
+
+</emphasis>
+</para>
+
+
+	
+	
+
+<para id="p1098">
+<link id="a1075" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ shows a real-world analogy of a selection statement that you 
+	might make on your day off.
+
+</para>
+
+
+
+	
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1006">
+<row id="tr1012">
+<entry id="th1006">
+
+
+
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Real-world analogy of a selection statement.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1007" display="block">
+if(it is not raining){
+  Play tennis
+  Go for a walk
+  Relax on the beach
+}else{//optional
+  Make popcorn
+  Watch TV
+}//end selection statement
+</code>
+
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1099">
+In this analogy, you would check outside to confirm that it is not 
+	raining. If the condition is true (meaning that it isn't raining), you would 
+	play tennis, go for a walk, and then relax on the beach. If it is raining, (meaning that the test 
+	condition is false), you would make some popcorn and relax in front of the 
+	TV.
+
+</para>
+
+
+
+
+<para id="p1100">
+<emphasis id="strong1081" effect="bold">
+The else clause is optional
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1101">
+Note that when writing JavaScript code, the 
+
+<emphasis id="strong1082" effect="bold">
+else
+
+</emphasis>
+ clause 
+shown in 
+
+<link id="a1076" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ is optional. In other words, you might choose to direct the script to 
+take some specific action if the condition is true, but simply transfer control to the 
+next sequential statement in the script if the condition is false.
+
+</para>
+
+
+	
+	
+
+<para id="p1102">
+<emphasis id="strong1083" effect="bold">
+A selection script example
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1103">
+<link id="a1077" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shows a sample script containing two selection statements 
+	(commonly called 
+
+<emphasis id="strong1084" effect="bold">
+if-else
+
+</emphasis>
+ statements) in sequence.
+
+</para>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1007">
+<row id="tr1014">
+<entry id="th1007">
+
+
+
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. A selection script example.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1008" display="block">&lt;!-- File JavaScript03.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+if(3 &gt; 2){
+document.write("3 is greater than 2.","&lt;br/&gt;")
+}else{
+document.write("3 is not greater than 2.")
+}//end if
+
+if(3 &lt; 2){
+document.write("3 is less than 2.","&lt;br/&gt;")
+}else{
+document.write("3 is not less than 2.")
+}//end if
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1104">
+<emphasis id="strong1085" effect="bold">
+If 3 is greater than 2...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1105">
+The conditional clause in the first 
+
+<emphasis id="strong1086" effect="bold">
+if
+
+</emphasis>
+ statement in Listing 
+3 uses the "greater-than" relational operator "&gt;" to determine if the literal value 3 is 
+greater than the literal value 2, producing the first line of output shown in 
+
+
+<link id="a1078" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. 
+
+</para>
+
+
+
+	
+
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1008">
+<row id="tr1016">
+<entry id="th1008">
+
+
+
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Output from script in Listing 3.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1008">
+<row id="tr1017">
+<entry id="td1008">
+
+
+
+<code id="pre1009" display="block">3 is greater than 2.
+3 is not less than 2.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1106">
+<emphasis id="strong1087" effect="bold">
+The test returns true
+
+</emphasis>
+</para>
+
+
+	
+	
+
+<para id="p1107">
+Since 3 is always greater than 2, the statement in the line immediately 
+	following the first test in 
+
+<link id="a1079" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ is executed and the code in the line 
+	following the word 
+
+<emphasis id="strong1088" effect="bold">
+else
+
+</emphasis>
+ is skipped producing the first line 
+	of output text shown in 
+
+<link id="a1080" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1089" effect="bold">
+If 3 is less than 2...
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1109">
+The conditional clause in the second 
+
+<emphasis id="strong1090" effect="bold">
+if
+
+</emphasis>
+ statement in 
+	
+
+<link id="a1081" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ uses the "less-than" relational operator 
+	(see 
+
+<link id="a1082" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+) to determine if the 
+	literal value 3 is less than the literal value 2.
+
+</para>
+
+
+
+
+<para id="p1110">
+<emphasis id="strong1091" effect="bold">
+The test returns false
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1111">
+Since 3 isn't less than 2, the statement in the line immediately 
+following the second test in 
+
+<link id="a1083" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ is skipped and the statement in the line immediately 
+following the second word 
+
+<emphasis id="strong1092" effect="bold">
+else
+
+</emphasis>
+ is executed producing the second line 
+of output text shown in 
+
+<link id="a1084" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Relational_and_logical_operators" effect="bold">
+
+Relational and logical operators
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1112">
+I doubt that I will a frequent need to use logical operators in the modules 
+	in this collection. If I do, I will explain them at the time. However, I 
+	will use relational operators.
+
+</para>
+
+
+
+
+<para id="p1113">
+The relational operators that are supported by JavaScript are shown in 
+
+<link id="a1085" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1009">
+<row id="tr1018">
+<entry id="th1009">
+
+
+
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. Relational operators.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1009">
+<row id="tr1019">
+<entry id="td1009">
+
+
+
+<code id="pre1010" display="block">
+&gt;  Left operand is greater than right operand
+&gt;= Left operand is greater than or equal to right operand
+&lt;  Left operand is less than right operand
+&lt;= Left operand is less than or equal to right operand
+== Left operand is equal to right operand
+!= Left operand is not equal to right operand</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1114">
+As with the arithmetic operators discussed earlier, we will use these 
+	operators extensively as we work through the physics exercises in future 
+	modules.
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Variables" effect="bold">
+
+Variables
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1115">
+The next item in the list under
+
+<link id="a1086" target-id="Structured_programming">
+
+ Structured 
+programming
+
+</link>
+
+ is 
+
+<emphasis id="strong1093" effect="bold">
+repetition
+
+</emphasis>
+. Before I can explain repetition, 
+however, I need to explain the use of variables.
+
+</para>
+
+
+
+
+<para id="p1116">
+<emphasis id="strong1094" effect="bold">
+What is a variable?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1117">
+You can think of a variable as the symbolic name for a pigeonhole in memory 
+where the script can store a value. The script can change the values stored in 
+that pigeonhole during the execution of the script. Once a value has been 
+stored in a variable, that value can be accessed by calling out the name of the 
+variable.
+
+</para>
+
+
+
+
+<para id="p1118">
+<emphasis id="strong1095" effect="bold">
+Variable names
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1119">
+Variable names must conform to the naming rules for identifiers.
+
+A JavaScript identifier must start with a letter or underscore "_".  Following this, you can use either letters or the symbols for the digits (0-9) 
+in the variable name.
+
+</para>
+
+
+
+
+<para id="p1120">
+JavaScript is case sensitive.  Therefore letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).
+
+</para>
+
+
+
+
+<para id="p1121">
+<emphasis id="strong1096" effect="bold">
+Declaring a variable
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1122">
+In many languages, including JavaScript, you must 
+
+<emphasis id="em1003" effect="italics">
+declare
+
+</emphasis>
+ a variable before you can use it.  However, JavaScript is very loose in this regard.  There are two ways to declare a variable in JavaScript:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1066">
+By simply assigning it a value; for example, x = 10
+
+</item>
+
+
+	
+
+<item id="li1067">
+By using the keyword 
+
+<emphasis id="strong1097" effect="bold">
+var
+
+</emphasis>
+; for example, 
+
+<emphasis id="strong1098" effect="bold">
+var
+
+</emphasis>
+ x = 10
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1123">
+<emphasis id="strong1099" effect="bold">
+Scope
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1124">
+When working with variables in JavaScript and other languages as well, you must always be concerned about an issue known as scope.  
+Among other things, scope determines which statements in a script have access to a variable.
+
+</para>
+
+
+
+
+<para id="p1125">
+<emphasis id="strong1100" effect="bold">
+Two kinds of variables
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1126">
+JavaScript recognizes two kinds of variables:
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1068">
+local
+
+</item>
+
+
+	
+
+<item id="li1069">
+global
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1127">
+Local variables are variables that are declared inside a function.  Global variables are variables that are declared outside a function.
+
+</para>
+
+
+
+
+<para id="p1128">
+<emphasis id="strong1101" effect="bold">
+Scope
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1129">
+Local variables may only be accessed by other code within the same function 
+following the declaration of the variable. 
+Hence, the scope of local variables is limited to the function or method in 
+which it is declared.
+
+</para>
+
+
+
+
+<para id="p1130">
+Global variables may be accessed by any code within the 
+script following the declaration of the variable. Hence, the scope of global variables is the entire script.
+
+</para>
+
+
+
+
+<para id="p1131">
+<emphasis id="strong1102" effect="bold">
+Use of the keyword var
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1132">
+Using 
+
+<emphasis id="strong1103" effect="bold">
+var
+
+</emphasis>
+ to declare a global variable is optional. However, you must use 
+
+
+<emphasis id="strong1104" effect="bold">
+var
+
+</emphasis>
+ to declare a variable inside a function (a local variable). 
+
+</para>
+
+
+
+
+<para id="p1133">
+<emphasis id="strong1105" effect="bold">
+A sample script that uses variables
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+A sample script that uses variables to store data is shown in 
+
+<link id="a1087" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1010">
+<row id="tr1020">
+<entry id="th1010">
+
+
+
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. A sample script that uses variables.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1010">
+<row id="tr1021">
+<entry id="td1010">
+
+
+
+<code id="pre1011" display="block">&lt;!-- File JavaScript04.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//Define the function named getArea()
+function getArea(theRadius) {
+  //declare a local variable
+  var theArea
+
+  //calculate the area
+  theArea = Math.PI * theRadius * theRadius
+  return theArea
+}//end function getArea()
+//=========================================//
+
+//declare a global variable without keyword var
+area = getArea(3.2)//call the function
+document.write("Area is: " + area)
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1106" effect="bold">
+The area of a circle
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1136">
+<link id="a1088" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ begins by defining a function that will compute and return the 
+	area of a circle given the radius of the circle as an incoming parameter.
+
+</para>
+
+
+
+
+<para id="p1137">
+The code in the function begins by declaring a variable named 
+
+<emphasis id="strong1107" effect="bold">
+theArea
+
+</emphasis>
+. 
+Effectively, this declaration sets aside a pigeon hole in memory and gives it the name
+
+
+<emphasis id="strong1108" effect="bold">
+theArea
+
+</emphasis>
+. Once the variable is declared, it can be accessed by 
+calling out its name. It can be used to store data, or it can be used to retrieve 
+data previously stored there.
+
+</para>
+
+
+
+
+<para id="p1138">
+<emphasis id="strong1109" effect="bold">
+Behavior of the function named getArea
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1139">
+You may recall that the area of a circle is calculated by multiplying the 
+	mathematical constant PI by the radius squared. There is no squaring 
+	operator in JavaScript. Therefore, you can square a value by multiplying it 
+	by itself.
+
+</para>
+
+
+
+
+<para id="p1140">
+<emphasis id="strong1110" effect="bold">
+PI times the square of the radius
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1141">
+The code in the function named 
+
+<emphasis id="strong1111" effect="bold">
+getArea
+
+</emphasis>
+ in 
+
+<link id="a1089" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ computes the area and uses the 
+
+<emphasis id="strong1112" effect="bold">
+assignment
+
+</emphasis>
+ 
+operator "=" to store the result in the variable named 
+
+<emphasis id="strong1113" effect="bold">
+theArea
+
+</emphasis>
+. 
+This statement represents a case where a value is being stored in a variable 
+(assigned to the variable) for safekeeping.
+
+</para>
+
+
+
+
+<para id="p1142">
+Then the code in the function extracts the value stored in the variable named
+
+
+<emphasis id="strong1114" effect="bold">
+theArea
+
+</emphasis>
+ and returns that value. After that, the function 
+terminates and returns control to the place in the calling script from which it 
+was originally called.
+
+</para>
+
+
+
+
+<para id="p1143">
+<emphasis id="strong1115" effect="bold">
+The variable named area
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1144">
+Further down the page in 
+
+<link id="a1090" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+, the script declares a variable named 
+	
+
+<emphasis id="strong1116" effect="bold">
+area
+
+</emphasis>
+ without using the keyword 
+
+<emphasis id="strong1117" effect="bold">
+var
+
+</emphasis>
+. (Note, however, 
+	that the keyword 
+
+<emphasis id="strong1118" effect="bold">
+var
+
+</emphasis>
+ could have been used here. I prefer 
+	that approach for reasons that I won't get into here.)
+
+</para>
+
+
+
+
+<para id="p1145">
+The script calls the 
+
+<emphasis id="strong1119" effect="bold">
+getArea
+
+</emphasis>
+ function, passing a radius value 
+of 3.2 as a parameter. As you learned earlier, the value returned by the 
+function replaces the call to the function, which is then assigned to the 
+variable named 
+
+<emphasis id="strong1120" effect="bold">
+area
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1146">
+<emphasis id="strong1121" effect="bold">
+Display the results
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1147">
+Then the script calls the 
+
+<emphasis id="strong1122" effect="bold">
+write
+
+</emphasis>
+ method to display some text 
+followed by the value stored in the variable named 
+
+<emphasis id="strong1123" effect="bold">
+area
+
+</emphasis>
+, producing the output shown in 
+
+
+<link id="a1091" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ in the browser window.
+
+</para>
+
+
+
+	
+
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1011">
+<row id="tr1022">
+<entry id="th1011">
+
+
+
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. Output from script in Listing 4.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1011">
+<row id="tr1023">
+<entry id="td1011">
+
+
+
+<code id="pre1012" display="block">Area is: 32.169908772759484 </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="The_string_concatenation_operator" effect="bold">
+
+The string concatenation 
+	operator
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1148">
+The code in 
+
+<link id="a1092" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ exposes another operator that I will refer to as 
+	the 
+
+<emphasis id="em1004" effect="italics">
+string concatenation operator
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1149">
+Note the argument list for the call to the 
+
+<emphasis id="strong1124" effect="bold">
+write
+
+</emphasis>
+ method in 
+
+
+<link id="a1093" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. In addition to being used to perform numeric addition, the plus 
+operator "+" can be used to concatenate (join) two strings.
+
+</para>
+
+
+
+
+<para id="p1150">
+If two strings are joined by the + operator, the two strings will produce a new string 
+that replaces the combination of the two original 
+strings and the + operator.
+
+</para>
+
+
+
+
+<para id="p1151">
+If the left operand to the + operator is a string and the right operand is a 
+numeric value (or the name of a variable containing a numeric value), the 
+numeric value will be replaced by a string of characters that represent that 
+numeric value and the two strings will be concatenated into a single string.
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Repetition" effect="bold">
+
+Repetition
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1152">
+The last item in the list under
+
+<link id="a1094" target-id="Structured_programming">
+
+ Structured 
+programming
+
+</link>
+
+ is 
+
+<emphasis id="strong1125" effect="bold">
+repetition
+
+</emphasis>
+, and that will be the topic of 
+this section. 
+
+</para>
+
+
+
+
+<para id="p1153">
+Repetition (also referred to as looping) means the act of causing something 
+to repeat. 
+
+</para>
+
+
+
+
+<para id="p1154">
+A repetition or loop is a set of commands that executes repeatedly until a specified condition is met.
+
+</para>
+
+
+
+
+<para id="p1155">
+JavaScript supports three loop statements:
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1070">
+while
+
+</item>
+
+
+	
+
+<item id="li1071">
+for
+
+</item>
+
+
+	
+
+<item id="li1072">
+do-while
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1156">
+<emphasis id="strong1126" effect="bold">
+The while loop
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1157">
+The 
+
+<emphasis id="strong1127" effect="bold">
+while
+
+</emphasis>
+ loop is not only the simplest of the three, it is 
+also the most fundamental. It can be used to satisfy any requirement for 
+repetition in a JavaScript script. The other two exist solely for added 
+convenience in some situations. Therefore, I will concentrate on the 
+
+<emphasis id="strong1128" effect="bold">
+
+while
+
+</emphasis>
+ loop, and leave the other two be discussed in a future module, 
+if at all.
+
+</para>
+
+
+
+
+<para id="p1158">
+<emphasis id="strong1129" effect="bold">
+Loop while a condition is true
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1159">
+A 
+
+<emphasis id="strong1130" effect="bold">
+while
+
+</emphasis>
+ loop executes the statements in its body for as long as a specified condition evaluates to true.  
+The general syntax of a 
+
+<emphasis id="strong1131" effect="bold">
+while
+
+</emphasis>
+ loop is shown in 
+
+<link id="a1095" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1012" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1012">
+<row id="tr1024">
+<entry id="th1012">
+
+
+
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9
+
+</emphasis>
+
+. General syntax for a while loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1012">
+<row id="tr1025">
+<entry id="td1012">
+
+
+
+<code id="pre1013" display="block">
+while(condition is true){
+  //Execute statements in body of loop.
+}//end while statement
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1160">
+<emphasis id="strong1132" effect="bold">
+When the condition is no longer true...
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1161">
+When the conditional expression evaluates to false, control passes to the next statement following the 
+	
+
+<emphasis id="strong1133" effect="bold">
+while
+
+</emphasis>
+ loop.
+
+</para>
+
+
+
+
+<para id="p1162">
+<emphasis id="strong1134" effect="bold">
+while
+
+</emphasis>
+ loops can be nested inside of other statements, including other 
+
+
+<emphasis id="strong1135" effect="bold">
+while
+
+</emphasis>
+ loops.
+
+</para>
+
+
+
+
+<para id="p1163">
+<emphasis id="strong1136" effect="bold">
+An infinite loop
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1164">
+As with all loop statements, you must be careful to make certain that the conditional expression eventually evaluates to false.  Otherwise, control will be trapped inside the 
+
+
+<emphasis id="strong1137" effect="bold">
+while
+
+</emphasis>
+ loop in what is commonly called an infinite loop.
+
+</para>
+
+
+
+
+<para id="p1165">
+<emphasis id="strong1138" effect="bold">
+A simple while loop
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1166">
+The script in 
+
+<link id="a1096" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ illustrates the use of a simple 
+
+<emphasis id="strong1139" effect="bold">
+while
+
+</emphasis>
+ 
+loop. 
+
+</para>
+
+
+	
+
+
+<table id="table1013" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1013">
+<row id="tr1026">
+<entry id="th1013">
+
+
+
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. A simple while loop.
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1013">
+<row id="tr1027">
+<entry id="td1013">
+
+
+
+<code id="pre1014" display="block">&lt;!-- File JavaScript05.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+cnt = 4//initialize a counter variable
+while(cnt &gt;= 0){//begin while loop
+  //display value of counter
+  document.write("cnt = " + cnt + "&lt;br/&gt;")
+  cnt = cnt - 1//decrement counter
+}//end while loop
+
+document.write("The End.");
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1167">
+<emphasis id="strong1140" effect="bold">
+A counting loop
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1168">
+This script initializes the value of a counter variable named 
+
+<emphasis id="strong1141" effect="bold">
+cnt
+
+</emphasis>
+ to 4. 
+	Control continues to loop (iterate) for as long as the value of the counter 
+	is greater than or equal to zero. During each iteration of the loop, the 
+	current value of 
+
+<emphasis id="strong1142" effect="bold">
+cnt
+
+</emphasis>
+ is displayed and then the value of
+	
+
+<emphasis id="strong1143" effect="bold">
+cnt
+
+</emphasis>
+ is reduced by a value of 1.
+
+</para>
+
+
+
+
+<para id="p1169">
+<emphasis id="strong1144" effect="bold">
+Repeat the test
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1170">
+At that point, control returns to the top of the loop where the test is 
+repeated. This process produces the first five lines of output text shown in 
+
+
+<link id="a1097" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1014" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1014">
+<row id="tr1028">
+<entry id="th1014">
+
+
+
+<emphasis id="Figure_10" effect="bold">
+
+Figure 10
+
+</emphasis>
+
+. Output from script in Listing 5.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1014">
+<row id="tr1029">
+<entry id="td1014">
+
+
+
+<code id="pre1015" display="block">cnt = 4
+cnt = 3
+cnt = 2
+cnt = 1
+cnt = 0
+The End. </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1171">
+<emphasis id="strong1145" effect="bold">
+When the test returns false...
+
+</emphasis>
+</para>
+
+
+	
+
+
+<para id="p1172">
+When the test in 
+
+<link id="a1098" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ returns false, meaning that 
+
+<emphasis id="strong1146" effect="bold">
+cnt
+
+</emphasis>
+ is no longer greater than or equal to zero, control exits the 
+
+
+<emphasis id="strong1147" effect="bold">
+while
+
+</emphasis>
+ loop and 
+	goes to the next statement following the 
+
+<emphasis id="strong1148" effect="bold">
+while
+
+</emphasis>
+ loop. This 
+is the statement that calls the 
+
+<emphasis id="strong1149" effect="bold">
+write
+
+</emphasis>
+ method to display the last line of text in 
+
+
+<link id="a1099" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Programming_errors" effect="bold">
+
+Programming errors
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1173">
+From time to time, we all make errors when writing scripts or programs. 
+Typical errors include typing a period instead of a comma, failing to include a 
+matching right parenthesis, etc. Usually, when you make a programming error 
+using JavaScript, some or all of the script simply doesn't execute.
+
+</para>
+
+
+
+
+<para id="p1174">
+<emphasis id="strong1150" effect="bold">
+Finding and fixing the errors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1175">
+The worst thing about programming errors is the need to find and fix them. 
+The Firefox and Google Chrome browsers have easy-to-use mechanisms to help 
+you identify the cause of the problem so that you can fix it. Internet Explorer 
+probably has similar capability, but so far, I haven't figured out how to access 
+it.
+
+</para>
+
+
+
+
+<para id="p1176">
+My recommendation is to simply open the files containing your JavaScript code 
+in either Firefox or Google Chrome. Or, you can open the file in Internet 
+Explorer, but if it doesn't do what you expect it to do, open it again in Google 
+Chrome or Firefox for assistance in finding and fixing the problem. 
+
+</para>
+
+
+
+
+<section id="h31010">
+<title>
+<emphasis id="Assistance_using_Google_Chrome" effect="bold">
+
+Assistance using Google Chrome
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1177">
+You can open the JavaScript console in the Chrome browser by holding down the 
+Ctrl key and the Shift key and pressing the J key. The console will open at 
+the bottom of the Chrome browser window. You can also close the console with the 
+same keystroke.
+
+</para>
+
+
+
+
+<para id="p1178">
+The format of the console is a little messy and may be difficult to navigate. However, it can be useful in locating errors if you can 
+navigate it.
+
+</para>
+
+
+
+
+<para id="p1179">
+<emphasis id="strong1151" effect="bold">
+An error message in the console
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1180">
+If you open an html file containing a JavaScript error in the browser while 
+the console is open, an error message will appear in the console. For example, I 
+am looking at such an error as I type this document. It consists of a round red 
+circle with a white x followed by the following text:
+
+</para>
+
+
+
+
+<para id="p1181">
+"Uncaught SyntaxError: Unexpected number"
+
+</para>
+
+
+
+
+<para id="p1182">
+<emphasis id="strong1152" effect="bold">
+The file name and line number
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1183">
+On the far right side of the same line is text that reads junk.html:23. That 
+is the name of the file and the line number in that file containing the error. 
+That text is a hyperlink. If the hyperlink is selected, another part of the 
+console opens showing the offending line of JavaScript code.
+
+</para>
+
+
+
+
+<para id="p1184">
+<emphasis id="strong1153" effect="bold">
+The description is unreliable
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1185">
+Also, in this particular case the description of the error isn't very useful 
+in determining the cause of the error although sometimes it may be useful. My 
+advice is not to put too much faith in that description. The error was actually 
+a missing relational operator in a comparison clause.
+
+</para>
+
+
+
+
+<para id="p1186">
+<emphasis id="strong1154" effect="bold">
+The line number is very important
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1187">
+Probably the most useful information is the line number that you can use to 
+go back and examine your source code, looking for an error in that line of code.
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Assistance_using_Firefox" effect="bold">
+
+Assistance using Firefox
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1188">
+You can open an error console when using the Firefox browser by holding down the 
+Ctrl key and the Shift key and pressing the J key. The console will open in a 
+separate window. Unlike with Chrome, repeating the keystroke won't close the 
+error console.
+
+</para>
+
+
+
+
+<para id="p1189">
+<emphasis id="strong1155" effect="bold">
+An error message in the console
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1190">
+If you open an html file containing a JavaScript error in the browser while 
+the error console is open, an error message will appear in the console. For 
+example, I am looking at such an error as I type this document. It consists of a 
+round red circle with a white x and the following text:
+
+</para>
+
+
+
+
+<para id="p1191">
+missing ) after condition
+
+</para>
+
+
+
+
+<para id="p1192">
+file: --html file name and path here-- 
+Line: 23
+
+</para>
+
+
+
+
+<para id="p1193">
+while(h 0){
+
+</para>
+
+
+
+
+<para id="p1194">
+<emphasis id="strong1156" effect="bold">
+The middle line is a hyperlink
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1195">
+The middle line of text that contains the file name to the left of the line 
+number is a hyperlink. If you select the link, a window will open showing the 
+source code with the problem line highlighted. Pressing the right arrow key will 
+cause a blinking cursor to appear between the first and second characters in 
+that line.
+
+</para>
+
+
+
+
+<para id="p1196">
+<emphasis id="strong1157" effect="bold">
+The description is unreliable
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1197">
+As with Chrome, in this particular case the description of the error isn't very useful 
+in determining the cause of the error although sometimes it may be useful. My 
+advice is not to put too much faith in that description. The error was actually 
+a missing relational operator in a comparison clause.
+
+</para>
+
+
+
+
+<para id="p1198">
+<emphasis id="strong1158" effect="bold">
+The line number is very important
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1199">
+Probably the most useful information is the line number that you can use to 
+go back and examine your source code, looking for an error in that line of code.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Run_the_script" effect="bold">
+
+Run the scripts
+
+</emphasis>
+
+
+</title>
+
+
+
+
+	
+
+<para id="p1200">
+I encourage you to run the scripts that I have presented in this lesson to 
+confirm that you get the same results. Copy the code for each script into a 
+	text file with an extension of html. Then open that file in your browser. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1201">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1000" type="">
+
+
+
+
+
+
+
+<emphasis id="strong1159" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+
+
+<item id="li1073">
+Module name: GAME 2302-0310 JavaScript
+
+</item>
+
+
+
+
+<item id="li1074">
+File: Game0310.htm
+
+
+</item>
+
+
+
+
+<item id="li1075">
+Published: 10/12/12
+
+</item>
+
+
+
+
+<item id="li1076">
+Revised: 12/27/14
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1001" type="">
+
+
+
+
+<emphasis id="strong1160" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1202">
+<emphasis id="strong1161" effect="bold">
+Financial
+
+</emphasis>
+: 
+	Although the Connexions site makes it possible for you to download a PDF 
+	file for this module at no charge, and also makes it possible for you to 
+	purchase a pre-printed version of the PDF file, you should be aware that 
+	some of the HTML elements in this module may not translate well into PDF.
+
+</para>
+
+
+	
+
+<para id="p1203">
+I also want you to know that, I receive no financial compensation from 
+	the Connexions website even if you purchase the PDF version of the module.
+
+</para>
+
+
+	
+
+<para id="p1204">
+In the past, unknown individuals have copied my modules from cnx.org, 
+	converted them to Kindle books, and placed them for sale on Amazon.com 
+	showing me as the author. I neither receive compensation for those sales nor 
+	do I know who does receive compensation. If you purchase such a book, please 
+	be aware that it is a copy of a module that is freely available on cnx.org 
+	and that it was made and published without my prior knowledge.
+
+</para>
+
+
+	
+
+<para id="p1205">
+<emphasis id="strong1162" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX. 
+
+</para>
+
+
+	
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1206">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

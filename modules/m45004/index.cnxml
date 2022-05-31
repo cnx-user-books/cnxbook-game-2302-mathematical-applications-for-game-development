@@ -1,0 +1,3293 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0340 Scientific Notation and Significant Figures</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45004</md:content-id>
+  <md:title>GAME 2302-0340 Scientific Notation and Significant Figures</md:title>
+  <md:abstract>The purpose of this module is to explain the use of scientific notation and significant figures.</md:abstract>
+  <md:uuid>b375ef0e-5c20-47ae-a3bd-4513a205858e</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Accuracy_and_precision">
+
+Accuracy and precision
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Scientific_notation">
+
+Scientific notation
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Significant_figures">
+
+Significant figures
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1009">
+<link id="a1009" target-id="Discussion">
+
+Discussion and sample code
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1010">
+<link id="a1010" target-id="Run_the_program">
+
+Run the scripts
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This module is part of a series of modules designed for teaching the physics 
+component of 
+
+<emphasis id="em1000" effect="italics">
+GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at 
+Austin Community College in Austin, TX. 
+
+<emphasis id="em1001" effect="italics">
+(See
+
+
+<link id="a1012" url="http://cnx.org/content/m44983/latest">
+
+GAME 2302-0100: Introduction
+
+</link>
+
+ 
+for the first module in the course along with a description of the course, 
+course resources, homework assignments, etc.) 
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1001">
+The purpose of this module is to explain the use of scientific notation and 
+significant figures. 
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+	
+
+<item id="li1012">
+<link id="a1013" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Examples of significant figures. 
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1014" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Screen output from Listing #1. 
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1015" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Screen output from Listing #2. 
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1016" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Behavior of the toPrecision method.
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1017" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Screen output from Listing #3. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1017">
+<link id="a1018" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. An exercise involving addition. 
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1019" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. An exercise involving 
+	multiplication. 
+
+</item>
+
+
+	
+
+<item id="li1019">
+<link id="a1020" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. An exercise involving combined operations. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="General_background_information" effect="bold">
+
+General background 
+information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+This section will contain a discussion of accuracy, precision, 
+scientific notation, and significant figures.
+
+</para>
+
+
+
+
+<section id="h21002">
+<title>
+<emphasis id="Accuracy_and_precision" effect="bold">
+
+Accuracy and precision
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+Let's begin with a brief discussion of accuracy and precision. These two 
+terms are often used interchangeably in everyday conversation, but they have very different 
+meanings in the world of science and engineering.
+
+</para>
+
+
+
+
+<para id="p1005">
+<emphasis id="strong1000" effect="bold">
+Accuracy
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+In science and engineering, the accuracy of a measurement system is the degree of 
+closeness of measurements of a quantity to its actual (true) value.
+
+</para>
+
+
+
+
+<para id="p1007">
+<emphasis id="strong1001" effect="bold">
+Precision
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+The precision of a measurement system (also called reproducibility or 
+repeatability) is the degree to which repeated measurements under unchanged 
+conditions show the same result.
+
+</para>
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1002" effect="bold">
+Four possibilities
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1010">
+A measurement system can be:
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1020">
+Both accurate and precise.
+
+</item>
+
+
+	
+
+<item id="li1021">
+Accurate but not precise.
+
+</item>
+
+
+	
+
+<item id="li1022">
+Precise but not accurate.
+
+</item>
+
+
+	
+
+<item id="li1023">
+Neither accurate nor precise.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1011">
+<emphasis id="strong1003" effect="bold">
+A hypothetical experiment
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1012">
+Consider an experiment where a firearm is clamped into a fixture, very 
+carefully aimed at a bulls eye on a downrange target, and fired six times. 
+(Although you may never have seen or touched a firearm, you probably have a 
+pretty good idea of how they behave.)
+
+</para>
+
+
+
+
+<para id="p1013">
+If the six holes produced by the bullets in the target fall in a tight 
+cluster in the bulls eye, the system can be considered to be both accurate and 
+precise.
+
+</para>
+
+
+
+
+<para id="p1014">
+If all of the holes fall in the general area of the bulls eye but the cluster 
+is not very tight, the system can be considered to be accurate but not precise.
+
+</para>
+
+
+
+
+<para id="p1015">
+If all of the holes fall in a tight cluster but the cluster is some distance 
+from the bulls eye, the system can be considered to be precise but not accurate.
+
+</para>
+
+
+
+
+<para id="p1016">
+If the holes are scattered across a wide area of the target, the system can 
+be considered to be neither accurate nor precise.
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="strong1004" effect="bold">
+Another use of the word precision
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1018">
+Another use of the word precision, which will be important in this module, is 
+based on the concept that the precision of a measurement describes the units 
+that you use to measure something.
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1005" effect="bold">
+How tall are you?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+For example, if you tell someone that you are about five feet tall, that 
+wouldn't be very precise. If you told someone that you are 62 inches tall, that 
+would be more precise. If you told someone that you are 62.3 inches tall, that 
+would be even more precise, and if you told someone that you are 62.37 inches 
+tall, that would be very precise for a measurement of that nature.
+
+</para>
+
+
+
+
+<para id="p1021">
+<emphasis id="strong1006" effect="bold">
+The smaller the unit...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1022">
+The smaller the unit you use to measure with, the more precise the 
+measurement can be. For example, assume that you measure someone's height with a 
+measuring stick that is longer than the person is tall. Assume also that 
+the measuring stick is graduated only in feet. In that case, the best that you 
+could hope for would be to get the measurement correct to the nearest foot and 
+perhaps estimate a second digit to the nearest tenth of a foot.
+
+</para>
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1007" effect="bold">
+One-inch graduations
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1024">
+On the other hand, if the measuring stick is graduated in inches and you are 
+careful, you should be able to get the measurement correct to the nearest inch 
+and perhaps estimate another digit to the nearest tenth of an inch. The second 
+measurement using the one-inch graduations would be more precise than the first 
+using the one-foot graduations.
+
+</para>
+
+
+
+
+<para id="p1025">
+<emphasis id="strong1008" effect="bold">
+Diminishing returns
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1026">
+If the measuring stick were graduated in tenth-inch units, however, 
+that may or may not lead to a more precise measurement. That would be 
+approaching the point of diminishing returns where your inability to take full 
+advantage of the more precise graduations and the inability of the subject to 
+always stand with the same degree of rigidity might come into play.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Scientific_notation" effect="bold">
+
+Scientific notation
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+According to 
+
+<link id="a1021" url="http://en.wikipedia.org/wiki/Scientific_notation">
+
+
+Wikipedia
+
+</link>
+
+, 
+
+<emphasis id="em1002" effect="italics">
+scientific notation is a way of writing numbers that accommodates values too large or small to be conveniently written in standard decimal notation
+
+</emphasis>
+. 
+The notation has a number of useful properties and is commonly used by scientists and engineers. 
+A variation of scientific notation is also used internally by computers.
+
+</para>
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1009" effect="bold">
+Scientific notation format
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+Numbers in scientific notation are written using the following format:
+
+</para>
+
+
+
+
+<para id="p1030">
+x * 10^y
+
+</para>
+
+
+
+
+<para id="p1031">
+which can be read as the value 
+
+<emphasis id="strong1010" effect="bold">
+x
+
+</emphasis>
+ multiplied by ten raised to 
+the 
+
+<emphasis id="strong1011" effect="bold">
+y
+
+</emphasis>
+ power where 
+
+<emphasis id="strong1012" effect="bold">
+y
+
+</emphasis>
+ is an integer and 
+
+<emphasis id="strong1013" effect="bold">
+
+x
+
+</emphasis>
+ is any real number. (Constraints are placed on the value of 
+
+<emphasis id="strong1014" effect="bold">
+x
+
+</emphasis>
+ when 
+using the 
+
+<emphasis id="strong1015" effect="bold">
+normalized
+
+</emphasis>
+ form of scientific notation which I will explain below.)
+
+</para>
+
+
+
+
+<para id="p1032">
+The values for 
+
+<emphasis id="strong1016" effect="bold">
+x
+
+</emphasis>
+ and 
+
+<emphasis id="strong1017" effect="bold">
+y
+
+</emphasis>
+ can be either 
+positive or negative.
+
+</para>
+
+
+
+
+<para id="p1033">
+The term referred to as 
+
+<emphasis id="strong1018" effect="bold">
+x
+
+</emphasis>
+ is often called the 
+
+<emphasis id="strong1019" effect="bold">
+
+significand
+
+</emphasis>
+ or the 
+
+<emphasis id="strong1020" effect="bold">
+mantissa
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1034">
+<emphasis id="strong1021" effect="bold">
+The computer display version of scientific notation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1035">
+Because of difficulties involved in displaying superscripts in the output of 
+computer programs, a typical display of a number in scientific notation by a 
+computer program might look something like the following example:
+
+</para>
+
+
+
+
+<para id="p1036">
+-3.141592653589793e+1
+
+</para>
+
+
+
+
+<para id="p1037">
+where
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1024">
+either numeric value can be positive, negative, or zero,
+
+</item>
+
+
+	
+
+<item id="li1025">
+the number of digits in the numeric value to the left of the 
+
+<emphasis id="strong1022" effect="bold">
+e
+
+</emphasis>
+ 
+	(the mantissa) may range from a few to many, and
+
+</item>
+
+
+	
+
+<item id="li1026">
+the 
+
+<emphasis id="strong1023" effect="bold">
+e
+
+</emphasis>
+ may be either upper-case or lower-case depending on the computer 
+	and the program.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1024" effect="bold">
+A power of ten is understood
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+In this format, it is understood that the number consists of the value to the 
+left of the 
+
+<emphasis id="strong1025" effect="bold">
+e
+
+</emphasis>
+ (the mantissa) multiplied by ten raised to a power given by the value to the 
+right of the 
+
+<emphasis id="strong1026" effect="bold">
+e
+
+</emphasis>
+ (the exponent).
+
+</para>
+
+
+
+
+<para id="p1040">
+For example, in JavaScript exponential format, the value -10*Math.PI is 
+displayed as
+
+</para>
+
+
+
+
+<para id="p1041">
+-3.141592653589793e+1
+
+</para>
+
+
+
+
+<para id="p1042">
+The value Math.PI/10 is displayed as
+
+</para>
+
+
+
+
+<para id="p1043">
+3.141592653589793e-1
+
+</para>
+
+
+
+
+<para id="p1044">
+The value Math.PI is displayed as
+
+</para>
+
+
+
+
+<para id="p1045">
+3.141592653589793e+0
+
+</para>
+
+
+
+
+<para id="p1046">
+The value 0 is displayed as
+
+</para>
+
+
+
+
+<para id="p1047">
+0e+0
+
+</para>
+
+
+
+
+<para id="p1048">
+<emphasis id="strong1027" effect="bold">
+The normalized form of scientific notation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1049">
+Using general scientific notation, the number -65700 could be written 
+in several different ways including the following:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1027">
+-6.57 * 10^4
+
+</item>
+
+
+	
+
+<item id="li1028">
+-65.7 * 10^3
+
+</item>
+
+
+	
+
+<item id="li1029">
+-657 * 10^2
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1050">
+In normalized scientific notation, the exponent is chosen such that the absolute value of 
+the mantissa is at least one but less than ten. For example, -65700 is written:
+
+</para>
+
+
+
+
+<para id="p1051">
+-6.57 * 10^4
+
+</para>
+
+
+
+
+<para id="p1052">
+In normalized notation the exponent is negative for a number with absolute value between 0 and 1. 
+For example, the value 0.00657 would be written:
+
+</para>
+
+
+
+
+<para id="p1053">
+6.57 * 10^(-3)
+
+</para>
+
+
+
+
+<para id="p1054">
+The 10 and the exponent are usually omitted when the exponent is 0.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Significant_figures" effect="bold">
+
+Significant figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+According to 
+
+<link id="a1022" url="http://en.wikipedia.org/wiki/Significant_figures">
+
+
+Wikipedia
+
+</link>
+
+, The significant figures of a number are those digits that carry meaning contributing to its precision. This includes all digits except:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1030">
+Leading zeros where they serve merely as placeholders to indicate the scale of the number 
+	(.00356 for example).
+
+</item>
+
+
+	
+
+<item id="li1031">
+Spurious digits introduced, for example, by calculations carried out to greater accuracy than that of the original data, or measurements reported to a greater precision than the equipment supports.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1056">
+A popular physics textbook provides a more complete set of rules for identifying the 
+significant figures in a number:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1032">
+Nonzero digits are always significant.
+
+</item>
+
+
+	
+
+<item id="li1033">
+Final or ending zeros written to the right of the decimal point are significant.
+
+</item>
+
+
+	
+
+<item id="li1034">
+Zeros written to the right of the decimal point for the purpose of spacing the
+decimal point are not significant.
+
+</item>
+
+
+	
+
+<item id="li1035">
+Zeros written to the left of the decimal point may be significant, or they may
+only be there to space the decimal point. For example, 200 cm could have one,
+two, or three significant figures; it's not clear whether the distance was measured
+to the nearest 1 cm, to the nearest 10 cm, or to the nearest 100 cm. On
+the other hand, 200.0 cm has four significant figures (see rule 5). Rewriting the
+number in scientific notation is one way to remove the ambiguity.
+
+</item>
+
+
+	
+
+<item id="li1036">
+Zeros written between significant figures are significant.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1028" effect="bold">
+Ambiguity of the last digit in scientific notation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+Again, according to
+
+
+<link id="a1023" url="http://en.wikipedia.org/wiki/Scientific_notation">
+
+Wikipedia
+
+</link>
+
+, it is customary in scientific measurements to record all the significant digits from the measurements, and to guess one additional digit if there is any information at all available to the observer to make a guess. The resulting number is considered more valuable than it would be without that extra digit, and it is considered a significant digit because it contains some information leading to greater precision in measurements and in aggregations of measurements (adding them or multiplying them together).
+
+</para>
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1029" effect="bold">
+Examples of significant digits
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+Referring back to the physics textbook mentioned earlier, 
+
+<link id="a1024" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1037">
+Four different numbers
+
+</item>
+
+
+	
+
+<item id="li1038">
+The number of significant figures in each number.
+
+</item>
+
+
+	
+
+<item id="li1039">
+The default JavaScript exponential representation of each number.
+
+</item>
+
+
+
+
+</list>
+
+
+
+	
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Examples of significant figures.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+1.  409.8         4          4.098e+2
+2.  0.058700      5          5.87e-2
+3.  9500          ambiguous  9.5e+3
+4.  950.0 * 10^1  4          9.5e+3
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1061">
+Note that the default JavaScript exponential representation fails to 
+	display the significant trailing zeros for the numbers on row 2 and row 5. I 
+	will show you some ways that you may be able to deal with this issue 
+	later but you may not find them to be very straightforward.
+
+</para>
+
+
+	
+	
+
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+ 
+
+<emphasis id="Discussion" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1062">
+Beyond knowing about scientific notation and significant figures from a 
+formatting viewpoint, you need to know how to perform arithmetic while 
+satisfying the rules for scientific notation and significant figures.
+
+</para>
+
+
+
+
+<para id="p1063">
+Performing arithmetic involves 
+
+<emphasis id="three_main_rules" effect="bold">
+
+three main rules
+
+</emphasis>
+
+:
+
+</para>
+
+
+
+
+<list id="ol1001" list-type="enumerated">
+
+	
+
+<item id="li1040">
+For addition and subtraction, the final result should be rounded so as 
+	to have the same number of decimal places as the number that was included in 
+	the sum that has the smallest number of decimal places. In accordance with 
+	the discussion early in this module, this is the least precise number.
+
+</item>
+
+
+	
+
+<item id="li1041">
+For multiplication and division, the final result should be rounded to 
+	have the same number of significant figures as the number that was included 
+	in the product with the smallest number of significant figures.
+
+</item>
+
+
+	
+
+<item id="li1042">
+The two rules listed above should not be applied to intermediate 
+	calculations. For intermediate calculations, keep as many digits as 
+	practical. Round to the correct number of significant figures or the correct 
+	number of decimal places in the final result.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1064">
+<emphasis id="strong1030" effect="bold">
+An exercise involving addition
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1065">
+Please copy the JavaScript code shown in  
+
+<link id="a1025" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ into an html file and open 
+the file in your browser.
+
+</para>
+
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+
+
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. An exercise involving addition.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">&lt;!-- File JavaScript01.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//Compute and display the sum of three
+// numbers
+var a = 169.01
+var b = 0.00356
+var c = 385.293
+var sum = a + b + c
+document.write("sum = " + sum + "&lt;br/&gt;")
+
+//Round the sum to the correct number
+// of digits to the right of the decimal
+// point.
+var round = sum.toFixed(2)
+document.write("round = " + round + "&lt;br/&gt;")
+
+//Display a final line as a hedge against
+// unidentified coding errors.
+document.write("The End")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1031" effect="bold">
+Screen output
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1067">
+When you open the html file in your browser, the text shown in 
+
+<link id="a1026" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ 
+	should appear in your browser.
+
+</para>
+
+
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Screen output from Listing #1.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">sum = 554.30656
+round = 554.31
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1068">
+The code in  
+
+<link id="a1027" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ begins by declaring three variables named 
+
+<emphasis id="strong1032" effect="bold">
+a
+
+</emphasis>
+,
+	
+
+<emphasis id="strong1033" effect="bold">
+b
+
+</emphasis>
+, and 
+
+<emphasis id="strong1034" effect="bold">
+c
+
+</emphasis>
+, adding them together, and 
+	displaying the sum in the JavaScript default format in the browser window.
+
+</para>
+
+
+
+
+<para id="p1069">
+<emphasis id="strong1035" effect="bold">
+Too many decimal digits
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1070">
+As you can see from the first line in 
+
+<link id="a1028" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, the result is computed and 
+displayed with eight decimal digits, five of which are to the right of the 
+decimal point. We know, however, from 
+
+<link id="a1029" target-id="three_main_rules">
+
+rule #1
+
+</link>
+
+, 
+that we should present the result rounded to a precision of two digits to the 
+right of the decimal point in order to match the least precise of the numbers 
+included in the sum. In this case, the value stored in the variable named
+
+
+<emphasis id="strong1036" effect="bold">
+a
+
+</emphasis>
+ is the least precise.
+
+</para>
+
+
+
+
+<para id="p1071">
+<emphasis id="strong1037" effect="bold">
+Correct the problem
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1072">
+The code in  
+
+<link id="a1030" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ calls a method named 
+
+<emphasis id="strong1038" effect="bold">
+toFixed
+
+</emphasis>
+ on the 
+value stored in the variable 
+
+<emphasis id="strong1039" effect="bold">
+sum
+
+</emphasis>
+ passing a value of 2 as a 
+parameter to the method. This method returns the value from 
+
+<emphasis id="strong1040" effect="bold">
+sum
+
+</emphasis>
+ 
+rounded to two decimal digits. The returned value is stored in the variable 
+named 
+
+<emphasis id="strong1041" effect="bold">
+round
+
+</emphasis>
+. Then the script displays that value as the second line of 
+text in 
+
+<link id="a1031" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1042" effect="bold">
+The output text that reads "The End"
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+There is a downside to using JavaScript (as opposed to other programming 
+languages such as Java). By default, if there is a coding error in your script, 
+there is no indication of the error in the output in the main browser window. 
+Instead, the browser simply refuses to display some or all of the output that 
+you are expecting to see.
+
+</para>
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1043" effect="bold">
+Put a marker at the end
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+Writing the script in such a way that a known line of text, such as "The End" 
+will appear following all of the other output won't solve coding errors. 
+However, if it doesn't appear, you will know that there is a coding error and 
+some or all of the output text may be missing.
+
+</para>
+
+
+
+
+<para id="p1077">
+<emphasis id="strong1044" effect="bold">
+JavaScript and error consoles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1078">
+I explained how you can open a JavaScript console in the Google Chrome 
+browser or an error console in the Firefox browser in an earlier module. While the diagnostic information provided in those 
+consoles is limited, it will usually indicate the line number in the source code 
+where the programming error was detected. Knowing the line number will help you 
+examine the code and fix the error.
+
+</para>
+
+
+	
+
+<para id="p1079">
+<emphasis id="strong1045" effect="bold">
+An exercise involving multiplication
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1080">
+Please copy the code shown in  
+
+<link id="a1032" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ into an html file and open it in 
+	your browser.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1003">
+<row id="tr1006">
+<entry id="th1003">
+
+
+
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. An exercise involving multiplication.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">&lt;!-- File JavaScript02.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//Compute and display the product of three
+// numbers, each having a different number
+// of significant figures.
+var a = 169.01
+var b = 0.00356
+var c = 386.253
+var product = a * b * c
+document.write("product = " + product + "&lt;br/&gt;")
+
+//Round the product to the correct number
+// of significant figures
+var rounded = product.toPrecision(5)
+document.write("rounded = " + rounded + "&lt;br/&gt;")
+
+//Display a final line as a hedge against
+// unidentified coding errors.
+document.write("The End")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1081">
+<emphasis id="strong1046" effect="bold">
+The screen output
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1082">
+When you open your html file in your browser, the text shown in 
+
+<link id="a1033" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ 
+should appear in your browser window.
+
+</para>
+
+
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1004">
+<row id="tr1008">
+<entry id="th1004">
+
+
+
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Screen output from Listing #2.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">product = 232.39900552679998
+rounded = 232.40
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+
+<para id="p1083">
+The code in  
+
+<link id="a1034" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ begins by declaring three variables named 
+
+<emphasis id="strong1047" effect="bold">
+a
+
+</emphasis>
+,
+	
+
+<emphasis id="strong1048" effect="bold">
+b
+
+</emphasis>
+, and 
+
+<emphasis id="strong1049" effect="bold">
+c
+
+</emphasis>
+, multiplying them together, and 
+	displaying the product in the browser window. Each of the factors in the 
+	product have a different number of significant figures, with the factor of 
+	value 169.01 having the least number (5) of significant figures. We know 
+	from 
+
+<link id="a1035" target-id="three_main_rules">
+
+rule #2
+
+</link>
+
+, therefore, that we need to 
+	present the result rounded to five significant figures.
+
+</para>
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1050" effect="bold">
+The toPrecision method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+ 
+
+<link id="a1036" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls a method named 
+
+<emphasis id="strong1051" effect="bold">
+toPrecision
+
+</emphasis>
+ on the variable 
+named 
+
+<emphasis id="strong1052" effect="bold">
+product
+
+</emphasis>
+, passing the desired number of significant 
+figures (5) as a parameter. The method rounds the value stored in 
+
+<emphasis id="strong1053" effect="bold">
+
+product
+
+</emphasis>
+ to the desired number of digits and returns the result, which 
+is stored in the variable named 
+
+<emphasis id="strong1054" effect="bold">
+rounded
+
+</emphasis>
+. Then the contents of 
+the variable named 
+
+<emphasis id="strong1055" effect="bold">
+rounded
+
+</emphasis>
+ are displayed, producing the second 
+line of text in 
+
+<link id="a1037" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1056" effect="bold">
+What about other parameter values
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1087">
+Note that the method named 
+
+<emphasis id="strong1057" effect="bold">
+toPrecision
+
+</emphasis>
+ knows nothing about 
+significant figures. It was up to me to figure out the desired number of 
+significant figures in advance and to pass that value as a parameter to the 
+method.
+
+</para>
+
+
+
+
+<para id="p1088">
+Although this has nothing to do with significant figures, it may be 
+instructive to examine the behavior of the method named 
+
+<emphasis id="strong1058" effect="bold">
+toPrecision
+
+</emphasis>
+ 
+for several different parameter values.
+
+</para>
+
+
+	
+
+<para id="p1089">
+<link id="a1038" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ shows the result of replacing the parameter value of 5 in the 
+	call to the 
+
+<emphasis id="strong1059" effect="bold">
+toPrecision
+
+</emphasis>
+ method with the values in the first 
+	column of 
+
+<link id="a1039" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ and displaying the value returned by the method.
+
+</para>
+
+
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1005">
+<row id="tr1010">
+<entry id="th1005">
+
+
+
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. Behavior of the toPrecision method.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+1  rounded = 2e+2
+2  rounded = 2.3e+2
+3  rounded = 232
+4  rounded = 232.4
+5  rounded = 232.40
+6  rounded = 232.399
+7  rounded = 232.3990
+10 rounded = 232.3990055
+15 rounded = 232.399005526800
+20 rounded = 232.39900552679998214 
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1090">
+<emphasis id="strong1060" effect="bold">
+And the point is...
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1091">
+The point to this is to emphasize that the method named 
+
+<emphasis id="strong1061" effect="bold">
+
+	toPrecision
+
+</emphasis>
+ is not a method that knows how to compute and display 
+	the required number of significant figures. Instead, according to the 
+	JavaScript documentation:
+
+</para>
+
+
+
+
+<para id="p1092">
+<emphasis id="em1003" effect="italics">
+"The toPrecision() method formats a number to a specified length. A decimal point and nulls are added (if needed), to create the specified length."
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1093">
+It is up to you, the author of the script, to determine what that length 
+	should be and to provide that information as a parameter to the 
+
+<emphasis id="strong1062" effect="bold">
+
+	toPrecision
+
+</emphasis>
+ method.
+
+</para>
+
+
+	
+
+<para id="p1094">
+<emphasis id="strong1063" effect="bold">
+Combined operations
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1095">
+This is where things become a little hazy. I have been unable to find 
+	definitive information as to how to treat the precision and the number of 
+	significant figures when doing computations that combine addition and/or 
+	subtraction with multiplication and/or division.
+
+</para>
+
+
+
+
+<para id="p1096">
+<emphasis id="strong1064" effect="bold">
+Two contradictory procedures
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1097">
+I have found two procedures documented on the web that seem to be somewhat 
+contradictory. Both sources seem to say that you should perform the addition 
+and/or subtraction first and that you should apply 
+
+<link id="a1040" target-id="three_main_rules">
+
+rule #1
+
+</link>
+
+ to the 
+results. However, they differ with regard to how stringently you apply that rule 
+before moving on to the multiplication and/or division.
+
+</para>
+
+
+
+
+<para id="p1098">
+<emphasis id="strong1065" effect="bold">
+<emphasis id="The_more_stringent_procedure" effect="bold">
+
+The more stringent procedure
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1099">
+One source seems to suggest that you should round the results of 
+the addition and/or subtraction according to 
+
+<link id="a1041" target-id="three_main_rules">
+
+rule #1
+
+</link>
+
+ 
+and replace the addition or subtraction expression in your overall expression 
+with the rounded result. Using that approach, you simply create one the factors 
+that will be used later in the multiplication and/or division. That factor has a 
+well-defined number of significant figures.
+
+</para>
+
+
+
+
+<para id="p1100">
+Then you proceed with the multiplication and/or division and adjust the 
+number of significant figures in the final result according to
+
+
+<link id="a1042" target-id="three_main_rules">
+
+rule #2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1101">
+<emphasis id="strong1066" effect="bold">
+The less stringent procedure
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1102">
+The other source seems to suggest that you mentally round the results of the 
+addition and/or subtraction according to 
+
+<link id="a1043" target-id="three_main_rules">
+
+rule #1
+
+</link>
+
+ and 
+make a note of the number of significant figures that would result if you were 
+to actually round the result. However, you should not actually round the result at that point in time. In other words, you 
+should use the raw result of the addition and/or subtraction as a factor in the 
+upcoming multiplication and/or division knowing that you may be carrying excess 
+precision according to
+
+
+<link id="a1044" target-id="three_main_rules">
+
+rule #1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1103">
+Then you proceed with the multiplication and/or division and adjust the 
+number of significant figures in the final result according to
+
+
+<link id="a1045" target-id="three_main_rules">
+
+rule #2
+
+</link>
+
+. However, when you adjust the number of 
+significant figures, you should include the number of significant figures from 
+your note in the decision process. If that is the smallest number of significant figures 
+of all the factors, you should use it as the number of significant figures for 
+the final result.
+
+</para>
+
+
+
+
+<para id="p1104">
+<emphasis id="strong1067" effect="bold">
+An exercise involving combined operations
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1105">
+Evaluate the following expression and display the final result with the 
+correct number of significant figures.
+
+</para>
+
+
+
+
+<para id="p1106">
+(169.01 + 3294.6372) * (0.00365 - 29.333)
+
+</para>
+
+
+
+
+<para id="p1107">
+Please copy the code from  
+
+<link id="a1046" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ into an html file and open it in your 
+browser.
+
+</para>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1006">
+<row id="tr1012">
+<entry id="th1006">
+
+
+
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. An exercise involving combined operations.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">&lt;!-- File JavaScript03.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//Compute, fix the number of decimal places,
+// and display the sum of two numbers. 
+var a1 = 169.01
+var a2 = 3294.6372
+var aSum = (a1 + a2).toFixed(2)
+document.write("aSum = " + aSum + "&lt;br/&gt;")
+
+//Compute, fix the number of decimal places,
+// and display the difference between two
+// other numbers.
+var b1 = 0.00356
+var b2 = 29.333
+var bDiff = (b1 - b2).toFixed(3)
+document.write("bDiff = " + bDiff + "&lt;br/&gt;")
+
+//Compute and display the product of the
+// sum and the difference.
+var product = aSum * bDiff
+document.write("product = " + product + "&lt;br/&gt;")
+
+//Round the product to the correct number
+// of significant figures based on the least
+// number of significant figures in the 
+// factors.
+var final = product.toPrecision(5)
+document.write("final = " + final + "&lt;br/&gt;")
+
+//Display a final line as a hedge against
+// unidentified coding errors.
+document.write("The End")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1108">
+When you open your html file in your browser, the text shown in 
+
+<link id="a1047" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ 
+should appear in the browser window.
+
+</para>
+
+
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1007">
+<row id="tr1014">
+<entry id="th1007">
+
+
+
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Screen output from Listing #3.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">aSum = 3463.65
+bDiff = -29.329
+product = -101585.39085000001
+final = -1.0159e+5
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1109">
+<emphasis id="strong1068" effect="bold">
+The more stringent procedure
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1110">
+The code in  
+
+<link id="a1048" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ implements the
+	
+
+<link id="a1049" target-id="The_more_stringent_procedure">
+
+more stringent procedure
+
+</link>
+
+, not 
+	because it is necessarily the correct one. Rather, it is simpler to 
+	implement in a script.
+
+</para>
+
+
+	
+
+<para id="p1111">
+<emphasis id="strong1069" effect="bold">
+Do addition and subtraction first
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+ 
+
+<link id="a1050" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ begins by adding two numbers, adjusting the precision to the least 
+precise of the two numbers, and saving the result in the variable named 
+
+<emphasis id="strong1070" effect="bold">
+
+aSum
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1113">
+Then  
+
+<link id="a1051" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ subtracts one number from another number, adjusts the 
+precision to the least precise of the two numbers, and saves the result in the 
+variable named 
+
+<emphasis id="strong1071" effect="bold">
+bDiff
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1114">
+<emphasis id="strong1072" effect="bold">
+Display to get information on significant figures
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1115">
+Both results are displayed immediately after they are obtained. This is 
+necessary for me to know which one has the least number of significant figures. 
+I need to know that to be able to properly adjust the number of 
+significant figures in the final product.
+
+</para>
+
+
+
+
+<para id="p1116">
+In other words, it was necessary for me to write and execute the 
+addition/subtraction portion of the script in order to get the information 
+required to write the remainder of the script.
+
+</para>
+
+
+
+
+<para id="p1117">
+<emphasis id="strong1073" effect="bold">
+Do the multiplication
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1118">
+Then  
+
+<link id="a1052" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ multiplies the sum and difference values and displays the 
+result in the default format with far too many significant figures as shown by 
+the third line of text in 
+
+<link id="a1053" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1119">
+Finally  
+
+<link id="a1054" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ adjusts the number of significant figures in the product 
+based on the number of significant figures in 
+
+<emphasis id="strong1074" effect="bold">
+bDiff
+
+</emphasis>
+ and 
+displays the final result with five significant figures in normalized scientific 
+(exponential) notation.
+
+</para>
+
+
+	
+
+	
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the scripts
+
+</emphasis>
+
+
+</title>
+
+
+
+
+	
+
+<para id="p1120">
+I encourage you to run the scripts that I have presented in this lesson to 
+confirm that you get the same results. Copy the code for each script into a 
+	text file with an extension of html. Then open that file in your browser. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do. 
+
+</para>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1121">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1000" type="">
+
+
+
+
+
+
+
+<emphasis id="strong1075" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+
+
+<item id="li1043">
+Module name: GAME 2302-0340 Scientific Notation and Significant Figures
+
+</item>
+
+
+
+
+<item id="li1044">
+File: Game0340.htm
+
+
+</item>
+
+
+
+
+<item id="li1045">
+Published: 10/12/12
+
+</item>
+
+
+
+
+<item id="li1046">
+Revised: 01/25/16
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1001" type="">
+
+
+
+
+<emphasis id="strong1076" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1122">
+<emphasis id="strong1077" effect="bold">
+Financial
+
+</emphasis>
+: 
+	Although the Connexions site makes it possible for you to download a PDF 
+	file for this module at no charge, and also makes it possible for you to 
+	purchase a pre-printed version of the PDF file, you should be aware that 
+	some of the HTML elements in this module may not translate well into PDF.
+
+</para>
+
+
+	
+
+<para id="p1123">
+I also want you to know that, I receive no financial compensation from 
+	the Connexions website even if you purchase the PDF version of the module.
+
+</para>
+
+
+	
+
+<para id="p1124">
+In the past, unknown individuals have copied my modules from cnx.org, 
+	converted them to Kindle books, and placed them for sale on Amazon.com 
+	showing me as the author. I neither receive compensation for those sales nor 
+	do I know who does receive compensation. If you purchase such a book, please 
+	be aware that it is a copy of a module that is freely available on cnx.org 
+	and that it was made and published without my prior knowledge.
+
+</para>
+
+
+		
+
+<para id="p1125">
+<emphasis id="strong1078" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer 
+		Information Technology at Austin Community College in Austin, TX.
+		
+
+</para>
+
+
+	
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1126">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

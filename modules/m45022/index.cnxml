@@ -1,0 +1,6908 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0150: Applications of the Vector Dot Product</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45022</md:content-id>
+  <md:title>GAME 2302-0150: Applications of the Vector Dot Product</md:title>
+  <md:abstract>Learn how to use the dot product to compute nine different angles of interest that a vector makes with various elements in 3D space. Also learn how to use the dot product to find six of the infinite set of vectors that are perpendicular to a given vector, and how to use the dot product to perform back-face culling of an image.</md:abstract>
+  <md:uuid>afd134f6-c000-498f-9267-93e4b9906c9e</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_game-math_library_named_GM02">
+
+The game-math library named GM02
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_program_named_DotProd3D05">
+
+The program named DotProd3D05
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_program_named_DotProd3D06">
+
+The program named DotProd3D06
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_program_named_DotProd3D04">
+
+The program named DotProd3D04
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="The_program_named_DotProd3D03">
+
+The program named DotProd3D03
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Homework_assignment">
+
+Homework assignment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Summary">
+
+Summary
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Whats_next">
+
+What's next?
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="Complete_program_listing">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Exercises">
+
+Exercises
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1018">
+<link id="a1018" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="Exercise_2">
+
+Exercise 2
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1000">
+This module is one in a collection of modules designed for teaching 
+
+<emphasis id="em1000" effect="italics">
+
+	GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX. 
+
+</para>
+
+
+
+
+<para id="p1001">
+<emphasis id="strong1000" effect="bold">
+What you have learned
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1002">
+In the previous module, which was the first part of a two-part miniseries on 
+the vector dot product, you learned the fundamentals of the vector dot product 
+in both 2D and 3D. You learned how to update the game-math library to support 
+various aspects of the vector dot product, and you learned how to write 2D and 
+3D programs that use the vector dot product methods in the game-math library.
+
+</para>
+
+
+
+
+<para id="p1003">
+<emphasis id="strong1001" effect="bold">
+What you will learn
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+In this module, you will learn how to apply the vector dot product to three 
+different applications. You will learn 
+
+</para>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1020">
+how to use the dot product to compute nine different angles of interest 
+	that a vector makes with various elements in 3D space,
+
+</item>
+
+
+	
+
+<item id="li1021">
+how to use the dot product to find six somewhat unique vectors of the infinite 
+	set of vectors that are perpendicular to a given vector as shown in 
+	
+
+<link id="a1020" target-id="Figure_4">
+
+Figure 
+	4
+
+</link>
+
+, and
+
+</item>
+
+
+	
+
+<item id="li1022">
+how to use the dot product to perform back-face culling 
+	to convert the image shown in 
+
+<link id="a1021" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ to the image shown in 
+
+<link id="a1022" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+<para id="p1005">
+<emphasis id="Figure_1" effect="bold">
+
+
+<emphasis id="strong1002" effect="bold">
+Figure 1
+
+</emphasis>
+</emphasis>
+
+ -
+
+<emphasis id="strong1003" effect="bold">
+ A 3D image before back-face culling.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/java1716a1.jpg" width="231" height="251"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1007">
+<emphasis id="Figure_2" effect="bold">
+
+
+<emphasis id="strong1004" effect="bold">
+Figure 2
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1005" effect="bold">
+ - The 3D image after back-face culling.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/java1716a2.jpg" width="231" height="251"/>
+</media>
+
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1009">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1023">
+<link id="a1023" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. A 3D image before back-face culling. 
+
+</item>
+
+
+		
+
+<item id="li1024">
+<link id="a1024" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. The 3D image after back-face culling.
+
+</item>
+
+
+		
+
+<item id="li1025">
+<link id="a1025" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Screen shot of the output from the program named DotProd3D05. 
+
+</item>
+
+
+		
+
+<item id="li1026">
+<link id="a1026" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Six (magenta) vectors that are perpendicular to a given (black) vector.
+
+</item>
+
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Screen output when one coordinate has a value of zero. 
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. A general formulation of 3D vector perpendicularity. 
+
+</item>
+
+
+		
+
+<item id="li1029">
+<link id="a1029" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Output from Exercise 1.
+
+</item>
+
+
+		
+
+<item id="li1030">
+<link id="a1030" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Output from Exercise 2.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1031">
+<link id="a1031" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Beginning of the actionPerformed method in the program named DotProd3D05.
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1032" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Create ColMatrix3D objects that represent projections. 
+
+</item>
+
+
+		
+
+<item id="li1033">
+<link id="a1033" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Create and draw vectors. 
+
+</item>
+
+
+		
+
+<item id="li1034">
+<link id="a1034" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Compute and display the nine angles. 
+
+</item>
+
+
+		
+
+<item id="li1035">
+<link id="a1035" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Beginning of the actionPerformed method for the program named DotProd3D06.
+
+</item>
+
+
+		
+
+<item id="li1036">
+<link id="a1036" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Remainder of the actionPerformed method. 
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1037" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. The method named drawTheCylinder in DotProd3D04. 
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1038" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. The method named drawTheCylinder in DotProd3D03.
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Source code for the game-math library named GM02. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1040" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Source code for the program named DotProd3D05. 
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1041" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Source code for the program named DotProd3D06. 
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1042" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Source code for the program named DotProb3D04. 
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1043" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. Source code for the program named DotProb3D03. 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1010">
+This module will build on what you learned about the vector dot product 
+	in the earlier module titled 
+
+<link id="a1044" url="http://cnx.org/content/m45018/latest">
+
+
+	GAME 2302-0145: Getting Started with the Vector Dot Product
+
+</link>
+
+. In that module, you learned some of the theory behind the 
+	dot product. In this module, you will learn how to use the dot-product 
+	methods of the game-math library to write several applications. I will 
+	present and explain the following four programs:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1044">
+<emphasis id="strong1006" effect="bold">
+DotProd3D05
+
+</emphasis>
+ - Demonstrates how the dot product can be used to 
+	compute nine different angles of interest that a vector makes with various 
+	elements in 3D space.
+
+</item>
+
+
+	
+
+<item id="li1045">
+<emphasis id="strong1007" effect="bold">
+DotProd3D06
+
+</emphasis>
+ - Demonstrates the use of the dot product to find six 
+	somewhat unique vectors of the infinite set of vectors that are perpendicular to a given vector. 
+
+<emphasis id="em1001" effect="italics">
+
+	(See 
+
+<link id="a1045" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1046">
+<emphasis id="strong1008" effect="bold">
+DotProd3D04
+
+</emphasis>
+ - Draws the same 3D object as the one drawn in 
+	DotProd3D03 but without the benefit of back-face culling. 
+
+<emphasis id="em1002" effect="italics">
+(See 
+
+<link id="a1046" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1047">
+<emphasis id="strong1009" effect="bold">
+DotProd3D03
+
+</emphasis>
+ - Demonstrates use of the vector dot product for 
+	back-face culling. 
+
+<emphasis id="em1003" effect="italics">
+(See 
+
+<link id="a1047" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.)
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1011">
+I will also provide exercises for you to complete on your own at the end of 
+the module. The exercises will concentrate on the material that you have learned 
+in this module and previous modules.
+
+</para>
+
+
+
+	
+
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<section id="h21001">
+<title>
+<emphasis id="The_game-math_library_named_GM02" effect="bold">
+
+The game-math library named 
+	GM02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1012">
+The game-math library has not been modified since the previous module. 
+Therefore, there is nothing new to discuss and explain insofar as the library is 
+concerned. For your convenience, a complete listing of the source code for the 
+library is provided in 
+
+<link id="a1048" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ near the end of the module. 
+
+</para>
+
+
+
+
+<para id="p1013">
+A link to a zip file containing documentation for the library is provided in 
+the earlier module titled 
+
+<link id="a1049" url="http://cnx.org/content/m45018/latest">
+
+GAME 
+2302-0145: Getting Started with the Vector Dot Product
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_program_named_DotProd3D05" effect="bold">
+
+The program named DotProd3D05
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+In order to understand this and the following programs, you need to 
+understand the material in the Kjell tutorial through 
+
+<emphasis id="em1004" effect="italics">
+Chapter 10, Angle 
+between 3D Vectors
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1015">
+Game programming frequently requires the determination of angles of various 
+types. The purpose of this program is to demonstrate how the dot product can be 
+used to compute nine different angles of interest that a vector makes with 
+various elements in 3Dspace.
+
+</para>
+
+
+
+
+<para id="p1016">
+<link id="a1050" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows a screen shot of the graphical user interface provided by this 
+program.
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="Figure_3" effect="bold">
+
+
+<emphasis id="strong1010" effect="bold">
+Figure 3
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1011" effect="bold">
+ - Screen shot of the output from the program named DotProd3D05.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1018">
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/java1716a3.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1012" effect="bold">
+Angles relative to the axes
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+First, the program computes and displays the angle between a user-specified 
+vector 
+
+<emphasis id="em1005" effect="italics">
+(drawn in black in 
+
+<link id="a1051" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+)
+
+</emphasis>
+ and each of the X, Y, and Z axes. 
+These values are displayed with the labels 
+
+<emphasis id="strong1013" effect="bold">
+Angle X
+
+</emphasis>
+, 
+
+<emphasis id="strong1014" effect="bold">
+Angle Y
+
+</emphasis>
+, and
+
+
+<emphasis id="strong1015" effect="bold">
+Angle Z
+
+</emphasis>
+ in 
+
+<link id="a1052" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1021">
+<emphasis id="strong1016" effect="bold">
+Angles relative to the XY, YZ, and ZX planes
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1022">
+Then the program computes and displays the angle between the vector and each 
+of the 
+
+<emphasis id="strong1017" effect="bold">
+XY
+
+</emphasis>
+, 
+
+<emphasis id="strong1018" effect="bold">
+YZ
+
+</emphasis>
+, and 
+
+<emphasis id="strong1019" effect="bold">
+ZX
+
+</emphasis>
+ planes. In this case, the program 
+computes the smallest possible angle by projecting the vector onto the plane and 
+then computing the angle between the vector and its projection. These values are 
+displayed with the labels 
+
+<emphasis id="strong1020" effect="bold">
+Angle XY
+
+</emphasis>
+, 
+
+<emphasis id="strong1021" effect="bold">
+Angle YZ
+
+</emphasis>
+, and 
+
+<emphasis id="strong1022" effect="bold">
+Angle ZX
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1023" effect="bold">
+Angles of projections relatives to the axes
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1024">
+Finally, the program computes and displays the angle between the projection 
+of the vector on each of the three planes and one of the axes that defines each 
+plane. The angle between the projection and the other axis that defines the 
+plane is 90 degrees minus the computed angle. Specifically the values that are 
+computed and displayed are:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1048">
+Projection onto the 
+
+<emphasis id="strong1024" effect="bold">
+XY
+
+</emphasis>
+ plane relative to the x-axis, displayed 
+	with the label 
+
+<emphasis id="strong1025" effect="bold">
+Angle PX
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1049">
+Projection onto the 
+
+<emphasis id="strong1026" effect="bold">
+YZ
+
+</emphasis>
+ plane relative to the y-axis, displayed 
+	with the label 
+
+<emphasis id="strong1027" effect="bold">
+Angle PY
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1050">
+Projection onto the 
+
+<emphasis id="strong1028" effect="bold">
+ZX
+
+</emphasis>
+ plane relative to the z-axis, displayed 
+	with the label 
+
+<emphasis id="strong1029" effect="bold">
+Angle PZ
+
+</emphasis>
+.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1025">
+<emphasis id="strong1030" effect="bold">
+The graphical user interface
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1026">
+All angles are reported as positive angles in degrees. As you can see in 
+
+
+<link id="a1053" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, a GUI is provided that allows the user to enter three 
+
+<emphasis id="strong1031" effect="bold">
+double
+
+</emphasis>
+ 
+values that define a 
+
+<emphasis id="strong1032" effect="bold">
+GM02.Vector3D
+
+</emphasis>
+ object. The GUI also provides an 
+
+<emphasis id="strong1033" effect="bold">
+OK
+
+</emphasis>
+ 
+button as well as nine text fields that are used to display the computed results 
+described above. In addition, the GUI provides a 3D drawing area.
+
+</para>
+
+
+
+
+<para id="p1027">
+When the user clicks the 
+
+<emphasis id="strong1034" effect="bold">
+OK
+
+</emphasis>
+ button, the program draws the 
+user-specified vector in black with the tail located at the origin in 3D space. 
+It also draws the projection of that vector in magenta on each of the 
+
+<emphasis id="strong1035" effect="bold">
+XY
+
+</emphasis>
+,
+
+
+<emphasis id="strong1036" effect="bold">
+YZ
+
+</emphasis>
+, AND 
+
+<emphasis id="strong1037" effect="bold">
+ZX
+
+</emphasis>
+ planes.
+
+</para>
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1038" effect="bold">
+Very similar to previously-explained code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+Much of the code in this program is very similar to code that I have 
+explained in previous modules. I won't repeat those explanations here. Most of 
+the new code is contained in the method named 
+
+<emphasis id="strong1039" effect="bold">
+actionPerformed
+
+</emphasis>
+, so I will 
+explain the code in that method. A complete listing of this program is provided 
+in 
+
+<link id="a1054" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ near the end of the module.
+
+</para>
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1040" effect="bold">
+Beginning of the actionPerformed method in the program named DotProd3D05
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+<link id="a1055" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows the beginning of the 
+
+<emphasis id="strong1041" effect="bold">
+actionPerformed
+
+</emphasis>
+ method. This 
+method is called to respond to a click on the 
+
+<emphasis id="strong1042" effect="bold">
+OK
+
+</emphasis>
+ button shown in 
+
+
+<link id="a1056" target-id="Figure_3">
+
+Figure 
+3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the actionPerformed method in the program named DotProd3D05.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">  public void actionPerformed(ActionEvent e){
+    
+    //Erase the off-screen image and draw the axes.
+    setCoordinateFrame(g2D);
+    
+    //Create one ColMatrix3D object based on the user
+    // input values.
+    GM02.ColMatrix3D matrixA = new GM02.ColMatrix3D(
+                  Double.parseDouble(vecX.getText()),
+                  Double.parseDouble(vecY.getText()),
+                  Double.parseDouble(vecZ.getText()));
+                  
+    //Create ColMatrix3D objects that represent each of
+    // the three axes.
+    GM02.ColMatrix3D matrixX = 
+                              new GM02.ColMatrix3D(1,0,0);
+    GM02.ColMatrix3D matrixY = 
+                              new GM02.ColMatrix3D(0,1,0);
+    GM02.ColMatrix3D matrixZ = 
+                              new GM02.ColMatrix3D(0,0,1);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1032">
+You have seen code similar to that in 
+
+<link id="a1057" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ many times before. 
+	Therefore, this code should not require further explanation beyond the 
+	embedded comments.
+
+</para>
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1043" effect="bold">
+Create ColMatrix3D objects that represent projections
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1034">
+<link id="a1058" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ creates 
+
+<emphasis id="strong1044" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects that represent the projection of 
+the user-specified vector onto each of the three planes.
+
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Create ColMatrix3D objects that represent projections. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">    GM02.ColMatrix3D matrixXY = new GM02.ColMatrix3D(
+                      Double.parseDouble(vecX.getText()),
+                      Double.parseDouble(vecY.getText()),
+                      0);
+                  
+    GM02.ColMatrix3D matrixYZ = new GM02.ColMatrix3D(
+                      0,
+                      Double.parseDouble(vecY.getText()),
+                      Double.parseDouble(vecZ.getText()));
+                  
+    GM02.ColMatrix3D matrixZX = new GM02.ColMatrix3D(
+                      Double.parseDouble(vecX.getText()),
+                      0,
+                      Double.parseDouble(vecZ.getText()));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1035">
+Although the actual code in 
+
+<link id="a1059" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ should be familiar to you, the 
+	application may be new. The important thing to note is that the projection 
+	onto each of the three planes in 
+
+<link id="a1060" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ is accomplished 
+	
+
+<emphasis id="em1006" effect="italics">
+by setting one of 
+	the coordinate values to zero
+
+</emphasis>
+ for each projection. For example, in order to 
+	project the vector onto the 
+
+<emphasis id="strong1045" effect="bold">
+XY
+
+</emphasis>
+ plane, the value for the z-axis 
+	coordinate is set to zero as shown in 
+
+<link id="a1061" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1036">
+<emphasis id="strong1046" effect="bold">
+Create and draw vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+<link id="a1062" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ uses the 
+
+<emphasis id="strong1047" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects created in 
+
+<link id="a1063" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ and 
+
+
+<link id="a1064" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ to create and draw vectors based on those 
+
+<emphasis id="strong1048" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Create and draw vectors. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">    //Use the ColMatrix3D objects to create Vector3D
+    // objects representing the user-specified vector and
+    // each of the axes.
+    GM02.Vector3D vecA = new GM02.Vector3D(matrixA);
+    GM02.Vector3D vecX = new GM02.Vector3D(matrixX);
+    GM02.Vector3D vecY = new GM02.Vector3D(matrixY);
+    GM02.Vector3D vecZ = new GM02.Vector3D(matrixZ);
+    
+    //Create Vector3D objects that represent the
+    // projection of the user-specified vector on each of
+    // the planes.
+    GM02.Vector3D vecXY = new GM02.Vector3D(matrixXY);
+    GM02.Vector3D vecYZ = new GM02.Vector3D(matrixYZ);
+    GM02.Vector3D vecZX = new GM02.Vector3D(matrixZX);
+    	                    
+    //Draw the projection of the user specified vector on
+    // each of the three planes.
+    g2D.setColor(Color.MAGENTA);
+    vecXY.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    vecYZ.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    vecZX.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    
+    //Draw the user-specified vector with its tail at the
+    // origin.
+    g2D.setColor(Color.BLACK);
+    vecA.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1038">
+Once the 
+
+<emphasis id="strong1049" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects have been created to serve each 
+	specific purpose, there is nothing new in 
+
+<link id="a1065" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Therefore, no 
+	explanation of the code beyond the embedded comments should be necessary.
+
+</para>
+
+
+
+
+<para id="p1039">
+<emphasis id="strong1050" effect="bold">
+Compute and display the nine angles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1040">
+<link id="a1066" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1051" effect="bold">
+angle
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1052" effect="bold">
+GM02.Vector3D
+
+</emphasis>
+ class 
+nine times in succession, using references to the vectors created in 
+
+<link id="a1067" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+, 
+to compute and display the nine angle values shown in 
+
+<link id="a1068" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1041">
+<emphasis id="strong1053" effect="bold">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Compute and display the nine angles.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1003" display="block">    //Compute and display the angle relative to the
+    // x-axis.
+    double angle = vecA.angle(vecX);
+    angleX.setText("" +  prepareForDisplay(angle));
+
+    //Compute and display the angle relative to the
+    // y-axis.
+    angle = vecA.angle(vecY);
+    angleY.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle relative to the
+    // z-axis.
+    angle = vecA.angle(vecZ);
+    angleZ.setText("" +  prepareForDisplay(angle));
+    
+    
+    //Compute and display the angle relative to the
+    // XY plane
+    angle = vecA.angle(vecXY);
+    angleXY.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle relative to the
+    // YZ plane
+    angle = vecA.angle(vecYZ);
+    angleYZ.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle relative to the
+    // ZX plane
+    angle = vecA.angle(vecZX);
+    angleZX.setText("" +  prepareForDisplay(angle));
+    
+    
+    //Compute and display the angle of the projection onto
+    // the XY plane relative to the x-axis
+    angle = vecXY.angle(vecX);
+    anglePX.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle of the projection onto
+    // the YZ plane relative to the y-axis
+    angle = vecYZ.angle(vecY);
+    anglePY.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle of the projection onto
+    // the ZX plane relative to the z-axis
+    angle = vecZX.angle(vecZ);
+    anglePZ.setText("" +  prepareForDisplay(angle));    
+    
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+    
+  }//end actionPerformed
+</code>
+
+
+
+	
+
+<para id="p1042">
+Once the required vectors had been created in 
+
+<link id="a1069" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+, there is nothing 
+	new in the code in 
+
+<link id="a1070" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Therefore, no explanation of 
+
+<link id="a1071" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ should 
+	be required beyond the comments embedded in the code.
+
+</para>
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1054" effect="bold">
+The bottom line on the program named DotProd3D05
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1044">
+The bottom line is that because the methods in the game-math library named 
+
+<emphasis id="strong1055" effect="bold">
+
+GM02
+
+</emphasis>
+ were designed to do most of the hard work, writing application programs 
+such as 
+
+<emphasis id="strong1056" effect="bold">
+DotProd3D05
+
+</emphasis>
+ using the game-math library is not difficult at all. 
+You simply need to understand how to organize your code to accomplish the things 
+that you need to accomplish.
+
+</para>
+
+
+
+
+<para id="p1045">
+That concludes the explanation of the program named 
+
+<emphasis id="strong1057" effect="bold">
+DotProd3D05
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_program_named_DotProd3D06" effect="bold">
+
+The program named DotProd3D06
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1046">
+This program demonstrates how the dot product can be used to find vectors 
+that are perpendicular to a given vector.
+
+</para>
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1058" effect="bold">
+An infinite number of possibilities
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1048">
+Recall that you learned in the previous module that there are an infinite 
+number of vectors that are perpendicular to a given vector in 3D. This program 
+computes and displays normalized and scaled versions of six somewhat unique 
+vectors of the infinite set 
+of vectors that are perpendicular to a user specified vector.
+
+</para>
+
+
+
+
+<para id="p1049">
+<emphasis id="strong1059" effect="bold">
+The graphic output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1050">
+The screen output from this program is shown in 
+
+<link id="a1072" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1051">
+<emphasis id="Figure_4" effect="bold">
+
+
+<emphasis id="strong1060" effect="bold">
+Figure 4
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1061" effect="bold">
+ - Six (magenta) vectors that are perpendicular to a given (black) vector.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1052">
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/java1716a4.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1053">
+<emphasis id="strong1062" effect="bold">
+Output on the command-line screen
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1054">
+In addition to the graphic output shown in 
+
+<link id="a1073" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, the program also 
+displays the values of three of the perpendicular vectors on the command-line 
+screen along with the angle between the perpendicular vector and the 
+user-specified vector. The angle should always be 90 degrees or very close to 90 
+degrees if the program is working properly. The other three of the six 
+perpendicular vectors are simply negated versions of the three for which the 
+values are displayed.
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="strong1063" effect="bold">
+Special case of one zero coordinate value
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1056">
+If the user specifies one of the coordinate values to be zero 
+
+<emphasis id="em1007" effect="italics">
+(or close to 
+zero)
+
+</emphasis>
+, the program only computes and displays four of the possible vectors 
+in order to avoid performing division by a near-zero value. In this case, the 
+orientation of two of the vectors will overlay the orientation of the other two. 
+Because the vectors are normalized to the same length and occupy the same space, 
+you will only see two vectors instead of four. This is illustrated in 
+
+<link id="a1074" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ 
+where the value of the z-axis coordinate value was set to zero relative to the 
+value used in 
+
+<link id="a1075" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1057">
+<emphasis id="Figure_5" effect="bold">
+
+
+<emphasis id="strong1064" effect="bold">
+Figure 5
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1065" effect="bold">
+ - Screen output when one coordinate has a value of zero.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/java1716a5.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1066" effect="bold">
+Special case of two coordinates with a value of zero
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+If the user specifies two of the coordinate values to be zero or close to 
+zero, the program doesn't produce a valid result. Instead, it draws a 
+perpendicular vector where all of the coordinate values are zero resulting in a 
+magenta vector head at the origin. It also displays NaN 
+
+<emphasis id="em1008" effect="italics">
+(Not a Number)
+
+</emphasis>
+ 
+for the angle on the command line screen.
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1067" effect="bold">
+The graphical user interface
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+The GUI shown in 
+
+<link id="a1076" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ is provided to allow the user to enter three 
+
+<emphasis id="strong1068" effect="bold">
+
+double
+
+</emphasis>
+ values that define a 
+
+<emphasis id="strong1069" effect="bold">
+GM02.Vector3D
+
+</emphasis>
+ object. The GUI also 
+provides an 
+
+<emphasis id="strong1070" effect="bold">
+OK
+
+</emphasis>
+ button in addition to a 3D drawing area.
+
+</para>
+
+
+
+
+<para id="p1063">
+When the user clicks the 
+
+<emphasis id="strong1071" effect="bold">
+OK
+
+</emphasis>
+ button, the program draws the 
+user-specified vector in black with the tail located at the origin in 3D space. 
+It draws normalized versions of the perpendicular vectors in magenta with their 
+tails also located at the origin. Each normalized vector is scaled by a factor 
+of 50 before it is drawn to cause it to be long enough to be seen.
+
+</para>
+
+
+
+
+<para id="p1064">
+<emphasis id="strong1072" effect="bold">
+A short review
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1065">
+Before getting into the programming details, we need to review some material 
+from the previous module. Recall that I did some algebraic manipulations in the 
+previous module and produced the equations shown in 
+
+<link id="a1077" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. A general formulation of 3D vector perpendicularity. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1004" display="block">dot product = x1*x2 + y1*y2 + z1*z2
+
+If the two vectors are perpendicular:
+
+x1*x2 + y1*y2 + z1*z2 = 0.0
+x1*x2 =  -(y1*y2 + z1*z2)
+
+x2 = -(y1*y2 + z1*z2)/x1
+
+or
+
+y2 = -(x1*x2 + z1*z2)/y1
+
+or
+
+z2 = -(x1*x2 + y1*y2)/z1
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1066">
+<emphasis id="strong1073" effect="bold">
+An infinite set of perpendicular vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+The equations in 
+
+<link id="a1078" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ describe an infinite set of vectors that are all 
+perpendicular to a given vector. Given these equations, and given the 
+coordinates 
+
+<emphasis id="em1009" effect="italics">
+(x1, y1, and z1)
+
+</emphasis>
+ of a vector for which we need to produce 
+perpendicular vectors, we can assume values for any two of x2, y2, and z2. We 
+can then determine the value for the other coordinate that will cause the new 
+vector to be perpendicular to the given vector.
+
+</para>
+
+
+
+
+<para id="p1068">
+That is the procedure that is used by this program to produce three of the 
+perpendicular vectors shown in 
+
+<link id="a1079" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. The remaining three perpendicular 
+vectors shown in 
+
+<link id="a1080" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ are produced by negating the three vectors that are 
+created using the procedure described above.
+
+</para>
+
+
+
+
+<para id="p1069">
+<emphasis id="strong1074" effect="bold">
+Beginning of the actionPerformed method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1070">
+The only code in this program that is new to this module is contained in the
+
+
+<emphasis id="strong1075" effect="bold">
+actionPerformed
+
+</emphasis>
+ method. This method is called to respond to a click on 
+the 
+
+<emphasis id="strong1076" effect="bold">
+OK
+
+</emphasis>
+ button in 
+
+<link id="a1081" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Therefore, I will confine my explanation to 
+portions of the 
+
+<emphasis id="strong1077" effect="bold">
+actionPerformed
+
+</emphasis>
+ method. You can view a complete listing 
+of this program in 
+
+<link id="a1082" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ near the end of the module.
+
+</para>
+
+
+
+
+<para id="p1071">
+The 
+
+<emphasis id="strong1078" effect="bold">
+actionPerformed
+
+</emphasis>
+ method begins in 
+
+<link id="a1083" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Note that I deleted 
+some of the code early in the method because it is very similar to code that I 
+have explained before.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Beginning of the actionPerformed method for the program named DotProd3D06.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1005" display="block">  public void actionPerformed(ActionEvent e){
+    
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1072">
+<emphasis id="strong1079" effect="bold">
+Behavior of the actionPerformed method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1073">
+The 
+
+<emphasis id="strong1080" effect="bold">
+actionPerformed
+
+</emphasis>
+ method contains three sections of code, each of 
+which implements one of the equations in 
+
+<link id="a1084" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, to compute and draw one of 
+the perpendicular vectors shown in 
+
+<link id="a1085" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. In addition, the code in the 
+
+<emphasis id="strong1081" effect="bold">
+
+actionPerformed
+
+</emphasis>
+ method draws the negative of those three vectors to produce 
+the other three perpendicular vectors shown in 
+
+<link id="a1086" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1074">
+<emphasis id="strong1082" effect="bold">
+Implement the last equation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1075">
+<link id="a1087" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ implements the last equation from 
+
+<link id="a1088" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, provided that the 
+z-axis coordinate value for the given vector is greater than 0.001. As mentioned 
+earlier, if the z-axis coordinate value is not greater than 0.001, the code in 
+
+
+<link id="a1089" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ is skipped and no effort is made to create and draw that particular 
+vector. This is done to prevent an attempt to divide by a zero or near-zero 
+value.
+
+</para>
+
+
+
+
+<para id="p1076">
+<emphasis id="strong1083" effect="bold">
+A new ColMatrix3D object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1077">
+<link id="a1090" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ creates a new 
+
+<emphasis id="strong1084" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ object with the x and y-axes 
+coordinate values matching the corresponding values for the user specified 
+vector. It executes the expression shown in 
+
+<link id="a1091" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ to compute the value of 
+the z-axis coordinate that will cause the new vector to be perpendicular to the 
+user-specified vector. 
+
+<emphasis id="em1010" effect="italics">
+(The expression in 
+
+<link id="a1092" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ matches the last equation 
+in 
+
+<link id="a1093" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1078">
+<emphasis id="strong1085" effect="bold">
+A new Vector3D object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1079">
+Then it uses the 
+
+<emphasis id="strong1086" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ object described above to create, 
+normalize, scale, and draw the first perpendicular vector. Following that, the 
+code negates the perpendicular vector to create another perpendicular vector 
+that points in the opposite direction.
+
+</para>
+
+
+
+
+<para id="p1080">
+Along the way, some information is displayed on the command-line screen.
+
+</para>
+
+
+
+
+<para id="p1081">
+<emphasis id="strong1087" effect="bold">
+The most important code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1082">
+The most important code in 
+
+<link id="a1094" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+, insofar as the objective of the program 
+is concerned, is the expression that computes the z-axis coordinate value that 
+will cause the new vector to be perpendicular to the user-specified vector.
+
+</para>
+
+
+
+
+<para id="p1083">
+<emphasis id="strong1088" effect="bold">
+Remainder of the actionPerformed method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1084">
+<link id="a1095" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ does essentially the same thing two more times to implement the 
+other two equations shown in 
+
+<link id="a1096" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, creating and drawing four more 
+perpendicular vectors in the process.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Remainder of the actionPerformed method. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1006" display="block">    if(Math.abs(yCoor) &gt; 0.001){
+      tempMatrix = new GM02.ColMatrix3D(
+          xCoor,-(xCoor*xCoor + zCoor*zCoor)/yCoor,zCoor);
+      tempVec = new GM02.Vector3D(tempMatrix);
+      System.out.println(tempVec);
+      //Normalize and scale the perpendicular vector.
+      tempVec = tempVec.normalize().scale(50.0);
+      tempVec.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      tempVec.negate().draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      System.out.println(vecA.angle(tempVec));
+    }//end if
+    
+    if(Math.abs(xCoor) &gt; 0.001){
+      tempMatrix = new GM02.ColMatrix3D(
+         -(yCoor*yCoor + zCoor*zCoor)/xCoor, yCoor,zCoor);
+      tempVec = new GM02.Vector3D(tempMatrix);
+      System.out.println(tempVec);
+      //Normalize and scale the perpendicular vector.
+      tempVec = tempVec.normalize().scale(50.0);
+      tempVec.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      tempVec.negate().draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      System.out.println(vecA.angle(tempVec));
+    }//end if
+
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+    System.out.println();//blank line
+  }//end actionPerformed
+  //----------------------------------------------------//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1085">
+<link id="a1097" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ also causes the off-screen image to be displayed on the canvas.
+
+</para>
+
+
+
+
+<para id="p1086">
+That concludes the explanation of the program named 
+
+<emphasis id="strong1089" effect="bold">
+DotProd3D06
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_program_named_DotProd3D04" effect="bold">
+
+The program named DotProd3D04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1087">
+The purpose of this program is to serve as a counterpoint to the program 
+named 
+
+<emphasis id="strong1090" effect="bold">
+Prob3D03
+
+</emphasis>
+, which demonstrates backface culling. 
+
+<emphasis id="em1011" effect="italics">
+(I will explain 
+the program named 
+
+<emphasis id="strong1091" effect="bold">
+Prob3D03
+
+</emphasis>
+ shortly.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1088">
+This program draws the 3D object shown in 
+
+<link id="a1098" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, while the program named
+
+
+<emphasis id="strong1092" effect="bold">
+DotProd3D03
+
+</emphasis>
+ draws the 3D object shown in 
+
+<link id="a1099" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. The 
+difference between the two is that the object drawn by this program 
+
+<emphasis id="em1012" effect="italics">
+(
+
+<link id="a1100" target-id="Figure_1">
+
+Figure 
+1
+
+</link>
+
+)
+
+</emphasis>
+ does not incorporate 
+
+<emphasis id="em1013" effect="italics">
+backface culling
+
+</emphasis>
+ to hide the lines on the 
+back of the object. The object in 
+
+<link id="a1101" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ does incorporate backface culling. 
+The difference is easy to see.
+
+</para>
+
+
+
+
+<para id="p1089">
+This program draws a 3D circular cylinder by stacking 20 circular disks on 
+the x-z plane as shown in 
+
+<link id="a1102" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The disks are centered on the y-axis and are 
+parallel to the x-z plane. The thickness of each disk is 5 vertical units. As 
+mentioned above, there is no backface culling in this program, so all of the 
+lines that should be hidden show through.
+
+</para>
+
+
+
+
+<para id="p1090">
+<emphasis id="strong1093" effect="bold">
+Will discuss in fragments
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1091">
+A complete listing of this program is provided in 
+
+<link id="a1103" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ near the end of 
+the module. I will explain portions of the program using code fragments. 
+However, I won't repeat explanations of code that I have already explained in 
+this or in earlier modules.
+
+</para>
+
+
+
+
+<para id="p1092">
+<emphasis id="strong1094" effect="bold">
+The method named drawTheCylinder
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1093">
+All of the interesting code in this program is contained in the method named
+
+
+<emphasis id="strong1095" effect="bold">
+drawTheCylinder
+
+</emphasis>
+, which is shown in 
+
+<link id="a1104" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. 
+
+<emphasis id="em1014" effect="italics">
+(Note that some of the 
+code was deleted from 
+
+<link id="a1105" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ for brevity.)
+
+</emphasis>
+ This method is used to set the 
+axes to the center of the off-screen image and to draw a 3D cylinder that is 
+centered on the y-axis.
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. The method named drawTheCylinder in DotProd3D04. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1007" display="block">  private void drawTheCylinder(Graphics2D g2D){
+
+    </code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1094">
+<emphasis id="strong1096" effect="bold">
+Behavior of the code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1095">
+Basically, the code in 
+
+<link id="a1106" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ draws 21 circles, one above the other to 
+represent the edges of the 20 circular disks. If you understand the trigonometry 
+involved in drawing a circle, you should find the code in 
+
+<link id="a1107" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ to be 
+straightforward and no explanation beyond the embedded comments should be 
+required. If you don't understand the trigonometry, you will simply have to take 
+my word for it that the expressions in 
+
+<link id="a1108" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ are correct for drawing 
+circles. A study of trigonometry is beyond the scope of this module.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_program_named_DotProd3D03" effect="bold">
+
+The program named DotProd3D03
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1096">
+The purpose of this program is to demonstrate a practical use of the vector 
+dot product -- backface culling. As before, the program draws a 3D circular 
+cylinder by stacking 20 circular disks on the x-z plane. The disks are centered 
+on the y-axis and are parallel to the x-z plane. The thickness of each disk is 5 
+vertical units.
+
+</para>
+
+
+
+
+<para id="p1097">
+Backface culling is incorporated using the dot product between a vector that 
+is parallel to the viewpoint of the viewer and a vector that is perpendicular to 
+the line being drawn to form the outline of a circle. The results are shown in 
+
+
+<link id="a1109" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1098">
+<emphasis id="strong1097" effect="bold">
+Will discuss in fragments
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1099">
+A complete listing of this program is provided in 
+
+<link id="a1110" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ near the end of 
+the module. I will explain portions of the program using code fragments. 
+However, I won't repeat explanations of code that I have already explained in 
+this or in earlier modules.
+
+</para>
+
+
+
+
+<para id="p1100">
+<emphasis id="strong1098" effect="bold">
+The method named drawTheCylinder
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1101">
+As before, all of the interesting code in this program is contained in the 
+method named 
+
+<emphasis id="strong1099" effect="bold">
+drawTheCylinder
+
+</emphasis>
+, which is shown in 
+
+<link id="a1111" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. 
+
+<emphasis id="em1015" effect="italics">
+(Note that 
+some of the code was deleted from 
+
+<link id="a1112" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ for brevity.)
+
+</emphasis>
+ This method is 
+used to set the axes to the center of the off-screen image and to draw a 3D 
+cylinder that is centered on the y-axis.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. The method named drawTheCylinder in DotProd3D03.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1008" display="block">  private void drawTheCylinder(Graphics2D g2D){
+
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1102">
+<emphasis id="strong1100" effect="bold">
+The new code and an exercise for the student
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1103">
+The new code in 
+
+<link id="a1113" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ is highlighted by a long explanatory comment near 
+the middle of 
+
+<link id="a1114" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. I will leave it as an exercise for the student to think 
+about the rationale that was used to decide which lines to draw and which lines 
+to suppress depending on the algebraic sign of the dot product between the two 
+vectors.
+
+</para>
+
+
+
+
+<para id="p1104">
+Otherwise, no explanation of the code should be necessary beyond the embedded 
+comments.
+
+</para>
+
+
+	
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Homework_assignment" effect="bold">
+
+Homework assignment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1105">
+The homework assignment for this module was to study the Kjell tutorial 
+through 
+
+<emphasis id="em1016" effect="italics">
+Chapter 10, Angle between 3D Vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1106">
+The homework assignment for the next module is to study the Kjell tutorial 
+through 
+
+<emphasis id="em1017" effect="italics">
+Chapter 11, Projections.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1107">
+In addition to studying the Kjell material, you should read at least the next 
+two modules in this collection and bring your questions about that material to 
+the next classroom session.
+
+</para>
+
+
+
+
+<para id="p1108">
+Finally, you should have begun studying the
+
+
+<link id="a1115" url="http://cnx.org/content/m44992/latest/">
+
+physics material
+
+</link>
+
+ at the 
+beginning of the semester and you should continue studying one physics module 
+per week thereafter. You should also feel free to bring your questions about 
+that material to the classroom for discussion. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1109">
+I encourage you to copy the code from 
+
+<link id="a1116" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ through 
+
+<link id="a1117" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. Compile the code and 
+execute it in conjunction with the game-math library named 
+
+<emphasis id="strong1101" effect="bold">
+GM02
+
+</emphasis>
+ in 
+
+
+<link id="a1118" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Summary" effect="bold">
+
+Summary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1110">
+In this module, you learned how to apply the vector dot product to three 
+different applications. You learned:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1051">
+how to use the dot product to compute nine different angles of interest 
+	that a vector makes with various elements in 3D space,
+
+</item>
+
+
+	
+
+<item id="li1052">
+you learned how to use the dot product to find six of the infinite set 
+	of vectors that are perpendicular to a given vector as shown in 
+
+<link id="a1119" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, 
+	and
+
+</item>
+
+
+	
+
+<item id="li1053">
+you learned how to use the dot product to perform back-face culling to 
+	convert the image in 
+
+<link id="a1120" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ to the image in 
+
+<link id="a1121" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Whats_next" effect="bold">
+
+What's next?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1111">
+In the next module, you will learn about first-person computer games in 
+general, and how to use the game-math library to write a first-person game in a 
+3D world using the game math library.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1112">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1102" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1011" list-type="bulleted">
+
+					
+
+<item id="li1054">
+Module name: GAME 2302-0150: Applications of the Vector Dot Product
+
+</item>
+
+
+					
+
+<item id="li1055">
+File: Game0150.htm
+
+
+</item>
+
+
+					
+
+<item id="li1056">
+Published: 10/23/12
+
+</item>
+
+
+					
+
+<item id="li1057">
+Revised: 02/01/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1103" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1113">
+<emphasis id="strong1104" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1114">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1115">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1116">
+<emphasis id="strong1105" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1117">
+Complete listings of the programs discussed in this module are shown in 
+
+
+<link id="a1122" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ through 
+
+<link id="a1123" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ below.
+
+</para>
+
+
+
+
+
+<para id="p1118">
+<emphasis id="strong1106" effect="bold">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Source code for the game-math library named GM02.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1009" display="block">/*GM02.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/08/08
+
+This is an update to the game-math library named GM01.
+
+The main purpose of this update was to add vector dot
+product and related capabilities to the library.
+
+Please see the comments at the beginning of the library
+class named GM01 for a general description of the library.
+
+The following methods are new instance methods of the 
+indicated static top-level classes belonging to the class
+named GM02.
+
+GM02.ColMatrix2D.dot - compute dot product of two
+ ColMatrix2D objects.
+GM02.Vector2D.dot - compute dot product of two
+ Vector2D objects.
+GM02.Vector2D.angle - compute angle between two Vector2D
+ objects.
+
+GM02.ColMatrix3D.dot - compute dot product of two
+ ColMatrix3D objects
+GM02.Vector3D.dot - compute dot product of two
+ Vector3D objects.
+GM02.Vector3D.angle - compute angle between two Vector3D
+ objects.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.geom.*;
+import java.awt.*;
+
+public class GM02{
+  //----------------------------------------------------//
+  
+  //This method converts a ColMatrix3D object to a
+  // ColMatrix2D object. The purpose is to accept
+  // x, y, and z coordinate values and transform those
+  // values into a pair of coordinate values suitable for
+  // display in two dimensions.
+  //See http://local.wasp.uwa.edu.au/~pbourke/geometry/
+  // classification/ for technical background on the
+  // transform from 3D to 2D.
+  //The transform equations are:
+  // x2d = x3d + z3d * cos(theta)/tan(alpha)
+  // y2d = y3d + z3d * sin(theta)/tan(alpha);
+  //Let theta = 30 degrees and alpha = 45 degrees
+  //Then:cos(theta) = 0.866
+  //     sin(theta) = 0.5
+  //     tan(alpha) = 1;
+  //Note that the signs in the above equations depend
+  // on the assumed directions of the angles as well as
+  // the assumed positive directions of the axes. The
+  // signs used in this method assume the following:
+  //   Positive x is to the right.
+  //   Positive y is up the screen.
+  //   Positive z is protruding out the front of the
+  //     screen.
+  //   The viewing position is above the x axis and to the
+  //     right of the z-y plane.
+  public static GM02.ColMatrix2D convert3Dto2D(
+                                   GM02.ColMatrix3D data){
+    return new GM02.ColMatrix2D(
+                  data.getData(0) - 0.866*data.getData(2),
+                  data.getData(1) - 0.50*data.getData(2));
+  }//end convert3Dto2D 
+  //----------------------------------------------------//
+  
+  //This method wraps around the translate method of the
+  // Graphics2D class. The purpose is to cause the
+  // positive direction for the y-axis to be up the screen
+  // instead of down the screen. When you use this method,
+  // you should program as though the positive direction
+  // for the y-axis is up.
+  public static void translate(Graphics2D g2D,
+                               double xOffset,
+                               double yOffset){
+    //Flip the sign on the y-coordinate to change the
+    // direction of the positive y-axis to go up the
+    // screen.
+    g2D.translate(xOffset,-yOffset);
+  }//end translate
+  //----------------------------------------------------//
+  
+  //This method wraps around the drawLine method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void drawLine(Graphics2D g2D,
+                              double x1,
+                              double y1,
+                              double x2,
+                              double y2){
+    //Flip the sign on the y-coordinate value.
+    g2D.drawLine((int)x1,-(int)y1,(int)x2,-(int)y2);
+  }//end drawLine
+  //----------------------------------------------------//
+  
+  //This method wraps around the fillOval method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void fillOval(Graphics2D g2D,
+                              double x,
+                              double y,
+                              double width,
+                              double height){
+    //Flip the sign on the y-coordinate value.
+    g2D.fillOval((int)x,-(int)y,(int)width,(int)height);
+  }//end fillOval
+  //----------------------------------------------------//
+
+  //This method wraps around the drawOval method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void drawOval(Graphics2D g2D,
+                              double x,
+                              double y,
+                              double width,
+                              double height){
+    //Flip the sign on the y-coordinate value.
+    g2D.drawOval((int)x,-(int)y,(int)width,(int)height);
+  }//end drawOval
+  //----------------------------------------------------//
+  
+  //This method wraps around the fillRect method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void fillRect(Graphics2D g2D,
+                              double x,
+                              double y,
+                              double width,
+                              double height){
+    //Flip the sign on the y-coordinate value.
+    g2D.fillRect((int)x,-(int)y,(int)width,(int)height);
+  }//end fillRect
+  //----------------------------------------------------//
+  
+  
+
+  //An object of this class represents a 2D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix2D{
+    double[] data = new double[2];
+    
+    public ColMatrix2D(double data0,double data1){
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    //Overridden toString method.
+    public String toString(){
+      return data[0] + "," + data[1];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+    
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in two matrices and returns true if the
+    // values are equal or almost equal and returns false
+    // otherwise. 
+    public boolean equals(Object obj){
+      if(obj instanceof GM02.ColMatrix2D &amp;&amp;
+         Math.abs(((GM02.ColMatrix2D)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM02.ColMatrix2D)obj).getData(1) - 
+                                  getData(1)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Adds one ColMatrix2D object to another ColMatrix2D
+    // object, returning a ColMatrix2D object.
+    public GM02.ColMatrix2D add(GM02.ColMatrix2D matrix){
+      return new GM02.ColMatrix2D(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Subtracts one ColMatrix2D object from another
+    // ColMatrix2D object, returning a ColMatrix2D object.
+    // The object that is received as an incoming
+    // parameter  is subtracted from the object on which
+    // the method is called.
+    public GM02.ColMatrix2D subtract(
+                                 GM02.ColMatrix2D matrix){
+      return new GM02.ColMatrix2D(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1));
+    }//end subtract
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two ColMatrix2D
+    // objects and returns the result as type double.
+    public double dot(GM02.ColMatrix2D matrix){
+      return getData(0) * matrix.getData(0) 
+           + getData(1) * matrix.getData(1);
+    }//end dot
+    //--------------------------------------------------//
+  }//end class ColMatrix2D
+  //====================================================//
+
+
+  //An object of this class represents a 3D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix3D{
+    double[] data = new double[3];
+    
+    public ColMatrix3D(
+                  double data0,double data1,double data2){
+      data[0] = data0;
+      data[1] = data1;
+      data[2] = data2;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    public String toString(){
+      return data[0] + "," + data[1] + "," + data[2];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+    
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in two matrices and returns true if the
+    // values are equal or almost equal and returns false
+    // otherwise. 
+    public boolean equals(Object obj){
+      if(obj instanceof GM02.ColMatrix3D &amp;&amp;
+         Math.abs(((GM02.ColMatrix3D)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM02.ColMatrix3D)obj).getData(1) - 
+                                 getData(1)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM02.ColMatrix3D)obj).getData(2) - 
+                                  getData(2)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Adds one ColMatrix3D object to another ColMatrix3D
+    // object, returning a ColMatrix3D object.
+    public GM02.ColMatrix3D add(GM02.ColMatrix3D matrix){
+      return new GM02.ColMatrix3D(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1),
+                            getData(2)+matrix.getData(2));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Subtracts one ColMatrix3D object from another
+    // ColMatrix3D object, returning a ColMatrix3D object.
+    // The object that is received as an incoming
+    // parameter is subtracted from the object on which
+    // the method is called.
+    public GM02.ColMatrix3D subtract(
+                                 GM02.ColMatrix3D matrix){
+      return new GM02.ColMatrix3D(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1),
+                            getData(2)-matrix.getData(2));
+    }//end subtract
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two ColMatrix3D
+    // objects and returns the result as type double.
+    public double dot(GM02.ColMatrix3D matrix){
+      return getData(0) * matrix.getData(0) 
+           + getData(1) * matrix.getData(1)
+           + getData(2) * matrix.getData(2);
+    }//end dot
+    //--------------------------------------------------//
+  }//end class ColMatrix3D
+  //====================================================//
+  //====================================================//
+
+
+  public static class Point2D{
+    GM02.ColMatrix2D point;
+    
+    public Point2D(GM02.ColMatrix2D point){//constructor
+      //Create and save a clone of the ColMatrix2D object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix2D object
+      // through use of its set method.
+      this.point = new ColMatrix2D(
+                       point.getData(0),point.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      drawOval(g2D,getData(0)-3,
+                   getData(1)+3,6,6);
+    }//end draw
+
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix2D object that
+    // defines this Point2D object.
+    public GM02.ColMatrix2D getColMatrix(){
+      return point;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix2D objects that define two
+    // Point2D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(point.equals(((GM02.Point2D)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Gets a displacement vector from one Point2D object
+    // to a second Point2D object. The vector points from
+    // the object on which the method is called to the
+    // object passed as a parameter to the method. Kjell
+    // describes this as the distance you would have to
+    // walk along the x and then the y axes to get from
+    // the first point to the second point.
+    public GM02.Vector2D getDisplacementVector(
+                                      GM02.Point2D point){
+      return new GM02.Vector2D(new GM02.ColMatrix2D(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1)));
+    }//end getDisplacementVector
+    //--------------------------------------------------//
+    
+    //Adds a Vector2D to a Point2D producing a
+    // new Point2D.
+    public GM02.Point2D addVectorToPoint(
+                                      GM02.Vector2D vec){
+      return new GM02.Point2D(new GM02.ColMatrix2D(
+                          getData(0) + vec.getData(0),
+                          getData(1) + vec.getData(1)));
+    }//end addVectorToPoint
+    //--------------------------------------------------//
+    
+    //Returns a new Point2D object that is a clone of
+    // the object on which the method is called.
+    public Point2D clone(){
+      return new Point2D(
+                  new ColMatrix2D(getData(0),getData(1)));
+    }//end clone
+    //--------------------------------------------------//
+    
+    //The purpose of this method is to rotate a point
+    // around a specified anchor point in the x-y plane.
+    //The rotation angle is passed in as a double value
+    // in degrees with the positive angle of rotation
+    // being counter-clockwise.
+    //This method does not modify the contents of the
+    // Point2D object on which the method is called.
+    // Rather, it uses the contents of that object to
+    // instantiate, rotate, and return a new Point2D
+    // object.
+    //For simplicity, this method translates the
+    // anchorPoint to the origin, rotates around the
+    // origin, and then translates back to the
+    // anchorPoint.
+    /*
+    See http://www.ia.hiof.no/~borres/cgraph/math/threed/
+    p-threed.html for a definition of the equations
+    required to do the rotation.
+
+    x2 = x1*cos - y1*sin
+    y2 = x1*sin + y1*cos
+    */ 
+    public GM02.Point2D rotate(GM02.Point2D anchorPoint,
+                               double angle){
+      GM02.Point2D newPoint = this.clone();
+      
+      double tempX ;
+      double tempY;
+ 
+      //Translate anchorPoint to the origin
+      GM02.Vector2D tempVec = 
+            new GM02.Vector2D(anchorPoint.getColMatrix());
+      newPoint = 
+              newPoint.addVectorToPoint(tempVec.negate());
+      
+      //Rotate around the origin.
+      tempX = newPoint.getData(0);
+      tempY = newPoint.getData(1);
+      newPoint.setData(//new x coordinate
+                      0,
+                      tempX*Math.cos(angle*Math.PI/180) -
+                      tempY*Math.sin(angle*Math.PI/180));
+
+      newPoint.setData(//new y coordinate
+                      1,
+                      tempX*Math.sin(angle*Math.PI/180) +
+                      tempY*Math.cos(angle*Math.PI/180));
+
+      //Translate back to anchorPoint
+      newPoint = newPoint.addVectorToPoint(tempVec);
+      
+      return newPoint;
+
+    }//end rotate
+    //--------------------------------------------------//
+    
+    //Multiplies this point by a scaling matrix received
+    // as an incoming parameter and returns the scaled
+    // point.
+    public GM02.Point2D scale(GM02.ColMatrix2D scale){
+      return new GM02.Point2D(new ColMatrix2D(
+                          getData(0) * scale.getData(0),
+                          getData(1) * scale.getData(1)));
+    }//end scale
+    //--------------------------------------------------//
+  }//end class Point2D
+  //====================================================//
+
+
+  public static class Point3D{
+    GM02.ColMatrix3D point;
+    
+    public Point3D(GM02.ColMatrix3D point){//constructor
+      //Create and save a clone of the ColMatrix3D object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix3D object
+      // through use of its set method.
+      this.point = 
+         new ColMatrix3D(point.getData(0),
+                         point.getData(1),
+                         point.getData(2));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1) 
+                                 + "," + point.getData(2);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      
+      //Get 2D projection coordinate values.
+      ColMatrix2D temp = convert3Dto2D(point);
+      drawOval(g2D,temp.getData(0)-3,
+                   temp.getData(1)+3,
+                   6,
+                   6);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix3D object that
+    // defines this Point3D object.
+    public GM02.ColMatrix3D getColMatrix(){
+      return point;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix3D objects that define two
+    // Point3D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(point.equals(((GM02.Point3D)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Gets a displacement vector from one Point3D object
+    // to a second Point3D object. The vector points from
+    // the object on which the method is called to the
+    // object passed as a parameter to the method. Kjell
+    // describes this as the distance you would have to
+    // walk along the x and then the y axes to get from
+    // the first point to the second point.
+    public GM02.Vector3D getDisplacementVector(
+                                      GM02.Point3D point){
+      return new GM02.Vector3D(new GM02.ColMatrix3D(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1),
+                            point.getData(2)-getData(2)));
+    }//end getDisplacementVector
+    //--------------------------------------------------//
+    
+    //Adds a Vector3D to a Point3D producing a
+    // new Point3D.
+    public GM02.Point3D addVectorToPoint(
+                                      GM02.Vector3D vec){
+      return new GM02.Point3D(new GM02.ColMatrix3D(
+                          getData(0) + vec.getData(0),
+                          getData(1) + vec.getData(1),
+                          getData(2) + vec.getData(2)));
+    }//end addVectorToPoint
+    //--------------------------------------------------//
+    
+    //Returns a new Point3D object that is a clone of
+    // the object on which the method is called.
+    public Point3D clone(){
+      return new Point3D(new ColMatrix3D(getData(0),
+                                         getData(1),
+                                         getData(2)));
+    }//end clone
+    //--------------------------------------------------//
+    
+    //The purpose of this method is to rotate a point
+    // around a specified anchor point in the following
+    // order:
+    // Rotate around z - rotation in x-y plane.
+    // Rotate around x - rotation in y-z plane.
+    // Rotate around y - rotation in x-z plane.
+    //The rotation angles are passed in as double values
+    // in degrees (based on the right-hand rule) in the
+    // order given above, packaged in an object of the
+    // class GM02.ColMatrix3D. (Note that in this case,
+    // the ColMatrix3D object is simply a convenient
+    // container and it has no significance from a matrix
+    // viewpoint.)
+    //The right-hand rule states that if you point the
+    // thumb of your right hand in the positive direction
+    // of an axis, the direction of positive rotation
+    // around that axis is given by the direction that
+    // your fingers will be pointing.
+    //This method does not modify the contents of the
+    // Point3D object on which the method is called.
+    // Rather, it uses the contents of that object to
+    // instantiate, rotate, and return a new Point3D
+    // object.
+    //For simplicity, this method translates the
+    // anchorPoint to the origin, rotates around the
+    // origin, and then translates back to the
+    // anchorPoint.
+    /*
+    See http://www.ia.hiof.no/~borres/cgraph/math/threed/
+    p-threed.html for a definition of the equations
+    required to do the rotation.
+    z-axis 
+    x2 = x1*cos - y1*sin
+    y2 = x1*sin + y1*cos
+    
+    x-axis
+    y2 = y1*cos(v) - z1*sin(v)
+    z2 = y1*sin(v) + z1* cos(v) 
+    
+    y-axis
+    x2 = x1*cos(v) + z1*sin(v)
+    z2 = -x1*sin(v) + z1*cos(v)
+    */ 
+    public GM02.Point3D rotate(GM02.Point3D anchorPoint,
+                               GM02.ColMatrix3D angles){
+      GM02.Point3D newPoint = this.clone();
+      
+      double tempX ;
+      double tempY;
+      double tempZ;
+ 
+      //Translate anchorPoint to the origin
+      GM02.Vector3D tempVec = 
+            new GM02.Vector3D(anchorPoint.getColMatrix());
+      newPoint = 
+              newPoint.addVectorToPoint(tempVec.negate());
+
+      double zAngle = angles.getData(0);
+      double xAngle = angles.getData(1);
+      double yAngle = angles.getData(2);
+      
+      //Rotate around z-axis
+      tempX = newPoint.getData(0);
+      tempY = newPoint.getData(1);
+      newPoint.setData(//new x coordinate
+                      0,
+                      tempX*Math.cos(zAngle*Math.PI/180) -
+                      tempY*Math.sin(zAngle*Math.PI/180));
+
+      newPoint.setData(//new y coordinate
+                      1,
+                      tempX*Math.sin(zAngle*Math.PI/180) +
+                      tempY*Math.cos(zAngle*Math.PI/180));
+      
+      //Rotate around x-axis
+      tempY = newPoint.getData(1);
+      tempZ = newPoint.getData(2);
+      newPoint.setData(//new y coordinate
+                      1,
+                      tempY*Math.cos(xAngle*Math.PI/180) -
+                      tempZ*Math.sin(xAngle*Math.PI/180));
+
+      newPoint.setData(//new z coordinate
+                      2,
+                      tempY*Math.sin(xAngle*Math.PI/180) +
+                      tempZ*Math.cos(xAngle*Math.PI/180));
+      
+      //Rotate around y-axis
+      tempX = newPoint.getData(0);
+      tempZ = newPoint.getData(2);
+      newPoint.setData(//new x coordinate
+                      0,
+                      tempX*Math.cos(yAngle*Math.PI/180) +
+                      tempZ*Math.sin(yAngle*Math.PI/180));
+
+      newPoint.setData(//new z coordinate
+                     2,
+                     -tempX*Math.sin(yAngle*Math.PI/180) +
+                     tempZ*Math.cos(yAngle*Math.PI/180));
+      
+      //Translate back to anchorPoint
+      newPoint = newPoint.addVectorToPoint(tempVec);
+      
+      return newPoint;
+
+    }//end rotate
+    //--------------------------------------------------//
+    
+    //Multiplies this point by a scaling matrix received
+    // as an incoming parameter and returns the scaled
+    // point.
+    public GM02.Point3D scale(GM02.ColMatrix3D scale){
+      return new GM02.Point3D(new ColMatrix3D(
+                          getData(0) * scale.getData(0),
+                          getData(1) * scale.getData(1),
+                          getData(2) * scale.getData(2)));
+    }//end scale
+    //--------------------------------------------------//
+  }//end class Point3D
+  //====================================================//
+  //====================================================//
+
+  
+  public static class Vector2D{
+    GM02.ColMatrix2D vector;
+    
+    public Vector2D(GM02.ColMatrix2D vector){//constructor
+      //Create and save a clone of the ColMatrix2D object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColVector2D object.
+      this.vector = new ColMatrix2D(
+                     vector.getData(0),vector.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small filled circle at
+    // the head.
+    public void draw(Graphics2D g2D,GM02.Point2D tail){
+
+      drawLine(g2D,
+               tail.getData(0),
+               tail.getData(1),
+               tail.getData(0)+vector.getData(0),
+               tail.getData(1)+vector.getData(1));
+
+      fillOval(g2D,
+               tail.getData(0)+vector.getData(0)-3,
+               tail.getData(1)+vector.getData(1)+3,
+               6,
+               6);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix2D object that
+    // defines this Vector2D object.
+    public GM02.ColMatrix2D getColMatrix(){
+      return vector;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix2D objects that define two
+    // Vector2D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(vector.equals((
+                     (GM02.Vector2D)obj).getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+    
+    //Adds this vector to a vector received as an incoming
+    // parameter and returns the sum as a vector.
+    public GM02.Vector2D add(GM02.Vector2D vec){
+      return new GM02.Vector2D(new ColMatrix2D(
+                       vec.getData(0)+vector.getData(0),
+                       vec.getData(1)+vector.getData(1)));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Returns the length of a Vector2D object.
+    public double getLength(){
+      return Math.sqrt(
+           getData(0)*getData(0) + getData(1)*getData(1));
+    }//end getLength
+    //--------------------------------------------------//
+    
+    //Multiplies this vector by a scale factor received as
+    // an incoming parameter and returns the scaled
+    // vector.
+    public GM02.Vector2D scale(Double factor){
+      return new GM02.Vector2D(new ColMatrix2D(
+                                    getData(0) * factor,
+                                    getData(1) * factor));
+    }//end scale
+    //--------------------------------------------------//
+    
+    //Changes the sign on each of the vector components
+    // and returns the negated vector.
+    public GM02.Vector2D negate(){
+      return new GM02.Vector2D(new ColMatrix2D(
+                                            -getData(0),
+                                            -getData(1)));
+    }//end negate
+    //--------------------------------------------------//
+    
+    //Returns a new vector that points in the same
+    // direction but has a length of one unit.
+    public GM02.Vector2D normalize(){
+      double length = getLength();
+      return new GM02.Vector2D(new ColMatrix2D(
+                                      getData(0)/length,
+                                      getData(1)/length));
+    }//end normalize
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two Vector2D
+    // objects and returns the result as type double.
+    public double dot(GM02.Vector2D vec){
+      GM02.ColMatrix2D matrixA = getColMatrix();
+      GM02.ColMatrix2D matrixB = vec.getColMatrix();
+      return matrixA.dot(matrixB);
+    }//end dot
+    //--------------------------------------------------//
+    
+    //Computes and returns the angle between two Vector2D
+    // objects. The angle is returned in degrees as type
+    // double.
+    public double angle(GM02.Vector2D vec){
+      GM02.Vector2D normA = normalize();
+      GM02.Vector2D normB = vec.normalize();
+      double normDotProd = normA.dot(normB);
+      return Math.toDegrees(Math.acos(normDotProd));
+    }//end angle
+    //--------------------------------------------------//
+  }//end class Vector2D
+  //====================================================//
+
+
+  public static class Vector3D{
+    GM02.ColMatrix3D vector;
+    
+    public Vector3D(GM02.ColMatrix3D vector){//constructor
+      //Create and save a clone of the ColMatrix3D object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatris3D object.
+      this.vector = new ColMatrix3D(vector.getData(0),
+                                    vector.getData(1),
+                                    vector.getData(2));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1) 
+                                + "," + vector.getData(2);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 2)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small circle at the
+    // head.
+    public void draw(Graphics2D g2D,GM02.Point3D tail){
+      
+      //Get a 2D projection of the tail
+      GM02.ColMatrix2D tail2D = convert3Dto2D(tail.point);
+      
+      //Get the 3D location of the head
+      GM02.ColMatrix3D head = 
+                      tail.point.add(this.getColMatrix());
+      
+      //Get a 2D projection of the head
+      GM02.ColMatrix2D head2D = convert3Dto2D(head);
+      drawLine(g2D,tail2D.getData(0),
+                   tail2D.getData(1),
+                   head2D.getData(0),
+                   head2D.getData(1));      
+
+      //Draw a small filled circle to identify the head.
+      fillOval(g2D,head2D.getData(0)-3,
+                   head2D.getData(1)+3,
+                   6,
+                   6);
+
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix3D object that
+    // defines this Vector3D object.
+    public GM02.ColMatrix3D getColMatrix(){
+      return vector;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix3D objects that define two
+    // Vector3D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(vector.equals((
+                     (GM02.Vector3D)obj).getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+    
+    //Adds this vector to a vector received as an incoming
+    // parameter and returns the sum as a vector.
+    public GM02.Vector3D add(GM02.Vector3D vec){
+      return new GM02.Vector3D(new ColMatrix3D(
+                       vec.getData(0)+vector.getData(0),
+                       vec.getData(1)+vector.getData(1),
+                       vec.getData(2)+vector.getData(2)));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Returns the length of a Vector3D object.
+    public double getLength(){
+      return Math.sqrt(getData(0)*getData(0) + 
+                       getData(1)*getData(1) + 
+                       getData(2)*getData(2));
+    }//end getLength
+    //--------------------------------------------------//
+    
+    //Multiplies this vector by a scale factor received as
+    // an incoming parameter and returns the scaled
+    // vector.
+    public GM02.Vector3D scale(Double factor){
+      return new GM02.Vector3D(new ColMatrix3D(
+                                    getData(0) * factor,
+                                    getData(1) * factor,
+                                    getData(2) * factor));
+    }//end scale
+    //--------------------------------------------------//
+    
+    //Changes the sign on each of the vector components
+    // and returns the negated vector.
+    public GM02.Vector3D negate(){
+      return new GM02.Vector3D(new ColMatrix3D(
+                                            -getData(0),
+                                            -getData(1),
+                                            -getData(2)));
+    }//end negate
+    //--------------------------------------------------//
+    
+    //Returns a new vector that points in the same
+    // direction but has a length of one unit.
+    public GM02.Vector3D normalize(){
+      double length = getLength();
+      return new GM02.Vector3D(new ColMatrix3D(
+                                      getData(0)/length,
+                                      getData(1)/length,
+                                      getData(2)/length));
+    }//end normalize
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two Vector3D
+    // objects and returns the result as type double.
+    public double dot(GM02.Vector3D vec){
+      GM02.ColMatrix3D matrixA = getColMatrix();
+      GM02.ColMatrix3D matrixB = vec.getColMatrix();
+      return matrixA.dot(matrixB);
+    }//end dot
+    //--------------------------------------------------//
+    
+    //Computes and returns the angle between two Vector3D
+    // objects. The angle is returned in degrees as type
+    // double.
+    public double angle(GM02.Vector3D vec){
+      GM02.Vector3D normA = normalize();
+      GM02.Vector3D normB = vec.normalize();
+      double normDotProd = normA.dot(normB);
+      return Math.toDegrees(Math.acos(normDotProd));
+    }//end angle
+    //--------------------------------------------------//
+  }//end class Vector3D
+  //====================================================//
+  //====================================================//
+
+  
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head. Note that this
+  // class has the same name as one of the classes in
+  // the Graphics2D class. Therefore, if the class from
+  // the Graphics2D class is used in some future upgrade
+  // to this program, it will have to be fully qualified.
+  public static class Line2D{
+    GM02.Point2D[] line = new GM02.Point2D[2];
+    
+    public Line2D(GM02.Point2D tail,GM02.Point2D head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point2D(new GM02.ColMatrix2D(
+                        tail.getData(0),tail.getData(1)));
+      this.line[1] = new Point2D(new GM02.ColMatrix2D(
+                        head.getData(0),head.getData(1)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM02.Point2D getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM02.Point2D getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+    
+    public void setTail(GM02.Point2D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point2D(new GM02.ColMatrix2D(
+                newPoint.getData(0),newPoint.getData(1)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM02.Point2D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point2D(new GM02.ColMatrix2D(
+                newPoint.getData(0),newPoint.getData(1)));
+    }//end setHead
+    //--------------------------------------------------//
+    
+    public void draw(Graphics2D g2D){
+      drawLine(g2D,getTail().getData(0),
+                   getTail().getData(1),
+                   getHead().getData(0),
+                   getHead().getData(1));
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line2D
+  //====================================================//
+
+
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line3D{
+    GM02.Point3D[] line = new GM02.Point3D[2];
+    
+    public Line3D(GM02.Point3D tail,GM02.Point3D head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point3D(new GM02.ColMatrix3D(
+                                        tail.getData(0),
+                                        tail.getData(1),
+                                        tail.getData(2)));
+      this.line[1] = new Point3D(new GM02.ColMatrix3D(
+                                        head.getData(0),
+                                        head.getData(1),
+                                        head.getData(2)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+                       + line[0].getData(1)  + "," 
+                       + line[0].getData(2) 
+                       + "\nHead = " 
+                       + line[1].getData(0) + "," 
+                       + line[1].getData(1) + ","      
+                       + line[1].getData(2);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM02.Point3D getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM02.Point3D getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+
+    public void setTail(GM02.Point3D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point3D(new GM02.ColMatrix3D(
+                                    newPoint.getData(0),
+                                    newPoint.getData(1),
+                                    newPoint.getData(2)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM02.Point3D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point3D(new GM02.ColMatrix3D(
+                                    newPoint.getData(0),
+                                    newPoint.getData(1),
+                                    newPoint.getData(2)));
+    }//end setHead
+    //--------------------------------------------------//
+
+    public void draw(Graphics2D g2D){
+      
+      //Get 2D projection coordinates.
+      GM02.ColMatrix2D tail = 
+                           convert3Dto2D(getTail().point);
+      GM02.ColMatrix2D head = 
+                           convert3Dto2D(getHead().point);
+
+      drawLine(g2D,tail.getData(0),
+                   tail.getData(1),
+                   head.getData(0),
+                   head.getData(1));
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line3D
+  //====================================================//
+
+}//end class GM02
+</code>
+
+
+
+	
+
+
+<para id="p1119">
+<emphasis id="strong1107" effect="bold">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Source code for the program named DotProd3D05.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1010" display="block">/*DotProd3D05.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/06/08
+
+The purpose of this program is to demonstrate how the dot 
+product can be used to compute nine different angles of 
+interest that a vector makes with various elements in 3D 
+space.
+
+First, the program computes and displays the angle between
+a user-specified vector and each of the X, Y, and Z axes.
+These values are displayed with the labels Angle X, 
+Angle Y, and Angle Z.
+
+Then the program computes and displays the angle between
+the vector and each of the XY, YZ, and ZX planes. In
+this case, the program computes the smallest possible 
+angle by projecting the vector onto the plane and then 
+computing the angle between the vector and its projection.
+These values are displayed with the labels Angle XY, 
+Angle YZ, and Angle ZX.
+
+Finally, the program computes and displays the angle 
+between the projection of the vector on each of the three 
+planes and one of the axes that defines each plane. 
+Obviously, the angle between the projection and the other 
+axis that defines the plane is 90 degrees less the 
+computed angle.  Specifically the values that are computed
+and displayed are:
+
+Projection onto the XY plane relative to the x-axis,
+displayed with the label Angle PX.
+
+Projection onto the YZ plane relative to the y-axis,
+displayed with the label Angle PY.
+
+Projection onto the ZX plane relative to the z-axis,
+displayed with the label Angle PZ.
+
+All angles are reported as positive angles in degrees.
+  
+Study Kjell through Chapter 10, Angle between 3D Vectors.
+
+A GUI is provided that allows the user to enter three
+double values that define a GM02.Vector3D object.  The GUI
+also provides an OK button as well as nine text fields 
+used to display the computed results described above.
+
+In addition, the GUI provides a 3D drawing area.
+
+When the user clicks the OK button, the program draws the
+user-specified vector in black with the tail located at 
+the origin in 3D space. It also draws the projection of
+that vector in magenta on each of the XY, YZ, AND ZX
+planes
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class DotProd3D05{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd3D05
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 400;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas 
+  Graphics2D g2D;//off-screen graphics context.
+
+  //User input components.
+  JTextField vecX = new JTextField("50.0");
+  JTextField vecY = new JTextField("100.0");
+  JTextField vecZ = new JTextField("0.0");
+
+  JTextField angleX = new JTextField("0");
+  JTextField angleY = new JTextField("0");
+  JTextField angleZ = new JTextField("0");
+  
+  JTextField angleXY = new JTextField("0");
+  JTextField angleYZ = new JTextField("0");
+  JTextField angleZX = new JTextField("0");
+  
+  JTextField anglePX = new JTextField("0");
+  JTextField anglePY = new JTextField("0");
+  JTextField anglePZ = new JTextField("0");
+
+  JButton button = new JButton("OK");
+  
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //Instantiate a JPanel that will house the user input
+    // components and set its layout manager.
+    JPanel controlPanel = new JPanel();
+    controlPanel.setLayout(new GridLayout(0,6));
+
+    //Add the user input components and appropriate labels
+    // to the control panel.
+    controlPanel.add(new JLabel(" Vec X "));    
+    controlPanel.add(vecX);
+
+    controlPanel.add(new JLabel(" Vec Y "));    
+    controlPanel.add(vecY);
+    
+    controlPanel.add(new JLabel(" Vec Z "));    
+    controlPanel.add(vecZ);
+    
+    controlPanel.add(new JLabel(" Angle X "));    
+    controlPanel.add(angleX);
+    
+    controlPanel.add(new JLabel(" Angle Y "));    
+    controlPanel.add(angleY);
+    
+    controlPanel.add(new JLabel(" Angle Z "));    
+    controlPanel.add(angleZ);
+    
+    controlPanel.add(new JLabel(" Angle XY "));    
+    controlPanel.add(angleXY);
+    
+    controlPanel.add(new JLabel(" Angle YZ "));    
+    controlPanel.add(angleYZ);
+    
+    controlPanel.add(new JLabel(" Angle ZX "));
+    controlPanel.add(angleZX);
+    
+    controlPanel.add(new JLabel(" Angle PX "));    
+    controlPanel.add(anglePX);
+    
+    controlPanel.add(new JLabel(" Angle PY "));    
+    controlPanel.add(anglePY);
+    
+    controlPanel.add(new JLabel(" Angle PZ "));
+    controlPanel.add(anglePZ);
+    
+    controlPanel.add(button);
+
+    //Add the control panel to the SOUTH position in the
+    // JFrame.
+    this.getContentPane().add(
+                        BorderLayout.SOUTH,controlPanel);
+
+    
+    //Create a new drawing canvas and add it to the
+    // CENTER of the JFrame above the control panel.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+    
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+    
+
+    //Translate the origin to the center.
+    GM02.translate(g2D,0.5*osiWidth,-0.5*osiHeight);
+
+    
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+    
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //This method is used to draw orthogonal 3D axes on the
+  // off-screen image that intersect at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Erase the screen
+    g2D.setColor(Color.WHITE);
+    GM02.fillRect(g2D,-osiWidth/2,osiHeight/2,
+                                      osiWidth,osiHeight);
+
+    //Draw x-axis in RED
+    g2D.setColor(Color.RED);
+    GM02.Point3D pointA = new GM02.Point3D(
+                   new GM02.ColMatrix3D(-osiWidth/2,0,0));
+    GM02.Point3D pointB = new GM02.Point3D(
+                    new GM02.ColMatrix3D(osiWidth/2,0,0));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+    
+    //Draw y-axis in GREEN
+    g2D.setColor(Color.GREEN);
+    pointA = new GM02.Point3D(
+                  new GM02.ColMatrix3D(0,-osiHeight/2,0));
+    pointB = new GM02.Point3D(
+                   new GM02.ColMatrix3D(0,osiHeight/2,0));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+    
+    //Draw z-axis in BLUE. Make its length the same as the
+    // length of the x-axis.
+    g2D.setColor(Color.BLUE);
+    pointA = new GM02.Point3D(
+                   new GM02.ColMatrix3D(0,0,-osiWidth/2));
+    pointB = new GM02.Point3D(
+                    new GM02.ColMatrix3D(0,0,osiWidth/2));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+
+  }//end setCoordinateFrame method
+  //----------------------------------------------------//
+  
+  //This method is called to respond to a click on the
+  // button.
+  public void actionPerformed(ActionEvent e){
+    
+    //Erase the off-screen image and draw the axes.
+    setCoordinateFrame(g2D);
+    
+    //Create one ColMatrix3D object based on the user
+    // input values.
+    GM02.ColMatrix3D matrixA = new GM02.ColMatrix3D(
+                  Double.parseDouble(vecX.getText()),
+                  Double.parseDouble(vecY.getText()),
+                  Double.parseDouble(vecZ.getText()));
+                  
+    //Create ColMatrix3D objects that represent each of
+    // the three axes.
+    GM02.ColMatrix3D matrixX = 
+                              new GM02.ColMatrix3D(1,0,0);
+    GM02.ColMatrix3D matrixY = 
+                              new GM02.ColMatrix3D(0,1,0);
+    GM02.ColMatrix3D matrixZ = 
+                              new GM02.ColMatrix3D(0,0,1);
+    
+    //Create ColMatrix3D objects that represent the
+    // projection of the user-specified vector onto each
+    // of the three planes.
+    GM02.ColMatrix3D matrixXY = new GM02.ColMatrix3D(
+                      Double.parseDouble(vecX.getText()),
+                      Double.parseDouble(vecY.getText()),
+                      0);
+                  
+    GM02.ColMatrix3D matrixYZ = new GM02.ColMatrix3D(
+                      0,
+                      Double.parseDouble(vecY.getText()),
+                      Double.parseDouble(vecZ.getText()));
+                  
+    GM02.ColMatrix3D matrixZX = new GM02.ColMatrix3D(
+                      Double.parseDouble(vecX.getText()),
+                      0,
+                      Double.parseDouble(vecZ.getText()));
+    
+
+
+    //Use the ColMatrix3D objects to create Vector3D
+    // objects representing the user-specified vector and
+    // each of the axes.
+    GM02.Vector3D vecA = new GM02.Vector3D(matrixA);
+    GM02.Vector3D vecX = new GM02.Vector3D(matrixX);
+    GM02.Vector3D vecY = new GM02.Vector3D(matrixY);
+    GM02.Vector3D vecZ = new GM02.Vector3D(matrixZ);
+    
+    //Create Vector3D objects that represent the
+    // projection of the user-specified vector on each of
+    // the planes.
+    GM02.Vector3D vecXY = new GM02.Vector3D(matrixXY);
+    GM02.Vector3D vecYZ = new GM02.Vector3D(matrixYZ);
+    GM02.Vector3D vecZX = new GM02.Vector3D(matrixZX);
+    	                    
+    //Draw the projection of the user specified vector on
+    // each of the three planes.
+    g2D.setColor(Color.MAGENTA);
+    vecXY.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    vecYZ.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    vecZX.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    
+    //Draw the user-specified vector with its tail at the
+    // origin.
+    g2D.setColor(Color.BLACK);
+    vecA.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    
+    	                    
+
+    //Compute and display the angle relative to the
+    // x-axis.
+    double angle = vecA.angle(vecX);
+    angleX.setText("" +  prepareForDisplay(angle));
+
+    //Compute and display the angle relative to the
+    // y-axis.
+    angle = vecA.angle(vecY);
+    angleY.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle relative to the
+    // z-axis.
+    angle = vecA.angle(vecZ);
+    angleZ.setText("" +  prepareForDisplay(angle));
+    
+    
+    //Compute and display the angle relative to the
+    // XY plane
+    angle = vecA.angle(vecXY);
+    angleXY.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle relative to the
+    // YZ plane
+    angle = vecA.angle(vecYZ);
+    angleYZ.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle relative to the
+    // ZX plane
+    angle = vecA.angle(vecZX);
+    angleZX.setText("" +  prepareForDisplay(angle));
+    
+    
+    //Compute and display the angle of the projection onto
+    // the XY plane relative to the x-axis
+    angle = vecXY.angle(vecX);
+    anglePX.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle of the projection onto
+    // the YZ plane relative to the y-axis
+    angle = vecYZ.angle(vecY);
+    anglePY.setText("" +  prepareForDisplay(angle));
+    
+    //Compute and display the angle of the projection onto
+    // the ZX plane relative to the z-axis
+    angle = vecZX.angle(vecZ);
+    anglePZ.setText("" +  prepareForDisplay(angle));    
+    
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+    
+    
+  }//end actionPerformed
+  //----------------------------------------------------//
+  
+  //The code in this method prepares a double value for
+  // display in a text field by eliminating exponential
+  // format for very small values and setting the number
+  // of decimal digits to four.
+  private double prepareForDisplay(double data){
+      //Eliminate exponential notation in the display.
+      if(Math.abs(data) &lt; 0.001){
+        data = 0.0;
+      }//end if
+      
+      //Convert to four decimal digits.
+      return ((int)(10000*data))/10000.0;
+  }//end prepareForDisplay
+  
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+	
+
+
+<para id="p1120">
+<emphasis id="strong1108" effect="bold">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Source code for the program named DotProd3D06.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1011" display="block">/*DotProd3D06.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/09/08
+
+This program demonstrates how the dot product can be used
+to find vectors that are perpendicular to a given vector.
+
+The program computes and displays normalized and scaled
+versions of six of the infinite set of vectors that are 
+perpendicular to a user specified vector.
+
+If the user specifies one of the coordinates to be zero
+or close to zero, the program only computes and displays 
+four of the possible vectors in order to avoid performing 
+division by a near-zero value. For a value of zero, the
+orientation of two of the vectors will overlay the 
+orientation of the other two. Because they are the same
+length, and occupy the same space, you will only see two
+vectors.
+
+If the user specifies two of the coordinates to be zero
+or close to zero, the program doesn't produce a valid
+result.  Instead, it displays the coordinates for a 
+perpendicular vector where all of the coordinates are
+zero and displays NaN for the angle.
+
+Study Kjell through Chapter 10, Angle between 3D Vectors.
+
+A GUI is provided that allows the user to enter three
+double values that define a GM02.Vector3D object.  The GUI
+also provides an OK button.
+
+In addition, the GUI provides a 3D drawing area.
+
+When the user clicks the OK button, the program draws the
+user-specified vector in black with the tail located at 
+the origin in 3D space. It also draws normalized versions
+of the perpendicular vectors in magenta with their tails 
+located at the origin.  Each normalized vector is scaled
+by a factor of 50 before it is drawn.
+
+The program also displays the values of three of the
+perpendicular vectors on the command-line screen along
+with the angle between the perpendicular vector and the
+user-specified vector. The angle should be 90 degrees or
+at least very close to 90 degrees. The other three
+perpendicular vectors are simply negated versions of the
+three for which the values are displayed.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class DotProd3D06{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd3D06
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 400;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas 
+  Graphics2D g2D;//off-screen graphics context.
+
+  //User input components.
+  JTextField vecX = new JTextField("50.0");
+  JTextField vecY = new JTextField("50.0");
+  JTextField vecZ = new JTextField("50.0");
+
+  JButton button = new JButton("OK");
+  
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //Instantiate a JPanel that will house the user input
+    // components and set its layout manager.
+    JPanel controlPanel = new JPanel();
+    controlPanel.setLayout(new GridLayout(0,6));
+
+    //Add the user input components and appropriate labels
+    // to the control panel.
+    controlPanel.add(new JLabel(" Vec X "));    
+    controlPanel.add(vecX);
+
+    controlPanel.add(new JLabel(" Vec Y "));    
+    controlPanel.add(vecY);
+    
+    controlPanel.add(new JLabel(" Vec Z "));    
+    controlPanel.add(vecZ);
+
+    controlPanel.add(button);
+
+    //Add the control panel to the SOUTH position in the
+    // JFrame.
+    this.getContentPane().add(
+                        BorderLayout.SOUTH,controlPanel);
+
+    
+    //Create a new drawing canvas and add it to the
+    // CENTER of the JFrame above the control panel.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+    
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+    
+
+    //Translate the origin to the center.
+    GM02.translate(g2D,0.5*osiWidth,-0.5*osiHeight);
+
+    
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+    
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //This method is used to draw orthogonal 3D axes on the
+  // off-screen image that intersect at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Erase the screen
+    g2D.setColor(Color.WHITE);
+    GM02.fillRect(g2D,-osiWidth/2,osiHeight/2,
+                                      osiWidth,osiHeight);
+
+    //Draw x-axis in RED
+    g2D.setColor(Color.RED);
+    GM02.Point3D pointA = new GM02.Point3D(
+                   new GM02.ColMatrix3D(-osiWidth/2,0,0));
+    GM02.Point3D pointB = new GM02.Point3D(
+                    new GM02.ColMatrix3D(osiWidth/2,0,0));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+    
+    //Draw y-axis in GREEN
+    g2D.setColor(Color.GREEN);
+    pointA = new GM02.Point3D(
+                  new GM02.ColMatrix3D(0,-osiHeight/2,0));
+    pointB = new GM02.Point3D(
+                   new GM02.ColMatrix3D(0,osiHeight/2,0));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+    
+    //Draw z-axis in BLUE. Make its length the same as the
+    // length of the x-axis.
+    g2D.setColor(Color.BLUE);
+    pointA = new GM02.Point3D(
+                   new GM02.ColMatrix3D(0,0,-osiWidth/2));
+    pointB = new GM02.Point3D(
+                    new GM02.ColMatrix3D(0,0,osiWidth/2));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+
+  }//end setCoordinateFrame method
+  //----------------------------------------------------//
+  
+  //This method is called to respond to a click on the
+  // button.
+  public void actionPerformed(ActionEvent e){
+    
+    //Erase the off-screen image and draw the axes.
+    setCoordinateFrame(g2D);
+    
+    //Get and save the user specified coordinate values.
+    double xCoor = Double.parseDouble(vecX.getText());
+    double yCoor = Double.parseDouble(vecY.getText());
+    double zCoor = Double.parseDouble(vecZ.getText());
+    
+    //Create a ColMatrix3D object based on the user input
+    // values.
+    GM02.ColMatrix3D matrixA = 
+                  new GM02.ColMatrix3D(xCoor,yCoor,zCoor);
+    
+    //Use the ColMatrix3D object to create a Vector3D
+    // object representing the user-specified vector.
+    GM02.Vector3D vecA = new GM02.Vector3D(matrixA);
+    
+    //Draw the user-specified vector with its tail at the
+    // origin.
+    g2D.setColor(Color.BLACK);
+    vecA.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    
+    //Create and draw the perpendicular vectors.  However,
+    // if a coordinate value is near zero, don't attempt
+    // to create and draw the perpendicular vector that
+    // would require division by the near-zero value.
+    GM02.Vector3D tempVec;
+    GM02.ColMatrix3D tempMatrix;
+    g2D.setColor(Color.MAGENTA);
+    
+    if(Math.abs(zCoor) &gt; 0.001){
+      tempMatrix = new GM02.ColMatrix3D(
+          xCoor,yCoor,-(xCoor*xCoor + yCoor*yCoor)/zCoor);
+      tempVec = new GM02.Vector3D(tempMatrix);
+      System.out.println(tempVec);
+      //Normalize and scale the perpendicular vector.
+      tempVec = tempVec.normalize().scale(50.0);
+      tempVec.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      tempVec.negate().draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      System.out.println(vecA.angle(tempVec));
+    }//end if
+    
+    if(Math.abs(yCoor) &gt; 0.001){
+      tempMatrix = new GM02.ColMatrix3D(
+          xCoor,-(xCoor*xCoor + zCoor*zCoor)/yCoor,zCoor);
+      tempVec = new GM02.Vector3D(tempMatrix);
+      System.out.println(tempVec);
+      //Normalize and scale the perpendicular vector.
+      tempVec = tempVec.normalize().scale(50.0);
+      tempVec.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      tempVec.negate().draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      System.out.println(vecA.angle(tempVec));
+    }//end if
+    
+    if(Math.abs(xCoor) &gt; 0.001){
+      tempMatrix = new GM02.ColMatrix3D(
+         -(yCoor*yCoor + zCoor*zCoor)/xCoor, yCoor,zCoor);
+      tempVec = new GM02.Vector3D(tempMatrix);
+      System.out.println(tempVec);
+      //Normalize and scale the perpendicular vector.
+      tempVec = tempVec.normalize().scale(50.0);
+      tempVec.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      tempVec.negate().draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+      System.out.println(vecA.angle(tempVec));
+    }//end if
+
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+    System.out.println();//blank line
+  }//end actionPerformed
+  //----------------------------------------------------//
+ 
+  //====================================================//
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+	
+
+
+
+<para id="p1121">
+<emphasis id="strong1109" effect="bold">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. Source code for the program named DotProb3D04.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1012" display="block">/*DotProd3D04.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/07/08
+
+The purpose of this program is serve as a counterpoint to 
+the program named Prob3D03, which demonstrates backface 
+culling.
+
+This program draws the same 3D object as the one drawn in 
+DotProd3D03 but without the benefit of backface culling.
+
+Study Kjell through Chapter 10, Angle between 3D Vectors.
+
+The program draws a 3D circular cylinder by stacking 20 
+circular disks on the x-z plane. The disks are centered on
+the y-axis and are parallel to the x-z plane. The 
+thickness of each disk is 5 vertical units.
+
+There is no backface culling in this program, so all of 
+the lines that should be hidden show through.
+
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+
+class DotProd3D04{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd3D04
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 230;
+  int vSize = 250;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas 
+  Graphics2D g2D;//off-screen graphics context.
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //Create a new drawing canvas and add it to the
+    // CENTER of the JFrame above the control panel.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+    
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+
+    //Call a method that sets the axes and draws the 
+    // cylinder.
+    drawTheCylinder(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+    
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //This method is used to set the axes to the center of
+  // the off-screen image and to draw a 3D cylinder that
+  // is centered on the y-axis.
+  private void drawTheCylinder(Graphics2D g2D){
+
+    //Translate the origin to the center of the off-screen
+    // image.
+    GM02.translate(g2D,0.5*osiWidth,-0.5*osiHeight);
+    
+    //Erase the screen
+    g2D.setColor(Color.WHITE);
+    GM02.fillRect(g2D,-osiWidth/2,osiHeight/2,
+                                      osiWidth,osiHeight);
+    //Draw a cylinder by stacking 20 circular disks on
+    // the x-z plane. The disks are centered on the
+    // y-axis and are parallel to the x-z plane. The
+    // thickness of each disk is 5 vertical units.
+    GM02.Point3D tempPointA;
+    GM02.Point3D tempPointB;
+    g2D.setColor(Color.BLACK);
+    
+    for(int y = 0;y &lt; 105;y += 5){//iterate on disks
+      //Define the starting point on the circle for this
+      // disk.
+      tempPointA = new GM02.Point3D(
+              new GM02.ColMatrix3D(76,y - osiHeight/4,0));
+      //Iterate on points on the circle that represents
+      // this disk.
+      for(int cnt = 0;cnt &lt; 360;cnt++){//360 points
+        //Compute the next point on the circle.
+        tempPointB = 
+            new GM02.Point3D(new GM02.ColMatrix3D(
+              76*Math.cos(Math.toRadians(cnt*360/360)),
+              y - osiHeight/4,
+              76*Math.sin(Math.toRadians(cnt*360/360))));
+
+        //Draw the line in 3D. Note that there is no
+        // backface culling in this program.
+        new GM02.Line3D(tempPointA,tempPointB).draw(g2D);
+
+        //Save the point for use in drawing the next line.
+        tempPointA = tempPointB;
+      }//end for loop on points
+    }//end for loop on disks
+
+  }//end drawTheCylinder method
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+	
+
+
+
+<para id="p1122">
+<emphasis id="strong1110" effect="bold">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. Source code for the program named DotProb3D03.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1013" display="block">/*DotProd3D03.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/07/08
+
+The purpose of this program is to demonstrate a practical
+use of the vector dot product - backface culling.
+
+Study Kjell through Chapter 10, Angle between 3D Vectors.
+
+The program draws a 3D circular cylinder by stacking 20 
+circular disks on the x-z plane. The disks are centered on
+the y-axis and are parallel to the x-z plane. The 
+thickness of each disk is 5 vertical units.
+
+Backface culling is done using the dot product between a
+vector that is parallel to the viewpoint of the viewer and
+a vector that is perpendicular to the line being drawn to
+form the outline of a disk.  The backface culling 
+process is good but not perfect.  There is some leakage 
+around the back on the right and left sides of the 
+cylinder and some short lines segments are visible that 
+should not be visible.
+
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+
+class DotProd3D03{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd3D03
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 230;
+  int vSize = 250;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas 
+  Graphics2D g2D;//off-screen graphics context.
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //Create a new drawing canvas and add it to the
+    // CENTER of the JFrame above the control panel.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+    
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+
+    //Call a method that sets the axes and draws the 
+    // cylinder.
+    drawTheCylinder(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+    
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //This method is used to set the axes to the center of
+  // the off-screen image and to draw a 3D cylinder that
+  // is centered on the y-axis.
+  private void drawTheCylinder(Graphics2D g2D){
+
+    //Translate the origin to the center of the off-screen
+    // image.
+    GM02.translate(g2D,0.5*osiWidth,-0.5*osiHeight);
+    
+    //Erase the screen
+    g2D.setColor(Color.WHITE);
+    GM02.fillRect(g2D,-osiWidth/2,osiHeight/2,
+                                      osiWidth,osiHeight);
+
+    //Get a vector that is approximately parallel to the
+    // viewpoint of the viewer. The best values for this
+    // vector were determined experimentally using this
+    // program and the earlier program named DotProd3D02.
+    GM02.Vector3D viewPoint = 
+        new GM02.Vector3D(new GM02.ColMatrix3D(43,5,50));
+    
+    //Draw a cylinder by stacking 20 circular disks on
+    // the x-z plane. The disks are centered on the
+    // y-axis and are parallel to the x-z plane. The
+    // thickness of each disk is 5 vertical units.
+    GM02.Point3D tempPointA;
+    GM02.Point3D tempPointB;
+    g2D.setColor(Color.BLACK);
+    
+    for(int y = 0;y &lt; 105;y += 5){//iterate on disks
+      //Define the starting point on the circle for this
+      // disk.
+      tempPointA = new GM02.Point3D(new GM02.ColMatrix3D(
+                                   76,y - osiHeight/4,0));
+      //Iterate on points on the circle that represents
+      // this disk.
+      for(int cnt = 0;cnt &lt; 360;cnt++){//360 points
+        //Compute the next point on the circle.
+        tempPointB = 
+            new GM02.Point3D(new GM02.ColMatrix3D(
+              76*Math.cos(Math.toRadians(cnt*360/360)),
+              y - osiHeight/4,
+              76*Math.sin(Math.toRadians(cnt*360/360))));
+          
+        //Do backface culling using the dot product of the
+        // viewpoint vector and a vector that is almost
+        // perpendicular to the line being drawn. If the
+        // dot product is negative, or if the disk being
+        // drawn is the top disk on the stack, draw the
+        // line. Otherwise, don't draw the line.
+        //The perpendicular vector used in the dot
+        // product is the displacement vector from the
+        // origin to a point that defines one end of the
+        // line being drawn. Note that this vector is not
+        // perfectly perpendicular to the line being 
+        // drawn. Later in the series, we will learn about
+        // and use the cross product to get perpendicular
+        // vectors.
+        if((tempPointB.getDisplacementVector(
+                           new GM02.Point3D(
+                             new GM02.ColMatrix3D(0,0,0)))
+                                   .dot(viewPoint) &lt; 0.0) 
+                                           || (y == 100)){
+          //Draw the line in 3D.
+          new GM02.Line3D(
+                         tempPointA,tempPointB).draw(g2D);
+        }//end if
+
+        //Save the point for use in drawing the next line.
+        tempPointA = tempPointB;
+      }//end for loop on points
+    }//end for loop on disks
+
+  }//end drawTheCylinder method
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+	
+
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Exercises" effect="bold">
+
+Exercises
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21006">
+<title>
+<emphasis id="Exercise_1" effect="bold">
+
+Exercise 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1123">
+Using Java and the game-math library named 
+
+<emphasis id="strong1111" effect="bold">
+GM02
+
+</emphasis>
+, or using a 
+different programming environment of your choice, write a program that creates 
+the drawing of half of a 3D sphere protruding upward from the x-z plane as shown 
+in 
+
+<link id="a1124" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. The north and south poles of the sphere lie on 
+the y-axis, but only the 
+northern hemisphere is visible.
+
+</para>
+
+
+
+
+<para id="p1124">
+Cause your name to appear in the screen output in some manner.
+
+</para>
+
+
+
+
+<para id="p1125">
+<emphasis id="Figure_7" effect="bold">
+
+
+<emphasis id="strong1112" effect="bold">
+Figure 7
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1113" effect="bold">
+ - Output from Exercise 1.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1126">
+<media id="media1005" alt="Missing image." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/0150ex01.jpg" width="451" height="451"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Exercise_2" effect="bold">
+
+Exercise 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1127">
+Beginning with a program similar to the one that you wrote in
+
+
+<link id="a1125" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+, create a drawing of a 3D sphere as shown in
+
+
+<link id="a1126" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. The north and south poles of the sphere lie on 
+the y-axis.
+
+</para>
+
+
+
+
+<para id="p1128">
+<emphasis id="Figure_8" effect="bold">
+
+
+<emphasis id="strong1114" effect="bold">
+Figure 8
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1115" effect="bold">
+ - Output from Exercise 2.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1129">
+<media id="media1006" alt="Missing image." display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/0150ex02.jpg" width="451" height="451"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1130">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,8178 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0125: Vector Addition</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45012</md:content-id>
+  <md:title>GAME 2302-0125: Vector Addition</md:title>
+  <md:abstract>Learn how to add two or more vectors. Also learn about the head-to-tail rule in vector addition, about the vector addition parallelogram, about the relationship between the length of the sum of vectors and the lengths of the individual vectors in the sum, how to add a vector to a point, how to get the length of a vector, and how to represent an object in different coordinate frames.</md:abstract>
+  <md:uuid>9392ee0f-aa19-44f0-a03b-ef67877b4c16</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_game-math_library_named_GM2D04">
+
+The game-math library named GM2D04
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_program_named_VectorAdd01">
+
+The program named VectorAdd01
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_program_named_CoordinateFrame01">
+
+The program named CoordinateFrame01
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_program_named_VectorAdd02_">
+
+The program named VectorAdd02
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="The_program_named_VectorAdd03">
+
+The program named VectorAdd03
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="The_program_named_VectorAdd04">
+
+The program named VectorAdd04
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Documentation_for_the_GM2D04_library">
+
+Documentation for the 
+	GM2D04 library
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Homework_assignment">
+
+Homework assignment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Summary">
+
+Summary
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="Whats_next">
+
+What's next?
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1019">
+<link id="a1019" target-id="Exercises">
+
+Exercises
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1021">
+<link id="a1021" target-id="Exercise_2">
+
+Exercise 2
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1000">
+This module is one in a collection of modules designed for teaching 
+
+<emphasis id="em1000" effect="italics">
+
+	GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX. 
+
+</para>
+
+
+
+
+<para id="p1001">
+<emphasis id="strong1000" effect="bold">
+What you have learned
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1002">
+In the previous couple of modules, you learned:
+
+</para>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1022">
+How to compare column matrices for equality
+
+</item>
+
+
+	
+
+<item id="li1023">
+How to compare two points for equality
+
+</item>
+
+
+	
+
+<item id="li1024">
+How to compare two vectors for equality
+
+</item>
+
+
+	
+
+<item id="li1025">
+How to add one column matrix to another
+
+</item>
+
+
+	
+
+<item id="li1026">
+How to subtract one column matrix from another
+
+</item>
+
+
+	
+
+<item id="li1027">
+How to get a displacement vector from one point to another
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1003">
+<emphasis id="strong1001" effect="bold">
+What you will learn
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+In this module you will learn:
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1028">
+How to add two or more vectors
+
+</item>
+
+
+	
+
+<item id="li1029">
+About the head-to-tail rule in vector addition
+
+</item>
+
+
+	
+
+<item id="li1030">
+About the vector addition parallelogram
+
+</item>
+
+
+	
+
+<item id="li1031">
+About the relationship between the length of the sum of vectors and the 
+	lengths of the individual vectors in the sum
+
+</item>
+
+
+	
+
+<item id="li1032">
+How to add a vector to a point
+
+</item>
+
+
+	
+
+<item id="li1033">
+How to get the length of a vector
+
+</item>
+
+
+	
+
+<item id="li1034">
+How to represent an object in different coordinate frames
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1005">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1035">
+<link id="a1022" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Screen output from the program named VectorAdd01. 
+
+</item>
+
+
+		
+
+<item id="li1036">
+<link id="a1023" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Screen output from CoordinateFrame01 at startup. 
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1024" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Screen output from CoordinateFrame01 after changes to the coordinate frame. 
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1025" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Screen output from the program named VectorAdd02. 
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1026" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Graphic screen output from the program named VectorAdd03. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1027" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Command-line output from the program named VectorAdd03. 
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1028" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Screen output from the program named VectorAdd04. 
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1029" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Screen output from Exercise 1.
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1030" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Screen output from Exercise 2.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1008" list-type="bulleted">
+
+		
+
+<item id="li1044">
+<link id="a1031" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. The add method of the GM2D04.Vector class. 
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1032" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. The getLength method of the GM2D04.Vector class. 
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1033" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. The addVectorToPoint method of the GM2D04 class. 
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1034" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Beginning of the program named VectorAdd01. 
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1035" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Beginning of the method named drawOffScreen. 
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1036" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. The method named setCoordinateFrame. 
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1037" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Adding two vectors. 
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1038" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Draw vecA in RED with its tail at the origin. 
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1039" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Draw vecB in GREEN head-to-tail with vecA.
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1040" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Draw sumOf2 in MAGENTA with its tail at the origin. 
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1041" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Extending the example to three vectors. 
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1042" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. The actionPerformed method.
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1043" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. The setCoordinateFrame method. 
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1044" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. Beginning of the drawOffScreen method. 
+
+</item>
+
+
+		
+
+<item id="li1058">
+<link id="a1045" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. Define a point to position the vectors. 
+
+</item>
+
+
+		
+
+<item id="li1059">
+<link id="a1046" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. Remaining code in the drawOffScreen method. 
+
+</item>
+
+
+		
+
+<item id="li1060">
+<link id="a1047" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+. Beginning of the method named drawOffScreen of the program named VectorAdd02. 
+
+</item>
+
+
+		
+
+<item id="li1061">
+<link id="a1048" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+. Do the same operations in a different order. 
+
+</item>
+
+
+		
+
+<item id="li1062">
+<link id="a1049" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. Source code for the game-math library named GM2D04. 
+
+</item>
+
+
+		
+
+<item id="li1063">
+<link id="a1050" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+. Source code for the program named VectorAdd01.
+
+</item>
+
+
+		
+
+<item id="li1064">
+<link id="a1051" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+. Source code for the program named CoordinateFrame01. 
+
+</item>
+
+
+		
+
+<item id="li1065">
+<link id="a1052" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+. Source code for the program named VectorAdd02.
+
+</item>
+
+
+		
+
+<item id="li1066">
+<link id="a1053" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+. Source code for the program named VectorAdd03. 
+
+</item>
+
+
+		
+
+<item id="li1067">
+<link id="a1054" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+. Source code for the program named VectorAdd04. 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1006">
+In this module, I will present and explain several updates to the 
+	game-math library. In addition, I will present and explain five sample 
+	programs that illustrate the use of the new features of the library.
+
+</para>
+
+
+
+
+<para id="p1007">
+I will also provide exercises for you to complete on your own at the end of 
+the module. The exercises will concentrate on the material that you have learned 
+in this module and previous modules.
+
+</para>
+
+
+	
+
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1008">
+The game-math library was updated and the name was changed to 
+
+<emphasis id="strong1002" effect="bold">
+
+	GM2D04
+
+</emphasis>
+ in preparation for this module. Much of the code in the 
+	updated library remains unchanged. I explained that code in the previous 
+	modules and I won't repeat that explanation in this module. I will 
+	concentrate on explaining the modifications that I made to the library in 
+	this module.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_game-math_library_named_GM2D04" effect="bold">
+
+The game-math library named 
+GM2D04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+A complete listing of the library program is provided in 
+
+<link id="a1055" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+ near the 
+end of the module.
+
+</para>
+
+
+
+
+<para id="p1010">
+This update added the following new capabilities to the library:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1068">
+<emphasis id="strong1003" effect="bold">
+GM2D04.Vector.add
+
+</emphasis>
+ - Adds this 
+
+<emphasis id="strong1004" effect="bold">
+Vector
+
+</emphasis>
+ object to a 
+
+<emphasis id="strong1005" effect="bold">
+Vector
+
+</emphasis>
+ 
+	object received as an incoming parameter and returns the sum as a new 
+
+<emphasis id="strong1006" effect="bold">
+
+	Vector
+
+</emphasis>
+ object.
+
+</item>
+
+
+	
+
+<item id="li1069">
+<emphasis id="strong1007" effect="bold">
+GM2D04.Vector.getLength
+
+</emphasis>
+ - Returns the length of a 
+
+<emphasis id="strong1008" effect="bold">
+Vector
+
+</emphasis>
+ as 
+	type 
+
+<emphasis id="strong1009" effect="bold">
+double
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1070">
+<emphasis id="strong1010" effect="bold">
+GM2D04.Point.addVectorToPoint
+
+</emphasis>
+ - Adds a 
+
+<emphasis id="strong1011" effect="bold">
+Vector
+
+</emphasis>
+ object to a
+	
+
+<emphasis id="strong1012" effect="bold">
+Point
+
+</emphasis>
+ object returning a new 
+
+<emphasis id="strong1013" effect="bold">
+Point
+
+</emphasis>
+ object.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1011">
+These three new methods are presented in 
+
+<link id="a1056" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+, 
+
+<link id="a1057" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, and 
+
+<link id="a1058" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ 
+below. These methods are so simple that no explanation should be required for 
+you to understand them.
+
+</para>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. The add method of the GM2D04.Vector class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">    //Adds this vector to a vector received as an incoming
+    // parameter and returns the sum as a vector.
+    public GM2D04.Vector add(GM2D04.Vector vec){
+      return new GM2D04.Vector(new ColMatrix(
+                       vec.getData(0)+vector.getData(0),
+                       vec.getData(1)+vector.getData(1)));
+    }//end add
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. The getLength method of the GM2D04.Vector class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">    //Returns the length of a Vector object.
+    public double getLength(){
+      return Math.sqrt(
+           getData(0)*getData(0) + getData(1)*getData(1));
+    }//end getLength
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. The addVectorToPoint method of the GM2D04 class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">    //Adds a Vector to a Point producing a new Point.
+    public GM2D04.Point addVectorToPoint(
+                                      GM2D04.Vector vec){
+      return new GM2D04.Point(new GM2D04.ColMatrix(
+                          getData(0) + vec.getData(0),
+                          getData(1) + vec.getData(1)));
+    }//end addVectorToPoint
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1012">
+<emphasis id="strong1014" effect="bold">
+Simple but powerful
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1013">
+Although these new methods are individually very simple, when combined with 
+the other methods in the library, they significantly increase the power of the 
+library. For example, in the next module I will show you that the library in its 
+current form supports translation and animation.
+
+</para>
+
+
+
+
+<para id="p1014">
+I will illustrate the use of these new methods in the sample programs that 
+follow.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_program_named_VectorAdd01" effect="bold">
+
+The program named VectorAdd01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1015">
+This program illustrates the addition of two and then three vectors. It also 
+illustrates the 
+
+<emphasis id="em1001" effect="italics">
+head-to-tail
+
+</emphasis>
+ rule described by Kjell. A complete listing 
+of the program is provided in 
+
+<link id="a1059" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+ near the end of the module.
+
+</para>
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1015" effect="bold">
+Screen output from the program named VectorAdd01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+The screen output from the program is shown in 
+
+<link id="a1060" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1018">
+<emphasis id="Figure_1" effect="bold">
+
+
+<emphasis id="strong1016" effect="bold">
+Figure 1
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1017" effect="bold">
+ Screen output from the program named VectorAdd01.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1019">
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/java1706a1.jpg" width="276" height="201"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1020">
+You will recall that the game-math library represents a 
+
+<emphasis id="strong1018" effect="bold">
+Vector
+
+</emphasis>
+ object 
+graphically as a straight line with a small circle at the head. Thus, there are 
+five vectors drawn in 
+
+<link id="a1061" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. I will explain the meaning of the output in 
+conjunction with the explanation of the program.
+
+</para>
+
+
+
+
+<para id="p1021">
+<emphasis id="strong1019" effect="bold">
+Beginning of the program named VectorAdd01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1022">
+<link id="a1062" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ shows the entire class named 
+
+<emphasis id="strong1020" effect="bold">
+VectorAdd01
+
+</emphasis>
+ along with the 
+beginning of the class named 
+
+<emphasis id="strong1021" effect="bold">
+GUI
+
+</emphasis>
+ including the constructor for the 
+
+<emphasis id="strong1022" effect="bold">
+GUI
+
+</emphasis>
+ 
+class.
+
+</para>
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1023" effect="bold">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Beginning of the program named VectorAdd01.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1003" display="block">class VectorAdd01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class VectorAdd01
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 275;
+  int vSize = 200;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    Graphics2D g2D = (Graphics2D)(osi.getGraphics());
+    
+    //Draw some graphical objects on the off-screen
+    // image that represent underlying data objects in
+    // 2D space.
+    drawOffScreen(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+</code>
+
+
+
+	
+
+<para id="p1024">
+<emphasis id="strong1024" effect="bold">
+Very familiar code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1025">
+The code in 
+
+<link id="a1063" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ is very similar to code that I explained in the earlier 
+module titled 
+
+<emphasis id="em1002" effect="italics">
+
+
+
+<link id="a1064" url="http://cnx.org/content/m45009/latest/?collection=col11450/latest">
+
+GAME 2302-0110: Updating the Math Library for Graphics
+
+</link>
+
+
+</emphasis>
+. 
+Therefore, I won't explain that code again in this module.
+
+</para>
+
+
+
+
+<para id="p1026">
+This code is mainly needed to get everything set up for graphics.
+
+</para>
+
+
+
+
+<para id="p1027">
+Note that the code in 
+
+<link id="a1065" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ makes a call to the method named 
+
+<emphasis id="strong1025" effect="bold">
+
+drawOffScreen 
+
+</emphasis>
+near the end of the listing. That is where we find the 
+interesting code.
+
+</para>
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1026" effect="bold">
+Beginning of the method named drawOffScreen
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+The beginning of the 
+
+<emphasis id="strong1027" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method is shown in 
+
+<link id="a1066" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1030">
+The purpose of this method is to add some 
+
+<emphasis id="strong1028" effect="bold">
+Vector
+
+</emphasis>
+ objects and to cause 
+visual manifestations of the raw 
+
+<emphasis id="strong1029" effect="bold">
+Vector
+
+</emphasis>
+ objects and the resultant 
+
+<emphasis id="strong1030" effect="bold">
+
+Vector
+
+</emphasis>
+ objects to be drawn onto an off-screen image.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Beginning of the method named drawOffScreen. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1004" display="block">  void drawOffScreen(Graphics2D g2D){
+    setCoordinateFrame(g2D);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1031">
+<link id="a1067" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ begins by calling the method named 
+
+<emphasis id="strong1031" effect="bold">
+setCoordinateFrame
+
+</emphasis>
+, 
+	which is shown in its entirety in 
+
+<link id="a1068" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. I will put the discussion of 
+	the 
+
+<emphasis id="strong1032" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method on hold while I explain the method named 
+
+<emphasis id="strong1033" effect="bold">
+
+	setCoordinateFrame
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="strong1034" effect="bold">
+The method named setCoordinateFrame
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1033">
+This method sets the origin to a point near the upper-left corner of the 
+off-screen image 
+
+<emphasis id="em1003" effect="italics">
+(see 
+
+<link id="a1069" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+)
+
+</emphasis>
+ and draws orthogonal axes on the 
+off-screen image intersecting at the origin.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. The method named setCoordinateFrame. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1005" display="block">  private void setCoordinateFrame(Graphics2D g2D){
+    //Translate the origin.
+    g2D.translate(0.2*osiWidth,0.2*osiHeight);
+   
+    //Draw new X and Y-axes in default BLACK
+    g2D.drawLine(-(int)(0.2*osiWidth),0,
+                 (int)(0.8*osiWidth),0);
+                 
+    g2D.drawLine(0,-(int)(0.2*osiHeight),
+                 0,(int)(0.8*osiHeight));
+        
+  }//end setCoordinateFrame method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1034">
+There is no intention to perform mathematical operations on the axes, so 
+	they are drawn independently of the classes and methods in the game-math 
+	library using the simplest method available for drawing a line.
+
+</para>
+
+
+
+
+<para id="p1035">
+The name of that simple method is 
+
+<emphasis id="strong1035" effect="bold">
+drawLine
+
+</emphasis>
+, and it is a method of the
+standard Java
+
+
+<emphasis id="strong1036" effect="bold">
+Graphics
+
+</emphasis>
+ class. The 
+
+<emphasis id="strong1037" effect="bold">
+translate
+
+</emphasis>
+ method is also a method of the 
+
+<emphasis id="strong1038" effect="bold">
+
+Graphics
+
+</emphasis>
+ class. Given that information, the code in 
+
+<link id="a1070" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ is 
+straightforward and should not require further explanation.
+
+</para>
+
+
+
+
+<para id="p1036">
+<emphasis id="strong1039" effect="bold">
+Adding two vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+Returning to the method named 
+
+<emphasis id="strong1040" effect="bold">
+drawOffScreen
+
+</emphasis>
+, 
+
+<link id="a1071" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ begins by 
+instantiating two objects of the 
+
+<emphasis id="strong1041" effect="bold">
+GM2D04.Vector
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Adding two vectors. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1006" display="block">    GM2D04.Vector vecA = new GM2D04.Vector(
+                            new GM2D04.ColMatrix(50,100));
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                             new GM2D04.ColMatrix(75,25));
+                           
+    GM2D04.Vector sumOf2 = vecA.add(vecB);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1038">
+Then 
+
+<link id="a1072" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ calls the new 
+
+<emphasis id="strong1042" effect="bold">
+add
+
+</emphasis>
+ method 
+
+<emphasis id="em1004" effect="italics">
+(see 
+
+<link id="a1073" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+)
+
+</emphasis>
+ on 
+	one of the vectors, passing the other vector as a parameter to the method. 
+	The 
+
+<emphasis id="strong1043" effect="bold">
+add
+
+</emphasis>
+ method returns a third vector that is the sum of the other 
+	two vectors. The new vector is referred to as 
+
+<emphasis id="strong1044" effect="bold">
+sumOf2
+
+</emphasis>
+ in 
+
+<link id="a1074" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1039">
+<emphasis id="strong1045" effect="bold">
+Draw vecA in RED with its tail at the origin
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1040">
+Recall that a vector has only two properties: length and direction. It does 
+not have a position property. Therefore, if you decide to draw a vector, you can 
+draw it anywhere in space, and one position is equally as valid as any other 
+position.
+
+</para>
+
+
+
+
+<para id="p1041">
+<link id="a1075" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ sets the drawing color to RED and calls the 
+
+<emphasis id="strong1046" effect="bold">
+draw
+
+</emphasis>
+ method on
+
+
+<emphasis id="strong1047" effect="bold">
+vecA
+
+</emphasis>
+ producing the red visual manifestation of the 
+
+<emphasis id="strong1048" effect="bold">
+Vector
+
+</emphasis>
+ object 
+shown in 
+
+<link id="a1076" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="em1005" effect="italics">
+(Note that there is also a magenta vector in 
+
+<link id="a1077" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, and it may be 
+difficult to distinguish from the red vector, depending on the quality of the 
+color on your monitor. The magenta vector is longer than the red vector.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Draw vecA in RED with its tail at the origin. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1007" display="block">    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1043">
+Note that I elected to draw the vector with its tail at the origin, but 
+	that was an arbitrary decision that I will discuss in more detail later.
+
+</para>
+
+
+
+
+<para id="p1044">
+<emphasis id="strong1049" effect="bold">
+Draw vecB in GREEN head-to-tail with vecA
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1045">
+While it's legal to draw a vector anywhere in space, certain positions may 
+have advantages over other positions in some cases. You will see what I mean 
+shortly. In the meantime, 
+
+<link id="a1078" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ creates a visual manifestation of the 
+
+<emphasis id="strong1050" effect="bold">
+
+vecB
+
+</emphasis>
+ object with its tail at the head of the 
+
+<emphasis id="strong1051" effect="bold">
+vecA
+
+</emphasis>
+ object as shown by 
+the green vector in 
+
+<link id="a1079" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Draw vecB in GREEN head-to-tail with vecA.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1008" display="block">    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1046">
+<emphasis id="strong1052" effect="bold">
+Draw sumOf2 in MAGENTA with its tail at the origin
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1047">
+<link id="a1080" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ creates a visual manifestation of the 
+
+<emphasis id="strong1053" effect="bold">
+sumOf2 
+
+</emphasis>
+object with 
+its tail at the origin as shown by the magenta vector in 
+
+<link id="a1081" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1048">
+<emphasis id="em1006" effect="italics">
+(In case 
+you don't recognize the name of the color magenta, it looks similar to violet 
+or purple. As mentioned earlier, it is somewhat longer than the red vector)
+
+</emphasis>
+ 
+
+
+</para>
+
+
+
+
+<para id="p1049">
+More correctly, 
+
+<link id="a1082" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ draws the 
+
+<emphasis id="strong1054" effect="bold">
+sumOf2
+
+</emphasis>
+ object with its tail 
+coinciding with the tail of 
+
+<emphasis id="strong1055" effect="bold">
+vecA
+
+</emphasis>
+. I elected to position the tails of the 
+two vectors at the origin to keep the code a little simpler.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Draw sumOf2 in MAGENTA with its tail at the origin. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1009" display="block">    g2D.setColor(Color.MAGENTA);
+    sumOf2.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       0.0,0.0)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1050">
+<emphasis id="strong1056" effect="bold">
+The head-to-tail rule
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1051">
+We have just illustrated a very important rule that can make it much easier 
+to visualize the results of vector addition. It is often called the 
+
+<emphasis id="em1007" effect="italics">
+
+head-to-tail
+
+</emphasis>
+ rule. 
+
+</para>
+
+
+
+
+<para id="p1052">
+If you add two or more vectors to produce a 
+
+<emphasis id="em1008" effect="italics">
+sum
+
+</emphasis>
+ vector, and then draw 
+the vectors that were included in the sum with the tail of one vector coinciding 
+with the head of another vector, 
+
+<emphasis id="em1009" effect="italics">
+(as illustrated by the red and green vectors 
+in 
+
+<link id="a1083" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+)
+
+</emphasis>
+, the head of the last vector that you draw will be positioned 
+at some particular point in space.
+
+</para>
+
+
+
+
+<para id="p1053">
+If you then draw the vector that represents the sum vector with its tail 
+coinciding with the tail of the first vector that you drew, its head will 
+coincide with the head of the last vector that you drew as shown by the magenta 
+vector in 
+
+<link id="a1084" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1054">
+The tail of the magenta vector coincides with the tail of 
+the red vector, and the head of the magenta vector coincides with the head of 
+the green vector. 
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="em1010" effect="italics">
+(It doesn't matter whether or not the coinciding tails are 
+drawn at the origin.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1056">
+Furthermore, this rule will hold regardless of the 
+number of vectors included in the sum.
+
+</para>
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1057" effect="bold">
+Extending the example to three vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+<link id="a1085" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ extends this example to three vectors.
+
+</para>
+
+
+
+	
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Extending the example to three vectors. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1010" display="block">    //Now define another vector and add it to vecA and
+    // vecB.
+    GM2D04.Vector vecC = new GM2D04.Vector(
+                           new GM2D04.ColMatrix(30,-150));
+                           
+    //Draw vecD in BLUE with its tail positioned at the
+    // sum of vecA and vecB
+    g2D.setColor(Color.BLUE);
+    vecC.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                   sumOf2.getData(0),sumOf2.getData(1))));
+                       
+    //Define a vector as the sum of vecA, vecB, and vecC
+    GM2D04.Vector sumOf3 = (vecA.add(vecB)).add(vecC);
+
+    //Draw sumOf3 in BLACK with its tail at the origin.
+    g2D.setColor(Color.BLACK);
+    sumOf3.draw(g2D,new GM2D04.Point(
+                          new GM2D04.ColMatrix(0.0,0.0)));
+
+  }//end drawOffScreen</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1059">
+<emphasis id="strong1058" effect="bold">
+You should understand this code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+By now, you should have no difficulty understanding the code in 
+
+<link id="a1086" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. 
+The only tricky thing that I would call your attention to is the syntax of the 
+code that adds the three vectors shown below for emphasis. 
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1059" effect="bold">
+GM2D04.Vector sumOf3 = (vecA.add(vecB)).add(vecC);
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+You should make certain that you understand this syntax.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1060" effect="bold">
+No overloaded operators:
+
+</emphasis>
+
+				
+
+<para id="p1063">
+It is at times like this when I wish that Java supported overloaded operators in a manner similar to C++. Overloading the + operator would make the syntax much more intuitive than that shown by the code in 
+
+<link id="a1087" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+.
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1064">
+<emphasis id="strong1061" effect="bold">
+Back to the drawing
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1065">
+Now turn your attention back to the drawing in 
+
+<link id="a1088" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The red, green, and 
+blue vectors are drawn in a head-to-tail manner as described earlier. The 
+
+<emphasis id="strong1062" effect="bold">
+
+sumOf3
+
+</emphasis>
+ 
+
+<emphasis id="em1011" effect="italics">
+(black)
+
+</emphasis>
+ vector is drawn with its tail coinciding with the tail 
+of the first 
+
+<emphasis id="em1012" effect="italics">
+(red)
+
+</emphasis>
+ vector. Note that the head of the black vector 
+coincides with the head of the last 
+
+<emphasis id="em1013" effect="italics">
+(blue)
+
+</emphasis>
+ vector in the sum. Although 
+not a definitive proof, this is at least a strong indication that the 
+head-to-tail rule works for adding any number of vectors.
+
+</para>
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1063" effect="bold">
+An overridden paint method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+The 
+
+<emphasis id="strong1064" effect="bold">
+MyCanvas
+
+</emphasis>
+ class also includes an overridden 
+
+<emphasis id="strong1065" effect="bold">
+paint
+
+</emphasis>
+ method. 
+However, the code in that method is very similar to code that I explained in the 
+earlier module titled 
+
+<emphasis id="em1014" effect="italics">
+
+
+
+<link id="a1089" url="http://cnx.org/content/m45009/latest/?collection=col11450/latest">
+
+GAME 2302-0110: Updating the Math Library for Graphics
+
+</link>
+
+
+</emphasis>
+. 
+Therefore, I won't explain that code again in this module. You can view the 
+overridden 
+
+<emphasis id="strong1066" effect="bold">
+paint
+
+</emphasis>
+ method in 
+
+<link id="a1090" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1068">
+That concludes the discussion of the program named 
+
+<emphasis id="strong1067" effect="bold">
+VectorAdd01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_program_named_CoordinateFrame01" effect="bold">
+
+The program named 
+CoordinateFrame01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1069">
+A complete listing of this program is provided in 
+
+<link id="a1091" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+ near the end of 
+the module. This program illustrates the relationship between the coordinate 
+frame and a geometric object described in that coordinate frame.
+
+</para>
+
+
+
+
+<para id="p1070">
+A GUI allows the user to move the origin of the coordinate frame. Proper 
+mathematical corrections are made such that a geometric object described in that 
+coordinate frame maintains its position relative to world coordinates even when 
+the coordinate frame is changed. This causes its position relative to the 
+coordinate frame to change.
+
+</para>
+
+
+
+
+<para id="p1071">
+<emphasis id="strong1068" effect="bold">
+Screen output at startup
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1072">
+<link id="a1092" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the screen output of the program at startup.
+
+</para>
+
+
+
+
+<para id="p1073">
+<emphasis id="Figure_2" effect="bold">
+
+
+<emphasis id="strong1069" effect="bold">
+Figure 2
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1070" effect="bold">
+ Screen output from CoordinateFrame01 at startup.
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1074">
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/java1706a2.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1071" effect="bold">
+The axes are difficult to see
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+At this point, the origin is at the upper-left corner of the canvas. Although 
+orthogonal axes are drawn intersecting at the origin, they are at the very edge 
+of the canvas and are only barely visible. I will later refer to this coordinate 
+frame with the origin in the upper-left corner as 
+
+<emphasis id="em1015" effect="italics">
+world coordinates
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1077">
+A point has been defined 
+
+<emphasis id="em1016" effect="italics">
+(but not drawn)
+
+</emphasis>
+ at a location specified by X 
+equal to 196 and Y equal to 165. Even though the point is not drawn, a red 
+vector has been drawn with its tail located at that point. A green vector has 
+been drawn with its tail at the head of the red vector. A blue vector has been 
+computed as the sum of the red and green vectors and it has been drawn with its 
+tail at the tail of the red vector. As you learned in the previous program, this 
+results in a closed polygon that is drawn at the point defined above.
+
+</para>
+
+
+
+
+<para id="p1078">
+<emphasis id="strong1072" effect="bold">
+Modify the coordinate frame
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1079">
+<link id="a1093" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows the result of modifying the coordinate frame and then causing 
+everything to be re-drawn. The coordinate frame is modified by entering values 
+into the two user input fields and clicking the 
+
+<emphasis id="strong1073" effect="bold">
+Replot
+
+</emphasis>
+ button at the 
+bottom of the GUI.
+
+</para>
+
+
+
+
+<para id="p1080">
+<emphasis id="Figure_3" effect="bold">
+
+
+<emphasis id="strong1074" effect="bold">
+Figure 3
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1075" effect="bold">
+ Screen output from CoordinateFrame01 after changes to the coordinate frame.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1081">
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/java1706a3.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1076" effect="bold">
+The new location of the origin
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1083">
+In 
+
+<link id="a1094" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, the origin of the coordinate frame has been moved to the right 
+by an amount that is equal to 40-percent of the width of the off-screen image, 
+and has been moved down by an amount that is 60-percent of the height of the 
+off-screen image. Then a pair of orthogonal axes was drawn, intersecting at the 
+new location of the origin.
+
+</para>
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1077" effect="bold">
+A point is simply a location in space
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+Although a vector doesn't have a location property and therefore is immune to 
+changes in the coordinate frame, a point does have a location property. In fact 
+that is the only property that a point does have, because a point is simply a 
+location in space. Furthermore, that location is always specified relative to 
+some coordinate frame. In order to cause the point to remain in the same 
+location relative to world coordinates, 
+
+<emphasis id="em1017" effect="italics">
+(which was the objective here)
+
+</emphasis>
+, 
+its values relative to the current coordinate frame must be modified each time 
+the coordinate frame is modified.
+
+</para>
+
+
+
+
+<para id="p1086">
+After the values representing the point were modified appropriately, the 
+three vectors were drawn in 
+
+<link id="a1095" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ with the tails of the red and blue vectors 
+located at the point. This caused the geometric object described by the three 
+vectors to remain in the same location relative to world coordinates. However, 
+when the current coordinate frame no longer matched the world coordinate frame, 
+the location of the geometric object changed relative to the current coordinate 
+frame. The geometric object is closer to the origin of the current coordinate 
+frame in 
+
+<link id="a1096" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ than was the case in 
+
+<link id="a1097" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1087">
+<emphasis id="strong1078" effect="bold">
+More complicated code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1088">
+The code in this program is somewhat more complicated than the code in the 
+previous program, mainly due to the inclusion of an interactive GUI in the 
+program. I have published many previous tutorials that explain how to write 
+interactive programs in Java, and I won't repeat that explanation here. Instead, 
+I will concentrate on the use of the game-math library in my explanation of this 
+program. What this really means is that I am only going to explain the following 
+three methods in this program:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1071">
+actionPerformed
+
+</item>
+
+
+	
+
+<item id="li1072">
+setCoordinateFrame
+
+</item>
+
+
+	
+
+<item id="li1073">
+drawOffScreen
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1089">
+You can view the remaining program code in 
+
+<link id="a1098" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+ near the end of the 
+module.
+
+</para>
+
+
+
+
+<para id="p1090">
+<emphasis id="strong1079" effect="bold">
+The actionPerformed method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1091">
+This method must be defined in the class named 
+
+<emphasis id="strong1080" effect="bold">
+GUI
+
+</emphasis>
+ because the 
+
+<emphasis id="strong1081" effect="bold">
+GUI
+
+</emphasis>
+ 
+class implements the 
+
+<emphasis id="strong1082" effect="bold">
+ActionListener
+
+</emphasis>
+ interface. Because an object of the
+
+
+<emphasis id="strong1083" effect="bold">
+GUI
+
+</emphasis>
+ class is registered as a listener on the 
+
+<emphasis id="strong1084" effect="bold">
+Replot
+
+</emphasis>
+ button shown 
+in 
+
+<link id="a1099" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, the
+
+<emphasis id="strong1085" effect="bold">
+ actionPerformed 
+
+</emphasis>
+method is called each time the user 
+clicks the button.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. The actionPerformed method.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1011" display="block">  public void actionPerformed(ActionEvent e){
+    //Reset the coordinate frame to world coordinates by
+    // reversing the most recent translation.
+    setCoordinateFrame(g2D,-xOffset,-yOffset);
+
+    //Compute new translation offsets based on user input.
+    xOffsetFactor = 
+               Double.parseDouble(xOffsetField.getText());
+    yOffsetFactor = 
+               Double.parseDouble(yOffsetField.getText());
+
+    xOffset = osiWidth*xOffsetFactor;
+    yOffset = osiHeight*yOffsetFactor;
+
+    //Draw a new off-screen image based on user inputs
+    // and copy it to the canvas. Note that the
+    // drawOffScreen method will call the
+    // setCoordinateFrame method again with the new
+    // offset values for the origin of the coordinate
+    // frame.
+    drawOffScreen(g2D);
+    myCanvas.repaint();
+  }//end actionPerformed
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1092">
+<emphasis id="strong1086" effect="bold">
+What does the actionPerformed method do?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1093">
+There is nothing complicated about the code in 
+
+<link id="a1100" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. This code performs 
+the following actions as indicated by the embedded comments:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1074">
+Call the 
+
+<emphasis id="strong1087" effect="bold">
+setCoordinateFrame
+
+</emphasis>
+ method to reset the coordinate frame 
+	to world coordinates.
+
+</item>
+
+
+	
+
+<item id="li1075">
+Get user input values and use them to compute and save new offset values 
+	that will be used to define the origin of the new coordinate frame.
+
+</item>
+
+
+	
+
+<item id="li1076">
+Call the 
+
+<emphasis id="strong1088" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method to erase the current image from the 
+	off-screen image and draw a new image on it using the new coordinate frame. 
+	Note that the 
+
+<emphasis id="strong1089" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method will call the 
+
+<emphasis id="strong1090" effect="bold">
+
+	setCoordinateFrame
+
+</emphasis>
+ method to establish the new coordinate frame before 
+	drawing the new image on the off-screen image.
+
+</item>
+
+
+	
+
+<item id="li1077">
+Call the 
+
+<emphasis id="strong1091" effect="bold">
+repaint
+
+</emphasis>
+ method to cause the off-screen image to be 
+	copied to the canvas and displayed on the computer screen.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1094">
+<emphasis id="strong1092" effect="bold">
+The setCoordinateFrame method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1095">
+This method, which is shown in 
+
+<link id="a1101" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+, is used to set the coordinate 
+frame of the off-screen image by setting the origin to the specified offset 
+values relative to origin of the world coordinate frame.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. The setCoordinateFrame method. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1012" display="block">  private void setCoordinateFrame(
+                  Graphics2D g2D,double xOff,double yOff){
+
+    //Paint the background white
+    g2D.setColor(Color.WHITE);
+    g2D.fillRect(0,0,osiWidth,osiHeight);
+
+    //Translate the origin by the specified amount
+    g2D.translate((int)xOff,(int)yOff);
+
+    //Draw new X and Y-axes in BLACK
+    g2D.setColor(Color.BLACK);
+    g2D.drawLine(-(int)xOff,0,(int)(osiWidth-xOff),0);
+    g2D.drawLine(0,-(int)yOff,0,(int)((osiHeight-yOff)));
+
+  }//end setCoordinateFrame method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1096">
+<emphasis id="strong1093" effect="bold">
+What does the setCoordinateFrame method do?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1097">
+As mentioned earlier, the origin of the world coordinate frame is the 
+upper-left corner of the off-screen image. The
+
+<emphasis id="strong1094" effect="bold">
+ setCoordinateFrame 
+
+</emphasis>
+method 
+assumes that the current coordinate frame coincides with the world coordinate 
+frame when the method is called. This is because the method changes the 
+coordinate frame relative to the current coordinate frame.
+
+</para>
+
+
+
+
+<para id="p1098">
+The method begins by painting the background white erasing anything already 
+there. 
+
+<emphasis id="em1018" effect="italics">
+(Note that this step erases the entire image only when the coordinate 
+frame coincides with the world coordinate frame when the method is called.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1099">
+Then the method establishes the new coordinate frame by translating the 
+origin of the off-screen image using the X and Y offset values received as 
+incoming parameters.
+
+</para>
+
+
+
+
+<para id="p1100">
+Finally, the method draws black orthogonal axes intersecting at the origin of 
+the new coordinate frame on the off-screen image.
+
+</para>
+
+
+
+
+<para id="p1101">
+<emphasis id="strong1095" effect="bold">
+Beginning of the drawOffScreen method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1102">
+The code for the method named 
+
+<emphasis id="strong1096" effect="bold">
+drawOffScreen
+
+</emphasis>
+ begins in 
+
+<link id="a1102" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. This 
+method is called once in the constructor for the 
+
+<emphasis id="strong1097" effect="bold">
+GUI
+
+</emphasis>
+ class 
+
+<emphasis id="em1019" effect="italics">
+(see 
+
+
+<link id="a1103" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+)
+
+</emphasis>
+, and again each time the user clicks the 
+
+<emphasis id="strong1098" effect="bold">
+Replot
+
+</emphasis>
+ button 
+shown in 
+
+<link id="a1104" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1103">
+The purpose of this method is to create some 
+
+<emphasis id="strong1099" effect="bold">
+Vector
+
+</emphasis>
+ objects and to 
+cause visual manifestations of the
+
+<emphasis id="strong1100" effect="bold">
+ Vector
+
+</emphasis>
+ objects to be drawn onto an 
+off-screen image.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. Beginning of the drawOffScreen method. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1013" display="block">  void drawOffScreen(Graphics2D g2D){
+    setCoordinateFrame(g2D,xOffset,yOffset);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1104">
+The 
+
+<emphasis id="strong1101" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method begins by calling the 
+
+<emphasis id="strong1102" effect="bold">
+
+	setCoordinateFrame
+
+</emphasis>
+ method to establish a new coordinate frame using 
+	offset values entered by the user, 
+
+<emphasis id="em1020" effect="italics">
+(or default offset values of 0.0 at 
+	startup)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1105">
+<emphasis id="strong1103" effect="bold">
+Define a point to position the vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1106">
+<link id="a1105" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ instantiates a new
+
+<emphasis id="strong1104" effect="bold">
+ GM2D04.Point
+
+</emphasis>
+ object that will be used to 
+locate the three vectors that form the closed polygon shown in 
+
+<link id="a1106" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. The 
+location of the polygon relative to the world coordinate frame will remain the 
+same regardless of how the current coordinate frame is changed.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_15" effect="bold">
+
+Listing 15
+
+</emphasis>
+
+. Define a point to position the vectors. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1014" display="block">    double startPointX = (196 - xOffset);
+    double startPointY = (165 - yOffset);
+    GM2D04.Point startPoint = new GM2D04.Point(
+           new GM2D04.ColMatrix(startPointX,startPointY));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1107">
+The code in 
+
+<link id="a1107" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ is probably the most important code in the entire 
+	program relative to the objective of the program. As I mentioned earlier, if 
+	you want the location of a point to remain the same relative to the world 
+	coordinate frame when you change the current coordinate frame, you must modify the 
+	values that represent that point whenever you cause the current coordinate 
+	frame to be different from the world coordinate frame. The code in 
+
+<link id="a1108" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ makes that modification.
+
+</para>
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1105" effect="bold">
+Remaining code in the drawOffScreen method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1109">
+The remaining code in the 
+
+<emphasis id="strong1106" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method is shown in 
+
+<link id="a1109" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Listing_16" effect="bold">
+
+Listing 16
+
+</emphasis>
+
+. Remaining code in the drawOffScreen method. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1015" display="block">    //Instantiate three Vector objects that form a closed
+    // polygon when drawn head-to-tail.
+    double vecAx = 25;
+    double vecAy = 50;
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                       new GM2D04.ColMatrix(vecAx,vecAy));
+
+    double vecBx = 37;
+    double vecBy = -12;
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                             new GM2D04.ColMatrix(37,12));
+                             
+    //Define vecC as the sum of vecA and vecB. It will be
+    // of the correct length and direction to close the
+    // polygon when drawn such that its tail coincides
+    // with the tail of vecA.
+    GM2D04.Vector vecC = vecA.add(vecB);
+    
+    //Draw vecA in red with its tail at startPoint.    
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,startPoint);
+    
+    //Compute the location of the head of vecA relative to
+    // the current coordinate frame.
+    double headX = 
+                  vecA.getData(0) + startPoint.getData(0);
+    double headY = 
+                  vecA.getData(1) + startPoint.getData(1);
+                              
+    //Draw vecB in GREEN with its tail at the head of
+    // vecA.
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(
+                      new GM2D04.ColMatrix(headX,headY)));
+
+    //Draw vecC in BLUE with its tail at startPoint,
+    // coinciding with the tail of vecA. This forms a
+    // closed polygon.
+    g2D.setColor(Color.BLUE);
+    vecC.draw(g2D,startPoint);
+
+  }//end drawOffScreen
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1110">
+With one exception, there is nothing in 
+
+<link id="a1110" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ that I haven't already 
+	explained in earlier programs in this or previous modules. Therefore, I 
+	won't repeat those explanations here.
+
+</para>
+
+
+
+
+<para id="p1111">
+<emphasis id="strong1107" effect="bold">
+The one exception
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+Recall from 
+
+<link id="a1111" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ that we need to draw the green vector with its tail 
+located at the head of the red vector. In order to do that, we must be able to 
+determine the location of the head of the red vector relative to the current 
+coordinate frame. 
+
+</para>
+
+
+
+
+<para id="p1113">
+The 
+
+<emphasis id="strong1108" effect="bold">
+getData
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1109" effect="bold">
+Vector
+
+</emphasis>
+ class knows nothing about 
+position. That method simply returns the X and Y coordinate values that describe 
+the length of the vector relative to its tail. 
+
+</para>
+
+
+
+
+<para id="p1114">
+<emphasis id="em1021" effect="italics">
+(For the special case where the tail is located at the origin, the 
+
+<emphasis id="strong1110" effect="bold">
+
+getData
+
+</emphasis>
+ method returns the X and Y coordinates of the head of the vector.)
+
+</emphasis>
+
+
+
+</para>
+
+
+
+
+<para id="p1115">
+However, because the tail of the red vector in this case is not necessarily 
+located at the origin, we must calculate the position of the head of the red 
+vector taking the position of its tail 
+
+<emphasis id="em1022" effect="italics">
+(
+
+<emphasis id="strong1111" effect="bold">
+startPoint
+
+</emphasis>
+)
+
+</emphasis>
+ into account. 
+The code in 
+
+<link id="a1112" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ does just that.
+
+</para>
+
+
+
+
+<para id="p1116">
+That concludes the discussion of the program named 
+
+<emphasis id="strong1112" effect="bold">
+CoordinateFrame01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_program_named_VectorAdd02_" effect="bold">
+
+The program named VectorAdd02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1117">
+Hopefully, you have been studying the Kjell tutorial as instructed in the 
+section titled 
+
+<link id="a1113" target-id="Homework_assignment">
+
+Homework assignment
+
+</link>
+
+. This 
+program illustrates the addition of two vectors using two different approaches 
+that result in the parallelogram described by Kjell. That parallelogram is shown 
+in the screen output in 
+
+<link id="a1114" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1118">
+<emphasis id="Figure_4" effect="bold">
+
+
+<emphasis id="strong1113" effect="bold">
+Figure 4
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1114" effect="bold">
+ Screen output from the program named VectorAdd02.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1119">
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/java1706a4.jpg" width="226" height="226"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1120">
+<emphasis id="strong1115" effect="bold">
+The method named drawOffScreen
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1121">
+A complete listing of this program is provided in 
+
+<link id="a1115" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+ near the end of 
+the module. Most of the new material is contained in the method named 
+
+<emphasis id="strong1116" effect="bold">
+
+drawOffScreen
+
+</emphasis>
+. Therefore, I will limit my explanation to the method named 
+
+<emphasis id="strong1117" effect="bold">
+
+drawOffScreen
+
+</emphasis>
+, which begins in 
+
+<link id="a1116" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Listing_17" effect="bold">
+
+Listing 17
+
+</emphasis>
+
+. Beginning of the method named drawOffScreen of the program named VectorAdd02. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1016" display="block">  void drawOffScreen(Graphics2D g2D){
+    
+    //Translate the origin to a position near the bottom-
+    // left corner of the off-screen image and draw a pair
+    // of orthogonal axes that intersect at the origin.
+    setCoordinateFrame(g2D);
+    
+    //Define two vectors.
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                           new GM2D04.ColMatrix(50,-100));
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                            new GM2D04.ColMatrix(75,-25));
+                           
+    //Draw vecA in RED with its tail at the origin
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+                              
+    //Draw vecB in GREEN with its tail at the head of vecA
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+                       
+    //Define a third vector as the sum of the first
+    // two vectors defined above by adding vecB to vecA.
+    GM2D04.Vector sumA = vecA.add(vecB);
+    
+    //Draw sumA in BLACK with its tail at the origin.
+    // The head will coincide with the head of the
+    // green vecB.
+    g2D.setColor(Color.BLACK);
+    sumA.draw(g2D,new GM2D04.Point(
+                          new GM2D04.ColMatrix(0.0,0.0)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1122">
+There is nothing new in 
+
+<link id="a1117" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+. The code in 
+
+<link id="a1118" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+ produces the 
+	black vector in 
+
+<link id="a1119" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ plus the red and green vectors that appear above 
+	the black vector.
+
+</para>
+
+
+
+
+<para id="p1123">
+<emphasis id="strong1118" effect="bold">
+Do the same operations in a different order
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1124">
+<link id="a1120" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ begins by drawing the red and green vectors again. However, this 
+time the green vector is drawn with its tail at the origin, and the red vector 
+is drawn with its tail at the head of the green vector as shown by the green and 
+red vectors below the black vector in 
+
+<link id="a1121" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. This is perfectly legal because 
+a vector has no location property. We can draw a vector anywhere we please 
+provided we draw it with the correct length and direction.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1016" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1016">
+
+			
+
+<row id="tr1032">
+
+				
+
+<entry id="th1016">
+<emphasis id="Listing_18" effect="bold">
+
+Listing 18
+
+</emphasis>
+
+. Do the same operations in a different order. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1016">
+
+			
+
+<row id="tr1033">
+
+				
+
+<entry id="td1016">
+
+
+
+<code id="pre1017" display="block">    //Draw vecB in GREEN with its tail at the origin.
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+
+    //Draw vecA in RED with its tail at the head of vecB.
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecB.getData(0),vecB.getData(1))));
+
+    //Define a fourth vector as the sum of the first
+    // two vectors defined above by adding vecA to vecB.
+    GM2D04.Vector sumB = vecB.add(vecA);
+    
+    //Draw sumB in BLACK with its tail at the origin.
+    // The head will coincide with the head of the
+    // red vecA, and the visual manifestation of sumB will
+    // overlay the visual manifestation of sumA
+    g2D.setColor(Color.BLACK);
+    sumB.draw(g2D,new GM2D04.Point(
+                          new GM2D04.ColMatrix(0.0,0.0)));
+
+  }//end drawOffScreen
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1125">
+Then 
+
+<link id="a1122" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ creates another vector by adding the red and green 
+	vectors and refers to the new vector as 
+
+<emphasis id="strong1119" effect="bold">
+sumB
+
+</emphasis>
+. In the case of Listing 
+	17, 
+
+<emphasis id="strong1120" effect="bold">
+vecB
+
+</emphasis>
+ is added to 
+
+<emphasis id="strong1121" effect="bold">
+vecA
+
+</emphasis>
+ to produce 
+
+<emphasis id="strong1122" effect="bold">
+sumA
+
+</emphasis>
+. In Listing 
+	18, 
+
+<emphasis id="strong1123" effect="bold">
+vecA
+
+</emphasis>
+ is added to 
+
+<emphasis id="strong1124" effect="bold">
+vecB
+
+</emphasis>
+ to produce 
+
+<emphasis id="strong1125" effect="bold">
+sumB
+
+</emphasis>
+. In other 
+	words, the two addition operations are performed in reverse order in the two 
+	listings. As I have mentioned before, the order in which you add vectors 
+	doesn't matter. The result will be the same no matter the order in which you 
+	add them.
+
+</para>
+
+
+
+
+<para id="p1126">
+This is demonstrated in 
+
+<link id="a1123" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ by drawing the vector referred to by 
+
+<emphasis id="strong1126" effect="bold">
+
+sumB
+
+</emphasis>
+ in black. As you can see in 
+
+<link id="a1124" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, the drawing of 
+
+<emphasis id="strong1127" effect="bold">
+sumB
+
+</emphasis>
+ 
+overlays the earlier drawing of 
+
+<emphasis id="strong1128" effect="bold">
+sumA
+
+</emphasis>
+ and you can't tell one from the 
+other. 
+
+</para>
+
+
+
+
+<para id="p1127">
+<emphasis id="em1023" effect="italics">
+(You know that the length of the two vectors is the same because the 
+little circles at the heads of the two vectors overlay one another. You know 
+that the directions are the same because 
+
+<emphasis id="strong1129" effect="bold">
+sumB
+
+</emphasis>
+ completely covers 
+
+<emphasis id="strong1130" effect="bold">
+sumA
+
+</emphasis>
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1128">
+That concludes the discussion of the program named 
+
+<emphasis id="strong1131" effect="bold">
+VectorAdd02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_program_named_VectorAdd03" effect="bold">
+
+The program named VectorAdd03
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1129">
+This program illustrates the fact that the length of the sum of two vectors 
+is not necessarily equal to the sum of the lengths of the two vectors.
+
+</para>
+
+
+
+
+<para id="p1130">
+Two vectors are added by the program. The length of the sum is much smaller 
+than the length of either of the original vectors. This is shown in 
+
+<link id="a1125" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ 
+where the red vector is added to the green vector producing the shorter black 
+vector.
+
+</para>
+
+
+
+
+<para id="p1131">
+<emphasis id="Figure_5" effect="bold">
+
+
+<emphasis id="strong1132" effect="bold">
+Figure 5
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1133" effect="bold">
+ Graphic screen output from the program named VectorAdd03.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1132">
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/java1706a5.jpg" width="226" height="226"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1133">
+<emphasis id="strong1134" effect="bold">
+Command-line output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+In addition to the graphic output shown in 
+
+<link id="a1126" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+, this program also 
+produces three lines of text on the command-line screen as shown in 
+
+<link id="a1127" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1017" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1017">
+
+			
+
+<row id="tr1034">
+
+				
+
+<entry id="th1017">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Command-line output from the program named VectorAdd03. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1017">
+
+			
+
+<row id="tr1035">
+
+				
+
+<entry id="td1017">
+
+
+
+<code id="pre1018" display="block">Red length = 111.80339887498948
+Green length = 115.43396380615195
+Black length = 18.027756377319946
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1135">
+The text output on the command-line screen shows the length of each 
+	vector. As you can see in 
+
+<link id="a1128" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, the length of the black vector is much 
+	less than the length of either the red vector or the blue vector.
+
+</para>
+
+
+
+
+<para id="p1136">
+<emphasis id="strong1135" effect="bold">
+Not much that is new
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1137">
+The only thing that is new in this program is the call to the new 
+
+<emphasis id="strong1136" effect="bold">
+
+getLength
+
+</emphasis>
+ 
+method of the 
+
+<emphasis id="strong1137" effect="bold">
+GM2D04.Vector
+
+</emphasis>
+ class to compute and display the length of 
+each vector in 
+
+<link id="a1129" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1138">
+The source code for the 
+
+<emphasis id="strong1138" effect="bold">
+getLength
+
+</emphasis>
+ method is shown in 
+
+<link id="a1130" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. This 
+code computes the length of the vector as the square root of the sum of the 
+squares of the X and Y components of the vector. Other than that code, there is 
+no code in this program that warrants further explanation.
+
+</para>
+
+
+
+
+<para id="p1139">
+You can view a complete listing of the program in 
+
+<link id="a1131" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+ near the end of 
+the module.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_program_named_VectorAdd04" effect="bold">
+
+The program named VectorAdd04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1140">
+This program illustrates the addition of a 
+
+<emphasis id="strong1139" effect="bold">
+Vector
+
+</emphasis>
+ object to a 
+
+<emphasis id="strong1140" effect="bold">
+Point
+
+</emphasis>
+ 
+object producing a new 
+
+<emphasis id="strong1141" effect="bold">
+Point
+
+</emphasis>
+ object. Both points and the vector are drawn 
+on the screen as shown in 
+
+<link id="a1132" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1141">
+<emphasis id="Figure_7" effect="bold">
+
+
+<emphasis id="strong1142" effect="bold">
+Figure 7
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1143" effect="bold">
+ Screen output from the program named VectorAdd04.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1142">
+<media id="media1005" alt="Missing image." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/java1706a6.jpg" width="226" height="226"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1143">
+The only thing that is new in this program is the call to the new 
+
+<emphasis id="strong1144" effect="bold">
+
+addVectorToPoint 
+
+</emphasis>
+method of the 
+
+<emphasis id="strong1145" effect="bold">
+GM2D04.Point
+
+</emphasis>
+ class to add the vector 
+to the point producing a new point.
+
+</para>
+
+
+
+
+<para id="p1144">
+The source code for the 
+
+<emphasis id="strong1146" effect="bold">
+addVectorToPoint 
+
+</emphasis>
+method is shown in 
+
+<link id="a1133" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. 
+You can view a complete listing of the program in 
+
+<link id="a1134" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+ near the end of the 
+module.
+
+</para>
+
+
+
+
+<para id="p1145">
+<emphasis id="strong1147" effect="bold">
+A very powerful capability
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1146">
+Don't be fooled by the apparent simplicity of the 
+
+<emphasis id="strong1148" effect="bold">
+addVectorToPoint 
+
+</emphasis>
+
+method. The ability to add a vector to a point provides a powerful new 
+capability to the game-math library. As you will see in the next module, this 
+capability makes it possible not only to translate geometrical objects from one 
+location in space to another, but also makes it possible to animate geometrical 
+objects.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Documentation_for_the_GM2D04_library" effect="bold">
+
+Documentation 
+for the GM2D04 library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1147">
+Click 
+
+<link id="a1135" url="GM2D04docs.zip">
+
+here
+
+</link>
+
+ to download a zip file containing 
+standard javadoc documentation for the library named 
+
+<emphasis id="strong1149" effect="bold">
+GM2D04
+
+</emphasis>
+. 
+Extract the contents of the zip file into an empty folder and open the file 
+named 
+
+<emphasis id="strong1150" effect="bold">
+index.html
+
+</emphasis>
+ in your browser to view the documentation.
+
+</para>
+
+
+
+
+<para id="p1148">
+Although the documentation doesn't provide much in the way of explanatory 
+text 
+
+<emphasis id="em1024" effect="italics">
+(see 
+
+<link id="a1136" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+ and the explanations given 
+above)
+
+</emphasis>
+, the documentation does provide a good overview of the organization 
+and structure of the library. You may find it helpful in that regard. 
+
+</para>
+
+
+	
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Homework_assignment" effect="bold">
+
+Homework assignment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1149">
+The homework assignment for this module was to study the Kjell tutorial 
+through 
+
+<emphasis id="em1025" effect="italics">
+Chapter 3 - Vector Addition.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1150">
+The homework assignment for the next module is to study the Kjell tutorial 
+through 
+
+<emphasis id="em1026" effect="italics">
+Chapter 5 - Vector Direction
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1151">
+In addition to studying the Kjell material, you should read at least the next 
+two modules in this collection and bring your questions about that material to 
+the next classroom session.
+
+</para>
+
+
+
+
+<para id="p1152">
+Finally, you should have begun studying the
+
+
+<link id="a1137" url="http://cnx.org/content/m44992/latest/">
+
+physics material
+
+</link>
+
+ at the 
+beginning of the semester and you should continue studying one physics module 
+per week thereafter. You should also feel free to bring your questions about 
+that material to the classroom for discussion. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1153">
+I encourage you to copy the code from 
+
+<link id="a1138" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+ through 
+
+<link id="a1139" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+. Compile the code and 
+execute it in conjunction with the game-math library provided in 
+
+<link id="a1140" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Summary" effect="bold">
+
+Summary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1154">
+In this module you learned
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1078">
+How to add two or more vectors
+
+</item>
+
+
+	
+
+<item id="li1079">
+About the head-to-tail rule in vector addition
+
+</item>
+
+
+	
+
+<item id="li1080">
+About the vector addition parallelogram
+
+</item>
+
+
+	
+
+<item id="li1081">
+About the relationship between the length of the sum of vectors and the 
+	lengths of the individual vectors in the sum
+
+</item>
+
+
+	
+
+<item id="li1082">
+How to add a vector to a point
+
+</item>
+
+
+	
+
+<item id="li1083">
+How to get the length of a vector
+
+</item>
+
+
+	
+
+<item id="li1084">
+How to represent an object in different coordinate frames
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Whats_next" effect="bold">
+
+What's next?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1155">
+In the next module you will learn how to use the game-math library for 
+translation and animation in two dimensions.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1156">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1151" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1013" list-type="bulleted">
+
+					
+
+<item id="li1085">
+Module name: GAME 2302-0125: Vector Addition
+
+</item>
+
+
+					
+
+<item id="li1086">
+File: Game0125.htm
+
+
+</item>
+
+
+					
+
+<item id="li1087">
+Published: 10/15/12
+
+</item>
+
+
+					
+
+<item id="li1088">
+Revised: 02/02/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1152" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1157">
+<emphasis id="strong1153" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1158">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1159">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1160">
+<emphasis id="strong1154" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1161">
+Complete listings of the programs discussed in this module are shown in 
+
+
+<link id="a1141" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+ through 
+
+<link id="a1142" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+ below.
+
+</para>
+
+
+
+
+
+<para id="p1162">
+<emphasis id="strong1155" effect="bold">
+<emphasis id="Listing_19" effect="bold">
+
+Listing 19
+
+</emphasis>
+
+. Source code for the game-math library named GM2D04.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1019" display="block">/*GM2D04.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/08/08
+
+The name GM2Dnn is an abbreviation for GameMath2Dnn.
+
+See the file named GM2D01.java for a general description 
+of this game-math library file. This file is an update of 
+GM2D03.
+
+This update added the following new capabilities:
+
+Vector addition - Adds this Vector object to a Vector
+object received as an incoming parameter and returns the
+sum as a resultant Vector object.
+
+Added a method named getLength that returns the length
+of a vector as type double.
+
+Added a method named addVectorToPoint to add a Vector to 
+a Point producing a new Point.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.geom.*;
+import java.awt.*;
+
+public class GM2D04{
+
+  //An object of this class represents a 2D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix{
+    double[] data = new double[2];
+    
+    public ColMatrix(double data0,double data1){
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    public String toString(){
+      return data[0] + "," + data[1];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+    
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in two matrices and returns true if the
+    // values are equal or almost equal and returns false
+    // otherwise. 
+    public boolean equals(Object obj){
+      if(obj instanceof GM2D04.ColMatrix &amp;&amp;
+         Math.abs(((GM2D04.ColMatrix)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM2D04.ColMatrix)obj).getData(1) - 
+                                  getData(1)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Adds one ColMatrix object to another ColMatrix
+    // object, returning a ColMatrix object.
+    public GM2D04.ColMatrix add(GM2D04.ColMatrix matrix){
+      return new GM2D04.ColMatrix(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1));
+    }//end subtract
+    //--------------------------------------------------//
+    
+    //Subtracts one ColMatrix object from another
+    // ColMatrix object, returning a ColMatrix object. The
+    // object that is received as an incoming parameter 
+    // is subtracted from the object on which the method
+    // is called.
+    public GM2D04.ColMatrix subtract(
+                                 GM2D04.ColMatrix matrix){
+      return new GM2D04.ColMatrix(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1));
+    }//end subtract
+    //--------------------------------------------------//
+  }//end class ColMatrix
+  //====================================================//
+  
+  public static class Point{
+    GM2D04.ColMatrix point;
+    
+    public Point(GM2D04.ColMatrix point){//constructor
+      //Create and save a clone of the ColMatrix object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix object
+      // through use of its set method.
+      this.point = 
+         new ColMatrix(point.getData(0),point.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      Ellipse2D.Double circle = 
+                        new Ellipse2D.Double(getData(0)-3,
+                                             getData(1)-3,
+                                             6,
+                                             6);
+      g2D.draw(circle);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix object that
+    // defines this Point object.
+    public GM2D04.ColMatrix getColMatrix(){
+      return point;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix objects that define two
+    // Point objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(point.equals(((GM2D04.Point)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Gets a displacement vector from one Point object to
+    // a second Point object. The vector points from the
+    // object on which the method is called to the object
+    // passed as a parameter to the method. Kjell
+    // describes this as the distance you would have to
+    // walk along the x and then the y axes to get from
+    // the first point to the second point.
+    public GM2D04.Vector getDisplacementVector(
+                                      GM2D04.Point point){
+      return new GM2D04.Vector(new GM2D04.ColMatrix(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1)));
+    }//end getDisplacementVector
+    //--------------------------------------------------//
+    
+    //Adds a Vector to a Point producing a new Point.
+    public GM2D04.Point addVectorToPoint(
+                                      GM2D04.Vector vec){
+      return new GM2D04.Point(new GM2D04.ColMatrix(
+                          getData(0) + vec.getData(0),
+                          getData(1) + vec.getData(1)));
+    }//end addVectorToPoint
+    //--------------------------------------------------//
+  }//end class Point
+  //====================================================//
+  
+  public static class Vector{
+    GM2D04.ColMatrix vector;
+    
+    public Vector(GM2D04.ColMatrix vector){//constructor
+      //Create and save a clone of the ColMatrix object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColVector object.
+      this.vector = new ColMatrix(
+                     vector.getData(0),vector.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small circle at the
+    // head.
+    public void draw(Graphics2D g2D,GM2D04.Point tail){
+      Line2D.Double line = new Line2D.Double(
+                       tail.getData(0),
+                       tail.getData(1),
+                       tail.getData(0)+vector.getData(0),
+                       tail.getData(1)+vector.getData(1));
+
+    //Draw a small circle to identify the head.
+      Ellipse2D.Double circle = new Ellipse2D.Double(
+                      tail.getData(0)+vector.getData(0)-2,
+                      tail.getData(1)+vector.getData(1)-2,
+                      4,
+                      4);
+      g2D.draw(circle);
+      g2D.draw(line);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix object that
+    // defines this Vector object.
+    public GM2D04.ColMatrix getColMatrix(){
+      return vector;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix objects that define two
+    // Vector objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(vector.equals((
+                     (GM2D04.Vector)obj).getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+    
+    //Adds this vector to a vector received as an incoming
+    // parameter and returns the sum as a vector.
+    public GM2D04.Vector add(GM2D04.Vector vec){
+      return new GM2D04.Vector(new ColMatrix(
+                       vec.getData(0)+vector.getData(0),
+                       vec.getData(1)+vector.getData(1)));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Returns the length of a Vector object.
+    public double getLength(){
+      return Math.sqrt(
+           getData(0)*getData(0) + getData(1)*getData(1));
+    }//end getLength
+    //--------------------------------------------------//
+  }//end class Vector
+  //====================================================//
+  
+  
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line{
+    GM2D04.Point[] line = new GM2D04.Point[2];
+    
+    public Line(GM2D04.Point tail,GM2D04.Point head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point(new GM2D04.ColMatrix(
+                        tail.getData(0),tail.getData(1)));
+      this.line[1] = new Point(new GM2D04.ColMatrix(
+                        head.getData(0),head.getData(1)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM2D04.Point getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM2D04.Point getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+    
+    public void setTail(GM2D04.Point newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point(new GM2D04.ColMatrix(
+              newPoint.getData(0),newPoint.getData(1)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM2D04.Point newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point(new GM2D04.ColMatrix(
+              newPoint.getData(0),newPoint.getData(1)));
+    }//end setHead
+    //--------------------------------------------------//
+    
+    public void draw(Graphics2D g2D){
+      Line2D.Double line = new Line2D.Double(
+                                    getTail().getData(0),
+                                    getTail().getData(1),
+                                    getHead().getData(0),
+                                    getHead().getData(1));
+      g2D.draw(line);
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line
+  //====================================================//
+
+}//end class GM2D04
+//======================================================//
+</code>
+
+
+	
+
+
+
+<para id="p1163">
+<emphasis id="strong1156" effect="bold">
+<emphasis id="Listing_20" effect="bold">
+
+Listing 20
+
+</emphasis>
+
+. Source code for the program named VectorAdd01.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1020" display="block">/*VectorAdd01.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/10/08
+
+This program illustrates the addition of two or more
+vectors. It also illustrates the Head-to-Tail rule
+described by Kjell.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*;
+
+class VectorAdd01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class VectorAdd01
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 275;
+  int vSize = 200;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    Graphics2D g2D = (Graphics2D)(osi.getGraphics());
+    
+    //Draw some graphical objects on the off-screen
+    // image that represent underlying data objects in
+    // 2D space.
+    drawOffScreen(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to add some Vector
+  // objects and to cause visual manifestations of the raw
+  // Vector objects and the resultant Vector objects to be
+  // drawn onto an off-screen image.
+  void drawOffScreen(Graphics2D g2D){
+    
+    //Translate the origin on the off-screen
+    // image and draw a pair of orthogonal axes on it.
+    setCoordinateFrame(g2D);
+    
+    //Define two vectors.
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                            new GM2D04.ColMatrix(50,100));
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                             new GM2D04.ColMatrix(75,25));
+                           
+    //Define a third vector as the sum of the first
+    // two vectors defined above.
+    GM2D04.Vector sumOf2 = vecA.add(vecB);
+    
+    //Draw vecA in RED with its tail at the origin
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+                              
+    //Draw vecB in GREEN with its tail at the head of vecA
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+                       
+    //Draw sumOf2 in MAGENTA with its tail at the origin.
+    // The head will coincide with the head of vecB.
+    g2D.setColor(Color.MAGENTA);
+    sumOf2.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       0.0,0.0)));
+
+    //Now define another vector and add it to vecA and
+    // vecB.
+    GM2D04.Vector vecC = new GM2D04.Vector(
+                           new GM2D04.ColMatrix(30,-150));
+                           
+    //Draw vecD in BLUE with its tail positioned at the
+    // sum of vecA and vecB
+    g2D.setColor(Color.BLUE);
+    vecC.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                   sumOf2.getData(0),sumOf2.getData(1))));
+                       
+    //Define a vector as the sum of vecA, vecB, and vecC
+    GM2D04.Vector sumOf3 = (vecA.add(vecB)).add(vecC);
+
+    //Draw sumOf3 in BLACK with its tail at the origin.
+    g2D.setColor(Color.BLACK);
+    sumOf3.draw(g2D,new GM2D04.Point(
+                          new GM2D04.ColMatrix(0.0,0.0)));
+
+  }//end drawOffScreen
+  //----------------------------------------------------//
+
+  //This method is used to set the origin to a point near
+  // the upper-left corner of the off-screen image  and
+  // draw orthogonal axes on the off-screen image. There
+  // is no intention to perform mathematical operations on
+  // the axes, so they are drawn independently of the
+  // classes and methods in the game-math library using
+  // the simplest method available for drawing a line.
+  private void setCoordinateFrame(Graphics2D g2D){
+    //Translate the origin.
+    g2D.translate(0.2*osiWidth,0.2*osiHeight);
+   
+    //Draw new X and Y-axes in default BLACK
+    g2D.drawLine(-(int)(0.2*osiWidth),0,
+                 (int)(0.8*osiWidth),0);
+                 
+    g2D.drawLine(0,-(int)(0.2*osiHeight),
+                 0,(int)(0.8*osiHeight));
+        
+  }//end setCoordinateFrame method
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+//======================================================//
+</code>
+
+
+
+	
+
+
+
+<para id="p1164">
+<emphasis id="strong1157" effect="bold">
+<emphasis id="Listing_21" effect="bold">
+
+Listing 21
+
+</emphasis>
+
+. Source code for the program named CoordinateFrame01.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1021" display="block">/*CoordinateFrame01.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/14/08
+
+This program illustrates the relationship between the 
+coordinate frame and a geometric object described in that 
+coordinate frame. 
+
+A GUI allows the user to move the origin of the coordinate 
+frame. Proper mathematical corrections are made such that 
+a geometric object described in that coordinate frame 
+maintains its position relative to world coordinates even 
+when the coordinate frame is changed. This causes its 
+position relative to the coordinate frame to change.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*;
+import java.awt.event.*;
+
+class CoordinateFrame01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class CoordinateFrame01
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 400;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  //The following offset values are applied to the width
+  // and the height of the off-screen image to modify the 
+  // coordinate frame. They are used to store user input
+  // values.
+  double xOffsetFactor = 0.0;
+  double yOffsetFactor = 0.0;
+  
+  //The following offset values are computed using the
+  // user-specified offset factor values.
+  double xOffset;
+  double yOffset;
+  
+  Graphics2D g2D;//Off-screen graphics context.
+  
+  //User input fields.
+  JTextField xOffsetField;
+  JTextField yOffsetField;
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the content pane.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+    
+    //Create and populate a JPanel to be used as a user-
+    // input panel and add it to the SOUTH position on
+    // the content pane.
+    JPanel controlPanel = new JPanel();
+    controlPanel.add(new JLabel("X-offset"));
+    xOffsetField = new JTextField("0.0",3);
+    controlPanel.add(xOffsetField);
+    
+    controlPanel.add(new JLabel("Y-offset"));
+    yOffsetField = new JTextField("0.0",3);
+    controlPanel.add(yOffsetField);
+    
+    JButton button = new JButton("Replot");
+    controlPanel.add(button);
+    this.getContentPane().add(
+                         BorderLayout.SOUTH,controlPanel);
+    
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+    
+    //Create some underlying data objects in
+    // 2D space and draw visual manifestations of them.
+    drawOffScreen(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to create some Vector
+  // objects and to cause visual manifestations of them to
+  // be drawn onto an off-screen image.
+  void drawOffScreen(Graphics2D g2D){
+    
+    //Establish the current coordinate frame and prepare
+    // the off-screen image with axes, etc.
+    setCoordinateFrame(g2D,xOffset,yOffset);
+
+    //Define a Point that will be used to locate three
+    // vectors that form a closed polygon. The physical
+    // location of the polygon on the canvas (world)
+    // remains the same regardless of how the coordinate
+    // frame is changed.
+    double startPointX = (196 - xOffset);
+    double startPointY = (165 - yOffset);
+    GM2D04.Point startPoint = new GM2D04.Point(
+           new GM2D04.ColMatrix(startPointX,startPointY));
+
+    //Instantiate three Vector objects that form a closed
+    // polygon when drawn head-to-tail.
+    double vecAx = 25;
+    double vecAy = 50;
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                       new GM2D04.ColMatrix(vecAx,vecAy));
+
+    double vecBx = 37;
+    double vecBy = -12;
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                             new GM2D04.ColMatrix(37,12));
+                             
+    //Define vecC as the sum of vecA and vecB. It will be
+    // of the correct length and direction to close the
+    // polygon when drawn such that its tail coincides
+    // with the tail of vecA.
+    GM2D04.Vector vecC = vecA.add(vecB);
+    
+    //Draw vecA in red with its tail at startPoint.    
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,startPoint);
+    
+    //Compute the location of the head of vecA relative to
+    // the current coordinate frame.
+    double headX = 
+                  vecA.getData(0) + startPoint.getData(0);
+    double headY = 
+                  vecA.getData(1) + startPoint.getData(1);
+                              
+    //Draw vecB in GREEN with its tail at the head of
+    // vecA.
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(
+                      new GM2D04.ColMatrix(headX,headY)));
+
+    //Draw vecC in BLUE with its tail at startPoint,
+    // coinciding with the tail of vecA. This forms a
+    // closed polygon.
+    g2D.setColor(Color.BLUE);
+    vecC.draw(g2D,startPoint);
+
+  }//end drawOffScreen
+  //----------------------------------------------------//
+
+  //This method is used to set the coordinate frame of
+  // the off-screen image by setting the origin to the
+  // specified offset values relative to origin of the
+  // world. The origin of the world is the upper-left
+  // corner of the off-screen image.
+  //The method draws black orthogonal axes on the
+  // off-screen image.
+  //There is no intention to perform mathematical
+  // operations on the axes, so they are drawn
+  // independently of the classes and methods in the
+  // game-math library.
+  //The method paints the background white erasing
+  // anything already there.
+  private void setCoordinateFrame(
+                  Graphics2D g2D,double xOff,double yOff){
+
+    //Paint the background white
+    g2D.setColor(Color.WHITE);
+    g2D.fillRect(0,0,osiWidth,osiHeight);
+
+    //Translate the origin by the specified amount
+    g2D.translate((int)xOff,(int)yOff);
+
+    //Draw new X and Y-axes in BLACK
+    g2D.setColor(Color.BLACK);
+    g2D.drawLine(-(int)xOff,0,(int)(osiWidth-xOff),0);
+    g2D.drawLine(0,-(int)yOff,0,(int)((osiHeight-yOff)));
+
+  }//end setCoordinateFrame method
+  //----------------------------------------------------//
+  
+  //This method must be defined because the class 
+  // implements the ActionListener interface. Because an
+  // object of this class is registered as a listener on
+  // the button, this method is called each time the user
+  // presses the button.
+  public void actionPerformed(ActionEvent e){
+    //Reset the coordinate frame to world coordinates by
+    // reversing the most recent translation.
+    setCoordinateFrame(g2D,-xOffset,-yOffset);
+
+    //Compute new translation offsets based on user input.
+    xOffsetFactor = 
+               Double.parseDouble(xOffsetField.getText());
+    yOffsetFactor = 
+               Double.parseDouble(yOffsetField.getText());
+
+    xOffset = osiWidth*xOffsetFactor;
+    yOffset = osiHeight*yOffsetFactor;
+
+    //Draw a new off-screen image based on user inputs
+    // and copy it to the canvas. Note that the
+    // drawOffScreen method will call the
+    // setCoordinateFrame method again with the new
+    // offset values for the origin of the coordinate
+    // frame.
+    drawOffScreen(g2D);
+    myCanvas.repaint();
+  }//end actionPerformed
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+//======================================================//
+</code>
+
+
+	
+
+
+
+<para id="p1165">
+<emphasis id="strong1158" effect="bold">
+<emphasis id="Listing_22" effect="bold">
+
+Listing 22
+
+</emphasis>
+
+. Source code for the program named VectorAdd02.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1022" display="block">/*VectorAdd02.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/14/08
+
+This program illustrates the addition of two vectors using
+two different approaches that result in the parallelogram 
+described by Kjell. It also illustrates the Head-to-Tail 
+rule described by Kjell.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*;
+
+class VectorAdd02{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class VectorAdd02
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 225;
+  int vSize = 225;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    Graphics2D g2D = (Graphics2D)(osi.getGraphics());
+    
+    //Draw some graphical objects on the off-screen
+    // image that represent underlying data objects in
+    // 2D space.
+    drawOffScreen(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to add some Vector
+  // objects and to cause visual manifestations of the raw
+  // Vector objects and the resultant Vector objects to be
+  // drawn onto an off-screen image.
+  void drawOffScreen(Graphics2D g2D){
+    
+    //Translate the origin to a position near the bottom-
+    // left corner of the off-screen image and draw a pair
+    // of orthogonal axes that intersect at the origin.
+    setCoordinateFrame(g2D);
+    
+    //Define two vectors.
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                           new GM2D04.ColMatrix(50,-100));
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                            new GM2D04.ColMatrix(75,-25));
+                           
+    //Draw vecA in RED with its tail at the origin
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+                              
+    //Draw vecB in GREEN with its tail at the head of vecA
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+                       
+    //Define a third vector as the sum of the first
+    // two vectors defined above by adding vecB to vecA.
+    GM2D04.Vector sumA = vecA.add(vecB);
+    
+    //Draw sumA in BLACK with its tail at the origin.
+    // The head will coincide with the head of the
+    // green vecB.
+    g2D.setColor(Color.BLACK);
+    sumA.draw(g2D,new GM2D04.Point(
+                          new GM2D04.ColMatrix(0.0,0.0)));
+
+    //Do the same operations but in a different order.
+
+    //Draw vecB in GREEN with its tail at the origin.
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+
+    //Draw vecA in RED with its tail at the head of vecB.
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecB.getData(0),vecB.getData(1))));
+
+    //Define a fourth vector as the sum of the first
+    // two vectors defined above by adding vecA to vecB.
+    GM2D04.Vector sumB = vecB.add(vecA);
+    
+    //Draw sumB in BLACK with its tail at the origin.
+    // The head will coincide with the head of the
+    // red vecA, and the visual manifestation of sumB will
+    // overlay the visual manifestation of sumA
+    g2D.setColor(Color.BLACK);
+    sumB.draw(g2D,new GM2D04.Point(
+                          new GM2D04.ColMatrix(0.0,0.0)));
+
+  }//end drawOffScreen
+  //----------------------------------------------------//
+
+  //This method is used to set the origin of the
+  // off-screen image to a location near the lower-left
+  // corner and to draw orthogonal axes that intersect
+  // at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Translate the origin to a point near the lower-left
+    // corner of the off-screen image.
+    g2D.translate(0.2*osiWidth,0.8*osiHeight);
+
+    //Draw new X and Y-axes in default BLACK
+    g2D.drawLine(-(int)(0.2*osiWidth),0,
+                 (int)(0.8*osiWidth),0);
+    
+    g2D.drawLine(0,-(int)(0.8*osiHeight),
+                 0,(int)(0.2*osiHeight));   
+        
+  }//end setCoordinateFrame method
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+//======================================================//
+</code>
+
+
+
+
+
+
+<para id="p1166">
+<emphasis id="strong1159" effect="bold">
+<emphasis id="Listing_23" effect="bold">
+
+Listing 23
+
+</emphasis>
+
+. Source code for the program named VectorAdd03.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1023" display="block">/*VectorAdd03.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/14/08
+
+This program illustrates the fact that the length of the 
+sum of two vectors is not necessarily equal to the sum of 
+the lengths of the two vectors. Two vectors are added such
+and the length of the sum is much smaller than the length 
+of either of the original vectors. The red and green 
+vectors shown in the screen output are added producing the
+black vector. The lengths of all three vectors are 
+displayed on the command-line screen, demonstrating that 
+the length of the black vector is much less than the 
+length of either the red vector or the blue vector.
+
+The only thing that is new in this program is the
+getLength method of the GM2D04.Vector class.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*;
+
+class VectorAdd03{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class VectorAdd03
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 225;
+  int vSize = 225;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    Graphics2D g2D = (Graphics2D)(osi.getGraphics());
+    
+    //Draw some graphical objects on the off-screen
+    // image that represent underlying data objects in
+    // 2D space.
+    drawOffScreen(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to add some Vector
+  // objects and to cause visual manifestations of the raw
+  // Vector objects and the resultant Vector objects to be
+  // drawn onto an off-screen image.
+  void drawOffScreen(Graphics2D g2D){
+    
+    //Translate the origin and draw a pair of orthogonal
+    // axes that intersect at the origin.
+    setCoordinateFrame(g2D);
+    
+    //Define two vectors.
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                           new GM2D04.ColMatrix(50,-100));
+    GM2D04.Vector vecB = new GM2D04.Vector(
+                           new GM2D04.ColMatrix(-35,110));
+                           
+    //Define a third vector as the sum of the first
+    // two vectors defined above.
+    GM2D04.Vector sumOf2 = vecA.add(vecB);
+    
+    //Draw vecA in RED with its tail at the origin
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,new GM2D04.Point(
+                              new GM2D04.ColMatrix(0,0)));
+                              
+    //Draw vecB in GREEN with its tail at the head of vecA
+    g2D.setColor(Color.GREEN);
+    vecB.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+                       
+    //Draw sumOf2 in BLACK with its tail at the origin.
+    // The head will coincide with the head of vecB.
+    g2D.setColor(Color.BLACK);
+    sumOf2.draw(g2D,new GM2D04.Point(new GM2D04.ColMatrix(
+                                               0.0,0.0)));
+                       
+    System.out.println(
+                      "Red length = " + vecA.getLength());
+    System.out.println(
+                    "Green length = " + vecB.getLength());
+    System.out.println(
+                  "Black length = " + sumOf2.getLength());
+  }//end drawOffScreen
+  //----------------------------------------------------//
+
+  //This method is used to set the origin of the
+  // off-screen image and to draw orthogonal axes that
+  // intersect at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Translate the origin to a point near the lower-left
+    // corner of the off-screen image.
+    g2D.translate(0.2*osiWidth,0.8*osiHeight);
+
+    //Draw new X and Y-axes in default BLACK
+    g2D.drawLine(-(int)(0.2*osiWidth),0,
+                 (int)(0.8*osiWidth),0);
+    
+    g2D.drawLine(0,-(int)(0.8*osiHeight),
+                 0,(int)(0.2*osiHeight));   
+        
+  }//end setCoordinateFrame method
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+//======================================================//
+</code>
+
+
+
+	
+
+
+
+<para id="p1167">
+<emphasis id="strong1160" effect="bold">
+<emphasis id="Listing_24" effect="bold">
+
+Listing 24
+
+</emphasis>
+
+. Source code for the program named VectorAdd04. 
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1024" display="block">/*VectorAdd04.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/15/08
+
+This program illustrates the addition of a Vector to a 
+Point producing a new Point. Both points and the vector
+are drawn on the screen.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*;
+
+class VectorAdd04{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class VectorAdd04
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 225;
+  int vSize = 225;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    Graphics2D g2D = (Graphics2D)(osi.getGraphics());
+    
+    //Draw some graphical objects on the off-screen
+    // image.
+    drawOffScreen(g2D);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to add a Vector object
+  // to a Point object and to draw the result onto an
+  // off-screen image..
+  void drawOffScreen(Graphics2D g2D){
+    
+    //Translate the origin on the off-screen
+    // image and draw a pair of orthogonal axes on it.
+    setCoordinateFrame(g2D);
+
+    //Define one point
+    GM2D04.Point point = new GM2D04.Point(
+                            new GM2D04.ColMatrix(50,-25));
+    
+    //Define one vector.
+    GM2D04.Vector vecA = new GM2D04.Vector(
+                            new GM2D04.ColMatrix(25,-50));
+                           
+    //Add the Vector object to the Point object producing
+    // a new Point object
+    GM2D04.Point newPoint = point.addVectorToPoint(vecA);
+    
+    //Draw vecA in RED with its tail at the original
+    // point.
+    g2D.setColor(Color.RED);
+    vecA.draw(g2D,point);
+    
+    //Draw the original point in GREEN.
+    g2D.setColor(Color.GREEN);
+    point.draw(g2D);
+    
+    //Draw the new point in BLUE.
+    g2D.setColor(Color.BLUE);
+    newPoint.draw(g2D);
+
+  }//end drawOffScreen
+  //----------------------------------------------------//
+
+  //This method is used to set the origin of the
+  // off-screen image and to draw orthogonal axes on the
+  // off-screen image that intersect at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Translate the origin to a point near the lower-left
+    // corner of the off-screen image.
+    g2D.translate(0.2*osiWidth,0.8*osiHeight);
+
+    //Draw new X and Y-axes in default BLACK
+    g2D.drawLine(-(int)(0.2*osiWidth),0,
+                 (int)(0.8*osiWidth),0);
+    
+    g2D.drawLine(0,-(int)(0.8*osiHeight),
+                 0,(int)(0.2*osiHeight));   
+        
+  }//end setCoordinateFrame method
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+//======================================================//
+</code>
+
+
+
+	
+
+</section>
+<section id="h11011">
+<title>
+<emphasis id="Exercises" effect="bold">
+
+Exercises
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21007">
+<title>
+<emphasis id="Exercise_1" effect="bold">
+
+Exercise 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1168">
+Using Java and the game-math library named 
+
+<emphasis id="strong1161" effect="bold">
+GM2D04
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that creates twelve random values in the 
+approximate range from -64 to +63. Use those values in
+pairs to define six mathematical vectors.
+
+
+
+</para>
+
+
+
+
+<para id="p1169">
+Draw the six vectors in a head-to-tail arrangement in
+alternating colors of green and blue with the tail of
+the first vector at the origin as shown in 
+
+<link id="a1143" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1170">
+Compute and draw the sum of the six vectors in red with
+the tail of the sum vector at the origin.
+
+
+
+</para>
+
+
+
+
+<para id="p1171">
+Cause the origin of your reference frame to be at the
+center of your drawing and draw the axes for a Cartesian
+coordinate system in the reference frame in black.
+
+
+
+</para>
+
+
+
+
+<para id="p1172">
+Cause the positive x direction to be to the right.
+
+
+</para>
+
+
+
+
+<para id="p1173">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1174">
+Use a symbol of your choice to indicate the head of each
+vector.
+
+
+
+</para>
+
+
+
+
+<para id="p1175">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1176">
+<emphasis id="Figure_8" effect="bold">
+
+
+<emphasis id="strong1162" effect="bold">
+Figure 8
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1163" effect="bold">
+ Screen output from Exercise 1.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1177">
+<media id="media1006" alt="Missing image." display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/0125ex01.jpg" width="451" height="451"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Exercise_2" effect="bold">
+
+Exercise 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1178">
+Using Java and the game-math library named 
+
+<emphasis id="strong1164" effect="bold">
+GM2D04
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that creates four random values in the 
+approximate range from -128 to +127. Use those values in
+pairs to define two mathematical vectors.
+
+
+
+</para>
+
+
+
+
+<para id="p1179">
+Create a third vector as the sum of the first two vectors.
+
+
+
+</para>
+
+
+
+
+<para id="p1180">
+Using red, green, and blue, draw the three vectors in a 
+way that illustrates the parallelogram rule for vector 
+addition as shown in 
+
+<link id="a1144" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1181">
+Cause the origin of your reference frame to be at the
+center of your drawing and draw the axes for a Cartesian
+coordinate system in the reference frame in black.
+
+
+
+</para>
+
+
+
+
+<para id="p1182">
+Cause the positive x direction to be to the right.
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1183">
+Use a symbol of your choice to indicate the head of each
+vector.
+
+
+
+</para>
+
+
+
+
+<para id="p1184">
+Cause the program to display your name in some manner.
+
+
+
+</para>
+
+
+
+
+<para id="p1185">
+Because of the random nature of the vectors, you may need
+to run your program more than once to open up the vector
+diagram and get a clear picture of the parallelogram rule
+for vector addition.
+
+</para>
+
+
+
+
+<para id="p1186">
+<emphasis id="Figure_9" effect="bold">
+
+
+<emphasis id="strong1165" effect="bold">
+Figure 9
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1166" effect="bold">
+ Screen output from Exercise 2.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1187">
+<media id="media1007" alt="Missing image." display="block">
+<image id="img1007" mime-type="image/jpeg" src="../../media/0125ex02.jpg" width="451" height="451"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1188">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</content>
+
+
+
+
+</document>

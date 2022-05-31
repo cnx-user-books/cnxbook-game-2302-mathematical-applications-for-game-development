@@ -1,0 +1,9465 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0145: Getting Started with the Vector Dot Product</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45018</md:content-id>
+  <md:title>GAME 2302-0145: Getting Started with the Vector Dot Product</md:title>
+  <md:abstract>Learn the fundamentals of the vector dot product in both 2D and 3D.  Learn how to update the game-math library to support various aspects of the vector dot product.  Learn how to write 2D and 3D programs that use the vector dot product methods in the game-math library.</md:abstract>
+  <md:uuid>31f63318-d714-4c11-af1c-1c6aef9656d3</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_game-math_library_named_GM02">
+
+The game-math library named GM02
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_program_named_DotProd2D01">
+
+The program named DotProd2D01
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_program_named_DotProd2D02">
+
+The program named DotProd2D02
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_program_named_DotProd3D01">
+
+The program named DotProd3D01
+		
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="The_program_named_DotProd3D02">
+
+The program named DotProd3D02
+		
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="What_is_a_vector_dot_product">
+
+Interpreting the vector dot product
+
+</link>
+
+
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="More_than_three_dimensions">
+
+More than three dimensions
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Documentation_for_the_GM02_library">
+
+Documentation for the GM02 library
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Homework_assignment">
+
+Homework assignment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="Summary">
+
+Summary
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Whats_next">
+
+What's next?
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1019">
+<link id="a1019" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1020" target-id="Exercises">
+
+Exercises
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1021">
+<link id="a1021" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1022">
+<link id="a1022" target-id="Exercise_2">
+
+Exercise 2
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1023">
+<link id="a1023" target-id="Exercise_3">
+
+Exercise 3
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1000">
+This module is one in a collection of modules designed for teaching 
+
+<emphasis id="em1000" effect="italics">
+
+	GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX. 
+
+</para>
+
+
+
+
+<para id="p1001">
+<emphasis id="strong1000" effect="bold">
+What you have learned
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1002">
+In the previous module, you learned how to write your first interactive 3D 
+game using the game-math library. You also learned how to write a Java program 
+that simulates flocking behavior such as that exhibited by birds and fish and 
+how to incorporate that behavior into a game. Finally, you examined three other 
+programs that illustrate various aspects of both 2D and 3D animation using the 
+game-math library.
+
+</para>
+
+
+
+
+<para id="p1003">
+<emphasis id="strong1001" effect="bold">
+What you will learn
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+This module is the first part of a two-part mini-series on the 
+
+<emphasis id="em1001" effect="italics">
+vector dot 
+product
+
+</emphasis>
+. By the time you finish both parts, you will have learned 
+
+</para>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1024">
+the fundamentals of 
+the vector dot product in both 2D and 3D, 
+
+</item>
+
+
+	
+
+<item id="li1025">
+how to update the 
+game-math library to support various aspects of the vector dot product, and 
+
+</item>
+
+
+	
+
+<item id="li1026">
+how to write 2D and 3D programs that use the vector dot product for 
+various applications such as the back-face culling procedure that was used to 
+convert the image in 
+
+<link id="a1024" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ to the image in 
+	
+
+<link id="a1025" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<para id="p1005">
+<emphasis id="Figure_1" effect="bold">
+
+
+<emphasis id="strong1002" effect="bold">
+Figure 1
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1003" effect="bold">
+ A 3D image before back-face culling.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/java1714a1.jpg" width="231" height="251"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+
+
+<para id="p1007">
+<emphasis id="Figure_2" effect="bold">
+
+
+<emphasis id="strong1004" effect="bold">
+Figure 2
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1005" effect="bold">
+ The 3D image after back-face culling.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/java1714a2.jpg" width="231" height="251"/>
+</media>
+
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1009">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1027">
+<link id="a1026" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. A 3D image before back-face culling. 
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1027" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. The 3D image after back-face culling. 
+
+</item>
+
+
+		
+
+<item id="li1029">
+<link id="a1028" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Two vectors with their tails at the origin, program DotProd2D02. 
+
+</item>
+
+
+		
+
+<item id="li1030">
+<link id="a1029" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Dot product of two vectors with the same orientation in 2D. 
+
+</item>
+
+
+		
+
+<item id="li1031">
+<link id="a1030" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Dot product of two vectors with the same orientation in 3D. 
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1031" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Dot product of a 3D vector with an identical vector. 
+
+</item>
+
+
+		
+
+<item id="li1033">
+<link id="a1032" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Dot product of vectors with opposite orientations. 
+
+</item>
+
+
+		
+
+<item id="li1034">
+<link id="a1033" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. The dot product of perpendicular vectors in 2D. 
+
+</item>
+
+
+		
+
+<item id="li1035">
+<link id="a1034" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. A general formulation of 2D vector perpendicularity. 
+
+</item>
+
+
+		
+
+<item id="li1036">
+<link id="a1035" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+. Another interesting 2D case of perpendicular vectors. 
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1036" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+. A general formulation of 3D vector perpendicularity. 
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1037" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+. A pair of perpendicular 3D vectors.
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1038" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+. Another pair of perpendicular 3D vectors. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1039" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+. GUI for the program named DotProd2D01. 
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1040" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+. A screen shot of the output from the program named DotProd3D01. 
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1041" target-id="Figure_16">
+
+Figure 16
+
+</link>
+
+. Six (magenta) vectors that are perpendicular to a given (black) vector.
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1042" target-id="Figure_17">
+
+Figure 17
+
+</link>
+
+. Output from Exercise 1.
+
+</item>
+
+
+		
+
+<item id="li1044">
+<link id="a1043" target-id="Figure_18">
+
+Figure 18
+
+</link>
+
+. Output from Exercise 2.
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1044" target-id="Figure_19">
+
+Figure 19
+
+</link>
+
+. Output from Exercise 3.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1046">
+<link id="a1045" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Source code for the method named GM02.ColMatrix3D.dot. 
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1046" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Source code for the method named GM02.Vector3D.dot. 
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1047" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Source code for the method named GM02.Vector3D.angle.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1048" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. The actionPerformed method in the program named DotProd2D01. 
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1049" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Format the dot product value for display in the GUI. 
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1050" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Beginning of the actionPerformed method in the program named DotProd2D02. 
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1051" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Compute the dot product and the angle between the two vectors. 
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1052" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Source code for the game-math library named GM02.
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1053" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Source code for the program named DotProd2D01. 
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1054" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Source code for the program named DotProd2D02. 
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1055" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Source code for the program named DotProd3D01. 
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1056" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Source code for the program named DotProd3D02. 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1010">
+The homework assignment for this module was to study the Kjell tutorial 
+	through 
+
+<emphasis id="em1002" effect="italics">
+Chapter 10, Angle between 3D Vectors
+
+</emphasis>
+.
+
+</para>
+
+
+	
+
+<para id="p1011">
+I won't repeat everything that Dr. Kjell has to say. However, there 
+	are a few points that I will summarize in this section.
+
+</para>
+
+
+
+
+<para id="p1012">
+<emphasis id="strong1006" effect="bold">
+Basic definition of the vector dot product
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1013">
+The vector dot product is a special way to multiply two vectors to produce a 
+real result. 
+
+<emphasis id="Fundamentally" effect="bold">
+
+A
+
+</emphasis>
+
+ description of the vector dot product follows.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1007" effect="bold">
+The vector dot product:
+
+</emphasis>
+
+				
+
+<para id="p1014">
+The vector dot product of two vectors is the product of the lengths of the vectors multiplied by the cosine of the angle between them
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1015">
+By 
+
+<emphasis id="em1003" effect="italics">
+the angle between them
+
+</emphasis>
+, I mean 
+the angle that would be formed if you were to draw the two vectors with their 
+tails in the same location.
+
+</para>
+
+
+
+
+<para id="p1016">
+For example, 
+
+<link id="a1057" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows a black vector and a magenta vector drawn with 
+their tails at the origin. Eyeballing the picture suggests that the angle 
+between the two vectors is forty or fifty degrees.
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="Figure_3" effect="bold">
+
+
+<emphasis id="strong1008" effect="bold">
+Figure 3
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1009" effect="bold">
+ Two vectors with their tails at the origin, program DotProd2D02.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1018">
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/java1714a3.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1010" effect="bold">
+Can do more than eyeball
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+Fortunately, we can do more than eyeball the angle between two vectors. 
+
+
+<link id="a1058" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows the screen output produced by the program named 
+
+<emphasis id="strong1011" effect="bold">
+DotProd2D02
+
+</emphasis>
+ 
+that I will explain in this module. 
+
+<emphasis id="strong1012" effect="bold">
+DotProd2D02
+
+</emphasis>
+ is a 2D program. 
+I will also explain a 3D version named 
+
+<emphasis id="strong1013" effect="bold">
+DotProd3D02
+
+</emphasis>
+ in this module as 
+well.
+
+</para>
+
+
+
+
+<para id="p1021">
+In 
+
+<link id="a1059" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, the top four user input fields allow the user to enter the x and 
+y coordinate values of two vectors according to the labels that identify those 
+fields. When the user clicks the OK button, the first vector is drawn in 
+black with its tail at the origin and the second vector is drawn in magenta with 
+its tail at the origin. The dot product of the two vectors is computed and 
+displayed in the bottom left text field, and the angle between the two vectors 
+is computed and displayed in the bottom right text field.
+
+</para>
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1014" effect="bold">
+Don't need to know the angle between the vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1023">
+Upon seeing the description of the dot product given
+
+
+<link id="a1060" target-id="Fundamentally">
+
+above
+
+</link>
+
+, you may reasonably be concerned 
+about needing to know the angle between the vectors before you can compute the 
+dot product. Fortunately, as you will see
+
+
+<link id="a1061" target-id="The_computational_simplicity_of_the_vector_dot_product">
+
+
+later
+
+</link>
+
+, it is possible to compute the dot product of two vectors without 
+knowing the angle. In fact, being able to compute the dot product is one 
+way to determine the angle between two vectors.
+
+</para>
+
+
+
+
+<para id="p1024">
+As you can see, the value of the dot product of the two vectors shown in 
+
+
+<link id="a1062" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ is 6000 and the angle between the vectors is 49.3987 degrees. You 
+will learn how those values were computed shortly.
+
+</para>
+
+
+
+
+<para id="p1025">
+<emphasis id="strong1015" effect="bold">
+<emphasis id="Major_properties_of_the_dot_product" effect="bold">
+
+Major properties of the dot 
+product
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1026">
+Here are some of the major properties of the dot product of two vectors:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1058">
+The dot product of two vectors with the same orientation is the product 
+	of their lengths.
+
+</item>
+
+
+	
+
+<item id="li1059">
+The length of a vector is the square root of the dot product of the 
+	vector with itself.
+
+</item>
+
+
+	
+
+<item id="li1060">
+The dot product of two vectors having opposite orientations is the 
+	negative of the product of their lengths.
+
+</item>
+
+
+	
+
+<item id="li1061">
+The dot product of perpendicular vectors is zero.
+
+</item>
+
+
+	
+
+<item id="li1062">
+The angle between two vectors is the same as the angle between 
+	normalized versions of the vectors, which is equal to the arc cosine of the 
+	dot product of the normalized vectors.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1027">
+As you will see later, these properties apply to both 2D and 3D vectors. 
+In many cases, they also apply to vectors having more than three dimensions as 
+well.
+
+</para>
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1016" effect="bold">
+Dot product of two vectors with the same orientation in 2D
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+<link id="a1063" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ illustrates the first property in the above list: 
+
+<emphasis id="em1004" effect="italics">
+The dot 
+product of two vectors with the same orientation is the product of their 
+lengths.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+<emphasis id="Figure_4" effect="bold">
+
+
+<emphasis id="strong1017" effect="bold">
+Figure 4
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1018" effect="bold">
+ Dot product of two vectors with the same orientation in 2D.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/java1714a4.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1032">
+You may recall from some earlier experience that when a right triangle has 
+sides with lengths of 30 and 40, the length of the hypotenuse is 50. That 
+is the case for the magenta vector shown in 
+
+<link id="a1064" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Similarly, when the 
+sides of the triangle are 60 and 80, the length of the hypotenuse is 100, as is 
+the case for the black vector in 
+
+<link id="a1065" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1033">
+From the property given above, 
+we know that the dot product of the black and magenta vectors shown in 
+
+<link id="a1066" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ 
+is 5000, which agrees with the value shown in the 
+
+<emphasis id="strong1019" effect="bold">
+Dot Prod
+
+</emphasis>
+ output field 
+in 
+
+<link id="a1067" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1034">
+<emphasis id="strong1020" effect="bold">
+Dot product of two vectors with the same orientation in 3D
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1035">
+<link id="a1068" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ shows the dot product of two vectors with the same orientation in 
+3D. The image in 
+
+<link id="a1069" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ was produced by the program named 
+
+<emphasis id="strong1021" effect="bold">
+DotProd3D02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1036">
+<emphasis id="Figure_5" effect="bold">
+
+
+<emphasis id="strong1022" effect="bold">
+Figure 5
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1023" effect="bold">
+ Dot product of two vectors with the same orientation in 3D.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/java1714a5.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1024" effect="bold">
+Manually calculate the value of the dot product
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+You may need to get your calculator out to manually compute the lengths of 
+the two vectors in 
+
+<link id="a1070" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Computing the lengths as the square root of 
+the sum of the squares of the three components of each vector gives me the 
+following lengths:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1063">
+Black length = 141.42
+
+</item>
+
+
+	
+
+<item id="li1064">
+Magenta length = 70.71
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1040">
+Rounding the product of the two lengths gives the dot product value of 10000, 
+which matches the value shown in the bottom left output field in 
+
+<link id="a1071" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1041">
+<emphasis id="strong1025" effect="bold">
+The length of a vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1042">
+<link id="a1072" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ illustrates the second property in the above
+
+
+<link id="a1073" target-id="Major_properties_of_the_dot_product">
+
+list
+
+</link>
+
+: 
+
+<emphasis id="em1005" effect="italics">
+
+The length of a vector is the square root of the dot product of the vector with 
+itself.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+<emphasis id="Figure_6" effect="bold">
+
+
+<emphasis id="strong1026" effect="bold">
+Figure 6
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1027" effect="bold">
+ Dot product of a 3D vector with an identical vector.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1044">
+<media id="media1005" alt="Missing image." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/java1714a6.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1045">
+<link id="a1074" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ displays two vectors having the same coordinate values as the black 
+vector in 
+
+<link id="a1075" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. 
+
+<emphasis id="em1006" effect="italics">
+(The black vector is hidden by the magenta vector 
+in 
+
+<link id="a1076" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.)
+
+</emphasis>
+ Because these two vectors have identical coordinate 
+values, the dot product of these two vectors is the same as the dot product of 
+either vector with itself.
+
+</para>
+
+
+
+
+<para id="p1046">
+We concluded earlier that 
+the length of each of these vectors is 141.42. This length is the square 
+root of the dot product of the vector with itself. Squaring and rounding 
+this length gives a dot product value of 20000, which matches the value shown in 
+the bottom left output field in 
+
+<link id="a1077" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1028" effect="bold">
+Dot product of vectors with opposite orientations
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1048">
+<link id="a1078" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ illustrates the third property of the dot product given
+
+
+<link id="a1079" target-id="Major_properties_of_the_dot_product">
+
+above
+
+</link>
+
+: 
+
+<emphasis id="em1007" effect="italics">
+
+The dot product of two vectors having opposite orientations is the negative of 
+the product of their lengths.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1049">
+<emphasis id="Figure_7" effect="bold">
+
+
+<emphasis id="strong1029" effect="bold">
+Figure 7
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1030" effect="bold">
+ Dot product of vectors with opposite orientations.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1050">
+<media id="media1006" alt="Missing image." display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/java1714a7.jpg" width="401" height="398"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1051">
+The two vectors shown in 
+
+<link id="a1080" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ have the same absolute coordinates as the 
+two vectors shown in 
+
+<link id="a1081" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. However, the algebraic signs of the 
+coordinates of the magenta vector in 
+
+<link id="a1082" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ were reversed relative to 
+
+
+<link id="a1083" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, causing the magenta vector to point in the opposite direction from the black 
+vector. 
+
+<emphasis id="em1008" effect="italics">
+(Note that the angle between the two vectors, as reported by 
+the program is zero degrees in 
+
+<link id="a1084" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ and is 180 degrees in 
+
+<link id="a1085" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1052">
+The point here is that the dot product of the two vectors in 
+
+<link id="a1086" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ is the 
+negative of the dot product of the two vectors in 
+
+<link id="a1087" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. This property 
+will be used in another program in the second part of this two-part miniseries 
+to achieve the back-face culling shown in 
+
+<link id="a1088" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1053">
+<emphasis id="strong1031" effect="bold">
+<emphasis id="The_computational_simplicity_of_the_vector_dot_product" effect="bold">
+
+The 
+computational simplicity of the vector dot product
+
+</emphasis>
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1054">
+If you have studied the Kjell tutorial through 
+
+<emphasis id="em1009" effect="italics">
+Chapter 10, Angle between 
+3D Vectors
+
+</emphasis>
+ you have learned that the dot product of two vectors can be 
+computed as the sum of products of the corresponding x, y, and z components of 
+the two vectors. In particular, 
+
+<emphasis id="in_the_2D_case" effect="bold">
+
+in the 2D case
+
+</emphasis>
+
+, the dot product is given 
+by:
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="strong1032" effect="bold">
+2D dot product = x1*x2 + y1*y2
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1056">
+Similarly, 
+
+<emphasis id="in_the_3D_case" effect="bold">
+
+in the 3D case
+
+</emphasis>
+
+, the dot product is given by:
+
+</para>
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1033" effect="bold">
+3D dot product = x1*x2 + 
+y1*y2 + z1*z2
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+Note that these two formulations don't require the program to know anything 
+about the angle between the two vectors, as is the case in the
+
+<link id="a1089" target-id="Fundamentally">
+
+ 
+earlie
+
+</link>
+
+r definition. 
+
+</para>
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1034" effect="bold">
+The dot product of perpendicular vectors in 2D
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+The dot product has many uses in game programming, not the least of which is 
+determining if two vectors are perpendicular.
+
+</para>
+
+
+
+
+<para id="p1061">
+<link id="a1090" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ illustrates the fourth property in the above
+
+
+<link id="a1091" target-id="Major_properties_of_the_dot_product">
+
+list
+
+</link>
+
+: 
+
+<emphasis id="em1010" effect="italics">
+
+The dot product of perpendicular vectors is zero
+
+</emphasis>
+. This is an extremely 
+important property in that it allows game programs to easily determine if two vectors 
+are perpendicular. I will begin with a 2D discussion because the topic of 
+perpendicularly of vectors is 
+
+<emphasis id="less_complicated_in_2D_than_in_3D" effect="bold">
+
+less 
+complicated in 2D than in 3D
+
+</emphasis>
+
+.
+
+</para>
+
+
+
+
+<para id="p1062">
+<emphasis id="Figure_8" effect="bold">
+
+
+<emphasis id="strong1035" effect="bold">
+Figure 8
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1036" effect="bold">
+ The dot product of perpendicular vectors in 2D.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1063">
+<media id="media1007" alt="Missing image." display="block">
+<image id="img1007" mime-type="image/jpeg" src="../../media/java1714a8.jpg" width="401" height="400"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1064">
+By eyeballing 
+
+<link id="a1092" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, you can see that the magenta vector is probably 
+perpendicular to the black vector. Looking at the output fields at the 
+bottom left and the bottom right in 
+
+<link id="a1093" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, you will see that the dot product 
+of the two vectors is zero and the angle between the two vectors is 90 degrees.
+
+</para>
+
+
+
+
+<para id="p1065">
+<emphasis id="strong1037" effect="bold">
+Restating the perpendicularity property
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1066">
+Most of us learned in our earlier mathematics classes that the angle between 
+perpendicular lines is 90 degrees. Therefore, the angle between 
+perpendicular vectors must be 90 degrees. 
+
+<emphasis id="em1011" effect="italics">
+(See 
+
+<link id="a1094" url="http://www.thefreedictionary.com/perpendicularity">
+
+a definition of 
+perpendicularity
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+Most of us also learned in our trigonometry classes that the cosine of 90 
+degrees is 0.0. Since, 
+
+<link id="a1095" target-id="Fundamentally">
+
+by definition
+
+</link>
+
+, 
+
+
+<emphasis id="em1012" effect="italics">
+the value of the dot product of two vectors is the product of the lengths of the 
+vectors multiplied by the cosine of the angle between them
+
+</emphasis>
+, and the angle must 
+be 90 degrees for two vectors to be perpendicular, then the dot product of 
+perpendicular vectors must be zero as stated by the fourth property in the above
+
+
+<link id="a1096" target-id="Major_properties_of_the_dot_product">
+
+list of properties
+
+</link>
+
+.
+
+
+</para>
+
+
+
+
+<para id="p1068">
+<emphasis id="strong1038" effect="bold">
+An infinite number of perpendicular vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1069">
+By observing 
+
+<link id="a1097" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, it shouldn't be too much of a stretch for you to 
+recognize that there are an infinite number of different vectors that could 
+replace the magenta vector in 
+
+<link id="a1098" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ and be perpendicular to the black vector. 
+However, since we are discussing the 2D case here, all of those vectors must lie 
+in the same plane and must have the same orientation 
+
+<emphasis id="em1013" effect="italics">
+(or the reverse 
+orientation)
+
+</emphasis>
+ as the magenta vector. In other words, all of the vectors 
+in the infinite set of vectors that are perpendicular to the black vector must 
+lie on the line defined by the magenta vector, pointing in either the same 
+direction or in the opposite direction. However, those vectors can be any 
+length and still lie on that same line.
+
+</para>
+
+
+
+
+<para id="p1070">
+<emphasis id="strong1039" effect="bold">
+A general formulation of 2D vector perpendicularity
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+By performing some algebraic manipulations on the
+
+
+<link id="a1099" target-id="in_the_2D_case">
+
+earlier
+
+</link>
+
+ 2D formulation 
+of the dot product, we can formulate the equations shown in 
+
+<link id="a1100" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+ that define 
+the infinite set of perpendicular vectors described above.
+
+</para>
+
+
+
+
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9
+
+</emphasis>
+
+. A general formulation of 2D vector perpendicularity. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">dot product = x1*x2 + y1*y2
+
+If the two vectors are perpendicular:
+
+x1*x2 + y1*y2 = 0.0
+x1*x2 =  -y1*y2
+x2 = -y1*y2/x1
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1072">
+As you can see from 
+
+<link id="a1101" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+, we can assume any values for y1, y2, and x1 
+	and compute a value for x2 that will cause the two vectors to be 
+	perpendicular.
+
+</para>
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1040" effect="bold">
+A very interesting case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+One very interesting 2D case is the case shown in 
+
+<link id="a1102" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. In this 
+case, I initially specified one of the vectors to be given by the coordinate 
+values (50,100). Then I assumed that y2 is equal to x1 and computed the 
+value for x2. The result is that the required value of x2 is the negative 
+of the value of y1.
+
+</para>
+
+
+
+
+<para id="p1075">
+Thus, in the 2D case, we can easily define two vectors that are perpendicular 
+by
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1065">
+swapping the coordinate values between two vectors and 
+
+</item>
+
+
+	
+
+<item id="li1066">
+negating one of the coordinate values in the second vector 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1076">
+The actual direction that the second vector points will depend on which value 
+you negate in the second vector.
+
+</para>
+
+
+
+
+<para id="p1077">
+<emphasis id="strong1041" effect="bold">
+Another interesting 2D case of perpendicular vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1078">
+Another interesting 2D case is shown in 
+
+<link id="a1103" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1079">
+<emphasis id="Figure_10" effect="bold">
+
+
+<emphasis id="strong1042" effect="bold">
+Figure 10
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1043" effect="bold">
+ Another interesting 2D case of perpendicular vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1080">
+<media id="media1008" alt="Missing image." display="block">
+<image id="img1008" mime-type="image/jpeg" src="../../media/java1714a9.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1081">
+In 
+
+<link id="a1104" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+, I assumed the same coordinate values for the black vector as in 
+
+
+<link id="a1105" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Then I assumed that the values of the y-coordinates for both 
+vectors are the same. Using those values along with the equation in 
+
+
+<link id="a1106" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, I manually computed a required value of -200 for the x-coordinate of the 
+magenta vector. I entered that value into the field labeled 
+
+<emphasis id="strong1044" effect="bold">
+VectorBx =
+
+</emphasis>
+ 
+in 
+
+<link id="a1107" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ and clicked the 
+
+<emphasis id="strong1045" effect="bold">
+OK
+
+</emphasis>
+ button.
+
+</para>
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1046" effect="bold">
+And the result was...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1083">
+You can see that the value of the dot product of the two vectors in 
+
+<link id="a1108" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ 
+is 0.0, and the angle between the two vectors is 90 degrees. Therefore, 
+although the magenta vector in 
+
+<link id="a1109" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ is much longer than the magenta vector 
+in 
+
+<link id="a1110" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, the magenta vector in 
+
+<link id="a1111" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ is still perpendicular to the black 
+vector. Thus, 
+
+<link id="a1112" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ and 
+
+<link id="a1113" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ show two of the infinite number of 
+magenta vectors that are perpendicular to the black vector in those images.
+
+</para>
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1047" effect="bold">
+The dot product of perpendicular vectors in 3D
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+As I mentioned earlier, the topic of perpendicularity in 3D is
+
+
+<link id="a1114" target-id="less_complicated_in_2D_than_in_3D">
+
+more complicated
+
+</link>
+
+ 
+than is the case in 2D. As is the case in 2D, there are an infinite number 
+of vectors that are perpendicular to a given vector in 3D. In 2D, the 
+infinite set of perpendicular vectors must have different lengths taken in 
+pairs, and the vectors in each pair must point in opposite directions.
+
+</para>
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1048" effect="bold">
+An infinite number of perpendicular vectors having the same length
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1087">
+However, in 3D there are an infinite number of vectors having the same length 
+that are perpendicular to a given vector. All of the perpendicular vectors 
+having the same length must point in different directions and they must all lie 
+in a plane that is perpendicular to the given vector.
+
+</para>
+
+
+
+
+<para id="p1088">
+Perpendicular 
+vectors having different lengths may point in the same or in different 
+directions but they also must lie in a plane that is perpendicular to the given 
+vector.
+
+</para>
+
+
+
+
+<para id="p1089">
+<emphasis id="strong1049" effect="bold">
+A wagon-wheel analogy
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1090">
+Kjell explains the situation of an infinite set of 3D vectors that are 
+perpendicular to a given vector by describing an old-fashioned wagon wheel with 
+spokes that emanate directly from the hub and extend to the rim of the wheel. 
+The hub surrounds the axle and each of the spokes is perpendicular to the axle.
+Depending on the 
+thickness of the spokes, a large 
+
+<emphasis id="em1014" effect="italics">
+(but probably not infinite)
+
+</emphasis>
+ number of 
+spokes can be used in the construction of the wagon wheel.
+
+</para>
+
+
+
+
+<para id="p1091">
+<emphasis id="strong1050" effect="bold">
+Another wheel at the other end of the axle
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1092">
+In this case, the wagon wheel lies in a plane that is perpendicular to the 
+axle. There is normally another wheel at the other end of the axle. 
+Assuming that the axle is straight, the second wheel is in a different plane but 
+that plane is also perpendicular to the axle. Thus, the spokes in the 
+second wheel are also perpendicular to the axle.
+
+</para>
+
+
+
+
+<para id="p1093">
+If there were two 
+identical wheels at each end of the axle for a total of four wheels 
+
+<emphasis id="em1015" effect="italics">
+(the 
+predecessor to the modern 18-wheel tractor trailer)
+
+</emphasis>
+, the spokes in all 
+four of the wheels would be perpendicular to the axle. Again, the point is 
+that there are an infinite number of vectors that are perpendicular to a given 
+vector in 3D.
+
+</para>
+
+
+
+
+<para id="p1094">
+<emphasis id="strong1051" effect="bold">
+A general formulation of 3D vector perpendicularity
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1095">
+By performing some algebraic manipulations on the
+
+
+<link id="a1115" target-id="in_the_3D_case">
+
+earlier
+
+</link>
+
+ 3D 
+formulation of the dot product, we can develop the equations shown in 
+
+<link id="a1116" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+ 
+that describe an infinite set of vectors that are perpendicular to a given 
+vector.
+
+</para>
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Figure_11" effect="bold">
+
+Figure 11
+
+</emphasis>
+
+. A general formulation of 3D vector perpendicularity. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">dot product = x1*x2 + y1*y2 + z1*z2
+
+If the two vectors are perpendicular:
+
+x1*x2 + y1*y2 + z1*z2 = 0.0
+x1*x2 =  -(y1*y2 + z1*z2)
+
+x2 = -(y1*y2 + z1*z2)/x1
+
+or
+
+y2 = -(x1*x2 + z1*z2)/y1
+
+or
+
+z2 = -(x1*x2 + y1*y2)/z1
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1096">
+<emphasis id="em1016" effect="italics">
+(Although I didn't do so in 
+
+<link id="a1117" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+, I could have written three more 
+	equations that could be used to solve for x1, y1, and z1 if the given vector 
+	is notated as x2, y2, and z2.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1052" effect="bold">
+No simple case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1098">
+Unlike with 2D vectors, 
+
+<emphasis id="em1017" effect="italics">
+(to my knowledge)
+
+</emphasis>
+, there is no case that 
+simply allows you to swap coordinate values and change the sign on one of them 
+to produce a vector that is perpendicular to another vector. However, 
+given the equations in 
+
+<link id="a1118" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+, and given values for x1, y1, and z1, we can 
+assume values for y2 and z2 and determine the value for x2 that will cause the 
+two vectors to be perpendicular.
+
+</para>
+
+
+
+
+<para id="p1099">
+While this is a fairly tedious computation with a hand calculator, it is very 
+easy to write Java code to perform the computation. Therefore, given a 3D 
+vector, it is fairly easy to write Java code that will compute an infinite 
+number of vectors that are perpendicular to the given vector.
+
+</para>
+
+
+
+
+<para id="p1100">
+<emphasis id="strong1053" effect="bold">
+A pair of perpendicular 3D vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1101">
+<link id="a1119" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ and 
+
+<link id="a1120" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+ each show a magenta 3D vector that is part of the 
+infinite set of vectors that are all perpendicular to the black 3D vector. 
+In 
+
+<link id="a1121" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+, y1 was assumed to be equal to y2, and z1 was assumed to be equal 
+to z2. For an x1 value of 25, a value of -125 was required to cause the 
+magenta vector to be perpendicular to the black vector.
+
+</para>
+
+
+
+
+<para id="p1102">
+<emphasis id="Figure_12" effect="bold">
+
+
+<emphasis id="strong1054" effect="bold">
+Figure 12
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1055" effect="bold">
+ A pair of perpendicular 3D vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1103">
+<media id="media1009" alt="Missing image." display="block">
+<image id="img1009" mime-type="image/jpeg" src="../../media/java1714b1.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1104">
+<emphasis id="strong1056" effect="bold">
+Another pair of perpendicular 3D vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1105">
+In 
+
+<link id="a1122" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+, x1 was assumed to be equal to x2, and z1 was assumed to be 
+equal to z2.
+
+</para>
+
+
+
+
+<para id="p1106">
+<emphasis id="Figure_13" effect="bold">
+
+
+<emphasis id="strong1057" effect="bold">
+Figure 13
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1058" effect="bold">
+ Another pair of perpendicular 3D vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1107">
+<media id="media1010" alt="Missing image." display="block">
+<image id="img1010" mime-type="image/jpeg" src="../../media/java1714b2.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1108">
+For a y1 value of 50, a y2 value of - 25 was required to cause the magenta 
+vector to be perpendicular to the black vector.
+
+</para>
+
+
+
+
+<para id="p1109">
+<emphasis id="strong1059" effect="bold">
+The black vector didn't change
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1110">
+Note that the black vector is the same in 
+
+<link id="a1123" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ and 
+
+<link id="a1124" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+. 
+However, the magenta vectors are different in 
+
+<link id="a1125" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ and 
+
+<link id="a1126" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+. 
+They represent just two of the infinite set of vectors that are perpendicular to 
+the black vector. 
+
+<emphasis id="em1018" effect="italics">
+(They are two of the vectors in the infinite set of 
+perpendicular vectors that are relatively easy to compute using program code.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1111">
+<emphasis id="strong1060" effect="bold">
+Computing the angle between two vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+The fifth property in the previous
+
+
+<link id="a1127" target-id="Major_properties_of_the_dot_product">
+
+list
+
+</link>
+
+ reads:
+
+
+<emphasis id="em1019" effect="italics">
+The angle between two vectors is the same as the angle between normalized 
+versions of the vectors, which is equal to the arc cosine of the dot product of 
+the normalized vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1113">
+In other words, given two vectors, we can compute the angle between the two 
+vectors by first normalizing each vector and then computing the dot product of 
+the two normalized vectors.
+
+</para>
+
+
+
+
+<para id="p1114">
+<emphasis id="em1020" effect="italics">
+(By normalizing, I mean to change the 
+coordinate values such that the direction of the vector remains the same but the 
+length of the vector is converted to 1.0.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1115">
+The dot product is equal to 
+the cosine of the angle. The actual angle can be obtained by using one of 
+the methods of the 
+
+<emphasis id="strong1061" effect="bold">
+Math
+
+</emphasis>
+ class to compute the arc cosine of the value of 
+the dot product.
+
+</para>
+
+
+
+
+<para id="p1116">
+<emphasis id="strong1062" effect="bold">
+Used to compute the output angle in the programs
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1117">
+This is the procedure that is used by the programs in this module to compute 
+and display the angle between two vectors as illustrated by the contents of the 
+output fields labeled 
+
+<emphasis id="strong1063" effect="bold">
+Ang(deg)
+
+</emphasis>
+ or
+
+
+<emphasis id="strong1064" effect="bold">
+Angle (deg) =
+
+</emphasis>
+ in many of the images in this module.
+
+</para>
+
+
+
+
+<para id="p1118">
+I will have more to say about this topic as I explain the code in the 
+upgraded game-math library named 
+
+<emphasis id="strong1065" effect="bold">
+GM02
+
+</emphasis>
+ as well as the following four 
+programs that demonstrate the use of the upgraded game-math library:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1067">
+DotProd2D01
+
+</item>
+
+
+	
+
+<item id="li1068">
+DotProd2D02
+
+</item>
+
+
+	
+
+<item id="li1069">
+DotProd3D01
+
+</item>
+
+
+	
+
+<item id="li1070">
+DotProd3D02
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1119">
+I will also provide exercises for you to complete on your own at the end of 
+the module. The exercises will concentrate on the material that you have learned 
+in this module and previous modules.
+
+</para>
+
+
+
+	
+
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<section id="h21001">
+<title>
+<emphasis id="The_game-math_library_named_GM02" effect="bold">
+
+The game-math library named 
+	GM02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1120">
+In this section, I will present and explain an updated version of the game-math 
+library named 
+
+<emphasis id="strong1066" effect="bold">
+GM02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+
+<para id="p1121">
+This game-math library is an update to the 
+game-math library named 
+
+<emphasis id="strong1067" effect="bold">
+GM01
+
+</emphasis>
+. The main purpose of this update was 
+to add 
+
+<emphasis id="em1021" effect="italics">
+vector dot product
+
+</emphasis>
+ and related capabilities, such as the 
+computation of the angle between two vectors to the library.
+
+</para>
+
+
+
+
+<para id="p1122">
+The following methods are new instance methods of the indicated static 
+top-level classes belonging to the class named 
+
+<emphasis id="strong1068" effect="bold">
+GM02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1071">
+<emphasis id="strong1069" effect="bold">
+GM02.ColMatrix2D.dot
+
+</emphasis>
+ - computes dot product of two ColMatrix2D 
+	objects.
+
+</item>
+
+
+	
+
+<item id="li1072">
+<emphasis id="strong1070" effect="bold">
+GM02.Vector2D.dot
+
+</emphasis>
+ - computes dot product of two Vector2D objects.
+
+</item>
+
+
+	
+
+<item id="li1073">
+<emphasis id="strong1071" effect="bold">
+GM02.Vector2D.angle
+
+</emphasis>
+ - computes angle between two Vector2D 
+	objects.
+
+</item>
+
+
+	
+
+<item id="li1074">
+<emphasis id="strong1072" effect="bold">
+GM02.ColMatrix3D.dot
+
+</emphasis>
+ - computes dot product of two ColMatrix3D 
+	objects
+
+</item>
+
+
+	
+
+<item id="li1075">
+<emphasis id="strong1073" effect="bold">
+GM02.Vector3D.dot
+
+</emphasis>
+ - computes dot product of two Vector3D objects.
+
+</item>
+
+
+	
+
+<item id="li1076">
+<emphasis id="strong1074" effect="bold">
+GM02.Vector3D.angle
+
+</emphasis>
+ - computes angle between two Vector3D 
+	objects.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1123">
+<emphasis id="strong1075" effect="bold">
+Will only explain the new 3D methods
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1124">
+I have explained much of the code in the game-math library in previous 
+modules, and I won't repeat those explanations here. Rather, I will 
+explain only the new 3D code in this module. Once you understand the new 
+3D code, you should have no difficulty understanding the new 2D code.
+
+</para>
+
+
+
+
+<para id="p1125">
+You can view a complete listing of the updated game-math library in 
+
+<link id="a1128" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ 
+near the end of the module.
+
+</para>
+
+
+
+
+<para id="p1126">
+<emphasis id="strong1076" effect="bold">
+Source code for the method named GM02.ColMatrix3D.dot
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1127">
+<link id="a1129" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows the source code for the new instance method named 
+
+<emphasis id="strong1077" effect="bold">
+
+GM02.ColMatrix3D.dot
+
+</emphasis>
+. If you have studied the Kjell tutorials, you have learned that the 
+dot product can be applied not only to two vectors, but can also be applied to 
+the column matrix objects that are used to represent the vectors. 
+
+
+<link id="a1130" target-id="Listing_1">
+
+Listing 
+1
+
+</link>
+
+ computes the dot product of two 
+
+<emphasis id="strong1078" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects and returns the 
+result as type double.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Source code for the method named GM02.ColMatrix3D.dot. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">    public double dot(GM02.ColMatrix3D matrix){
+      return getData(0) * matrix.getData(0) 
+           + getData(1) * matrix.getData(1)
+           + getData(2) * matrix.getData(2);
+    }//end dot
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1128">
+This is one of those cases where it is very easy to write the code once 
+	you understand the code that you need to write. 
+
+<link id="a1131" target-id="Listing_1">
+
+Listing 
+1
+
+</link>
+
+ implements 
+	the equation for the 3D dot product that I provided
+	
+
+<link id="a1132" target-id="in_the_3D_case">
+
+earlier
+
+</link>
+
+ 
+	and returns the result of the computation as type 
+
+<emphasis id="strong1079" effect="bold">
+double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1129">
+<emphasis id="strong1080" effect="bold">
+Source code for the method named GM02.Vector3D.dot
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1130">
+<link id="a1133" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows the source code for the method named 
+
+<emphasis id="strong1081" effect="bold">
+GM02.Vector3D.dot
+
+</emphasis>
+. 
+This method computes the dot product of two 
+
+<emphasis id="strong1082" effect="bold">
+Vector3D
+
+</emphasis>
+ objects and returns 
+the result as type 
+
+<emphasis id="strong1083" effect="bold">
+double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Source code for the method named GM02.Vector3D.dot. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">    public double dot(GM02.Vector3D vec){
+      GM02.ColMatrix3D matrixA = getColMatrix();
+      GM02.ColMatrix3D matrixB = vec.getColMatrix();
+      return matrixA.dot(matrixB);
+    }//end dot
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1131">
+Once again, the code is straightforward. All 
+
+<emphasis id="strong1084" effect="bold">
+Vector3D
+
+</emphasis>
+ 
+	objects instantiated from classes in the game-math library are represented 
+	by objects of the 
+
+<emphasis id="strong1085" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ class. 
+
+<link id="a1134" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ gets a reference 
+	to the two 
+
+<emphasis id="strong1086" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects that represent the two vectors for 
+	which the dot product is needed. Then it calls the 
+
+<emphasis id="strong1087" effect="bold">
+
+	GM02.ColMatrix3D.dot 
+
+</emphasis>
+method shown earlier in 
+
+<link id="a1135" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ to get and return 
+	the value of the dot product of the two vectors.
+
+</para>
+
+
+
+
+<para id="p1132">
+<emphasis id="strong1088" effect="bold">
+Source code for the method named GM02.Vector3D.angle
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1133">
+<link id="a1136" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shows the source code for the method named 
+
+<emphasis id="strong1089" effect="bold">
+GM02.Vector3D.angle
+
+</emphasis>
+. 
+This method computes and returns the angle between two 
+
+<emphasis id="strong1090" effect="bold">
+Vector3D
+
+</emphasis>
+ objects. 
+The angle is returned in degrees as type 
+
+<emphasis id="strong1091" effect="bold">
+double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Source code for the method named GM02.Vector3D.angle.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">    public double angle(GM02.Vector3D vec){
+      GM02.Vector3D normA = normalize();
+      GM02.Vector3D normB = vec.normalize();
+      double normDotProd = normA.dot(normB);
+      return Math.toDegrees(Math.acos(normDotProd));
+    }//end angle
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1134">
+<emphasis id="strong1092" effect="bold">
+You need to understand trigonometry here
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1135">
+If you understand trigonometry, you will find the code in 
+
+<link id="a1137" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ 
+straightforward. If not, simply take my word for it that the method shown 
+in 
+
+<link id="a1138" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ behaves as described above.
+
+</para>
+
+
+
+
+<para id="p1136">
+The method begins by calling the 
+
+<emphasis id="strong1093" effect="bold">
+normalize
+
+</emphasis>
+ method on each of the two 
+vectors for which the angle between the vectors is needed. 
+
+<emphasis id="em1022" effect="italics">
+(See the 
+definition of the 
+
+<emphasis id="strong1094" effect="bold">
+normalize
+
+</emphasis>
+ method in 
+
+<link id="a1139" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1137">
+Then 
+
+<link id="a1140" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ computes the dot product of the two normalized vectors. 
+The value of the dot product is the cosine of the angle between the two original 
+vectors.
+
+</para>
+
+
+
+
+<para id="p1138">
+After that, 
+
+<link id="a1141" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1095" effect="bold">
+acos
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1096" effect="bold">
+Math
+
+</emphasis>
+ class 
+to get the 
+
+<emphasis id="em1023" effect="italics">
+arc (inverse) cosine
+
+</emphasis>
+ 
+
+<emphasis id="em1024" effect="italics">
+(see
+
+
+<link id="a1142" url="http://mathworld.wolfram.com/InverseCosine.html">
+
+Inverse Cosine
+
+</link>
+
+)
+
+</emphasis>
+ 
+of the dot product value. The 
+
+<emphasis id="strong1097" effect="bold">
+acos
+
+</emphasis>
+ method returns the angle in 
+radians.
+
+</para>
+
+
+
+
+<para id="p1139">
+Finally, 
+
+<link id="a1143" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1098" effect="bold">
+toDegrees
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1099" effect="bold">
+Math
+
+</emphasis>
+ class 
+to convert the angle from radians to degrees and to return the angle in degrees 
+as type 
+
+<emphasis id="strong1100" effect="bold">
+double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1140">
+That completes the discussion of the updates to the game-math library 
+resulting in the new library named 
+
+<emphasis id="strong1101" effect="bold">
+GM02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_program_named_DotProd2D01" effect="bold">
+
+The program named DotProd2D01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1141">
+To understand this program, you need to understand the material in the Kjell 
+tutorial through 
+
+<emphasis id="em1025" effect="italics">
+Chapter 8 - Length, Orthogonality, and the Column Matrix Dot 
+product
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1142">
+The purpose of this program is simply to confirm proper operation of the 
+
+<emphasis id="strong1102" effect="bold">
+
+GM02.ColMatrix2D.dot
+
+</emphasis>
+ method. The program output is shown in 
+
+<link id="a1144" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1143">
+<emphasis id="Figure_14" effect="bold">
+
+
+<emphasis id="strong1103" effect="bold">
+Figure 14
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1104" effect="bold">
+ GUI for the program named DotProd2D01.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1144">
+<media id="media1011" alt="Missing image." display="block">
+<image id="img1011" mime-type="image/jpeg" src="../../media/java1714b3.jpg" width="401" height="151"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1145">
+<emphasis id="strong1105" effect="bold">
+A graphical user interface
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1146">
+The program creates a GUI that allows the user to enter the first and second 
+values for each of a pair of 
+
+<emphasis id="strong1106" effect="bold">
+ColMatrix2D
+
+</emphasis>
+ objects into four text fields. 
+The GUI also provides a button labeled 
+
+<emphasis id="strong1107" effect="bold">
+OK
+
+</emphasis>
+. When the user clicks the
+
+
+<emphasis id="strong1108" effect="bold">
+OK
+
+</emphasis>
+ button, the dot product of the two 
+
+<emphasis id="strong1109" effect="bold">
+ColMatrix2D
+
+</emphasis>
+ objects is 
+computed. The resulting value is formatted to four decimal digits and 
+displayed in a text field in the lower left of the GUI.
+
+</para>
+
+
+
+
+<para id="p1147">
+<emphasis id="strong1110" effect="bold">
+Similar to previous programs
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1148">
+Much of the code in this program is similar to code that I have explained in 
+earlier modules, so I won't repeat those explanations here. I will explain 
+only the code contained in the 
+
+<emphasis id="strong1111" effect="bold">
+actionPerformed
+
+</emphasis>
+ method that is new to this 
+module. A complete listing of this program is shown in 
+
+<link id="a1145" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1149">
+<emphasis id="strong1112" effect="bold">
+The actionPerformed method in the program named DotProd2D01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1150">
+The beginning of the 
+
+<emphasis id="strong1113" effect="bold">
+actionPerformed
+
+</emphasis>
+ method is shown in 
+
+<link id="a1146" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. 
+This method is called to respond to a click on the 
+
+<emphasis id="strong1114" effect="bold">
+OK
+
+</emphasis>
+ button shown in 
+
+
+<link id="a1147" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. The actionPerformed method in the program named DotProd2D01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">  public void actionPerformed(ActionEvent e){
+    //Create two ColMatrix2D objects.
+    GM02.ColMatrix2D matrixA = new GM02.ColMatrix2D(
+      Double.parseDouble(colMatA0.getText()),
+      Double.parseDouble(colMatA1.getText()));
+      
+    GM02.ColMatrix2D matrixB = new GM02.ColMatrix2D(
+      Double.parseDouble(colMatB0.getText()),
+      Double.parseDouble(colMatB1.getText()));
+      
+    //Compute the dot product.
+    double dotProd = matrixA.dot(matrixB);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1151">
+<link id="a1148" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ begins by instantiating a pair of 
+
+<emphasis id="strong1115" effect="bold">
+GM02.ColMatrix2D
+
+</emphasis>
+ 
+	objects using data provided by the user in the top four fields shown in 
+	
+
+<link id="a1149" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1152">
+Then 
+
+<link id="a1150" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1116" effect="bold">
+dot
+
+</emphasis>
+ method on the object referred to by 
+
+<emphasis id="strong1117" effect="bold">
+
+matrixA
+
+</emphasis>
+, passing the object referred to by 
+
+<emphasis id="strong1118" effect="bold">
+matrixB
+
+</emphasis>
+ as a parameter. 
+The 
+
+<emphasis id="strong1119" effect="bold">
+dot
+
+</emphasis>
+ method computes the dot product of the two column matrix objects, 
+returning the result as type 
+
+<emphasis id="strong1120" effect="bold">
+double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1153">
+<emphasis id="strong1121" effect="bold">
+Format the dot product value for display in the GUI
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1154">
+In some cases, the format of the returned value is not very suitable for 
+display in the lower-left field in 
+
+<link id="a1151" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+. For example, if the value is 
+very small, it is returned in an exponential notation requiring a large number 
+of digits for display. Similarly, sometimes the dot-product value is 
+returned in a format something like 0.33333333 requiring a large number of 
+digits to display.
+
+</para>
+
+
+
+
+<para id="p1155">
+<link id="a1152" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ formats the dot product value to make it suitable for display in 
+the text field in 
+
+<link id="a1153" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+. 
+
+<emphasis id="em1026" effect="italics">
+(There may be an easier way to do this, 
+but I didn't want to take the time to figure out what it is.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Format the dot product value for display in the GUI. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">    //Eliminate exponential notation in the display.
+    if(Math.abs(dotProd) &lt; 0.001){
+      dotProd = 0.0;
+    }//end if
+    
+    //Convert to four decimal digits and display.
+    dotProd =((int)(10000*dotProd))/10000.0;
+    dotProduct.setText("" +  dotProd);
+
+  }//end actionPerformed
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1156">
+<emphasis id="strong1122" effect="bold">
+Eliminate exponential format and format to four decimal digits
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1157">
+<link id="a1154" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ begins by simply setting small values that are less than 0.001 to 
+0.0 to eliminate the exponential format for very small, non-zero values.
+
+</para>
+
+
+
+
+<para id="p1158">
+Then 
+
+<link id="a1155" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ executes some code that formats the dot product value to four 
+decimal digits. I will leave it as an exercise for the student to decipher 
+how this code does what it does.
+
+</para>
+
+
+
+
+<para id="p1159">
+<emphasis id="strong1123" effect="bold">
+I recommend that you try it
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1160">
+I recommend that you plug a few values into the input fields, click the 
+
+<emphasis id="strong1124" effect="bold">
+OK
+
+</emphasis>
+ 
+button, and use your calculator to convince yourself that the program properly 
+implements the 2D dot product equation shown
+
+
+<link id="a1156" target-id="in_the_2D_case">
+
+earlier
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1161">
+That concludes the discussion of the program named 
+
+<emphasis id="strong1125" effect="bold">
+DotProd2D01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_program_named_DotProd2D02" effect="bold">
+
+The program named DotProd2D02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1162">
+To understand this program, you need to understand the material in the Kjell 
+tutorial through 
+
+<emphasis id="em1027" effect="italics">
+Chapter 9, The Angle Between Two Vectors
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1163">
+This program allows the user to experiment with the dot product and the angle 
+between a pair of 
+
+<emphasis id="strong1126" effect="bold">
+GM02.Vector2D
+
+</emphasis>
+ objects.
+
+</para>
+
+
+
+
+<para id="p1164">
+A screen shot of the output from this program is shown in 
+
+<link id="a1157" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. The 
+GUI shown in 
+
+<link id="a1158" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ is provided to allow the user to enter four double values 
+that define each of two 
+
+<emphasis id="strong1127" effect="bold">
+GM02.Vector2D
+
+</emphasis>
+ objects. The GUI also 
+provides an 
+
+<emphasis id="strong1128" effect="bold">
+OK
+
+</emphasis>
+ button as well as two text fields used for display of 
+computed results.
+
+</para>
+
+
+
+
+<para id="p1165">
+In addition, the GUI provides a 2D drawing area. When the user clicks 
+the 
+
+<emphasis id="strong1129" effect="bold">
+OK
+
+</emphasis>
+ button, the program draws the two vectors, 
+
+<emphasis id="em1028" effect="italics">
+(one in black and 
+the other in magenta)
+
+</emphasis>
+, on the output screen with the tail of each vector 
+located at the origin in 2D space. The program also displays the values of 
+the dot product of the two vectors and the angle between the two vectors in 
+degrees.
+
+</para>
+
+
+
+
+<para id="p1166">
+Once again, much of the code in this program is similar to code that I have 
+explained before. I will explain only the method named 
+
+<emphasis id="strong1130" effect="bold">
+actionPerformed
+
+</emphasis>
+, 
+for which some of the code is new to this module. A complete listing of 
+this program is provided in 
+
+<link id="a1159" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1167">
+<emphasis id="strong1131" effect="bold">
+Beginning of the actionPerformed method in the program named DotProd2D02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1168">
+This method is called to respond to a click on the 
+
+<emphasis id="strong1132" effect="bold">
+OK
+
+</emphasis>
+ button in 
+
+
+<link id="a1160" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Beginning of the actionPerformed method in the program named DotProd2D02. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">  public void actionPerformed(ActionEvent e){
+    
+    //Erase the off-screen image and draw the axes.
+    setCoordinateFrame(g2D);
+    
+    //Create two ColMatrix2D objects based on the user
+    // input values.
+    GM02.ColMatrix2D matrixA = new GM02.ColMatrix2D(
+                  Double.parseDouble(vectorAx.getText()),
+                  Double.parseDouble(vectorAy.getText()));
+      
+    GM02.ColMatrix2D matrixB = new GM02.ColMatrix2D(
+                  Double.parseDouble(vectorBx.getText()),
+                  Double.parseDouble(vectorBy.getText()));
+      
+
+    //Use the ColMatrix2D objects to create two Vector2D
+    // objects.
+    GM02.Vector2D vecA = new GM02.Vector2D(matrixA);
+    GM02.Vector2D vecB = new GM02.Vector2D(matrixB);
+    
+    //Draw the two vectors with their tails at the origin.
+    g2D.setColor(Color.BLACK);
+    vecA.draw(
+         g2D,new GM02.Point2D(new GM02.ColMatrix2D(0,0)));
+
+    g2D.setColor(Color.MAGENTA);
+    vecB.draw(
+         g2D,new GM02.Point2D(new GM02.ColMatrix2D(0,0)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1169">
+<link id="a1161" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ gets the four user input values that define the two vectors and 
+	draws them in black and magenta on the GUI shown in 
+
+<link id="a1162" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. There is 
+	nothing new in the code in 
+
+<link id="a1163" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1170">
+<emphasis id="strong1133" effect="bold">
+Compute the dot product and the angle between the two vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1171">
+<link id="a1164" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ computes the dot product and the angle between the two vectors by 
+first calling the 
+
+<emphasis id="strong1134" effect="bold">
+dot
+
+</emphasis>
+ method and then the 
+
+<emphasis id="strong1135" effect="bold">
+angle
+
+</emphasis>
+ method on the 
+object referred to by 
+
+<emphasis id="strong1136" effect="bold">
+vecA
+
+</emphasis>
+, passing the object referred to by 
+
+<emphasis id="strong1137" effect="bold">
+vecB
+
+</emphasis>
+ 
+as a parameter.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Compute the dot product and the angle between the two vectors. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">    //Compute the dot product of the two vectors.
+    double dotProd = vecA.dot(vecB);
+
+//Output formatting code was deleted for brevity
+
+    //Compute the angle between the two vectors.
+    double angle = vecA.angle(vecB);
+
+//Output formatting code was deleted for brevity
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+  }//end actionPerformed
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1172">
+In both cases, the code in 
+
+<link id="a1165" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ formats the returned 
+
+<emphasis id="strong1138" effect="bold">
+double
+
+</emphasis>
+ 
+	values to make them appropriate for display in the bottom two text fields in 
+	
+
+<link id="a1166" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. This code was deleted from 
+
+<link id="a1167" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ for brevity.
+
+</para>
+
+
+
+
+<para id="p1173">
+<emphasis id="strong1139" effect="bold">
+Confirm that the results are correct
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1174">
+Because this is a 2D display, it is easy to make an eyeball comparison 
+between the drawing of the two vectors and the reported angle between the two 
+vectors to confirm agreement. However, I recommend that you use this 
+program to define several vectors and then use your scientific calculator to 
+confirm that the results shown are correct.
+
+</para>
+
+
+
+
+<para id="p1175">
+That concludes the explanation of the program named 
+
+<emphasis id="strong1140" effect="bold">
+DotProd2D02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_program_named_DotProd3D01" effect="bold">
+
+The program named DotProd3D01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1176">
+To understand this program, you need to understand the material in the Kjell 
+tutorial through 
+
+<emphasis id="em1029" effect="italics">
+Chapter 8 - Length, Orthogonality, and the Column Matrix Dot 
+product
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1177">
+The purpose of this program is to confirm proper operation of the 
+
+<emphasis id="strong1141" effect="bold">
+
+ColMatrix3D.dot
+
+</emphasis>
+ method. The program creates a GUI that allows the user 
+to enter three values for each of a pair of 
+
+<emphasis id="strong1142" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects along 
+with a button labeled 
+
+<emphasis id="strong1143" effect="bold">
+OK
+
+</emphasis>
+. When the user clicks the 
+
+<emphasis id="strong1144" effect="bold">
+OK
+
+</emphasis>
+ 
+button, the dot product of the two 
+
+<emphasis id="strong1145" effect="bold">
+ColMatrix3D
+
+</emphasis>
+ objects is computed and 
+displayed.
+
+</para>
+
+
+
+
+<para id="p1178">
+<emphasis id="strong1146" effect="bold">
+A screen shot of the output from the program named DotProd3D01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1179">
+A screen shot of the output from the program named 
+
+<emphasis id="strong1147" effect="bold">
+DotProd3D01
+
+</emphasis>
+ is 
+shown in 
+
+<link id="a1168" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+. 
+
+<emphasis id="em1030" effect="italics">
+(Compare 
+
+<link id="a1169" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+ with 
+
+<link id="a1170" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1180">
+<emphasis id="Figure_15" effect="bold">
+
+
+<emphasis id="strong1148" effect="bold">
+Figure 15
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1149" effect="bold">
+ A screen shot of the output from the program named DotProd3D01.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1181">
+<media id="media1012" alt="Missing image." display="block">
+<image id="img1012" mime-type="image/jpeg" src="../../media/java1714b4.jpg" width="471" height="148"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1182">
+<emphasis id="strong1150" effect="bold">
+Very similar to a previous program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1183">
+Except for the fact that this program calls the 
+
+<emphasis id="strong1151" effect="bold">
+dot
+
+</emphasis>
+ method on an 
+object of the 
+
+<emphasis id="strong1152" effect="bold">
+GM02.ColMatrix3D
+
+</emphasis>
+ class instead calling the 
+
+<emphasis id="strong1153" effect="bold">
+dot
+
+</emphasis>
+ 
+method on an object of the 
+
+<emphasis id="strong1154" effect="bold">
+GM02.ColMatrix2D
+
+</emphasis>
+ class, this program is 
+essentially the same at the program named 
+
+<emphasis id="strong1155" effect="bold">
+DotProd2D01
+
+</emphasis>
+ that I explained 
+earlier. Therefore, you should have no trouble understanding this program 
+without further explanation from me. A complete listing of this program is 
+provided in 
+
+<link id="a1171" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1184">
+That concludes the explanation of the program named 
+
+<emphasis id="strong1156" effect="bold">
+DotProd3D01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_program_named_DotProd3D02" effect="bold">
+
+The program named DotProd3D02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1185">
+You need to understand the material in the Kjell tutorial through 
+
+<emphasis id="em1031" effect="italics">
+Chapter 
+10, Angle between 3D Vectors 
+
+</emphasis>
+to understand this program.
+
+</para>
+
+
+
+
+<para id="p1186">
+<emphasis id="strong1157" effect="bold">
+Program output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1187">
+A screen shot of the output of this program is shown in 
+
+<link id="a1172" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+. This 
+program allows the user to experiment with the dot product and the angle between 
+a pair of 
+
+<emphasis id="strong1158" effect="bold">
+GM02.Vector3D
+
+</emphasis>
+ objects. A GUI is provided that allows the 
+user to enter six 
+
+<emphasis id="strong1159" effect="bold">
+double
+
+</emphasis>
+ values that define each of two 
+
+<emphasis id="strong1160" effect="bold">
+GM02.Vector3D
+
+</emphasis>
+ 
+objects. The GUI also provides an 
+
+<emphasis id="strong1161" effect="bold">
+OK
+
+</emphasis>
+ button as well as two text 
+fields used for display of the computed results.
+
+</para>
+
+
+
+
+<para id="p1188">
+In addition, the GUI provides a 3D drawing area. When the user clicks 
+the 
+
+<emphasis id="strong1162" effect="bold">
+OK
+
+</emphasis>
+ button, the program draws the two vectors, 
+
+<emphasis id="em1032" effect="italics">
+(one in black and 
+the other in magenta)
+
+</emphasis>
+, on the output screen with the tail of each vector 
+located at the origin in 3D space. The program also displays the values of 
+the dot product of the two vectors and the angle between the two vectors in 
+degrees. 
+
+<emphasis id="em1033" effect="italics">
+(Compare the output of this 3D program in 
+
+<link id="a1173" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ with the 
+output from the 2D program in 
+
+<link id="a1174" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1189">
+<emphasis id="strong1163" effect="bold">
+Program code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1190">
+A complete listing of this program is provided in 
+
+<link id="a1175" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Almost 
+all of the new and interesting code in this program is in the method named 
+
+<emphasis id="strong1164" effect="bold">
+
+actionPerformed
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1191">
+<emphasis id="strong1165" effect="bold">
+Very similar to a previous program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1192">
+If you compare the method named 
+
+<emphasis id="strong1166" effect="bold">
+actionPerformed
+
+</emphasis>
+ in 
+
+<link id="a1176" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ with the
+
+
+<emphasis id="strong1167" effect="bold">
+actionPerformed
+
+</emphasis>
+ method for the program named 
+
+<emphasis id="strong1168" effect="bold">
+DotProd2D02
+
+</emphasis>
+ in 
+
+
+<link id="a1177" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+, you will see that they are very similar. One calls 2D methods 
+in the game-math library while the other calls 3D methods in the same library. 
+Therefore, you should have no difficulty understanding this program without 
+further explanation from me.
+
+</para>
+
+
+
+
+<para id="p1193">
+That concludes the explanation of the program named 
+
+<emphasis id="strong1169" effect="bold">
+DotProd3D02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="What_is_a_vector_dot_product" effect="bold">
+
+Interpreting the vector dot product
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1194">
+In effect, the dot product of two vectors provides a measure of the extent to 
+which the two vectors have the same orientation. If the two vectors are 
+parallel, the dot product of the two vectors has a maximum value of 1.0 
+multiplied by the product of the lengths of the two vectors. Normalizing 
+the vectors before computing the dot product will eliminate the effect of the 
+vector lengths and will cause the results to be somewhat easier to interpret.
+
+</para>
+
+
+
+
+<para id="p1195">
+If the normalized vectors are parallel and point in the same direction, the 
+dot product of the normalized vectors will be 1.0. If the normalized 
+vectors are parallel and point in opposite directions, the value of the dot 
+product will be -1.0. If the vectors are perpendicular, the dot product of 
+the two vectors will be 0.0 regardless of whether or not they are normalized.
+
+</para>
+
+
+
+
+<para id="p1196">
+For all orientations, the value of the dot product of normalized vectors will 
+vary between -1.0 and +1.0.
+
+</para>
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="More_than_three_dimensions" effect="bold">
+
+More than three dimensions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1197">
+You may have it in your mind that the use of mathematical concepts such as 
+the vector dot product are limited to the three dimensions of width, height, and 
+depth. If so, that is a false impression. The vector dot product is 
+very useful for systems with more than three dimensions. In fact, 
+engineers and scientists deal with systems every day that have more than three 
+dimensions. While it usually isn't too difficult to handle the math 
+involved in such systems, we have a very hard time drawing pictures of systems 
+with more than three or four dimensions.
+
+</para>
+
+
+
+
+<para id="p1198">
+<emphasis id="strong1170" effect="bold">
+Digital convolution is a good example
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1199">
+I have spent much of my career in digital signal processing where I have 
+routinely dealt with systems having thirty or forty dimensions. For 
+example, in the module titled 
+
+<emphasis id="em1034" effect="italics">
+
+
+
+<link id="a1178" url="http://www.developer.com/java/other/article.php/3484591/Convolution-and-Frequency-Filtering-in-Java.htm">
+
+
+Convolution and Frequency Filtering in Java
+
+</link>
+
+ 
+
+</emphasis>
+and some other related 
+modules as well, I describe the process of digital 
+
+<emphasis id="em1035" effect="italics">
+convolution filtering
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1200">
+One way to think of digital convolution is that it is a running dot product 
+computation between one vector 
+
+<emphasis id="em1036" effect="italics">
+(the convolution filter)
+
+</emphasis>
+ and a series of 
+other vectors, each comprised of successive chunks of samples from the incoming 
+data. In non-adaptive systems, the vector that represents the convolution 
+filter usually has a set of fixed coordinate values, and there may be dozens and 
+even hundreds of such coordinates. 
+
+<emphasis id="em1037" effect="italics">
+(For an adaptive system, the values 
+that define the vector typically change as a function of time or some other 
+parameter.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1201">
+Often, the input data will consist of samples taken from a channel consisting 
+of signal plus noise. The objective is often to design a vector 
+
+<emphasis id="em1038" effect="italics">
+(the 
+convolution filter)
+
+</emphasis>
+ that is parallel to all of the signal components in the 
+incoming data and is perpendicular to all of the noise components in the 
+incoming data. If that objective is achieved, the noise will be suppressed 
+while the signal will be passed through to the output.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Documentation_for_the_GM02_library" effect="bold">
+
+Documentation for the GM02 library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1202">
+Click 
+
+<link id="a1179" url="GM02docs.zip">
+
+here
+
+</link>
+
+ to download a zip file containing standard javadoc documentation for 
+the library named 
+
+<emphasis id="strong1171" effect="bold">
+GM02
+
+</emphasis>
+. Extract the contents of the zip file 
+into an empty folder and open the file named 
+
+<emphasis id="strong1172" effect="bold">
+index.html
+
+</emphasis>
+ in your browser to view the documentation.
+
+</para>
+
+
+
+
+<para id="p1203">
+Although the documentation doesn't provide much in the way of explanatory 
+text 
+
+<emphasis id="em1039" effect="italics">
+(see 
+
+<link id="a1180" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ and the explanations given above)
+
+</emphasis>
+, the 
+documentation does provide a good overview of the organization and structure of 
+the library. You may find it helpful in that regard. 
+
+</para>
+
+
+	
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Homework_assignment" effect="bold">
+
+Homework assignment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1204">
+The homework assignment for this module was to study the Kjell tutorial 
+through 
+
+<emphasis id="em1040" effect="italics">
+Chapter 10, Angle between 3D Vectors
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1205">
+The homework assignment for the next module is to continue studying that same 
+material.
+
+</para>
+
+
+
+
+<para id="p1206">
+In addition to studying the Kjell material, you should read at least the next 
+two modules in this collection and bring your questions about that material to 
+the next classroom session.
+
+</para>
+
+
+
+
+<para id="p1207">
+Finally, you should have begun studying the
+
+
+<link id="a1181" url="http://cnx.org/content/m44992/latest/">
+
+physics material
+
+</link>
+
+ at the 
+beginning of the semester and you should continue studying one physics module 
+per week thereafter. You should also feel free to bring your questions about 
+that material to the classroom for discussion. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1208">
+I encourage you to copy the code from 
+
+<link id="a1182" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ through 
+
+<link id="a1183" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Compile the code and 
+execute it in conjunction with the game-math library named 
+
+<emphasis id="strong1173" effect="bold">
+GM02
+
+</emphasis>
+ provided in 
+
+
+<link id="a1184" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Summary" effect="bold">
+
+Summary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1209">
+In this module, you learned the fundamentals of the vector dot product in 
+both 2D and 3D. You learned how to update the game-math library to support 
+various aspects of the vector dot product, and you learned how to write 2D and 
+3D programs that use the vector dot product methods in the game-math library. 
+
+</para>
+
+
+
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Whats_next" effect="bold">
+
+What's next?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1210">
+In the next module, which will be the second part of this two-part miniseries 
+on the vector dot product, you will learn how to use the 
+dot product to compute nine different angles of interest that a vector makes 
+with various elements in 3D space.
+
+</para>
+
+
+
+
+<para id="p1211">
+You will learn how to use the dot product to find six of the infinite set of 
+vectors that are perpendicular to a given vector as shown in 
+
+<link id="a1185" target-id="Figure_16">
+
+Figure 16
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1212">
+<emphasis id="Figure_16" effect="bold">
+
+
+<emphasis id="strong1174" effect="bold">
+Figure 16
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1175" effect="bold">
+ Six (magenta) vectors that are perpendicular to a given (black) vector.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1213">
+<media id="media1013" alt="Missing image." display="block">
+<image id="img1013" mime-type="image/jpeg" src="../../media/java1714b5.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1214">
+You will also learn how to use the dot product to perform back-face culling 
+as shown in 
+
+<link id="a1186" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ and 
+
+<link id="a1187" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1215">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1176" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1012" list-type="bulleted">
+
+					
+
+<item id="li1077">
+Module name: GAME 2302-0145: Getting Started with the Vector Dot Product
+
+</item>
+
+
+					
+
+<item id="li1078">
+File: Game0145.htm
+
+
+</item>
+
+
+					
+
+<item id="li1079">
+Published: 10/21/12
+
+</item>
+
+
+					
+
+<item id="li1080">
+Revised: 02/01/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1177" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1216">
+<emphasis id="strong1178" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1217">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1218">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1219">
+<emphasis id="strong1179" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1220">
+Complete listings of the programs discussed in this module are shown in 
+
+
+<link id="a1188" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ through 
+
+<link id="a1189" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ below
+
+</para>
+
+
+
+
+<para id="p1221">
+<emphasis id="strong1180" effect="bold">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Source code for the game-math library named GM02.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1009" display="block">/*GM02.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/08/08
+
+This is an update to the game-math library named GM01.
+
+The main purpose of this update was to add vector dot
+product and related capabilities to the library.
+
+Please see the comments at the beginning of the library
+class named GM01 for a general description of the library.
+
+The following methods are new instance methods of the 
+indicated static top-level classes belonging to the class
+named GM02.
+
+GM02.ColMatrix2D.dot - compute dot product of two
+ ColMatrix2D objects.
+GM02.Vector2D.dot - compute dot product of two
+ Vector2D objects.
+GM02.Vector2D.angle - compute angle between two Vector2D
+ objects.
+
+GM02.ColMatrix3D.dot - compute dot product of two
+ ColMatrix3D objects
+GM02.Vector3D.dot - compute dot product of two
+ Vector3D objects.
+GM02.Vector3D.angle - compute angle between two Vector3D
+ objects.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.geom.*;
+import java.awt.*;
+
+public class GM02{
+  //----------------------------------------------------//
+  
+  //This method converts a ColMatrix3D obj to a
+  // ColMatrix2D object. The purpose is to accept
+  // x, y, and z coordinate values and transform those
+  // values into a pair of coordinate values suitable for
+  // display in two dimensions.
+  //See http://local.wasp.uwa.edu.au/~pbourke/geometry/
+  // classification/ for technical background on the
+  // transform from 3D to 2D.
+  //The transform equations are:
+  // x2d = x3d + z3d * cos(theta)/tan(alpha)
+  // y2d = y3d + z3d * sin(theta)/tan(alpha);
+  //Let theta = 30 degrees and alpha = 45 degrees
+  //Then:cos(theta) = 0.866
+  //     sin(theta) = 0.5
+  //     tan(alpha) = 1;
+  //Note that the signs in the above equations depend
+  // on the assumed directions of the angles as well as
+  // the assumed positive directions of the axes. The
+  // signs used in this method assume the following:
+  //   Positive x is to the right.
+  //   Positive y is up the screen.
+  //   Positive z is protruding out the front of the
+  //     screen.
+  //   The viewing position is above the x axis and to the
+  //     right of the z-y plane.
+  public static GM02.ColMatrix2D convert3Dto2D(
+                                   GM02.ColMatrix3D data){
+    return new GM02.ColMatrix2D(
+                  data.getData(0) - 0.866*data.getData(2),
+                  data.getData(1) - 0.50*data.getData(2));
+  }//end convert3Dto2D 
+  //----------------------------------------------------//
+  
+  //This method wraps around the translate method of the
+  // Graphics2D class. The purpose is to cause the
+  // positive direction for the y-axis to be up the screen
+  // instead of down the screen. When you use this method,
+  // you should program as though the positive direction
+  // for the y-axis is up.
+  public static void translate(Graphics2D g2D,
+                               double xOffset,
+                               double yOffset){
+    //Flip the sign on the y-coordinate to change the
+    // direction of the positive y-axis to go up the
+    // screen.
+    g2D.translate(xOffset,-yOffset);
+  }//end translate
+  //----------------------------------------------------//
+  
+  //This method wraps around the drawLine method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void drawLine(Graphics2D g2D,
+                              double x1,
+                              double y1,
+                              double x2,
+                              double y2){
+    //Flip the sign on the y-coordinate value.
+    g2D.drawLine((int)x1,-(int)y1,(int)x2,-(int)y2);
+  }//end drawLine
+  //----------------------------------------------------//
+  
+  //This method wraps around the fillOval method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void fillOval(Graphics2D g2D,
+                              double x,
+                              double y,
+                              double width,
+                              double height){
+    //Flip the sign on the y-coordinate value.
+    g2D.fillOval((int)x,-(int)y,(int)width,(int)height);
+  }//end fillOval
+  //----------------------------------------------------//
+
+  //This method wraps around the drawOval method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void drawOval(Graphics2D g2D,
+                              double x,
+                              double y,
+                              double width,
+                              double height){
+    //Flip the sign on the y-coordinate value.
+    g2D.drawOval((int)x,-(int)y,(int)width,(int)height);
+  }//end drawOval
+  //----------------------------------------------------//
+  
+  //This method wraps around the fillRect method of the
+  // Graphics class. The purpose is to cause the positive
+  // direction for the y-axis to be up the screen instead
+  // of down the screen. When you use this method, you
+  // should program as though the positive direction for
+  // the y-axis is up.
+  public static void fillRect(Graphics2D g2D,
+                              double x,
+                              double y,
+                              double width,
+                              double height){
+    //Flip the sign on the y-coordinate value.
+    g2D.fillRect((int)x,-(int)y,(int)width,(int)height);
+  }//end fillRect
+  //----------------------------------------------------//
+  
+  
+
+  //An object of this class represents a 2D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix2D{
+    double[] data = new double[2];
+    
+    public ColMatrix2D(double data0,double data1){
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    //Overridden toString method.
+    public String toString(){
+      return data[0] + "," + data[1];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+    
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in two matrices and returns true if the
+    // values are equal or almost equal and returns false
+    // otherwise. 
+    public boolean equals(Object obj){
+      if(obj instanceof GM02.ColMatrix2D &amp;&amp;
+         Math.abs(((GM02.ColMatrix2D)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM02.ColMatrix2D)obj).getData(1) - 
+                                  getData(1)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Adds one ColMatrix2D object to another ColMatrix2D
+    // object, returning a ColMatrix2D object.
+    public GM02.ColMatrix2D add(GM02.ColMatrix2D matrix){
+      return new GM02.ColMatrix2D(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Subtracts one ColMatrix2D object from another
+    // ColMatrix2D object, returning a ColMatrix2D object.
+    // The object that is received as an incoming
+    // parameter  is subtracted from the object on which
+    // the method is called.
+    public GM02.ColMatrix2D subtract(
+                                 GM02.ColMatrix2D matrix){
+      return new GM02.ColMatrix2D(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1));
+    }//end subtract
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two ColMatrix2D
+    // objects and returns the result as type double.
+    public double dot(GM02.ColMatrix2D matrix){
+      return getData(0) * matrix.getData(0) 
+           + getData(1) * matrix.getData(1);
+    }//end dot
+    //--------------------------------------------------//
+  }//end class ColMatrix2D
+  //====================================================//
+
+
+  //An object of this class represents a 3D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix3D{
+    double[] data = new double[3];
+    
+    public ColMatrix3D(
+                  double data0,double data1,double data2){
+      data[0] = data0;
+      data[1] = data1;
+      data[2] = data2;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    public String toString(){
+      return data[0] + "," + data[1] + "," + data[2];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+    
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in two matrices and returns true if the
+    // values are equal or almost equal and returns false
+    // otherwise. 
+    public boolean equals(Object obj){
+      if(obj instanceof GM02.ColMatrix3D &amp;&amp;
+         Math.abs(((GM02.ColMatrix3D)obj).getData(0) - 
+                                 getData(0)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM02.ColMatrix3D)obj).getData(1) - 
+                                 getData(1)) &lt;= 0.00001 &amp;&amp;
+         Math.abs(((GM02.ColMatrix3D)obj).getData(2) - 
+                                  getData(2)) &lt;= 0.00001){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Adds one ColMatrix3D object to another ColMatrix3D
+    // object, returning a ColMatrix3D object.
+    public GM02.ColMatrix3D add(GM02.ColMatrix3D matrix){
+      return new GM02.ColMatrix3D(
+                            getData(0)+matrix.getData(0),
+                            getData(1)+matrix.getData(1),
+                            getData(2)+matrix.getData(2));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Subtracts one ColMatrix3D object from another
+    // ColMatrix3D object, returning a ColMatrix3D object.
+    // The object that is received as an incoming
+    // parameter is subtracted from the object on which
+    // the method is called.
+    public GM02.ColMatrix3D subtract(
+                                 GM02.ColMatrix3D matrix){
+      return new GM02.ColMatrix3D(
+                            getData(0)-matrix.getData(0),
+                            getData(1)-matrix.getData(1),
+                            getData(2)-matrix.getData(2));
+    }//end subtract
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two ColMatrix3D
+    // objects and returns the result as type double.
+    public double dot(GM02.ColMatrix3D matrix){
+      return getData(0) * matrix.getData(0) 
+           + getData(1) * matrix.getData(1)
+           + getData(2) * matrix.getData(2);
+    }//end dot
+    //--------------------------------------------------//
+  }//end class ColMatrix3D
+  //====================================================//
+  //====================================================//
+
+
+  public static class Point2D{
+    GM02.ColMatrix2D point;
+    
+    public Point2D(GM02.ColMatrix2D point){//constructor
+      //Create and save a clone of the ColMatrix2D object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix2D object
+      // through use of its set method.
+      this.point = new ColMatrix2D(
+                       point.getData(0),point.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      drawOval(g2D,getData(0)-3,
+                   getData(1)+3,6,6);
+    }//end draw
+
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix2D object that
+    // defines this Point2D object.
+    public GM02.ColMatrix2D getColMatrix(){
+      return point;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix2D objects that define two
+    // Point2D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(point.equals(((GM02.Point2D)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Gets a displacement vector from one Point2D object
+    // to a second Point2D object. The vector points from
+    // the object on which the method is called to the
+    // object passed as a parameter to the method. Kjell
+    // describes this as the distance you would have to
+    // walk along the x and then the y axes to get from
+    // the first point to the second point.
+    public GM02.Vector2D getDisplacementVector(
+                                      GM02.Point2D point){
+      return new GM02.Vector2D(new GM02.ColMatrix2D(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1)));
+    }//end getDisplacementVector
+    //--------------------------------------------------//
+    
+    //Adds a Vector2D to a Point2D producing a
+    // new Point2D.
+    public GM02.Point2D addVectorToPoint(
+                                      GM02.Vector2D vec){
+      return new GM02.Point2D(new GM02.ColMatrix2D(
+                          getData(0) + vec.getData(0),
+                          getData(1) + vec.getData(1)));
+    }//end addVectorToPoint
+    //--------------------------------------------------//
+    
+    //Returns a new Point2D object that is a clone of
+    // the object on which the method is called.
+    public Point2D clone(){
+      return new Point2D(
+                  new ColMatrix2D(getData(0),getData(1)));
+    }//end clone
+    //--------------------------------------------------//
+    
+    //The purpose of this method is to rotate a point
+    // around a specified anchor point in the x-y plane.
+    //The rotation angle is passed in as a double value
+    // in degrees with the positive angle of rotation
+    // being counter-clockwise.
+    //This method does not modify the contents of the
+    // Point2D object on which the method is called.
+    // Rather, it uses the contents of that object to
+    // instantiate, rotate, and return a new Point2D
+    // object.
+    //For simplicity, this method translates the
+    // anchorPoint to the origin, rotates around the
+    // origin, and then translates back to the
+    // anchorPoint.
+    /*
+    See http://www.ia.hiof.no/~borres/cgraph/math/threed/
+    p-threed.html for a definition of the equations
+    required to do the rotation.
+
+    x2 = x1*cos - y1*sin
+    y2 = x1*sin + y1*cos
+    */ 
+    public GM02.Point2D rotate(GM02.Point2D anchorPoint,
+                               double angle){
+      GM02.Point2D newPoint = this.clone();
+      
+      double tempX ;
+      double tempY;
+ 
+      //Translate anchorPoint to the origin
+      GM02.Vector2D tempVec = 
+            new GM02.Vector2D(anchorPoint.getColMatrix());
+      newPoint = 
+              newPoint.addVectorToPoint(tempVec.negate());
+      
+      //Rotate around the origin.
+      tempX = newPoint.getData(0);
+      tempY = newPoint.getData(1);
+      newPoint.setData(//new x coordinate
+                      0,
+                      tempX*Math.cos(angle*Math.PI/180) -
+                      tempY*Math.sin(angle*Math.PI/180));
+
+      newPoint.setData(//new y coordinate
+                      1,
+                      tempX*Math.sin(angle*Math.PI/180) +
+                      tempY*Math.cos(angle*Math.PI/180));
+
+      //Translate back to anchorPoint
+      newPoint = newPoint.addVectorToPoint(tempVec);
+      
+      return newPoint;
+
+    }//end rotate
+    //--------------------------------------------------//
+    
+    //Multiplies this point by a scaling matrix received
+    // as an incoming parameter and returns the scaled
+    // point.
+    public GM02.Point2D scale(GM02.ColMatrix2D scale){
+      return new GM02.Point2D(new ColMatrix2D(
+                          getData(0) * scale.getData(0),
+                          getData(1) * scale.getData(1)));
+    }//end scale
+    //--------------------------------------------------//
+  }//end class Point2D
+  //====================================================//
+
+
+  public static class Point3D{
+    GM02.ColMatrix3D point;
+    
+    public Point3D(GM02.ColMatrix3D point){//constructor
+      //Create and save a clone of the ColMatrix3D object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix3D object
+      // through use of its set method.
+      this.point = 
+         new ColMatrix3D(point.getData(0),
+                         point.getData(1),
+                         point.getData(2));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1) 
+                                 + "," + point.getData(2);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      
+      //Get 2D projection coordinate values.
+      ColMatrix2D temp = convert3Dto2D(point);
+      drawOval(g2D,temp.getData(0)-3,
+                   temp.getData(1)+3,
+                   6,
+                   6);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix3D object that
+    // defines this Point3D object.
+    public GM02.ColMatrix3D getColMatrix(){
+      return point;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix3D objects that define two
+    // Point3D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(point.equals(((GM02.Point3D)obj).
+                                         getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+
+    //Gets a displacement vector from one Point3D object
+    // to a second Point3D object. The vector points from
+    // the object on which the method is called to the
+    // object passed as a parameter to the method. Kjell
+    // describes this as the distance you would have to
+    // walk along the x and then the y axes to get from
+    // the first point to the second point.
+    public GM02.Vector3D getDisplacementVector(
+                                      GM02.Point3D point){
+      return new GM02.Vector3D(new GM02.ColMatrix3D(
+                            point.getData(0)-getData(0),
+                            point.getData(1)-getData(1),
+                            point.getData(2)-getData(2)));
+    }//end getDisplacementVector
+    //--------------------------------------------------//
+    
+    //Adds a Vector3D to a Point3D producing a
+    // new Point3D.
+    public GM02.Point3D addVectorToPoint(
+                                      GM02.Vector3D vec){
+      return new GM02.Point3D(new GM02.ColMatrix3D(
+                          getData(0) + vec.getData(0),
+                          getData(1) + vec.getData(1),
+                          getData(2) + vec.getData(2)));
+    }//end addVectorToPoint
+    //--------------------------------------------------//
+    
+    //Returns a new Point3D object that is a clone of
+    // the object on which the method is called.
+    public Point3D clone(){
+      return new Point3D(new ColMatrix3D(getData(0),
+                                         getData(1),
+                                         getData(2)));
+    }//end clone
+    //--------------------------------------------------//
+    
+    //The purpose of this method is to rotate a point
+    // around a specified anchor point in the following
+    // order:
+    // Rotate around z - rotation in x-y plane.
+    // Rotate around x - rotation in y-z plane.
+    // Rotate around y - rotation in x-z plane.
+    //The rotation angles are passed in as double values
+    // in degrees (based on the right-hand rule) in the
+    // order given above, packaged in an object of the
+    // class GM02.ColMatrix3D. (Note that in this case,
+    // the ColMatrix3D object is simply a convenient
+    // container and it has no significance from a matrix
+    // viewpoint.)
+    //The right-hand rule states that if you point the
+    // thumb of your right hand in the positive direction
+    // of an axis, the direction of positive rotation
+    // around that axis is given by the direction that
+    // your fingers will be pointing.
+    //This method does not modify the contents of the
+    // Point3D object on which the method is called.
+    // Rather, it uses the contents of that object to
+    // instantiate, rotate, and return a new Point3D
+    // object.
+    //For simplicity, this method translates the
+    // anchorPoint to the origin, rotates around the
+    // origin, and then translates back to the
+    // anchorPoint.
+    /*
+    See http://www.ia.hiof.no/~borres/cgraph/math/threed/
+    p-threed.html for a definition of the equations
+    required to do the rotation.
+    z-axis 
+    x2 = x1*cos - y1*sin
+    y2 = x1*sin + y1*cos
+    
+    x-axis
+    y2 = y1*cos(v) - z1*sin(v)
+    z2 = y1*sin(v) + z1* cos(v) 
+    
+    y-axis
+    x2 = x1*cos(v) + z1*sin(v)
+    z2 = -x1*sin(v) + z1*cos(v)
+    */ 
+    public GM02.Point3D rotate(GM02.Point3D anchorPoint,
+                               GM02.ColMatrix3D angles){
+      GM02.Point3D newPoint = this.clone();
+      
+      double tempX ;
+      double tempY;
+      double tempZ;
+ 
+      //Translate anchorPoint to the origin
+      GM02.Vector3D tempVec = 
+            new GM02.Vector3D(anchorPoint.getColMatrix());
+      newPoint = 
+              newPoint.addVectorToPoint(tempVec.negate());
+
+      double zAngle = angles.getData(0);
+      double xAngle = angles.getData(1);
+      double yAngle = angles.getData(2);
+      
+      //Rotate around z-axis
+      tempX = newPoint.getData(0);
+      tempY = newPoint.getData(1);
+      newPoint.setData(//new x coordinate
+                      0,
+                      tempX*Math.cos(zAngle*Math.PI/180) -
+                      tempY*Math.sin(zAngle*Math.PI/180));
+
+      newPoint.setData(//new y coordinate
+                      1,
+                      tempX*Math.sin(zAngle*Math.PI/180) +
+                      tempY*Math.cos(zAngle*Math.PI/180));
+      
+      //Rotate around x-axis
+      tempY = newPoint.getData(1);
+      tempZ = newPoint.getData(2);
+      newPoint.setData(//new y coordinate
+                      1,
+                      tempY*Math.cos(xAngle*Math.PI/180) -
+                      tempZ*Math.sin(xAngle*Math.PI/180));
+
+      newPoint.setData(//new z coordinate
+                      2,
+                      tempY*Math.sin(xAngle*Math.PI/180) +
+                      tempZ*Math.cos(xAngle*Math.PI/180));
+      
+      //Rotate around y-axis
+      tempX = newPoint.getData(0);
+      tempZ = newPoint.getData(2);
+      newPoint.setData(//new x coordinate
+                      0,
+                      tempX*Math.cos(yAngle*Math.PI/180) +
+                      tempZ*Math.sin(yAngle*Math.PI/180));
+
+      newPoint.setData(//new z coordinate
+                     2,
+                     -tempX*Math.sin(yAngle*Math.PI/180) +
+                     tempZ*Math.cos(yAngle*Math.PI/180));
+      
+      //Translate back to anchorPoint
+      newPoint = newPoint.addVectorToPoint(tempVec);
+      
+      return newPoint;
+
+    }//end rotate
+    //--------------------------------------------------//
+    
+    //Multiplies this point by a scaling matrix received
+    // as an incoming parameter and returns the scaled
+    // point.
+    public GM02.Point3D scale(GM02.ColMatrix3D scale){
+      return new GM02.Point3D(new ColMatrix3D(
+                          getData(0) * scale.getData(0),
+                          getData(1) * scale.getData(1),
+                          getData(2) * scale.getData(2)));
+    }//end scale
+    //--------------------------------------------------//
+  }//end class Point3D
+  //====================================================//
+  //====================================================//
+
+  
+  public static class Vector2D{
+    GM02.ColMatrix2D vector;
+    
+    public Vector2D(GM02.ColMatrix2D vector){//constructor
+      //Create and save a clone of the ColMatrix2D object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColVector2D object.
+      this.vector = new ColMatrix2D(
+                     vector.getData(0),vector.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small filled circle at
+    // the head.
+    public void draw(Graphics2D g2D,GM02.Point2D tail){
+
+      drawLine(g2D,
+               tail.getData(0),
+               tail.getData(1),
+               tail.getData(0)+vector.getData(0),
+               tail.getData(1)+vector.getData(1));
+
+      fillOval(g2D,
+               tail.getData(0)+vector.getData(0)-3,
+               tail.getData(1)+vector.getData(1)+3,
+               6,
+               6);
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix2D object that
+    // defines this Vector2D object.
+    public GM02.ColMatrix2D getColMatrix(){
+      return vector;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix2D objects that define two
+    // Vector2D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(vector.equals((
+                     (GM02.Vector2D)obj).getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+    
+    //Adds this vector to a vector received as an incoming
+    // parameter and returns the sum as a vector.
+    public GM02.Vector2D add(GM02.Vector2D vec){
+      return new GM02.Vector2D(new ColMatrix2D(
+                       vec.getData(0)+vector.getData(0),
+                       vec.getData(1)+vector.getData(1)));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Returns the length of a Vector2D object.
+    public double getLength(){
+      return Math.sqrt(
+           getData(0)*getData(0) + getData(1)*getData(1));
+    }//end getLength
+    //--------------------------------------------------//
+    
+    //Multiplies this vector by a scale factor received as
+    // an incoming parameter and returns the scaled
+    // vector.
+    public GM02.Vector2D scale(Double factor){
+      return new GM02.Vector2D(new ColMatrix2D(
+                                    getData(0) * factor,
+                                    getData(1) * factor));
+    }//end scale
+    //--------------------------------------------------//
+    
+    //Changes the sign on each of the vector components
+    // and returns the negated vector.
+    public GM02.Vector2D negate(){
+      return new GM02.Vector2D(new ColMatrix2D(
+                                            -getData(0),
+                                            -getData(1)));
+    }//end negate
+    //--------------------------------------------------//
+    
+    //Returns a new vector that points in the same
+    // direction but has a length of one unit.
+    public GM02.Vector2D normalize(){
+      double length = getLength();
+      return new GM02.Vector2D(new ColMatrix2D(
+                                      getData(0)/length,
+                                      getData(1)/length));
+    }//end normalize
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two Vector2D
+    // objects and returns the result as type double.
+    public double dot(GM02.Vector2D vec){
+      GM02.ColMatrix2D matrixA = getColMatrix();
+      GM02.ColMatrix2D matrixB = vec.getColMatrix();
+      return matrixA.dot(matrixB);
+    }//end dot
+    //--------------------------------------------------//
+    
+    //Computes and returns the angle between two Vector2D
+    // objects. The angle is returned in degrees as type
+    // double.
+    public double angle(GM02.Vector2D vec){
+      GM02.Vector2D normA = normalize();
+      GM02.Vector2D normB = vec.normalize();
+      double normDotProd = normA.dot(normB);
+      return Math.toDegrees(Math.acos(normDotProd));
+    }//end angle
+    //--------------------------------------------------//
+  }//end class Vector2D
+  //====================================================//
+
+
+  public static class Vector3D{
+    GM02.ColMatrix3D vector;
+    
+    public Vector3D(GM02.ColMatrix3D vector){//constructor
+      //Create and save a clone of the ColMatrix3D object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatris3D object.
+      this.vector = new ColMatrix3D(vector.getData(0),
+                                    vector.getData(1),
+                                    vector.getData(2));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1) 
+                                + "," + vector.getData(2);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 2)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 2)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small circle at the
+    // head.
+    public void draw(Graphics2D g2D,GM02.Point3D tail){
+      
+      //Get a 2D projection of the tail
+      GM02.ColMatrix2D tail2D = convert3Dto2D(tail.point);
+      
+      //Get the 3D location of the head
+      GM02.ColMatrix3D head = 
+                      tail.point.add(this.getColMatrix());
+      
+      //Get a 2D projection of the head
+      GM02.ColMatrix2D head2D = convert3Dto2D(head);
+      drawLine(g2D,tail2D.getData(0),
+                   tail2D.getData(1),
+                   head2D.getData(0),
+                   head2D.getData(1));      
+
+      //Draw a small filled circle to identify the head.
+      fillOval(g2D,head2D.getData(0)-3,
+                   head2D.getData(1)+3,
+                   6,
+                   6);
+
+    }//end draw
+    //--------------------------------------------------//
+    
+    //Returns a reference to the ColMatrix3D object that
+    // defines this Vector3D object.
+    public GM02.ColMatrix3D getColMatrix(){
+      return vector;
+    }//end getColMatrix
+    //--------------------------------------------------//
+
+    //This method overrides the equals method inherited
+    // from the class named Object. It compares the values
+    // stored in the ColMatrix3D objects that define two
+    // Vector3D objects and returns true if they are equal
+    // and false otherwise. 
+    public boolean equals(Object obj){
+      if(vector.equals((
+                     (GM02.Vector3D)obj).getColMatrix())){
+        return true;
+      }else{
+        return false;
+      }//end else
+     
+    }//end overridden equals method
+    //--------------------------------------------------//
+    
+    //Adds this vector to a vector received as an incoming
+    // parameter and returns the sum as a vector.
+    public GM02.Vector3D add(GM02.Vector3D vec){
+      return new GM02.Vector3D(new ColMatrix3D(
+                       vec.getData(0)+vector.getData(0),
+                       vec.getData(1)+vector.getData(1),
+                       vec.getData(2)+vector.getData(2)));
+    }//end add
+    //--------------------------------------------------//
+    
+    //Returns the length of a Vector3D object.
+    public double getLength(){
+      return Math.sqrt(getData(0)*getData(0) + 
+                       getData(1)*getData(1) + 
+                       getData(2)*getData(2));
+    }//end getLength
+    //--------------------------------------------------//
+    
+    //Multiplies this vector by a scale factor received as
+    // an incoming parameter and returns the scaled
+    // vector.
+    public GM02.Vector3D scale(Double factor){
+      return new GM02.Vector3D(new ColMatrix3D(
+                                    getData(0) * factor,
+                                    getData(1) * factor,
+                                    getData(2) * factor));
+    }//end scale
+    //--------------------------------------------------//
+    
+    //Changes the sign on each of the vector components
+    // and returns the negated vector.
+    public GM02.Vector3D negate(){
+      return new GM02.Vector3D(new ColMatrix3D(
+                                            -getData(0),
+                                            -getData(1),
+                                            -getData(2)));
+    }//end negate
+    //--------------------------------------------------//
+    
+    //Returns a new vector that points in the same
+    // direction but has a length of one unit.
+    public GM02.Vector3D normalize(){
+      double length = getLength();
+      return new GM02.Vector3D(new ColMatrix3D(
+                                      getData(0)/length,
+                                      getData(1)/length,
+                                      getData(2)/length));
+    }//end normalize
+    //--------------------------------------------------//
+    
+    //Computes the dot product of two Vector3D
+    // objects and returns the result as type double.
+    public double dot(GM02.Vector3D vec){
+      GM02.ColMatrix3D matrixA = getColMatrix();
+      GM02.ColMatrix3D matrixB = vec.getColMatrix();
+      return matrixA.dot(matrixB);
+    }//end dot
+    //--------------------------------------------------//
+    
+    //Computes and returns the angle between two Vector3D
+    // objects. The angle is returned in degrees as type
+    // double.
+    public double angle(GM02.Vector3D vec){
+      GM02.Vector3D normA = normalize();
+      GM02.Vector3D normB = vec.normalize();
+      double normDotProd = normA.dot(normB);
+      return Math.toDegrees(Math.acos(normDotProd));
+    }//end angle
+    //--------------------------------------------------//
+  }//end class Vector3D
+  //====================================================//
+  //====================================================//
+
+  
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head. Note that this
+  // class has the same name as one of the classes in
+  // the Graphics2D class. Therefore, if the class from
+  // the Graphics2D class is used in some future upgrade
+  // to this program, it will have to be fully qualified.
+  public static class Line2D{
+    GM02.Point2D[] line = new GM02.Point2D[2];
+    
+    public Line2D(GM02.Point2D tail,GM02.Point2D head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point2D(new GM02.ColMatrix2D(
+                        tail.getData(0),tail.getData(1)));
+      this.line[1] = new Point2D(new GM02.ColMatrix2D(
+                        head.getData(0),head.getData(1)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM02.Point2D getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM02.Point2D getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+    
+    public void setTail(GM02.Point2D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point2D(new GM02.ColMatrix2D(
+                newPoint.getData(0),newPoint.getData(1)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM02.Point2D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point2D(new GM02.ColMatrix2D(
+                newPoint.getData(0),newPoint.getData(1)));
+    }//end setHead
+    //--------------------------------------------------//
+    
+    public void draw(Graphics2D g2D){
+      drawLine(g2D,getTail().getData(0),
+                   getTail().getData(1),
+                   getHead().getData(0),
+                   getHead().getData(1));
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line2D
+  //====================================================//
+
+
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line3D{
+    GM02.Point3D[] line = new GM02.Point3D[2];
+    
+    public Line3D(GM02.Point3D tail,GM02.Point3D head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point3D(new GM02.ColMatrix3D(
+                                        tail.getData(0),
+                                        tail.getData(1),
+                                        tail.getData(2)));
+      this.line[1] = new Point3D(new GM02.ColMatrix3D(
+                                        head.getData(0),
+                                        head.getData(1),
+                                        head.getData(2)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+                       + line[0].getData(1)  + "," 
+                       + line[0].getData(2) 
+                       + "\nHead = " 
+                       + line[1].getData(0) + "," 
+                       + line[1].getData(1) + ","      
+                       + line[1].getData(2);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM02.Point3D getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM02.Point3D getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+
+    public void setTail(GM02.Point3D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point3D(new GM02.ColMatrix3D(
+                                    newPoint.getData(0),
+                                    newPoint.getData(1),
+                                    newPoint.getData(2)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM02.Point3D newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point3D(new GM02.ColMatrix3D(
+                                    newPoint.getData(0),
+                                    newPoint.getData(1),
+                                    newPoint.getData(2)));
+    }//end setHead
+    //--------------------------------------------------//
+
+    public void draw(Graphics2D g2D){
+      
+      //Get 2D projection coordinates.
+      GM02.ColMatrix2D tail = 
+                           convert3Dto2D(getTail().point);
+      GM02.ColMatrix2D head = 
+                           convert3Dto2D(getHead().point);
+
+      drawLine(g2D,tail.getData(0),
+                   tail.getData(1),
+                   head.getData(0),
+                   head.getData(1));
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line3D
+  //====================================================//
+
+}//end class GM02
+</code>
+
+
+
+
+	
+
+
+<para id="p1222">
+<emphasis id="strong1181" effect="bold">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Source code for the program named DotProd2D01.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1010" display="block">/*DotProd2D01.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/04/08
+
+Study Kjell through Chapter 8 - Length, Orthogonality, and
+the Column Matrix Dot product.
+
+The purpose of this program is to confirm proper operation
+of the ColMatrix2D.dot method.
+
+The program creates a GUI that allows the user to enter
+the first and second values for a pair of ColMatrix2D
+objects along with a button labeled OK.
+
+When the user clicks the OK button, the dot product
+between the two ColMatrix2D objects is computed. The
+resulting value is converted to four decimal digits and
+displayed in a text field on the GUI.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class DotProd2D01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd2D01
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 150;
+
+  JTextField colMatA0 = new JTextField("0.707");
+  JTextField colMatA1 = new JTextField("0.707");
+  JTextField colMatB0 = new JTextField("-0.707");
+  JTextField colMatB1 = new JTextField("-0.707");
+  JTextField dotProduct = new JTextField();
+  JButton button = new JButton("OK");
+
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+
+    //Instantiate a JPanel that will house the user input
+    // components and set its layout manager.
+    JPanel controlPanel = new JPanel();
+    controlPanel.setLayout(new GridLayout(0,4));
+
+    //Add the user input components and appropriate labels
+    // to the control panel.
+    controlPanel.add(new JLabel(" colMatA0 = "));    
+    controlPanel.add(colMatA0);
+
+    controlPanel.add(new JLabel(" colMatA1 = "));    
+    controlPanel.add(colMatA1);
+    
+    controlPanel.add(new JLabel(" colMatB0 = "));    
+    controlPanel.add(colMatB0);
+    
+    controlPanel.add(new JLabel(" colMatB1 = "));    
+    controlPanel.add(colMatB1);
+    
+    controlPanel.add(new JLabel(" Dot Prod = "));
+    controlPanel.add(dotProduct);
+
+    controlPanel.add(new JLabel(""));//spacer
+    controlPanel.add(button);
+
+    //Add the control panel to the CENTER position in the
+    // JFrame.
+    this.getContentPane().add(
+                        BorderLayout.CENTER,controlPanel);
+    setVisible(true);
+
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+
+  }//end constructor
+  //----------------------------------------------------//
+
+  //This method is called to respond to a click on the
+  // button.
+  public void actionPerformed(ActionEvent e){
+    //Create two ColMatrix2D objects.
+    GM02.ColMatrix2D matrixA = new GM02.ColMatrix2D(
+      Double.parseDouble(colMatA0.getText()),
+      Double.parseDouble(colMatA1.getText()));
+      
+    GM02.ColMatrix2D matrixB = new GM02.ColMatrix2D(
+      Double.parseDouble(colMatB0.getText()),
+      Double.parseDouble(colMatB1.getText()));
+      
+    //Compute the dot product.
+    double dotProd = matrixA.dot(matrixB);
+    
+    //Eliminate exponential notation in the display.
+    if(Math.abs(dotProd) &lt; 0.001){
+      dotProd = 0.0;
+    }//end if
+    
+    //Convert to four decimal digits and display.
+    dotProd =((int)(10000*dotProd))/10000.0;
+    dotProduct.setText("" +  dotProd);
+
+  }//end actionPerformed
+  //====================================================//
+
+}//end class GUI
+</code>
+
+
+
+	
+
+
+<para id="p1223">
+<emphasis id="strong1182" effect="bold">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Source code for the program named DotProd2D02.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1011" display="block">/*DotProd2D02.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/07/08
+
+This program allows the user to experiment with the dot
+product and the angle between a pair of GM02.Vector2D 
+objects.
+
+Study Kjell through Chapter 9, The Angle Between Two 
+Vectors.
+
+A GUI is provided that allows the user to enter four
+double values that define each of two GM02.Vector2D 
+objects.  The GUI also provides an OK button as well as
+two text fields used for display of computed results.
+
+In addition, the GUI provides a 2D drawing area.
+
+When the user clicks the OK button, the program draws the
+two vectors, one in black and the other in magenta, on 
+the output screen with the tail of each vector located at 
+the origin in 2D space.
+
+The program also displays the values of the dot product 
+of the two vectors and the angle between the two vectors
+in degrees.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class DotProd2D02{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd2D02
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 400;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas 
+  Graphics2D g2D;//off-screen graphics context.
+
+  //User input components.
+  JTextField vectorAx = new JTextField("50.0");
+  JTextField vectorAy = new JTextField("100.0");
+  JTextField vectorBx = new JTextField("-100.0");
+  JTextField vectorBy = new JTextField("-50.0");
+  JTextField dotProduct = new JTextField();
+  JTextField angleDisplay = new JTextField();
+  JButton button = new JButton("OK");
+  
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //Instantiate a JPanel that will house the user input
+    // components and set its layout manager.
+    JPanel controlPanel = new JPanel();
+    controlPanel.setLayout(new GridLayout(0,4));
+
+    //Add the user input components and appropriate labels
+    // to the control panel.
+    controlPanel.add(new JLabel(" VectorAx = "));    
+    controlPanel.add(vectorAx);
+
+    controlPanel.add(new JLabel(" VectorAy = "));    
+    controlPanel.add(vectorAy);
+    
+    controlPanel.add(new JLabel(" VectorBx = "));    
+    controlPanel.add(vectorBx);
+    
+    controlPanel.add(new JLabel(" VectorBy = "));    
+    controlPanel.add(vectorBy);
+    
+    controlPanel.add(new JLabel(" Dot Prod = "));
+    controlPanel.add(dotProduct);
+    
+    controlPanel.add(new JLabel(" Angle (deg) = "));
+    controlPanel.add(angleDisplay);
+
+    controlPanel.add(button);
+
+    //Add the control panel to the SOUTH position in the
+    // JFrame.
+    this.getContentPane().add(
+                        BorderLayout.SOUTH,controlPanel);
+
+    
+    //Create a new drawing canvas and add it to the
+    // CENTER of the JFrame above the control panel.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+    
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+    
+
+    //Translate the origin to the center.
+    GM02.translate(g2D,0.5*osiWidth,-0.5*osiHeight);
+
+    
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+    
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //This method is used to draw orthogonal 2D axes on the
+  // off-screen image that intersect at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Erase the screen
+    g2D.setColor(Color.WHITE);
+    GM02.fillRect(g2D,-osiWidth/2,osiHeight/2,
+                                      osiWidth,osiHeight);
+
+    //Draw x-axis in RED
+    g2D.setColor(Color.RED);
+    GM02.Point2D pointA = new GM02.Point2D(
+                     new GM02.ColMatrix2D(-osiWidth/2,0));
+    GM02.Point2D pointB = new GM02.Point2D(
+                      new GM02.ColMatrix2D(osiWidth/2,0));
+    new GM02.Line2D(pointA,pointB).draw(g2D);
+    
+    //Draw y-axis in GREEN
+    g2D.setColor(Color.GREEN);
+    pointA = new GM02.Point2D(
+                    new GM02.ColMatrix2D(0,-osiHeight/2));
+    pointB = new GM02.Point2D(
+                     new GM02.ColMatrix2D(0,osiHeight/2));
+    new GM02.Line2D(pointA,pointB).draw(g2D);
+
+  }//end setCoordinateFrame method
+  //----------------------------------------------------//
+  
+  //This method is called to respond to a click on the
+  // button.
+  public void actionPerformed(ActionEvent e){
+    
+    //Erase the off-screen image and draw the axes.
+    setCoordinateFrame(g2D);
+    
+    //Create two ColMatrix2D objects based on the user
+    // input values.
+    GM02.ColMatrix2D matrixA = new GM02.ColMatrix2D(
+                  Double.parseDouble(vectorAx.getText()),
+                  Double.parseDouble(vectorAy.getText()));
+      
+    GM02.ColMatrix2D matrixB = new GM02.ColMatrix2D(
+                  Double.parseDouble(vectorBx.getText()),
+                  Double.parseDouble(vectorBy.getText()));
+      
+
+    //Use the ColMatrix2D objects to create two Vector2D
+    // objects.
+    GM02.Vector2D vecA = new GM02.Vector2D(matrixA);
+    GM02.Vector2D vecB = new GM02.Vector2D(matrixB);
+    
+    //Draw the two vectors with their tails at the origin.
+    g2D.setColor(Color.BLACK);
+    vecA.draw(
+         g2D,new GM02.Point2D(new GM02.ColMatrix2D(0,0)));
+
+    g2D.setColor(Color.MAGENTA);
+    vecB.draw(
+         g2D,new GM02.Point2D(new GM02.ColMatrix2D(0,0)));
+
+    //Compute the dot product of the two vectors.
+    double dotProd = vecA.dot(vecB);
+    
+    //Eliminate exponential notation in the display.
+    if(Math.abs(dotProd) &lt; 0.001){
+      dotProd = 0.0;
+    }//end if
+    
+    //Convert to four decimal digits and display.
+    dotProd =((int)(10000*dotProd))/10000.0;
+    dotProduct.setText("" +  dotProd);
+
+
+    //Compute the angle between the two vectors.
+    double angle = vecA.angle(vecB);
+    
+    //Eliminate exponential notation in the display.
+    if(Math.abs(angle) &lt; 0.001){
+      angle = 0.0;
+    }//end if
+    
+    //Convert to four decimal digits and display.
+    angle =((int)(10000*angle))/10000.0;
+    angleDisplay.setText("" +  angle);
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+  }//end actionPerformed
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+	
+
+	
+
+
+<para id="p1224">
+<emphasis id="strong1183" effect="bold">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Source code for the program named DotProd3D01.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1012" display="block">/*DotProd3D01.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/04/08
+
+Study Kjell through Chapter 8 - Length, Orthogonality, and
+the Column Matrix Dot product.
+
+The purpose of this program is to confirm proper operation
+of the ColMatrix3D.dot method.
+
+The program creates a GUI that allows the user to enter
+three values for each of a pair of ColMatrix3D objects 
+along with a button labeled OK.
+
+When the user clicks the OK button, the dot product
+between the two ColMatrix3D objects is computed. The
+resulting value is converted to four decimal digits and
+displayed in a text field on the GUI.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class DotProd3D01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd3D01
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 470;
+  int vSize = 150;
+
+  JTextField colMatA0 = new JTextField("0.57735");
+  JTextField colMatA1 = new JTextField("0.57735");
+  JTextField colMatA2 = new JTextField("0.57735");
+  
+  JTextField colMatB0 = new JTextField("-0.57735");
+  JTextField colMatB1 = new JTextField("-0.57735");
+  JTextField colMatB2 = new JTextField("-0.57735");
+  
+  JTextField dotProduct = new JTextField();
+  JButton button = new JButton("OK");
+
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+
+    //Instantiate a JPanel that will house the user input
+    // components and set its layout manager.
+    JPanel controlPanel = new JPanel();
+    controlPanel.setLayout(new GridLayout(0,6));
+
+    //Add the user input components and appropriate labels
+    // to the control panel.
+    controlPanel.add(new JLabel(" colMatA0 = "));    
+    controlPanel.add(colMatA0);
+
+    controlPanel.add(new JLabel(" colMatA1 = "));    
+    controlPanel.add(colMatA1);
+    
+    controlPanel.add(new JLabel(" colMatA2 = "));    
+    controlPanel.add(colMatA2);
+    
+    controlPanel.add(new JLabel(" colMatB0 = "));    
+    controlPanel.add(colMatB0);
+    
+    controlPanel.add(new JLabel(" colMatB1 = "));    
+    controlPanel.add(colMatB1);
+    
+    controlPanel.add(new JLabel(" colMatB2 = "));    
+    controlPanel.add(colMatB2);
+    
+    controlPanel.add(new JLabel(" Dot Prod = "));
+    controlPanel.add(dotProduct);
+
+    controlPanel.add(new JLabel(""));//spacer
+    controlPanel.add(button);
+
+    //Add the control panel to the CENTER position in the
+    // JFrame.
+    this.getContentPane().add(
+                        BorderLayout.CENTER,controlPanel);
+    setVisible(true);
+
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+
+  }//end constructor
+  //----------------------------------------------------//
+
+  //This method is called to respond to a click on the
+  // button.
+  public void actionPerformed(ActionEvent e){
+    //Create two ColMatrix3D objects.
+    GM02.ColMatrix3D matrixA = new GM02.ColMatrix3D(
+      Double.parseDouble(colMatA0.getText()),
+      Double.parseDouble(colMatA1.getText()),
+      Double.parseDouble(colMatA2.getText()));
+      
+    GM02.ColMatrix3D matrixB = new GM02.ColMatrix3D(
+      Double.parseDouble(colMatB0.getText()),
+      Double.parseDouble(colMatB1.getText()),
+      Double.parseDouble(colMatB2.getText()));
+      
+    //Compute the dot product.
+    double dotProd = matrixA.dot(matrixB);
+
+    //Eliminate exponential notation in the display.
+    if(Math.abs(dotProd) &lt; 0.001){
+      dotProd = 0.0;
+    }//end if
+
+    //Convert to four decimal digits and display.
+    dotProd =((int)(10000*dotProd))/10000.0;
+    dotProduct.setText("" +  dotProd);
+
+  }//end actionPerformed
+  //====================================================//
+
+}//end class GUI
+</code>
+
+
+	
+
+
+
+<para id="p1225">
+<emphasis id="strong1184" effect="bold">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. Source code for the program named DotProd3D02.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1013" display="block">/*DotProd3D02.java 
+Copyright 2008, R.G.Baldwin
+Revised 03/07/08
+
+This program allows the user to experiment with the dot
+product and the angle between a pair of GM02.Vector3D 
+objects.
+
+Study Kjell through Chapter 10, Angle between 3D Vectors.
+
+A GUI is provided that allows the user to enter six
+double values that define each of two GM02.Vector3D 
+objects.  The GUI also provides an OK button as well as
+two text fields used for display of computed results.
+
+In addition, the GUI provides a 3D drawing area.
+
+When the user clicks the OK button, the program draws the
+two vectors, one black and the other in magenta, on the 
+output screen with the tail of each vector located at the 
+origin in 3D space.
+
+The program also displays the values of the dot product 
+of the two vectors and the angle between the two vectors
+in degrees.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+class DotProd3D02{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class DotProd3D02
+//======================================================//
+
+class GUI extends JFrame implements ActionListener{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 400;
+  Image osi;//an off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas 
+  Graphics2D g2D;//off-screen graphics context.
+
+  //User input components.
+  JTextField vecAx = new JTextField("50.0");
+  JTextField vecAy = new JTextField("100.0");
+  JTextField vecAz = new JTextField("0.0");
+  JTextField vecBx = new JTextField("-100.0");
+  JTextField vecBy = new JTextField("-50.0");
+  JTextField vecBz = new JTextField("0.0");
+  JTextField dotProduct = new JTextField();
+  JTextField angleDisplay = new JTextField();
+  JButton button = new JButton("OK");
+  
+  //----------------------------------------------------//
+  
+  GUI(){//constructor
+
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //Instantiate a JPanel that will house the user input
+    // components and set its layout manager.
+    JPanel controlPanel = new JPanel();
+    controlPanel.setLayout(new GridLayout(0,6));
+
+    //Add the user input components and appropriate labels
+    // to the control panel.
+    controlPanel.add(new JLabel(" VecAx = "));    
+    controlPanel.add(vecAx);
+
+    controlPanel.add(new JLabel(" VecAy = "));    
+    controlPanel.add(vecAy);
+    
+    controlPanel.add(new JLabel(" VecAz = "));    
+    controlPanel.add(vecAz);
+    
+    controlPanel.add(new JLabel(" VecBx = "));    
+    controlPanel.add(vecBx);
+    
+    controlPanel.add(new JLabel(" VecrBy = "));    
+    controlPanel.add(vecBy);
+    
+    controlPanel.add(new JLabel(" VecBz = "));    
+    controlPanel.add(vecBz);
+    
+    controlPanel.add(new JLabel(" Dot Prod = "));
+    controlPanel.add(dotProduct);
+    
+    controlPanel.add(new JLabel(" Ang(deg)"));
+    controlPanel.add(angleDisplay);
+    
+    controlPanel.add(new JLabel(""));//spacer
+
+    controlPanel.add(button);
+
+    //Add the control panel to the SOUTH position in the
+    // JFrame.
+    this.getContentPane().add(
+                        BorderLayout.SOUTH,controlPanel);
+
+    
+    //Create a new drawing canvas and add it to the
+    // CENTER of the JFrame above the control panel.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(
+                            BorderLayout.CENTER,myCanvas);
+
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    
+    //Make the size of the off-screen image match the
+    // size of the canvas.
+    osiWidth = myCanvas.getWidth();
+    osiHeight = myCanvas.getHeight();
+    
+    //Create an off-screen image and get a graphics
+    // context on it.
+    osi = createImage(osiWidth,osiHeight);
+    g2D = (Graphics2D)(osi.getGraphics());
+    
+
+    //Translate the origin to the center.
+    GM02.translate(g2D,0.5*osiWidth,-0.5*osiHeight);
+
+    
+    //Register this object as an action listener on the
+    // button.
+    button.addActionListener(this);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+    
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //This method is used to draw orthogonal 3D axes on the
+  // off-screen image that intersect at the origin.
+  private void setCoordinateFrame(Graphics2D g2D){
+
+    //Erase the screen
+    g2D.setColor(Color.WHITE);
+    GM02.fillRect(g2D,-osiWidth/2,osiHeight/2,
+                                      osiWidth,osiHeight);
+
+    //Draw x-axis in RED
+    g2D.setColor(Color.RED);
+    GM02.Point3D pointA = new GM02.Point3D(
+                   new GM02.ColMatrix3D(-osiWidth/2,0,0));
+    GM02.Point3D pointB = new GM02.Point3D(
+                    new GM02.ColMatrix3D(osiWidth/2,0,0));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+    
+    //Draw y-axis in GREEN
+    g2D.setColor(Color.GREEN);
+    pointA = new GM02.Point3D(
+                  new GM02.ColMatrix3D(0,-osiHeight/2,0));
+    pointB = new GM02.Point3D(
+                   new GM02.ColMatrix3D(0,osiHeight/2,0));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+    
+    //Draw z-axis in BLUE. Make its length the same as the
+    // length of the x-axis.
+    g2D.setColor(Color.BLUE);
+    pointA = new GM02.Point3D(
+                   new GM02.ColMatrix3D(0,0,-osiWidth/2));
+    pointB = new GM02.Point3D(
+                    new GM02.ColMatrix3D(0,0,osiWidth/2));
+    new GM02.Line3D(pointA,pointB).draw(g2D);
+
+  }//end setCoordinateFrame method
+  //----------------------------------------------------//
+  
+  //This method is called to respond to a click on the
+  // button.
+  public void actionPerformed(ActionEvent e){
+    
+    //Erase the off-screen image and draw the axes.
+    setCoordinateFrame(g2D);
+    
+    //Create two ColMatrix3D objects based on the user
+    // input values.
+    GM02.ColMatrix3D matrixA = new GM02.ColMatrix3D(
+                  Double.parseDouble(vecAx.getText()),
+                  Double.parseDouble(vecAy.getText()),
+                  Double.parseDouble(vecAz.getText()));
+      
+    GM02.ColMatrix3D matrixB = new GM02.ColMatrix3D(
+                  Double.parseDouble(vecBx.getText()),
+                  Double.parseDouble(vecBy.getText()),
+                  Double.parseDouble(vecBz.getText()));
+      
+
+    //Use the ColMatrix3D objects to create two Vector3D
+    // objects.
+    GM02.Vector3D vecA = new GM02.Vector3D(matrixA);
+    GM02.Vector3D vecB = new GM02.Vector3D(matrixB);
+    
+    //Draw the two vectors with their tails at the origin.
+    g2D.setColor(Color.BLACK);
+    vecA.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+    g2D.setColor(Color.MAGENTA);
+    vecB.draw(g2D,new GM02.Point3D(
+                            new GM02.ColMatrix3D(0,0,0)));
+
+    //Compute the dot product of the two vectors.
+    double dotProd = vecA.dot(vecB);
+    
+    //Eliminate exponential notation in the display.
+    if(Math.abs(dotProd) &lt; 0.001){
+      dotProd = 0.0;
+    }//end if
+    
+    //Convert to four decimal digits and display.
+    dotProd =((int)(10000*dotProd))/10000.0;
+    dotProduct.setText("" +  dotProd);
+
+
+    //Compute the angle between the two vectors.
+    double angle = vecA.angle(vecB);
+    
+    //Eliminate exponential notation in the display.
+    if(Math.abs(angle) &lt; 0.001){
+      angle = 0.0;
+    }//end if
+    
+    //Convert to four decimal digits and display.
+    angle =((int)(10000*angle))/10000.0;
+    angleDisplay.setText("" +  angle);
+
+    myCanvas.repaint();//Copy off-screen image to canvas.
+  }//end actionPerformed
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the
+    // off-screen image on the screen.
+    public void paint(Graphics g){
+      g.drawImage(osi,0,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+	
+
+</section>
+<section id="h11011">
+<title>
+<emphasis id="Exercises" effect="bold">
+
+Exercises
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21008">
+<title>
+<emphasis id="Exercise_1" effect="bold">
+
+Exercise 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1226">
+Using Java and the game-math library named 
+
+<emphasis id="strong1185" effect="bold">
+GM02
+
+</emphasis>
+, or using a 
+different programming environment of your choice, write a program that behaves 
+as follows.
+
+</para>
+
+
+
+
+<para id="p1227">
+When the program starts running, an image similar to 
+
+<link id="a1190" target-id="Figure_17">
+
+
+Figure 17
+
+</link>
+
+ appears on the screen. Each of the text fields is blank and the 
+drawing area at the top is also blank.
+
+</para>
+
+
+
+
+<para id="p1228">
+Each time you click the 
+
+<emphasis id="strong1186" effect="bold">
+Replot
+
+</emphasis>
+ button, the program generates 
+three random values in the general range of -128 to 127. The first two values 
+are used as the x and y values for a vector. The two values are displayed in the 
+fields labeled 
+
+<emphasis id="strong1187" effect="bold">
+VectorAx
+
+</emphasis>
+ and 
+
+<emphasis id="strong1188" effect="bold">
+VectorAy
+
+</emphasis>
+. Also, the two 
+values are used to create and draw a black vector with its tail at the origin as 
+shown in 
+
+<link id="a1191" target-id="Figure_17">
+
+Figure 17
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1229">
+The third random value is used as the x-value for a second vector. It is 
+displayed in the field labeled 
+
+<emphasis id="strong1189" effect="bold">
+VectorBx
+
+</emphasis>
+. A y-value is computed 
+that will cause that vector to be perpendicular to the black vector. That value 
+is displayed in the field labeled 
+
+<emphasis id="strong1190" effect="bold">
+VectorBy
+
+</emphasis>
+ and the two values 
+are used to draw the magenta vector shown in 
+
+<link id="a1192" target-id="Figure_17">
+
+Figure 17
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1230">
+The dot product between the two vectors is computed and displayed in the 
+field labeled 
+
+<emphasis id="strong1191" effect="bold">
+Dot Prod
+
+</emphasis>
+. The angle between the two vectors is 
+computed and displayed in the field labeled 
+
+<emphasis id="strong1192" effect="bold">
+Angle (deg)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1231">
+If the two vectors are perpendicular, the dot product should be close to 
+zero and the angle should be very close 
+to 90 degrees.
+
+</para>
+
+
+
+
+<para id="p1232">
+Cause your name to appear in the screen output in some manner.
+
+</para>
+
+
+
+
+<para id="p1233">
+<emphasis id="Figure_17" effect="bold">
+
+
+<emphasis id="strong1193" effect="bold">
+Figure 17
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1194" effect="bold">
+ Output from Exercise 1.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1234">
+<media id="media1014" alt="Missing image." display="block">
+<image id="img1014" mime-type="image/jpeg" src="../../media/0145ex01.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Exercise_2" effect="bold">
+
+Exercise 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1235">
+Using Java and the game-math library named 
+
+<emphasis id="strong1195" effect="bold">
+GM02
+
+</emphasis>
+, or using a 
+different programming environment of your choice, write a program that behaves 
+as follows.
+
+</para>
+
+
+
+
+<para id="p1236">
+When the program starts running, an image similar to 
+
+<link id="a1193" target-id="Figure_18">
+
+
+Figure 18
+
+</link>
+
+ appears on the screen. Each of the text fields is blank and the 
+drawing area at the top is also blank.
+
+</para>
+
+
+
+
+<para id="p1237">
+Each time you click the 
+
+<emphasis id="strong1196" effect="bold">
+Plot
+
+</emphasis>
+ button, the program generates 
+three random values in the general range of -128 to 127. The first two values 
+are used as the x and y values for a 3D vector. (Set the z-value for the vector 
+to 0.0.) The three values are displayed in 
+the fields labeled 
+
+<emphasis id="strong1197" effect="bold">
+VecAx
+
+</emphasis>
+, 
+
+<emphasis id="strong1198" effect="bold">
+VecAy
+
+</emphasis>
+, and 
+
+<emphasis id="strong1199" effect="bold">
+
+VecAz
+
+</emphasis>
+. 
+Also, the three values are used to create and draw a black 3D vector with its tail at 
+the origin as shown in 
+
+<link id="a1194" target-id="Figure_18">
+
+Figure 18
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1238">
+The third random value is used as the x value for a second 3D vector. (Set 
+the z-value for the vector to 0.0.) Those two values are displayed in the fields labeled 
+
+<emphasis id="strong1200" effect="bold">
+VecBx
+
+</emphasis>
+ and 
+
+
+<emphasis id="strong1201" effect="bold">
+VecBz
+
+</emphasis>
+. A 
+y-value is computed 
+that will cause that vector to be perpendicular to the black vector. That value 
+is displayed in the field labeled 
+
+<emphasis id="strong1202" effect="bold">
+VecBy
+
+</emphasis>
+ and the three values 
+are used to draw the magenta vector shown in 
+
+<link id="a1195" target-id="Figure_18">
+
+Figure 18
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1239">
+The dot product between the two vectors is computed and displayed in the 
+field labeled 
+
+<emphasis id="strong1203" effect="bold">
+Dot Prod
+
+</emphasis>
+. The angle between the two vectors is 
+computed and displayed in the field labeled 
+
+<emphasis id="strong1204" effect="bold">
+Angle (deg)
+
+</emphasis>
+. 
+
+
+</para>
+
+
+
+
+<para id="p1240">
+If the two vectors are perpendicular, the dot product should be close to 
+zero and the angle should be very close 
+to 90 degrees.
+
+</para>
+
+
+
+
+<para id="p1241">
+Cause your name to appear in the screen output in some manner.
+
+</para>
+
+
+
+
+<para id="p1242">
+<emphasis id="Figure_18" effect="bold">
+
+
+<emphasis id="strong1205" effect="bold">
+Figure 18
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1206" effect="bold">
+ Output from Exercise 2.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1243">
+<media id="media1015" alt="Missing image." display="block">
+<image id="img1015" mime-type="image/jpeg" src="../../media/0145ex02.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21010">
+<title>
+<emphasis id="Exercise_3" effect="bold">
+
+Exercise 3
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1244">
+Using Java and the game-math library named 
+
+<emphasis id="strong1207" effect="bold">
+GM02
+
+</emphasis>
+, or using a 
+different programming environment of your choice, write a program that behaves 
+as follows.
+
+</para>
+
+
+
+
+<para id="p1245">
+When the program starts running, an image similar to 
+
+<link id="a1196" target-id="Figure_19">
+
+
+Figure 19
+
+</link>
+
+ appears on the screen. Each of the text fields is blank and the 
+drawing area at the top is also blank.
+
+</para>
+
+
+
+
+<para id="p1246">
+Each time you click the 
+
+<emphasis id="strong1208" effect="bold">
+Plot
+
+</emphasis>
+ button, the program generates 
+five random values in the general range of -128 to 127. The first three values 
+are used as the x, y, and z values for a vector. The three values are displayed in 
+the fields labeled 
+
+<emphasis id="strong1209" effect="bold">
+VecAx
+
+</emphasis>
+, 
+
+<emphasis id="strong1210" effect="bold">
+VecAy
+
+</emphasis>
+, and 
+
+<emphasis id="strong1211" effect="bold">
+
+VecAz
+
+</emphasis>
+. 
+Also, the three values are used to create and draw a black vector with its tail at 
+the origin as shown in 
+
+<link id="a1197" target-id="Figure_19">
+
+Figure 19
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1247">
+The fourth and fifth random values are used as the x and y values for a second vector. 
+They are displayed in the fields labeled 
+
+<emphasis id="strong1212" effect="bold">
+VecBx
+
+</emphasis>
+ and 
+
+<emphasis id="strong1213" effect="bold">
+VecBy
+
+</emphasis>
+. A 
+z-value is computed 
+that will cause that vector to be perpendicular to the black vector. That value 
+is displayed in the field labeled 
+
+<emphasis id="strong1214" effect="bold">
+VecBz
+
+</emphasis>
+ and the three values 
+are used to draw the magenta vector shown in 
+
+<link id="a1198" target-id="Figure_19">
+
+Figure 19
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1248">
+The dot product between the two vectors is computed and displayed in the 
+field labeled 
+
+<emphasis id="strong1215" effect="bold">
+Dot Prod
+
+</emphasis>
+. The angle between the two vectors is 
+computed and displayed in the field labeled 
+
+<emphasis id="strong1216" effect="bold">
+Angle (deg)
+
+</emphasis>
+. 
+
+
+</para>
+
+
+
+
+<para id="p1249">
+If the two vectors are perpendicular, the dot product should be close to 
+zero and the angle should be very close 
+to 90 degrees.
+
+</para>
+
+
+
+
+<para id="p1250">
+Cause your name to appear in the screen output in some manner.
+
+</para>
+
+
+
+
+<para id="p1251">
+<emphasis id="Figure_19" effect="bold">
+
+
+<emphasis id="strong1217" effect="bold">
+Figure 19
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1218" effect="bold">
+ Output from Exercise 3.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1252">
+<media id="media1016" alt="Missing image." display="block">
+<image id="img1016" mime-type="image/jpeg" src="../../media/0145ex03.jpg" width="401" height="401"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1253">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</content>
+
+
+
+
+</document>

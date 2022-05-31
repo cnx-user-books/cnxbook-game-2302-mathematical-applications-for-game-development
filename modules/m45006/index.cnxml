@@ -1,0 +1,4603 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0360 Motion -- Displacement and Vectors</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45006</md:content-id>
+  <md:title>GAME 2302-0360 Motion -- Displacement and Vectors</md:title>
+  <md:abstract>The purpose of this module is to introduce motion and to explain displacement and vector analysis.</md:abstract>
+  <md:uuid>0065176f-492b-4379-b8c8-5db6239efca4</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Discussion">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Displacement">
+
+Displacement
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Addition_of_vectors">
+
+Addition and subtraction of vectors
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Mathematical_solutions">
+
+Mathematical solutions
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Using_the_Math.atan_method">
+
+Using the Math.atan method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Mathematical_solution_to_an_earlier_problem">
+
+Mathematical solution to an earlier problem
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="Subtracting_vectors">
+
+Subtracting vectors
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="Adding_more_than_two_vectors">
+
+Adding more than two 
+			vectors
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Run_the_program">
+
+Run the scripts
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This module is part of a series of modules designed for teaching the physics 
+component of 
+
+<emphasis id="em1000" effect="italics">
+GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at 
+Austin Community College in Austin, TX. 
+
+<emphasis id="em1001" effect="italics">
+(See
+
+
+<link id="a1016" url="http://cnx.org/content/m44983/latest">
+
+GAME 2302-0100: Introduction
+
+</link>
+
+ 
+for the first module in the course along with a description of the course, 
+course resources, homework assignments, etc.) 
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1001">
+The purpose of this module is to introduce motion and to explain 
+displacement and vector analysis.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1016">
+<link id="a1017" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. A graphic showing displacement. 
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1018" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Vector diagram for a familiar example.
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1019" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. A triangle with sides of 30, 40, and ?.
+
+</item>
+
+
+	
+
+<item id="li1019">
+<link id="a1020" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Vector diagram for the sum of six vectors.
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1021" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Illustration of the parallelogram 
+	law.
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1022" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Screen output for Listing #1.
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1023" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Screen output for Listing #2. 
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1024" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Screen output for Listing #3. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1024">
+<link id="a1025" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Using the Math.atan method. 
+
+</item>
+
+
+	
+
+<item id="li1025">
+<link id="a1026" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. The sum of two vectors. 
+
+</item>
+
+
+	
+
+<item id="li1026">
+<link id="a1027" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. The sum of four vectors. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="General_background_information" effect="bold">
+
+General background 
+information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+<emphasis id="strong1000" effect="bold">
+Bodies - not a reference to people
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+To begin with, physics textbooks often refer to something called 
+
+<emphasis id="em1002" effect="italics">
+bodies
+
+</emphasis>
+. 
+By this, they are not referring to living bodies or the carcasses of once living 
+creatures. Instead, they are referring to what people might ordinarily call 
+objects.
+
+</para>
+
+
+
+
+<para id="p1005">
+For example, somewhere in this series of modules, we will discuss something 
+call
+
+<emphasis id="em1003" effect="italics">
+ed a free body diagram
+
+</emphasis>
+. A free body diagram can be drawn relative 
+to any object, such as a child sitting motionless in a swing on the playground 
+or a piano hanging on a rope.
+
+<emphasis id="em1004" effect="italics">
+ 
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+<emphasis id="strong1001" effect="bold">
+Rest and motion
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1007">
+While nothing in the universe is truly motionless (at rest), some things 
+around us such as buildings seem to be at rest, while other things such as 
+planes, trains, and busses appear to be in motion.
+
+</para>
+
+
+
+
+<para id="p1008">
+There is no such thing as absolute rest. However, two bodies moving together 
+at the same rate (with reference to some third body) may be deemed to be at rest 
+relative to one another.
+
+</para>
+
+
+
+
+<para id="p1009">
+Therefore, if you are standing motionless on the Earth, you are at rest 
+relative to the Earth with reference to the Sun.
+
+</para>
+
+
+
+
+<para id="p1010">
+<emphasis id="strong1002" effect="bold">
+Kinematics and kinetics
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1011">
+The 
+
+<emphasis id="em1005" effect="italics">
+fundamental properties of motion
+
+</emphasis>
+ are often referred to as 
+
+<emphasis id="strong1003" effect="bold">
+
+kinematics
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1012">
+According to the course description, in addition to 
+
+<emphasis id="em1006" effect="italics">
+"applications of 
+mathematics and science"
+
+</emphasis>
+, the course is also to include 
+
+<emphasis id="em1007" effect="italics">
+"the 
+utilization of matrix and vector operations, kinematics, and Newtonian 
+principles in games and simulations"
+
+</emphasis>
+,
+
+</para>
+
+
+
+
+<para id="p1013">
+The relationships between motion and force are often 
+referred to as 
+
+<emphasis id="strong1004" effect="bold">
+kinetics
+
+</emphasis>
+. These are the topics that will be 
+covered in this and the next several modules in this collection.
+
+</para>
+
+
+
+
+<para id="p1014">
+<emphasis id="strong1005" effect="bold">
+Displacement
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1015">
+If one body is moved with respect to another body, either one of them may be 
+said to have experienced a
+
+<emphasis id="strong1006" effect="bold">
+ displacement
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1016">
+Displacement, along with 
+vector analysis will be the primary topics covered in this module.
+
+<emphasis id="strong1007" effect="bold">
+
+
+
+</emphasis>
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11003">
+<title>
+ 
+
+<emphasis id="Discussion" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<section id="h21002">
+<title>
+<emphasis id="Displacement" effect="bold">
+
+Displacement
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+As mentioned above, if one body is moved with respect to another body, either 
+one of them may be said to have experienced a
+
+<emphasis id="strong1008" effect="bold">
+ displacement
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1018">
+<emphasis id="strong1009" effect="bold">
+Displacement is not the same as distance
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1019">
+Assume, for example, that you go to the local high school and run five laps 
+around the track, stopping exactly where you started. The distance that you have 
+run will be the length of the path that you followed while running. However, 
+while you may be completely out of breath by that point in time, the magnitude 
+of your displacement will have been zero.
+
+</para>
+
+
+
+
+<para id="p1020">
+<emphasis id="strong1010" effect="bold">
+Scalars versus vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1021">
+Distance is a 
+
+<emphasis id="strong1011" effect="bold">
+scalar
+
+</emphasis>
+ quantity, while displacement is a
+
+
+<emphasis id="strong1012" effect="bold">
+vector
+
+</emphasis>
+ quantity. Scalar quantities have only magnitude, such as 
+three kilometers.
+
+</para>
+
+
+
+
+<para id="p1022">
+Vector quantities have two parts: 
+
+<emphasis id="strong1013" effect="bold">
+magnitude
+
+</emphasis>
+ and 
+
+<emphasis id="strong1014" effect="bold">
+direction
+
+</emphasis>
+. For example, you 
+might describe a vector quantity as having a magnitude of three kilometers and a 
+direction of northwest.
+
+</para>
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1015" effect="bold">
+Magnitude and direction
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1024">
+A displacement vector must have both magnitude and direction. For example, if 
+you were to run about three-fourths of the way around the track, the distance 
+that you ran would be the length of your path. 
+
+</para>
+
+
+
+
+<para id="p1025">
+However, the magnitude of your displacement would be the straight-line 
+distance from your starting point to your stopping point.
+
+</para>
+
+
+
+
+<para id="p1026">
+The direction of your displacement would be an angle measured between some 
+reference (such as due east, for example) and an imaginary line connecting your 
+starting point and your stopping point.
+
+</para>
+
+
+
+
+<para id="p1027">
+<emphasis id="strong1016" effect="bold">
+If you stop where you start...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1028">
+Getting back to the original proposition, if your stopping point is exactly 
+the same as your starting point, the magnitude of your displacement vector will 
+be zero and the angle of your displacement vector will be indeterminate.
+
+</para>
+
+
+
+
+<para id="p1029">
+<emphasis id="strong1017" effect="bold">
+Vector notation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+Assume that there are three spots marked on the top of a table as A, B, and 
+C. If an object is moved from A to B and then from B to C, using vectors, it may 
+be stated that:
+
+</para>
+
+
+
+
+<para id="p1031">
+vecAC = vecAB + vecBC
+
+</para>
+
+
+
+
+<para id="p1032">
+where vecAB, vecBC, and vecAC represent vectors.
+
+</para>
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1018" effect="bold">
+Typical notation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1034">
+A typical notation for a vector in a physics textbook is something like AB, 
+possibly in boldface and/or italics, with a small arrow drawn above the two 
+letters. However, there is no such small arrow on a QWERTY keyboard, making it 
+very difficult for me to reproduce in these modules. 
+
+</para>
+
+
+
+
+<para id="p1035">
+<emphasis id="strong1019" effect="bold">
+My alternative notation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1036">
+Therefore, in these physics modules, I will use the following notation
+
+</para>
+
+
+
+
+<para id="p1037">
+vecAB
+
+</para>
+
+
+
+
+<para id="p1038">
+to indicate a vector extending from the spot labeled A to the spot labeled B.
+
+</para>
+
+
+
+
+<para id="p1039">
+In order to determine direction in an unambiguous way, you often need to know where the 
+vector starts (the tail) and where it ends (the head). The notation used above 
+indicates that the tail of the vector is at A and the head is at B.
+
+</para>
+
+
+
+
+<para id="p1040">
+In some cases, particularly in JavaScript code where a vector is defined by 
+magnitude and direction instead of by a starting point and an ending point, I 
+will refer to a vector simply as
+
+</para>
+
+
+
+
+<para id="p1041">
+vecA, vecB, etc.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="strong1020" effect="bold">
+A graphic illustrating displacement
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+<link id="a1028" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ is a graphic that illustrates displacement.
+
+</para>
+
+
+
+
+<para id="p1044">
+<emphasis id="Figure_1" effect="bold">
+
+
+<emphasis id="strong1021" effect="bold">
+Figure 1
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1022" effect="bold">
+ - A graphic showing displacement.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1045">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/png" src="../../media/Phy1060a1b.png" width="462" height="600"/>
+</media>
+
+
+</para>
+
+
+	
+
+
+
+
+<para id="p1046">
+The triangle shown in 
+
+<link id="a1029" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ is a physical representation of the vector equation
+
+</para>
+
+
+
+
+<para id="p1047">
+vecAC = vecAB + vecBC
+
+</para>
+
+
+
+
+<para id="p1048">
+As usual, please ignore the lower-case letters scattered throughout the 
+image, which were placed there for a purpose other than for use in this module.
+
+</para>
+
+
+
+
+<para id="p1049">
+<emphasis id="strong1023" effect="bold">
+What does this mean?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1050">
+This vector equation does not mean that the algebraic sum of two sides of the triangle are equal 
+to the third side. However, it does mean that the displacement vecAB together 
+with the displacement vecBC, have an effect 
+
+<emphasis id="em1008" effect="italics">
+that is equivalent
+
+</emphasis>
+ to the single displacement 
+vector vecAC.
+
+</para>
+
+
+
+
+<para id="p1051">
+<emphasis id="strong1024" effect="bold">
+Scalar addition and subtraction
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1052">
+When adding or subtracting scalars, you only need to take the magnitude 
+values of the scalars into account and perform normal arithmetic using those 
+magnitude values. An example would be to add 6 birds and 5 birds to produce a 
+sum of 11 birds.
+
+</para>
+
+
+
+
+<para id="p1053">
+<emphasis id="strong1025" effect="bold">
+Vector addition and subtraction
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1054">
+However, when adding or subtracting vectors, you not only need to take the 
+magnitude of the vectors into account, you also need to take the directions of 
+the vectors into account.
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="strong1026" effect="bold">
+A thought exercise
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1056">
+<link id="a1030" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the vector diagram for a familiar 
+example.
+
+</para>
+
+
+
+
+<para id="p1057">
+<emphasis id="Figure_2" effect="bold">
+
+
+<emphasis id="strong1027" effect="bold">
+Figure 2
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1028" effect="bold">
+ - Vector diagram for a familiar example.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+<media id="media1001" alt="Missing image" display="block">
+<image id="img1001" mime-type="image/png" src="../../media/Phy1060b1b.png" width="464" height="600"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1059">
+Pretend that you are standing at point A in 
+
+<link id="a1031" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Then pretend that 
+you walk 30 meters due east and designate that location as point B.
+
+</para>
+
+
+
+
+<para id="p1060">
+Up to this point, 
+your displacement can be represented by vecAB with a magnitude of 30 and an 
+angle of zero (assuming that due east represents an angle of zero).
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1029" effect="bold">
+Walk 40 meters due north
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+Now pretend that you walk 40 meters due north and mentally designate the stopping 
+point as C. Your displacement relative to point B can be 
+represented as vecBC with a magnitude of 40 meters and a direction of north or 
+90 degrees.
+
+</para>
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1030" effect="bold">
+Displacement relative to point A
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1064">
+The interesting question is, what is your displacement relative to your starting point at A?
+
+</para>
+
+
+
+
+<para id="p1065">
+The displacement vector vecAC is the straight line from point A to point C, 
+pointing in a direction from A to C. This vector is shown in the vector equation
+
+</para>
+
+
+
+
+<para id="p1066">
+vecAC = vecAB + vecBC
+
+</para>
+
+
+
+
+<para id="p1067">
+as the sum of the two vectors that describe the two segments of your journey from 
+A to C.
+
+</para>
+
+
+
+
+<para id="p1068">
+<emphasis id="strong1031" effect="bold">
+Graphical addition of vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1069">
+This process of connecting two or more vectors tail-to-head in sequence and 
+then measuring the distance and direction from the tail of the first vector to 
+the head of the last vector is known as the 
+
+<emphasis id="em1009" effect="italics">
+graphical addition of vectors
+
+</emphasis>
+. The 
+resulting vector (in this case vecAC) is known as the sum of the vectors that 
+make up the sequence. (The resulting vector is often called the 
+resultant.)
+
+</para>
+
+
+
+
+<para id="p1070">
+<emphasis id="strong1032" effect="bold">
+A 3-4-5 triangle
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+Recalling what we learned in an earlier module where I discussed a 3-4-5 
+triangle, the magnitude of the vector from A to C (the hypotenuse of a right 
+triangle with sides of 30 and 40) is 50 meters. You may also recall that the angle is 
+approximately 53 degrees relative to the horizontal (east-west) line.
+
+</para>
+
+
+
+
+<para id="p1072">
+You should be able to measure the length of vecAC as well as the angle 
+between that vector and the horizontal in 
+
+<link id="a1032" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ and get reasonable agreement with the 
+above.
+
+</para>
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1033" effect="bold">
+No requirement for a right triangle
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+While this example is based on a right triangle, that is not a requirement 
+for adding vectors. I chose a 3-4-5 right triangle for the example 
+because I knew what the answer would be in advance and also because it should 
+have been familiar to you.
+
+</para>
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1034" effect="bold">
+Graphic representation of vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+Many problems in kinematics and kinetics can be solved graphically using a 
+graphical representation of vectors.
+
+</para>
+
+
+
+
+<para id="p1077">
+Vectors are typically drawn as a heavy line between two points with an arrow 
+head at one end and nothing in particular at the other end. The end with the 
+arrow head is commonly called the head of the vector and the other end is 
+commonly called the tail.
+
+</para>
+
+
+
+
+<para id="p1078">
+<emphasis id="strong1035" effect="bold">
+Somewhat inconvenient
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1079">
+Drawing vectors on graph paper can be inconvenient, particularly if you don't 
+have graph paper available. Fortunately, as you will 
+soon learn, it isn't necessary to use graphics to solve vector problems. You can 
+also solve such problems mathematically, which will often be the better choice.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Addition_of_vectors" effect="bold">
+
+Addition and subtraction of vectors
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1080">
+There are at least two kinds of quantities in physics:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1027">
+<emphasis id="strong1036" effect="bold">
+scalars
+
+</emphasis>
+, having magnitude only
+
+</item>
+
+
+	
+
+<item id="li1028">
+<emphasis id="strong1037" effect="bold">
+vectors
+
+</emphasis>
+, having both magnitude and direction
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1081">
+You already know how to do scalar arithmetic. Otherwise, you probably 
+wouldn't be interested in physics.
+
+</para>
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1038" effect="bold">
+Another example
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1083">
+Let's go back to our original equation
+
+</para>
+
+
+
+
+<para id="p1084">
+vecAC = vecAB + vecBC 
+
+</para>
+
+
+
+
+<para id="p1085">
+and assume that the magnitude of vecAB is 30 and the magnitude of vecBC is 40. 
+The sum of those two vectors (vecAC) can have a magnitude ranging anywhere from 10 to 70 
+depending on the relative angles of vecAB and vecBC.
+
+</para>
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1039" effect="bold">
+<emphasis id="A_triangle_with_sides" effect="bold">
+
+A triangle with sides of 30, 4
+
+</emphasis>
+
+0, and ?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1087">
+Consider the triangle shown in 
+
+<link id="a1033" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1088">
+<emphasis id="Figure_3" effect="bold">
+
+
+<emphasis id="strong1040" effect="bold">
+Figure 3
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1041" effect="bold">
+ - A triangle with sides of 30, 40, and ?.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1089">
+<media id="media1002" alt="Missing image" display="block">
+<image id="img1002" mime-type="image/png" src="../../media/Phy1060c1b.png" width="464" height="600"/>
+</media>
+
+
+</para>
+
+
+	
+
+
+
+
+<para id="p1090">
+Pretend that instead of walking due north from point B as shown in
+
+
+<link id="a1034" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, you change direction and walk northwest 
+(135 degrees relative to the east-west horizontal line with east being zero 
+degrees) keeping the length at 40 meters.
+
+</para>
+
+
+
+
+<para id="p1091">
+<emphasis id="strong1042" effect="bold">
+What happened to the displacement?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1092">
+What is the displacement of the point C relative to the point A? I can't 
+do the arithmetic in my head for this problem, but I can measure the length of vecAC to be about 28 meters and the angle of vecAC to be a little less than 90 
+degrees. (I will show you how to write a script to solve this problem 
+mathematically later.)
+
+</para>
+
+
+
+
+<para id="p1093">
+<emphasis id="strong1043" effect="bold">
+Any number of displacements can be added
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1094">
+There is no limit to the number of displacement vectors that can be added in 
+this manner. For example, pretend that you walk from point A, 
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1029">
+10 meters east to point B,
+
+</item>
+
+
+	
+
+<item id="li1030">
+12 meters southwest to point C,
+
+</item>
+
+
+	
+
+<item id="li1031">
+30 meters north to point D,
+
+</item>
+
+
+	
+
+<item id="li1032">
+15 meters east to point E,
+
+</item>
+
+
+	
+
+<item id="li1033">
+35 meters southwest to point F, and
+
+</item>
+
+
+	
+
+<item id="li1034">
+44 meters north to point G where you stop.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1095">
+Your displacement vecAG will be
+
+</para>
+
+
+
+
+<para id="p1096">
+vecAG = vecAB + vecBC + vecCD + vecDE + vecEF + vecFG
+
+</para>
+
+
+
+
+<para id="p1097">
+even if your zigzag path crosses back over itself one or more times.
+
+</para>
+
+
+
+
+<para id="p1098">
+<emphasis id="strong1044" effect="bold">
+Vector diagram for the sum of six vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1099">
+ 
+
+<link id="a1035" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ shows the graphical addition of the six 
+vectors described above.
+
+</para>
+
+
+
+
+<para id="p1100">
+ 
+
+<emphasis id="Figure_4" effect="bold">
+
+
+<emphasis id="strong1045" effect="bold">
+Figure 4
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1046" effect="bold">
+ - Vector diagram for the sum of six vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1101">
+ 
+
+<media id="media1003" alt="Missing image" display="block">
+<image id="img1003" mime-type="image/png" src="../../media/Phy1060d1b.png" width="464" height="600"/>
+</media>
+
+
+</para>
+
+
+	
+
+
+
+
+<para id="p1102">
+The displacement in 
+
+<link id="a1036" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ is the vector with its 
+tail at A and its head at G, which you could measure with a measuring stick and 
+a protractor.
+
+</para>
+
+
+
+
+<para id="p1103">
+<emphasis id="strong1047" effect="bold">
+Can be extended to three (or more) dimensions
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1104">
+The physics textbook titled College Physics by Mendenhall, Eve, Keys, and 
+Sutton contains the following example.
+
+</para>
+
+
+
+
+<para id="p1105">
+<emphasis id="em1010" effect="italics">
+"If a man climbs up the mast of a ship sailing east while the tide caries 
+it south, then that sailor may have three displacements at right angles, vecAB 
+30 feet upward, vecBC 100 feet eastward, vecCD 20 feet southward, all with 
+respect to the bed of the ocean. The three displacements vecAB, vecBC, and vecCD 
+are equivalent to the single displacement vecAD; and in the same way, any number 
+of displacements may be added together."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1106">
+<emphasis id="strong1048" effect="bold">
+Difficult to draw
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1107">
+Of course, we can't easily draw that 3D vector diagram on a flat sheet of paper 
+or construct it on a flat computer monitor, but we can solve for the displacement vecAD if we are familiar with computations in three dimensions. (An explanation 
+of 3D computations is beyond the scope of this module.)
+
+</para>
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1049" effect="bold">
+The parallelogram law
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1109">
+There is a law that states:
+
+</para>
+
+
+
+
+<para id="p1110">
+<emphasis id="em1011" effect="italics">
+The sum of two vectors in a plane is represented by the diagonal of a 
+parallelogram whose adjacent sides represent the two vector quantities.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1111">
+<emphasis id="strong1050" effect="bold">
+The resultant
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+As I mentioned earlier, the sum of two or more vectors is called their 
+
+<emphasis id="strong1051" effect="bold">
+resultant
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1113">
+In general, the resultant is not simply the algebraic or arithmetic sum of 
+the vector magnitudes. Instead, in our original vector equation
+
+</para>
+
+
+
+
+<para id="p1114">
+vecAC = vecAB + vecBC
+
+</para>
+
+
+
+
+<para id="p1115">
+vecAC is the resultant of the sum of vecAB and vecBC in the sense that a 
+single vector vecAC would have the same effect as vecAB and vecAD acting 
+jointly.
+
+</para>
+
+
+
+
+<para id="p1116">
+<emphasis id="strong1052" effect="bold">
+Geometrical addition
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1117">
+The 
+
+<emphasis id="em1012" effect="italics">
+parallelogram law
+
+</emphasis>
+ is a form of geometrical addition. In 
+engineering and physics, it is 
+often used to find graphical solutions to problems involving forces, velocities, 
+displacements, accelerations, electric fields, and other 
+
+<emphasis id="em1013" effect="italics">
+directed
+
+</emphasis>
+ 
+quantities. (Directed quantities have both magnitude and direction.)
+
+</para>
+
+
+
+
+<para id="p1118">
+<emphasis id="strong1053" effect="bold">
+Solving a vector problem with a parallelogram
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1119">
+Pretend that you walk from point A
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1035">
+5 meters east to point B, followed by
+
+</item>
+
+
+	
+
+<item id="li1036">
+6 meters at an angle of 30 degrees (north of east) to point C.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1120">
+Let's use a vector diagram and the parallelogram law to find the resultant 
+displacement vector vecAC.
+
+</para>
+
+
+
+
+<para id="p1121">
+ 
+
+<link id="a1037" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ illustrates the use of the parallelogram 
+law to find a graphical solution to this problem.
+
+</para>
+
+
+
+
+<para id="p1122">
+ 
+
+<emphasis id="Figure_5" effect="bold">
+
+
+<emphasis id="strong1054" effect="bold">
+Figure 5
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1055" effect="bold">
+ - Illustration of the parallelogram law.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1123">
+ 
+
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/png" src="../../media/Phy1060e1b.png" width="464" height="600"/>
+</media>
+
+
+</para>
+
+
+	
+
+
+
+
+<para id="p1124">
+<emphasis id="strong1056" effect="bold">
+Put both vector tails at point A
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1125">
+Mentally designate the starting point on your vector diagram as point A. 
+Construct a vector with a length of 5 meters and an angle of 0 degrees relative 
+to the horizontal with its tail at point A. Mentally designate this vector as vecAB.
+
+</para>
+
+
+
+
+<para id="p1126">
+Construct a second vector with a length of 6 meters at an angle of 30 degrees 
+with its tail at point A. Mentally designate this vector as vecBC.
+
+</para>
+
+
+
+
+<para id="p1127">
+<emphasis id="strong1057" effect="bold">
+Parallel lines
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1128">
+Construct a 
+line at least 6 meters long starting at the head of vecBC. Make this line 
+parallel to vecAB.
+
+</para>
+
+
+
+
+<para id="p1129">
+(There are drawing tools that make it easy to draw a 
+line 
+that is parallel to another line. This is one reason why this is a popular 
+technique for graphically adding vectors.)
+
+</para>
+
+
+
+
+<para id="p1130">
+Construct another line, at least 7 meters long, starting at the head of vecAB. 
+Make this line parallel to vecBC.
+
+</para>
+
+
+
+
+<para id="p1131">
+<emphasis id="strong1058" effect="bold">
+A parallelogram
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1132">
+Note the point where the two lines intersect. The two lines and the two 
+vectors should now form a parallelogram as shown in 
+
+<link id="a1038" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1133">
+<emphasis id="strong1059" effect="bold">
+Solving for the resultant vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+According to the parallelogram law, the resultant vector, vecAC, is 
+represented by a directed line that extends from point A to the intersection of 
+the two lines that you constructed earlier. In other words, the sum of the two 
+vectors is equal to a diagonal line that extends from the starting point to the 
+opposite corner on the parallelogram that you constructed.
+
+</para>
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1060" effect="bold">
+Subtracting vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+In normal arithmetic subtraction, a 
+
+<emphasis id="strong1061" effect="bold">
+subtrahend
+
+</emphasis>
+ is subtracted 
+from a 
+
+<emphasis id="strong1062" effect="bold">
+minuend
+
+</emphasis>
+ to find a 
+
+<emphasis id="strong1063" effect="bold">
+difference
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1137">
+To subtract a subtrahend vector from a minuend vector (in a plane), add 180 
+degrees to the direction of the subtrahend vector, causing it to point in the 
+opposite direction, and add the modified subtrahend vector to the minuend 
+vector.
+
+</para>
+
+
+
+
+<para id="p1138">
+If you subtract vecAB in the above example from vecBC, you should be able to 
+show that the difference vector is represented by the other diagonal in the 
+parallelogram. However, you will probably find it easier to do this mathematically 
+rather than doing it 
+graphically.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Mathematical_solutions" effect="bold">
+
+Mathematical solutions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1139">
+The horizontal component of the sum of two or more vectors is the sum of the 
+horizontal components of the vectors.
+
+</para>
+
+
+
+
+<para id="p1140">
+The vertical component of the sum of two or more vectors is the sum of the 
+vertical components of the vectors.
+
+</para>
+
+
+
+
+<para id="p1141">
+<emphasis id="strong1064" effect="bold">
+The horizontal and vertical components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1142">
+The horizontal and vertical components respectively of a vector vecAB are 
+equal to
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1037">
+vecABh = vecABmag * cos(angle)
+
+</item>
+
+
+	
+
+<item id="li1038">
+vecABv = vecABmag * sin(angle)
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1143">
+where
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1039">
+angle is the angle that the vector makes relative to the horizontal axis.
+
+</item>
+
+
+	
+
+<item id="li1040">
+vecABh, vecABv, and vecABmag are respectively the horizontal component, 
+	the vertical component, and the magnitude of the vector vecAB
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1144">
+<emphasis id="strong1065" effect="bold">
+The magnitude of the resultant vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1145">
+Given the horizontal and vertical components of the resultant vector, the 
+magnitude of the resultant vector can be found using the Pythagorean theorem as 
+the square root of the sum of the squares of the horizontal and vertical 
+components.
+
+</para>
+
+
+
+
+<para id="p1146">
+<emphasis id="strong1066" effect="bold">
+The angle of the resultant vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1147">
+The angle that the resultant vector makes with the horizontal axis is the 
+arctangent (corrected for quadrant) of the ratio of the vertical component to 
+the horizontal component.
+
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Using_the_Math.atan_method" effect="bold">
+
+Using the Math.atan method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1148">
+We will need to deal with several issues that arise when using the 
+
+<emphasis id="strong1067" effect="bold">
+Math.atan
+
+</emphasis>
+ method. Therefore, I will write a script that contains a 
+function to deal with those issues. Then we can simply copy that function into 
+future scripts without having to consider those issues at that time.
+
+</para>
+
+
+
+
+<para id="p1149">
+Please copy the code shown in 
+
+<link id="a1039" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ into an html file and open the file 
+in your browser.
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+
+
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Using the Math.atan method.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">&lt;!-- File JavaScript01.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//The purpose of this function is to receive the adjacent
+// and opposite side values for a right triangle and to
+// return the angle in degrees in the correct quadrant.
+function getAngle(x,y){
+  if((x == 0) &amp;&amp; (y == 0)){
+    //Angle is indeterminate. Just return zero.
+    return 0;
+  }else if((x == 0) &amp;&amp; (y &gt; 0)){
+    //Avoid divide by zero denominator.
+    return 90;
+  }else if((x == 0) &amp;&amp; (y &lt; 0)){
+    //Avoid divide by zero denominator.
+    return -90;
+  }else if((x &lt; 0) &amp;&amp; (y &gt;= 0)){
+    //Correct to second quadrant
+    return Math.atan(y/x)*180/Math.PI + 180;
+  }else if((x &lt; 0) &amp;&amp; (y &lt;= 0)){
+    //Correct to third quadrant
+    return Math.atan(y/x)*180/Math.PI + 180;
+  }else{
+    //First and fourth quadrants. No correction required.
+    return Math.atan(y/x)*180/Math.PI;
+  }//end else
+}//end function getAngle
+
+//Test for a range of known angles.
+var angIn = 0;
+var angOut = 0;
+var x = 0;
+var y = 0;
+while(angIn &lt;= 360){
+  x = Math.cos(angIn*Math.PI/180);
+  y = Math.sin(angIn*Math.PI/180);
+  angOut = getAngle(x,y).toFixed(1);
+  document.write("angle = " + angOut + "&lt;br/&gt;");
+  angIn = angIn + 30;
+}//end while loop
+
+document.write("The End")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1150">
+<emphasis id="strong1068" effect="bold">
+The screen output
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1151">
+The text shown in 
+
+<link id="a1040" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ should appear in your browser window when you open 
+the html file in your browser.
+
+</para>
+
+
+
+	
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+
+
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Screen output for Listing #1.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">angle = 0.0
+angle = 30.0
+angle = 60.0
+angle = 90.0
+angle = 120.0
+angle = 150.0
+angle = 180.0
+angle = 210.0
+angle = 240.0
+angle = 270.0
+angle = -60.0
+angle = -30.0
+angle = -0.0
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1152">
+<emphasis id="strong1069" effect="bold">
+Structure of the script
+
+</emphasis>
+</para>
+
+
+	
+
+
+<para id="p1153">
+The script shown in 
+
+<link id="a1041" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ begins by defining a function named 
+
+
+<emphasis id="strong1070" effect="bold">
+getAngle
+
+</emphasis>
+. 
+The purpose of this function is to return an angle in degrees in the correct 
+quadrant based on the lengths of the adjacent and opposite sides of an enclosing 
+right triangle.
+
+</para>
+
+
+
+
+<para id="p1154">
+Then the script uses a 
+
+<emphasis id="strong1071" effect="bold">
+while
+
+</emphasis>
+ loop to test the function for a series of known 
+angles ranging from 0 to 360 degrees inclusive.
+
+</para>
+
+
+
+
+<para id="p1155">
+<emphasis id="strong1072" effect="bold">
+An indeterminate result
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1156">
+The 
+
+<emphasis id="strong1073" effect="bold">
+getAngle
+
+</emphasis>
+ function calls the 
+
+<emphasis id="strong1074" effect="bold">
+Math.atan
+
+</emphasis>
+ method to compute the angle whose 
+tangent is the ratio of the opposite side (y) to the adjacent side (x) of a 
+right triangle. 
+
+</para>
+
+
+
+
+<para id="p1157">
+If both x and y are zero, the ratio y/x is indeterminate and the value of the 
+angle cannot be computed. In fact there is no angle corresponding to the ratio 
+0/0. However, the function must either return the value of an angle, or must 
+return some sort of flag indicating that computation of the angle is not 
+possible.
+
+</para>
+
+
+
+
+<para id="p1158">
+In this case, the function simply returns the value zero for the angle.
+
+</para>
+
+
+
+
+<para id="p1159">
+<emphasis id="strong1075" effect="bold">
+Avoiding division by zero
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1160">
+If the value of x is zero and the value of y is not zero, the ratio y/x is 
+infinite. Therefore, the value of the angle cannot be computed. However, in this 
+case, the angle is known to be 90 degrees (for y greater than zero) or 270 
+degrees (-90 degrees, for y less than zero). The 
+
+<emphasis id="strong1076" effect="bold">
+getAngle
+
+</emphasis>
+ function traps both of 
+those cases and returns the correct angle in each case.
+
+</para>
+
+
+
+
+<para id="p1161">
+<emphasis id="strong1077" effect="bold">
+Correcting for the quadrant
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1162">
+The 
+
+<emphasis id="strong1078" effect="bold">
+Math.atan
+
+</emphasis>
+ method receives one parameter and it is either a positive or 
+negative value. If the value is positive, the method returns an angle between 0 
+and 90 degrees. If the value is negative, the method returns an angle between 0 
+and -90 degrees. Thus, the angles returned by the 
+
+<emphasis id="strong1079" effect="bold">
+Math.atan
+
+</emphasis>
+ method always lie in 
+the first or fourth quadrants.
+
+</para>
+
+
+
+
+<para id="p1163">
+(Actually, as I mentioned earlier, +90 degrees and -90 degrees are not 
+possible because the tangent of +90 degrees or -90 degrees is an infinitely 
+large positive or negative value. However, the method can handle angles that are 
+very close to +90 or -90 degrees.)
+
+</para>
+
+
+
+
+<para id="p1164">
+<emphasis id="strong1080" effect="bold">
+A negative y/x ratio
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1165">
+If the y/x ratio is negative, this doesn't necessarily mean that the angle 
+lies in the fourth quadrant. That negative ratio could result from a positive 
+value for y and a negative value for x. In that case, the angle would lie in the 
+second quadrant between 90 degrees and 180 degrees.
+
+</para>
+
+
+
+
+<para id="p1166">
+The 
+
+<emphasis id="strong1081" effect="bold">
+getAngle
+
+</emphasis>
+ function tests the signs of the values for y and x. If the signs 
+indicate that the angle lies in the second quadrant, the value returned from the 
+
+
+<emphasis id="strong1082" effect="bold">
+Math.atan
+
+</emphasis>
+ method is corrected to place the angle in the second quadrant. The 
+corrected angle is returned by the 
+
+<emphasis id="strong1083" effect="bold">
+getAngle
+
+</emphasis>
+ function.
+
+</para>
+
+
+
+
+<para id="p1167">
+<emphasis id="strong1084" effect="bold">
+A positive y/x ratio
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1168">
+Similarly, if the y/x ratio is positive, this doesn't necessarily mean that 
+the angle lies in the first quadrant. That positive ratio could result from a 
+negative y value and a negative x value. In that case, the angle would lie in 
+the third quadrant between 180 degrees and 270 degrees.
+
+</para>
+
+
+
+
+<para id="p1169">
+Again, the 
+
+<emphasis id="strong1085" effect="bold">
+getAngle
+
+</emphasis>
+ function tests the signs of the values for y and x. If 
+both values are negative, the value returned from the 
+
+<emphasis id="strong1086" effect="bold">
+Math.atan
+
+</emphasis>
+ method is 
+corrected to place the angle in the third quadrant.
+
+</para>
+
+
+
+
+<para id="p1170">
+<emphasis id="strong1087" effect="bold">
+No corrections required...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1171">
+Finally, if no corrections are required for the quadrant, the 
+
+<emphasis id="strong1088" effect="bold">
+getAngle
+
+</emphasis>
+ 
+function returns the value returned by the 
+
+<emphasis id="strong1089" effect="bold">
+Math.atan
+
+</emphasis>
+ method. Note however, that 
+in all cases, the 
+
+<emphasis id="strong1090" effect="bold">
+Math.atan
+
+</emphasis>
+ method returns the angle in radians. That value is 
+converted to degrees by the 
+
+<emphasis id="strong1091" effect="bold">
+getAngle
+
+</emphasis>
+ function and the returned value is in degrees.
+
+</para>
+
+
+
+
+<para id="p1172">
+<emphasis id="strong1092" effect="bold">
+Positive and negative angles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1173">
+As you can see from the results of the test shown in 
+
+<link id="a1042" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, angles in the 
+first, second, and third quadrants are returned as positive angles in degrees. 
+However, angles in the fourth quadrant are returned as negative angles in degrees.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Mathematical_solution_to_an_earlier_problem" effect="bold">
+
+Mathematical solution to an earlier problem
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1174">
+<link id="a1043" target-id="A_triangle_with_sides">
+
+Earlier
+
+</link>
+
+ in this module, I 
+described a problem involving the sum of two displacement vectors. One vector 
+had a magnitude of 30 meters with an angle of 0. The other vector had a 
+magnitude of 40 meters with an angle of 135 degrees.
+
+</para>
+
+
+
+
+<para id="p1175">
+On the basis of a graphic 
+solution, I estimated the length of the resultant vector to be about 28 meters 
+and the angle of the resultant vector to be a little less than 90 degrees. I 
+promised to provide a mathematical solution for that problem later, and that 
+time has come.
+
+</para>
+
+
+
+
+<para id="p1176">
+Please copy the code shown in 
+
+<link id="a1044" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ into an html file and open that file 
+in your browser.
+
+</para>
+
+
+
+
+
+<para id="p1177">
+<emphasis id="strong1093" effect="bold">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. The sum of two vectors.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1002" display="block">&lt;!-- File JavaScript02.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//The purpose of this function is to receive the adjacent
+// and opposite side values for a right triangle and to
+// return the angle in degrees in the correct quadrant.
+function getAngle(x,y){
+  if((x == 0) &amp;&amp; (y == 0)){
+    //Angle is indeterminate. Just return zero.
+    return 0;
+  }else if((x == 0) &amp;&amp; (y &gt; 0)){
+    //Avoid divide by zero denominator.
+    return 90;
+  }else if((x == 0) &amp;&amp; (y &lt; 0)){
+    //Avoid divide by zero denominator.
+    return -90;
+  }else if((x &lt; 0) &amp;&amp; (y &gt;= 0)){
+    //Correct to second quadrant
+    return Math.atan(y/x)*180/Math.PI + 180;
+  }else if((x &lt; 0) &amp;&amp; (y &lt;= 0)){
+    //Correct to third quadrant
+    return Math.atan(y/x)*180/Math.PI + 180;
+  }else{
+    //First and fourth quadrants. No correction required.
+    return Math.atan(y/x)*180/Math.PI;
+  }//end else
+}//end function getAngle
+
+
+//Specify the magnitudes and angles of two vectors.
+//Convert the angles from degrees to radians.
+var vecABmag = 30;//at an angle of 0
+var vecABang = 0*Math.PI/180;//degrees*radians/degrees=radians
+
+var vecBCmag = 40;//at an angle of 135
+var vecBCang = 135*Math.PI/180;//degrees*radians/degrees=radians
+
+
+//Compute the horizontal and vertical components of each vector.
+var vecABh = vecABmag*Math.cos(vecABang);
+var vecABv = vecABmag*Math.sin(vecABang);
+
+var vecBCh = vecBCmag*Math.cos(vecBCang);
+var vecBCv = vecBCmag*Math.sin(vecBCang);
+
+//Compute the sums of the horizontal and vertical components from
+// the two vectors to get the horizontal and vertical component
+// of the resultant vector.
+var vecResultH = vecABh + vecBCh;
+var vecResultV = vecABv + vecBCv;
+
+//Use the Pythagorean theorem to compute the magnitude of the
+// resultant vector.
+var vecResultMag = Math.sqrt(Math.pow(vecResultH,2) + 
+                   Math.pow(vecResultV,2));
+
+//Compute the angle of the resultant.
+vecResultAng = getAngle(vecResultH,vecResultV);
+
+document.write("Hello from JavaScript" + "&lt;br/&gt;")
+document.write("vecABv = " + vecABv + "&lt;br/&gt;");
+document.write("vecABh = " + vecABh + "&lt;br/&gt;");
+document.write("vecBCv = " + vecBCv + "&lt;br/&gt;");
+document.write("vecBCh = " + vecBCh + "&lt;br/&gt;");
+document.write("vecResultMag = " + vecResultMag + " &lt;br/&gt;");
+document.write("vecResultAng = " + vecResultAng + " &lt;br/&gt;");
+
+
+document.write("The End")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+
+
+<para id="p1178">
+<emphasis id="strong1094" effect="bold">
+Screen output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1179">
+When you open the html file in your browser, the text shown in 
+
+<link id="a1045" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ 
+should appear in your browser window.
+
+</para>
+
+
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+
+
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. Screen output for Listing #2.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1003" display="block">Hello from JavaScript
+vecABv = 0
+vecABh = 30
+vecBCv = 28.284271247461902
+vecBCh = -28.2842712474619
+vecResultMag = 28.336261665087125
+vecResultAng = 86.5286817554714
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+<para id="p1180">
+<emphasis id="strong1095" effect="bold">
+Explanation of the code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1181">
+<link id="a1046" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ begins with a copy of the 
+
+<emphasis id="strong1096" effect="bold">
+getAngle
+
+</emphasis>
+ method that I explained in 
+conjunction with 
+
+<link id="a1047" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. I won't repeat that explanation here.
+
+</para>
+
+
+
+
+<para id="p1182">
+<emphasis id="strong1097" effect="bold">
+Define magnitudes and angles of vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1183">
+Then 
+
+<link id="a1048" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ declares and initializes four variables that represent the 
+magnitude and angle of each of the two vectors. The variable names that end with 
+"mag" contain magnitude values and the variable names that end with "ang" 
+contain angle values, which are converted from degrees to radians.
+
+</para>
+
+
+
+
+<para id="p1184">
+<emphasis id="strong1098" effect="bold">
+Compute horizontal and vertical components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1185">
+Then 
+
+<link id="a1049" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1099" effect="bold">
+Math.cos
+
+</emphasis>
+ and 
+
+
+<emphasis id="strong1100" effect="bold">
+Math.sin
+
+</emphasis>
+ methods to compute the 
+horizontal and vertical components of each vector. The variable names that end 
+with "h" contain horizontal component values and the variable names that end 
+with "v" contain vertical component values.
+
+</para>
+
+
+
+
+<para id="p1186">
+<emphasis id="strong1101" effect="bold">
+Compute the sums of the components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1187">
+The procedure for adding two or more vectors is to
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1041">
+Add the horizontal components of all the vectors to get the horizontal 
+	component of the resultant vector.
+
+</item>
+
+
+	
+
+<item id="li1042">
+Add the vertical components of all the vectors to get the vertical 
+	component of the resultant vector.
+
+</item>
+
+
+	
+
+<item id="li1043">
+Compute the magnitude (if needed) of the resultant vector as the square 
+	root of the 
+
+<emphasis id="sum_of_the_squares" effect="bold">
+
+sum of the squares
+
+</emphasis>
+
+ of the 
+	horizontal and vertical components.
+
+</item>
+
+
+	
+
+<item id="li1044">
+Compute the angle (if needed) of the resultant vector as the arctangent 
+	of the ratio of the vertical component and the horizontal component.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1188">
+<link id="a1050" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ computes the sum of the horizontal components from each of the 
+vectors and saves the result in the variable named 
+
+<emphasis id="strong1102" effect="bold">
+vecResultH
+
+</emphasis>
+. 
+Then it computes the sum of the vertical components and saves the result in the 
+variable named 
+
+<emphasis id="strong1103" effect="bold">
+vecResultV
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1189">
+<emphasis id="strong1104" effect="bold">
+Compute the magnitude of the resultant
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1190">
+In many cases, simply knowing the horizontal and vertical components is the 
+solution to the problem. However, in some cases, it is necessary to convert 
+those components into a magnitude and an angle.
+
+</para>
+
+
+
+
+<para id="p1191">
+There are a couple of ways to compute the magnitude. One way is to use the 
+Pythagorean theorem as described 
+
+<link id="a1051" target-id="sum_of_the_squares">
+
+above
+
+</link>
+
+ to 
+compute the square root of the sum of the squares of the horizontal and vertical 
+components.
+
+</para>
+
+
+
+
+<para id="p1192">
+<emphasis id="strong1105" effect="bold">
+The Math.sqrt and Math.pow methods
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1193">
+The method named 
+
+<emphasis id="strong1106" effect="bold">
+Math.sqrt
+
+</emphasis>
+ can be called to return the square root of its 
+positive argument. (If the argument is negative, the method returns NaN, which 
+is an abbreviation for "Not a Number".)
+
+</para>
+
+
+
+
+<para id="p1194">
+The method named 
+
+<emphasis id="strong1107" effect="bold">
+Math.pow
+
+</emphasis>
+ can be called to raise the value specified by the 
+first argument to the power specified by the second argument.
+
+</para>
+
+
+
+
+<para id="p1195">
+<link id="a1052" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls those two methods to compute the magnitude of the resultant 
+and to save that value in the variable named 
+
+<emphasis id="strong1108" effect="bold">
+vecResultMag
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1196">
+<emphasis id="strong1109" effect="bold">
+Compute the angle of the resultant
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1197">
+Then 
+
+<link id="a1053" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1110" effect="bold">
+getAngle
+
+</emphasis>
+ method that we developed earlier to get the 
+angle of the resultant and to save the angle in degrees in the variable named
+
+
+<emphasis id="strong1111" effect="bold">
+vecResultAng
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1198">
+<emphasis id="strong1112" effect="bold">
+Display the results
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1199">
+Finally 
+
+<link id="a1054" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1113" effect="bold">
+document.write
+
+</emphasis>
+ method several times in succession 
+to display the values stored in some of the variables mentioned above in the 
+browser window as shown in 
+
+<link id="a1055" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. As you can see, the magnitude and angle of 
+the resultant agrees with the estimate that I made using the graphic method 
+earlier.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Subtracting_vectors" effect="bold">
+
+Subtracting vectors
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1200">
+To subtract one vector from another using the mathematical approach, simply 
+reverse the algebraic sign on the horizontal and vertical components for the 
+subtrahend vector and perform the addition shown in 
+
+<link id="a1056" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Adding_more_than_two_vectors" effect="bold">
+
+Adding more than two vectors
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1201">
+Let's work through a problem that requires the addition of four vectors.
+
+</para>
+
+
+
+
+<para id="p1202">
+<emphasis id="strong1114" effect="bold">
+A graphical solution
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1203">
+First I would like for you to lay out the vectors, tail-to-head on graph 
+paper to create a solution to this problem.
+
+</para>
+
+
+
+
+<para id="p1204">
+Pretend that you take a walk consisting of the following sequential segments. 
+Angles are specified relative to east with east being zero degrees. Positive 
+angles are counter-clockwise and negative angles are clockwise.
+
+</para>
+
+
+
+
+<para id="p1205">
+The segments are as follows:
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1045">
+12 meters at 20 degrees
+
+</item>
+
+
+	
+
+<item id="li1046">
+8 meters at 120 degrees
+
+</item>
+
+
+	
+
+<item id="li1047">
+10.5 meters at -74 degrees
+
+</item>
+
+
+	
+
+<item id="li1048">
+12.5 meters at 145 degrees
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1206">
+<emphasis id="strong1115" effect="bold">
+What is your final displacement?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1207">
+When you reach the end of the walk, what is your displacement (distance and 
+direction) relative to the location at which you began the walk. You should be 
+able to do a reasonable job of measuring the displacement using your vector 
+diagram.
+
+</para>
+
+
+
+
+<para id="p1208">
+<emphasis id="strong1116" effect="bold">
+A mathematical solution
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1209">
+Please copy the code shown in 
+
+<link id="a1057" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ into an html file and open the html 
+file in your browser.
+
+</para>
+
+
+
+
+
+<para id="p1210">
+<emphasis id="strong1117" effect="bold">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. The sum of four vectors.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1004" display="block">&lt;!-- File JavaScript03.html --&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;script language="JavaScript1.3"&gt;
+
+//The purpose of this function is to receive the adjacent
+// and opposite side values for a right triangle and to
+// return the angle in degrees in the correct quadrant.
+function getAngle(x,y){
+  if((x == 0) &amp;&amp; (y == 0)){
+    //Angle is indeterminate. Just return zero.
+    return 0;
+  }else if((x == 0) &amp;&amp; (y &gt; 0)){
+    //Avoid divide by zero denominator.
+    return 90;
+  }else if((x == 0) &amp;&amp; (y &lt; 0)){
+    //Avoid divide by zero denominator.
+    return -90;
+  }else if((x &lt; 0) &amp;&amp; (y &gt;= 0)){
+    //Correct to second quadrant
+    return Math.atan(y/x)*180/Math.PI + 180;
+  }else if((x &lt; 0) &amp;&amp; (y &lt;= 0)){
+    //Correct to third quadrant
+    return Math.atan(y/x)*180/Math.PI + 180;
+  }else{
+    //First and fourth quadrants. No correction required.
+    return Math.atan(y/x)*180/Math.PI;
+  }//end else
+}//end function getAngle
+
+
+//Specify the magnitudes and angles of four vectors.
+//Convert the angles from degrees to radians.
+var vecAmag = 12;
+var vecAang = 20*Math.PI/180;//degrees*radians/degrees=radians
+
+var vecBmag = 8;
+var vecBang = 120*Math.PI/180;//degrees*radians/degrees=radians
+
+var vecCmag = 10.5;
+var vecCang = -74*Math.PI/180;//degrees*radians/degrees=radians
+
+var vecDmag = 12.5;
+var vecDang = 145*Math.PI/180;//degrees*radians/degrees=radians
+
+
+//Compute the horizontal and vertical components of each vector.
+var vecAh = vecAmag*Math.cos(vecAang);
+var vecAv = vecAmag*Math.sin(vecAang);
+
+var vecBh = vecBmag*Math.cos(vecBang);
+var vecBv = vecBmag*Math.sin(vecBang);
+
+var vecCh = vecCmag*Math.cos(vecCang);
+var vecCv = vecCmag*Math.sin(vecCang);
+
+var vecDh = vecDmag*Math.cos(vecDang);
+var vecDv = vecDmag*Math.sin(vecDang);
+
+//Compute the sums of the horizontal and vertical components from
+// the four vectors to get the horizontal and vertical component
+// of the resultant vector.
+var vecResultH = vecAh + vecBh + vecCh + vecDh;
+var vecResultV = vecAv + vecBv + vecCv + vecDv;
+
+//Use the Pythagorean theorem to compute the magnitude of the
+// resultant vector.
+var vecResultMag = Math.sqrt(Math.pow(vecResultH,2) +
+                   Math.pow(vecResultV,2));
+
+//Compute the angle of the resultant vector.
+vecResultAng = getAngle(vecResultH,vecResultV);
+
+document.write("Hello from JavaScript" + "&lt;br/&gt;")
+document.write(
+  "vecResultMag = " + vecResultMag.toFixed(2) + " &lt;br/&gt;");
+document.write(
+  "vecResultAng = " + vecResultAng.toFixed(2) + " &lt;br/&gt;");
+
+
+document.write("The End")
+
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code>
+
+
+
+
+
+
+<para id="p1211">
+<emphasis id="strong1118" effect="bold">
+Screen output
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1212">
+The text shown in 
+
+<link id="a1058" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ should appear in your browser when you open 
+	the html file in your browser.
+
+</para>
+
+
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1003">
+<row id="tr1006">
+<entry id="th1003">
+
+
+
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. Screen output for Listing #3.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1005" display="block">Hello from JavaScript
+vecResultMag = 8.11
+vecResultAng = 90.49
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+<para id="p1213">
+As you can see, the displacement vector is just a little over eight meters at 
+an angle of about 90.5 degrees. In other words, your ending position was 
+approximately 8 meters north of your starting position. Hopefully you were able 
+to arrive at a very similar answer using vector diagram.
+
+</para>
+
+
+
+
+<para id="p1214">
+<emphasis id="strong1119" effect="bold">
+Explanation of the code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1215">
+The code in 
+
+<link id="a1059" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ is very similar to the code in 
+
+<link id="a1060" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. However, 
+there is more of it because the code is adding four vectors instead of only 2.
+
+</para>
+
+
+
+
+<para id="p1216">
+As before, 
+
+<link id="a1061" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ begins with the 
+
+<emphasis id="strong1120" effect="bold">
+getAngle
+
+</emphasis>
+ method that we developed 
+earlier.
+
+</para>
+
+
+
+
+<para id="p1217">
+<emphasis id="strong1121" effect="bold">
+Magnitude and angle for each vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1218">
+Then 
+
+<link id="a1062" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ defines eight variables containing the magnitudes and angles 
+of the four segments of the walk.
+
+</para>
+
+
+
+
+<para id="p1219">
+(Note that the names that I used for the variables in this script are 
+somewhat simpler than the names that I used in 
+
+<link id="a1063" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.)
+
+</para>
+
+
+
+
+<para id="p1220">
+<emphasis id="strong1122" effect="bold">
+Horizontal and vertical components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1221">
+Following that, 
+
+<link id="a1064" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ computes the horizontal and vertical components for 
+each of the four vectors and saves those values in eight different variables.
+
+</para>
+
+
+
+
+<para id="p1222">
+<emphasis id="strong1123" effect="bold">
+Sums of components
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1223">
+Then 
+
+<link id="a1065" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ computes and saves the sum of all 
+four horizontal components and computes and saves the sum of all four vertical 
+components.
+
+</para>
+
+
+
+
+<para id="p1224">
+After that, there is essentially no difference between the script in 
+
+
+<link id="a1066" target-id="Listing_3">
+
+Listing 
+3
+
+</link>
+
+ and the script in 
+
+<link id="a1067" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1225">
+<emphasis id="strong1124" effect="bold">
+Other vector operations
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1226">
+In addition to the addition and subtraction of vectors, there are other 
+	operations that can be performed using vectors, such as the dot product and 
+	the cross product. However, those operations are beyond the scope of this 
+	module.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the scripts
+
+</emphasis>
+
+
+</title>
+
+
+
+
+	
+
+<para id="p1227">
+I encourage you to run the scripts that I have presented in this lesson to 
+confirm that you get the same results. Copy the code for each script into a 
+	text file with an extension of html. Then open that file in your browser. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1228">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1000" type="">
+
+
+
+
+
+
+
+<emphasis id="strong1125" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+
+
+<item id="li1049">
+Module name: GAME 2302-0360 Motion -- Displacement and Vectors
+
+</item>
+
+
+
+
+<item id="li1050">
+File: Game0360.htm
+
+
+</item>
+
+
+
+
+<item id="li1051">
+Published: 10/13/12
+
+</item>
+
+
+
+
+<item id="li1052">
+Revised: 02/01/16
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1001" type="">
+
+
+
+
+
+	
+
+<para id="p1229">
+<emphasis id="strong1126" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions site makes it 
+	possible for you to download a PDF file for this module at no charge, and 
+	also makes it possible for you to purchase a pre-printed version of the PDF 
+	file, you should be aware that some of the HTML elements in this module may 
+	not translate well into PDF.
+
+</para>
+
+
+	
+
+<para id="p1230">
+I also want you to know that, I receive no financial compensation from 
+	the Connexions website even if you purchase the PDF version of the module.
+
+</para>
+
+
+	
+
+<para id="p1231">
+In the past, unknown individuals have copied my modules from cnx.org, 
+	converted them to Kindle books, and placed them for sale on Amazon.com 
+	showing me as the author. I neither receive compensation for those sales nor 
+	do I know who does receive compensation. If you purchase such a book, please 
+	be aware that it is a copy of a module that is freely available on cnx.org 
+	and that it was made and published without my prior knowledge.
+
+</para>
+
+
+		
+
+<para id="p1232">
+<emphasis id="strong1127" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer 
+		Information Technology at Austin Community College in Austin, TX.
+		
+
+</para>
+
+
+	
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1233">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

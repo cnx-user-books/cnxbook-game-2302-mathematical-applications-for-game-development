@@ -1,0 +1,10966 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0110: Updating the Game Math Library for Graphics</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45009</md:content-id>
+  <md:title>GAME 2302-0110: Updating the Game Math Library for Graphics</md:title>
+  <md:abstract>Learn how to update the game-math library to provide new capabilities including the addition of graphics and set methods for column matrices, points, vectors, and lines.  Also study sample programs that illustrate the use of the new capabilities and learn how to draw on off-screen images.</md:abstract>
+  <md:uuid>9c853ed0-6f56-4c0c-a32f-6e3defbfd9f1</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_game-programming_library_named_GM2D02">
+
+The game-programming library named GM2D02
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_program_named_PointLine03">
+
+The program named PointLine03
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="The_program_named_PointLine04">
+
+The program named PointLine04
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Documentation_for_the_GM2D02_library">
+
+Documentation for the GM2D02 library
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Homework_assignment">
+
+Homework assignment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Summary">
+
+Summary
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Whats_next">
+
+What's next?
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Exercises">
+
+Exercises
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="Exercise_2">
+
+Exercise 2
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1021">
+<link id="a1021" target-id="Exercise_3">
+
+Exercise 3
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1022">
+<link id="a1022" target-id="Exercise_4">
+
+Exercise 4
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1023">
+<link id="a1023" target-id="Exercise_5">
+
+Exercise 5
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1024">
+<link id="a1024" target-id="Exercise_6">
+
+Exercise 6
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1025">
+<link id="a1025" target-id="Exercise_7">
+
+Exercise 7
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1000">
+This module is one in a collection of modules designed for teaching 
+
+<emphasis id="em1000" effect="italics">
+
+	GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX.
+
+</para>
+
+
+
+
+<para id="p1001">
+<emphasis id="strong1000" effect="bold">
+What you have learned
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1002">
+In the previous module, I presented and explained two sample programs and a 
+sample game-programming math library named 
+
+<emphasis id="strong1001" effect="bold">
+GM2D01
+
+</emphasis>
+, which were intended to 
+implement concepts from 
+Kjell's tutorial in Java code.
+
+</para>
+
+
+
+
+<para id="p1003">
+The library named 
+
+<emphasis id="strong1002" effect="bold">
+GM2D01
+
+</emphasis>
+ is purely mathematical. By that, I 
+mean that the library doesn't provide any mechanism for rendering objects of the
+
+
+<emphasis id="strong1003" effect="bold">
+ColMatrix
+
+</emphasis>
+, 
+
+<emphasis id="strong1004" effect="bold">
+Line
+
+</emphasis>
+, 
+
+<emphasis id="strong1005" effect="bold">
+Point
+
+</emphasis>
+, or
+
+
+<emphasis id="strong1006" effect="bold">
+Vector
+
+</emphasis>
+ classes in a visual graphics context. That capability 
+will be added to the version that I will present in this module.
+
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1007" effect="bold">
+What you will learn
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1005">
+In this module, you will learn how to update the math library to provide a 
+number of new capabilities including the addition of graphics and various 
+
+<emphasis id="em1001" effect="italics">
+set
+
+</emphasis>
+ 
+methods. You will also learn that the addition of 
+
+<emphasis id="em1002" effect="italics">
+set
+
+</emphasis>
+ 
+methods exposes certain vulnerabilities, and you will learn how to protect 
+against those vulnerabilities. Finally, you will learn how to draw on 
+off-screen images.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1006">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1026">
+<link id="a1026" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Screen output from both sample programs. 
+
+</item>
+
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Graphic output from Exercise 1.
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Graphic output from Exercise 2.
+
+</item>
+
+
+		
+
+<item id="li1029">
+<link id="a1029" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Graphic output from Exercise 3.
+
+</item>
+
+
+		
+
+<item id="li1030">
+<link id="a1030" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Text output from Exercise 3.
+
+</item>
+
+
+		
+
+<item id="li1031">
+<link id="a1031" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Graphic output from Exercise 4.
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1032" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Graphic output from Exercise 5.
+
+</item>
+
+
+		
+
+<item id="li1033">
+<link id="a1033" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Graphic output from Exercise 6.
+
+</item>
+
+
+		
+
+<item id="li1034">
+<link id="a1034" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Graphic output from Exercise 7.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1035">
+<link id="a1035" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Beginning of the class named PointLine03 and the class named GUI. 
+
+</item>
+
+
+		
+
+<item id="li1036">
+<link id="a1036" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Beginning of the constructor for the GUI class. 
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1037" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Create two off-screen images. 
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1038" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Remaining code in the constructor. 
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Beginning of the drawOffscreen method. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1040" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Define four lines that will be used to draw borders. 
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1041" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Draw a visual manifestation of each line. 
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1042" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. The draw method of the GM2D02.Line class. 
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1043" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Draw a visual manifestation of a GM2D02.Point object.
+
+</item>
+
+
+		
+
+<item id="li1044">
+<link id="a1044" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. The draw method of the GM2D02.Point class. 
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1045" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Draw the vertices of a hexagon. 
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Draw six lines connecting the vertices of the hexagon. 
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. Instantiate three objects of type GM2D02.Vector. 
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. Call the draw method to draw the vector. 
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. The draw method of the GM2D02.Vector class. 
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. Three visual manifestations of the same vector. 
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+. Draw the blue vector. 
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+. The MyCanvas class and the overridden paint method. 
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1053" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. The setData method of the ColMatrix class. 
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1054" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+. Updated constructor for the Point class in GM2D02. 
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1055" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+. The drawOffscreen method of the program named PointLine04.
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1056" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+. Instantiate a point at the upper-left corner. 
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1057" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+. Instantiate a moveable Point object. 
+
+</item>
+
+
+		
+
+<item id="li1058">
+<link id="a1058" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+. Instantiate a moveable Line object. 
+
+</item>
+
+
+		
+
+<item id="li1059">
+<link id="a1059" target-id="Listing_25">
+
+Listing 25
+
+</link>
+
+. Relocate the Line to three more locations. 
+
+</item>
+
+
+		
+
+<item id="li1060">
+<link id="a1060" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+. Source code for the game-math library class named GM2D02.
+
+</item>
+
+
+		
+
+<item id="li1061">
+<link id="a1061" target-id="Listing_27">
+
+Listing 27
+
+</link>
+
+. Source code for the program named PointLine03. 
+
+</item>
+
+
+		
+
+<item id="li1062">
+<link id="a1062" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+. Source code for the program named PointLine04. 
+
+</item>
+
+
+		
+
+<item id="li1063">
+<link id="a1063" target-id="Listing_29">
+
+Listing 29
+
+</link>
+
+. Code for generating random values in Java.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+So far, we have been dealing with column matrices, points, vectors, and lines.
+
+
+<emphasis id="em1003" effect="italics">
+(We will get to other topics in future modules.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1008" effect="bold">
+What is a point?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+According to Kjell, a point is simply a location in space. It has no 
+width, depth, or height. Therefore, it cannot be seen by the human eye, 
+which means that we can't draw a point on the computer screen. However, it 
+is possible to draw an object on the computer screen that indicates the location 
+of the point.
+
+</para>
+
+
+
+
+<para id="p1010">
+<emphasis id="strong1009" effect="bold">
+What do I mean by this?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1011">
+Suppose you go out onto your driveway and establish that one corner of the 
+driveway represents the origin in a rectangular Cartesian coordinate framework. Then you use 
+measuring devices to identify a specific location on the driveway. You can 
+point to that location with your finger, and others can see your finger, but 
+they can't see the point. Once again, the point has no width, height, or 
+depth, and therefore cannot be seen by the human eye.
+
+</para>
+
+
+
+
+<para id="p1012">
+<emphasis id="strong1010" effect="bold">
+Mark the point
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1013">
+What you can do, however, is to take a piece of chalk and draw a small circle 
+around your finger. Then others can see the mark that you have drawn as an 
+estimate of the location of the point. It is very important however to 
+remember that the chalk mark is not the point. It is simply a visual 
+object that indicates the location of the point to some degree of accuracy. 
+The actual location of the point is a piece of 
+
+<emphasis id="em1004" effect="italics">
+underlying data
+
+</emphasis>
+. The 
+chalk mark is a graphic object that you have invented to represent that 
+underlying data in a visual way to a human observer.
+
+</para>
+
+
+
+
+<para id="p1014">
+<emphasis id="strong1011" effect="bold">
+Program output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1015">
+Both of the sample programs that I will explain in this module will 
+produce the same graphic screen output, which is shown in 
+
+<link id="a1064" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1016">
+<emphasis id="Figure_1" effect="bold">
+
+
+<emphasis id="strong1012" effect="bold">
+Figure 1
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1013" effect="bold">
+ Screen output from both sample programs.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/java1702a1.jpg" width="401" height="201"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1018">
+The left image in 
+
+<link id="a1065" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ contains seven small circles. Each of those 
+seven circles marks the location of a point in the 2D space of the image. 
+However, those circles are not the points. The seven 
+
+<emphasis id="em1005" effect="italics">
+points
+
+</emphasis>
+ consist solely 
+of coordinate values and are not visible to the human eye. The seven 
+circles are graphics objects that were placed there to mark the locations in 
+space of the seven points. The points existed in the 2D space before the 
+graphics objects were created, and would have existed even if I had not caused 
+the circles to be drawn to mark the locations of the points.
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1014" effect="bold">
+What is a line segment?
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1020">
+This can be even more confusing. Kjell tells us that a line segment is 
+the straight path between two points, and that it has no thickness. Since 
+it has no thickness, a line cannot be seen by the human eye.
+
+</para>
+
+
+
+
+<para id="p1021">
+The left image in 
+
+<link id="a1066" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ contains six graphic objects that we are likely 
+to call lines or line segments. True enough, those graphic objects mark 
+the path taken by the 
+
+<emphasis id="em1006" effect="italics">
+lines
+
+</emphasis>
+ that represent straight paths between the 
+pairs of points whose locations are indicated by the circles. However, 
+those graphic objects are not 
+
+<emphasis id="em1007" effect="italics">
+lines
+
+</emphasis>
+ in the context of this discussion. 
+Rather, they are simply graphic objects that were used to mark the paths of 
+the lines in a visual way for the benefit of a human observer.
+
+</para>
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1015" effect="bold">
+Why am I emphasizing this so heavily?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1023">
+Shortly, you will see the changes that I made to the game-math library in 
+preparation for this module. That library makes it possible for you to 
+easily create and manipulate underlying data objects for column matrices, 
+points, vectors, and lines. Those changes include the ability for points, 
+lines, and vectors to create graphical objects that represent themselves and to 
+display those graphical objects on a specified graphics context upon request. 
+
+
+</para>
+
+
+
+
+<para id="p1024">
+The left image in 
+
+<link id="a1067" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows the manner in which 
+
+<emphasis id="strong1016" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ objects and
+
+
+<emphasis id="strong1017" effect="bold">
+GM2D02.Line 
+
+</emphasis>
+objects represent themselves on a graphics context. 
+
+</para>
+
+
+
+
+<para id="p1025">
+The 
+right image in 
+
+<link id="a1068" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows the manner in which 
+
+<emphasis id="strong1018" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ objects 
+represent themselves on a graphics context.
+
+</para>
+
+
+
+
+<para id="p1026">
+It is very important to understand the difference between the objects that 
+encapsulate the underlying data and the graphic objects that represent those 
+objects for visible human consumption. Later on, we will be doing math 
+using the underlying data objects. However, it is generally not possible 
+to do math using the graphic objects shown in 
+
+<link id="a1069" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1027">
+Additional 
+modifications that I made to the library for this module makes it is easy 
+to modify the values encapsulated in one of the underlying data objects. 
+However, once the graphical representation of one of those data objects is drawn 
+on the graphics context, it is fairly difficult to modify, particularly if it 
+overlaps another graphic object that you don't want to modify. The 
+library does not provide that capability.
+
+</para>
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1019" effect="bold">
+All Java parameters are passed to methods by value
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+Moving to a completely different topic, when you call out the name of a 
+variable as a parameter to be passed to a method in Java, a copy of the contents 
+of that variable is made and the copy is passed to the method. Code in the 
+method can modify the copy but it cannot modify the contents of the original 
+variable. This is typically referred to as passing parameters 
+
+<emphasis id="em1008" effect="italics">
+by value
+
+</emphasis>
+.
+
+
+<emphasis id="em1009" effect="italics">
+(Despite what you may have read elsewhere, unlike C and C++, Java parameters 
+are never passed by reference.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+However, Java supports both primitive variables and reference variables. Passing reference variables by value exposes some vulnerabilities in the 
+original version of the library when 
+
+<emphasis id="strong1020" effect="bold">
+set
+
+</emphasis>
+ methods are added to the 
+library. A complete explanation of this topic is beyond the scope of this 
+module. However, I will show you how I modified the code in the library to 
+protect against such vulnerabilities.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1031">
+I will explain the changes to the library in this module in conjunction 
+	with two programs that illustrate the impact of those changes. Both 
+	programs produce the screen output shown in 
+
+<link id="a1070" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, but they do so in 
+	significantly different ways.
+
+</para>
+
+
+
+
+<para id="p1032">
+The primary topics to be discussed have to do with:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1064">
+Making it possible for the underlying data objects to represent 
+	themselves by drawing graphical objects on a specified 2D graphics context 
+	upon request.
+
+</item>
+
+
+	
+
+<item id="li1065">
+Making it possible to call 
+
+<emphasis id="strong1021" effect="bold">
+set
+
+</emphasis>
+ methods to modify the data 
+	encapsulated in the underlying data objects.
+
+</item>
+
+
+	
+
+<item id="li1066">
+Protecting the data from corruption due to certain vulnerabilities 
+	exposed by adding 
+
+<emphasis id="strong1022" effect="bold">
+set
+
+</emphasis>
+ methods to the library.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1033">
+I will also provide exercises for you to complete on your own at the end of 
+the module. The exercises will concentrate on the material that you have learned 
+in this module and previous modules.
+
+</para>
+
+
+	
+
+	
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1034">
+Much of the code in the library remains unchanged. I explained that code in 
+the previous module and I won't repeat that explanation in this module. Rather, 
+in this module, I will concentrate on explaining the modifications that I made 
+to the library.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_game-programming_library_named_GM2D02" effect="bold">
+
+The game-programming 
+library named GM2D02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+A complete listing of the modified game-programming library named 
+
+<emphasis id="strong1023" effect="bold">
+GM2D02
+
+</emphasis>
+ 
+is provided in 
+
+<link id="a1071" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1036">
+This library is an update of the earlier game-math library named 
+
+<emphasis id="strong1024" effect="bold">
+GM2D01
+
+</emphasis>
+. 
+This update added the following new capabilities:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1067">
+Draw circles to represent 
+
+<emphasis id="strong1025" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ objects.
+
+</item>
+
+
+	
+
+<item id="li1068">
+Draw visible lines to represent 
+
+<emphasis id="strong1026" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ objects.
+
+</item>
+
+
+	
+
+<item id="li1069">
+Draw visible lines and circles to represent 
+
+<emphasis id="strong1027" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ 
+	objects.
+
+</item>
+
+
+	
+
+<item id="li1070">
+Call a 
+
+<emphasis id="strong1028" effect="bold">
+setData
+
+</emphasis>
+ method to change the values in a 
+
+<emphasis id="strong1029" effect="bold">
+
+	GM2D02.ColMatrix
+
+</emphasis>
+ object.
+
+</item>
+
+
+	
+
+<item id="li1071">
+Call a 
+
+<emphasis id="strong1030" effect="bold">
+setData
+
+</emphasis>
+ method to change the values in a 
+
+<emphasis id="strong1031" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ 
+	object.
+
+</item>
+
+
+	
+
+<item id="li1072">
+Call a 
+
+<emphasis id="strong1032" effect="bold">
+setData
+
+</emphasis>
+ method to change the values in a 
+
+<emphasis id="strong1033" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ 
+	object.
+
+</item>
+
+
+	
+
+<item id="li1073">
+Call a 
+
+<emphasis id="strong1034" effect="bold">
+setHead
+
+</emphasis>
+ method or a 
+
+<emphasis id="strong1035" effect="bold">
+setTail
+
+</emphasis>
+ method to change one of 
+	the points that defines a 
+
+<emphasis id="strong1036" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ object.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1037">
+Constructors were updated to ensure that existing points, vectors, and lines 
+are not corrupted by using the new 
+
+<emphasis id="em1010" effect="italics">
+set
+
+</emphasis>
+ methods to change the values in 
+the 
+
+<emphasis id="strong1037" effect="bold">
+ColMatrix
+
+</emphasis>
+ and/or 
+
+<emphasis id="strong1038" effect="bold">
+Point
+
+</emphasis>
+ objects originally used to construct 
+the points, vectors, and lines. The updated constructors create and save 
+clones of the 
+
+<emphasis id="strong1039" effect="bold">
+ColMatrix
+
+</emphasis>
+ and/or 
+
+<emphasis id="strong1040" effect="bold">
+Point
+
+</emphasis>
+ objects originally used to 
+define the 
+
+<emphasis id="strong1041" effect="bold">
+Point
+
+</emphasis>
+, 
+
+<emphasis id="strong1042" effect="bold">
+Vector
+
+</emphasis>
+, and/or 
+
+<emphasis id="strong1043" effect="bold">
+Line
+
+</emphasis>
+ objects.
+
+</para>
+
+
+
+
+<para id="p1038">
+I will explain the new code in the library in conjunction with the 
+explanations of the programs named 
+
+<emphasis id="strong1044" effect="bold">
+PointLine03
+
+</emphasis>
+ and 
+
+<emphasis id="strong1045" effect="bold">
+PointLine04
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_program_named_PointLine03" effect="bold">
+
+The program named PointLine03
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+A complete listing of the program named 
+
+<emphasis id="strong1046" effect="bold">
+PointLine03
+
+</emphasis>
+ is provided in 
+
+
+<link id="a1072" target-id="Listing_27">
+
+Listing 27
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1040">
+This program illustrates the use of 
+
+<emphasis id="em1011" effect="italics">
+draw
+
+</emphasis>
+ methods that were added to 
+the 
+
+<emphasis id="strong1047" effect="bold">
+GM2D02
+
+</emphasis>
+ game-math library to produce visual manifestations of 
+
+<emphasis id="strong1048" effect="bold">
+Point
+
+</emphasis>
+,
+
+
+<emphasis id="strong1049" effect="bold">
+Line
+
+</emphasis>
+, and 
+
+<emphasis id="strong1050" effect="bold">
+Vector
+
+</emphasis>
+ objects instantiated from classes in the 
+game-math library. The program also illustrates drawing on off-screen 
+images and then copying those images to a 
+
+<emphasis id="strong1051" effect="bold">
+Canvas
+
+</emphasis>
+ object in an overridden
+
+
+<emphasis id="strong1052" effect="bold">
+paint
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+<para id="p1041">
+As mentioned earlier, this program produces the screen output shown in 
+
+
+<link id="a1073" target-id="Figure_1">
+
+Figure 
+1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="strong1053" effect="bold">
+Beginning of the class named PointLine03 and the class named GUI
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+<link id="a1074" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows the beginning of the class named 
+
+<emphasis id="strong1054" effect="bold">
+PointLine03
+
+</emphasis>
+ 
+
+<emphasis id="em1012" effect="italics">
+
+(including the 
+
+<emphasis id="strong1055" effect="bold">
+main
+
+</emphasis>
+ method)
+
+</emphasis>
+ and the beginning of the class named 
+
+<emphasis id="strong1056" effect="bold">
+
+GUI
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the class named PointLine03 and the class named GUI. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">class PointLine03{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class PointLine03
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 200;
+  Image osiA;//one off-screen image
+  Image osiB;//another off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1044">
+The code in the 
+
+<emphasis id="strong1057" effect="bold">
+main
+
+</emphasis>
+ method instantiates an object of the 
+
+<emphasis id="strong1058" effect="bold">
+GUI
+
+</emphasis>
+ 
+	class. The code showing in the 
+
+<emphasis id="strong1059" effect="bold">
+GUI
+
+</emphasis>
+ class definition declares several 
+	instance variables, initializing some of them.
+
+</para>
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1060" effect="bold">
+Beginning of the constructor for the GUI class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1046">
+<link id="a1075" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows the beginning of the constructor for the 
+
+<emphasis id="strong1061" effect="bold">
+GUI
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Beginning of the constructor for the GUI class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth()/2;
+    osiHeight = myCanvas.getHeight();
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1047">
+The code in 
+
+<link id="a1076" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ is straightforward and shouldn't require an 
+	explanation beyond the embedded comments.
+
+</para>
+
+
+
+
+<para id="p1048">
+<emphasis id="strong1062" effect="bold">
+Create two off-screen images
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1049">
+Here is where things begin to get interesting. 
+
+<link id="a1077" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ creates two 
+off-screen images and gets a graphics context on each of them.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Create two off-screen images. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">    osiA = createImage(osiWidth,osiHeight);
+    Graphics2D g2Da = (Graphics2D)(osiA.getGraphics());
+    
+    osiB = createImage(osiWidth,osiHeight);
+    Graphics2D g2Db = (Graphics2D)(osiB.getGraphics());
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1050">
+Java programs are not constrained to simply draw on the screen. 
+	It is possible to create an off-screen image, get a graphics context on it, 
+	and use methods of the 
+
+<emphasis id="strong1063" effect="bold">
+Graphics
+
+</emphasis>
+ and/or 
+
+<emphasis id="strong1064" effect="bold">
+Graphics2D
+
+</emphasis>
+ classes to 
+	draw on the off-screen image.
+
+</para>
+
+
+
+
+<para id="p1051">
+The off-screen image can then be used for a variety of purposes including:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1074">
+writing the image into a disk file.
+
+</item>
+
+
+	
+
+<item id="li1075">
+copying the image to a 
+
+<emphasis id="strong1065" effect="bold">
+Canvas
+
+</emphasis>
+ object for display on the screen.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1052">
+<emphasis id="strong1066" effect="bold">
+Will copy off-screen images to the screen
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1053">
+In this program, we will copy each of the off-screen images to a 
+
+<emphasis id="strong1067" effect="bold">
+Canvas
+
+</emphasis>
+ 
+object in a side-by-side format 
+
+<emphasis id="em1013" effect="italics">
+(see 
+
+<link id="a1078" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+)
+
+</emphasis>
+ and display the 
+
+<emphasis id="strong1068" effect="bold">
+Canvas
+
+</emphasis>
+ 
+object on the content pane in a 
+
+<emphasis id="strong1069" effect="bold">
+JFrame
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1054">
+While animation is not the purpose of using off-screen images in this 
+program, such off-screen images are often used to produce clean animation. Code is 
+executed to produce an off-screen image and then the entire image is copied to the 
+screen in a single blast. This prevents the user from seeing the 
+development of the image that might otherwise be visible if the code was 
+executed to produce the image directly onto the screen.
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="strong1070" effect="bold">
+The createImage method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1056">
+There are seven different versions of the 
+
+<emphasis id="strong1071" effect="bold">
+createImage
+
+</emphasis>
+ method in the 
+JDK 1.7 standard library. The version of the method used in this program 
+is defined in the 
+
+<emphasis id="strong1072" effect="bold">
+Component
+
+</emphasis>
+ class and inherited into the 
+
+<emphasis id="strong1073" effect="bold">
+JFrame
+
+</emphasis>
+ 
+class. According to the Sun documentation, this method creates an 
+off-screen drawable image to be used for double buffering.
+
+</para>
+
+
+
+
+<para id="p1057">
+The two required parameters are width and height. If the image is later 
+displayed on the screen, the units of width and height are measured in pixels. 
+The values contained in the width and height parameters in 
+
+<link id="a1079" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ were 
+computed in 
+
+<link id="a1080" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. The width of each off-screen image is set to half 
+the width of the canvas. The height of each off-screen image is set to the 
+height of the canvas. This facilitates the display of the two images in 
+the side-by-side format shown in 
+
+<link id="a1081" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1058">
+Also, according to the Sun documentation, the method returns 
+
+<emphasis id="em1014" effect="italics">
+"an 
+off-screen drawable image, which can be used for double buffering. The return 
+value may be null if the component is not displayable."
+
+</emphasis>
+ The returned value 
+is type 
+
+<emphasis id="strong1074" effect="bold">
+Image
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1075" effect="bold">
+The getGraphics method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+There are eleven different versions of the 
+
+<emphasis id="strong1076" effect="bold">
+getGraphics
+
+</emphasis>
+ method in the 
+JDK 1.7 standard library. The version of the method used in this program 
+is defined in the 
+
+<emphasis id="strong1077" effect="bold">
+Image
+
+</emphasis>
+ class. This method is called on the 
+
+<emphasis id="strong1078" effect="bold">
+
+Image
+
+</emphasis>
+ object returned by the 
+
+<emphasis id="strong1079" effect="bold">
+createImage
+
+</emphasis>
+ method in 
+
+<link id="a1082" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1061">
+According to the Sun documentation, this method creates a graphics context 
+for drawing to an off-screen image. You will note that the reference to 
+the graphics context was cast to type 
+
+<emphasis id="strong1080" effect="bold">
+Graphics2D
+
+</emphasis>
+ and saved in a reference 
+variable of the type 
+
+<emphasis id="strong1081" effect="bold">
+Graphics2D
+
+</emphasis>
+. I explained the relationship 
+between the 
+
+<emphasis id="strong1082" effect="bold">
+Graphics
+
+</emphasis>
+ class and the 
+
+<emphasis id="strong1083" effect="bold">
+Graphics2D
+
+</emphasis>
+ class in an earlier module.
+
+</para>
+
+
+
+
+<para id="p1062">
+At this point, we have two off-screen image objects of type 
+
+<emphasis id="strong1084" effect="bold">
+Image
+
+</emphasis>
+ and 
+we have a graphics context on each of them. This makes it possible to use 
+the methods of the 
+
+<emphasis id="strong1085" effect="bold">
+Graphics
+
+</emphasis>
+ class and/or the methods of the 
+
+<emphasis id="strong1086" effect="bold">
+Graphics2D
+
+</emphasis>
+ 
+class to draw on either of the off-screen images.
+
+</para>
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1087" effect="bold">
+Remaining code in the constructor
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1064">
+<link id="a1083" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ shows the remainder of the constructor for the 
+
+<emphasis id="strong1088" effect="bold">
+GUI
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Remaining code in the constructor. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">    drawOffscreen(g2Da,g2Db);
+
+    myCanvas.repaint();
+
+  }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1065">
+<link id="a1084" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ begins by calling the method named 
+
+<emphasis id="strong1089" effect="bold">
+drawOffscreen
+
+</emphasis>
+ to draw 
+	some points, lines, and vectors on the two off-screen images. Note 
+	that references to each of the two graphics contexts are passed as 
+	parameters to the 
+
+<emphasis id="strong1090" effect="bold">
+drawOffscreen
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+<para id="p1066">
+Then 
+
+<link id="a1085" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1091" effect="bold">
+repaint
+
+</emphasis>
+ method belonging to the 
+
+<emphasis id="strong1092" effect="bold">
+MyCanvas
+
+</emphasis>
+ 
+object to cause the overridden 
+
+<emphasis id="strong1093" effect="bold">
+paint
+
+</emphasis>
+ method belonging to that object to 
+be executed. Later, we will see that the overridden 
+
+<emphasis id="strong1094" effect="bold">
+paint
+
+</emphasis>
+ method 
+copies the two off-screen images to the canvas in the side-by-side format shown 
+in 
+
+<link id="a1086" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ causing the contents of those off-screen images to be displayed in a
+
+
+<emphasis id="strong1095" effect="bold">
+JFrame
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1067">
+<emphasis id="strong1096" effect="bold">
+Beginning of the drawOffscreen method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1068">
+The beginning of the 
+
+<emphasis id="strong1097" effect="bold">
+drawOffscreen
+
+</emphasis>
+ method is shown in 
+
+<link id="a1087" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. 
+The purpose of this method is to define points, lines, and vectors as underlying 
+data objects and then to cause a visual manifestation of some of the points, 
+lines, and vectors to be drawn onto the two off-screen images.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Beginning of the drawOffscreen method. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">  void drawOffscreen(Graphics2D g2Da,Graphics2D g2Db){
+    
+    //Draw a label on each off-screen image.
+    g2Da.drawString("Off-screen image A",
+                    osiWidth/8,
+                    osiHeight/8);
+    g2Db.drawString("Off-screen image B",
+                    osiWidth/8,
+                    osiHeight/8);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1069">
+Before getting into the underlying data objects, however, 
+
+<link id="a1088" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ calls 
+	the 
+
+<emphasis id="strong1098" effect="bold">
+drawString
+
+</emphasis>
+ method belonging to the 
+
+<emphasis id="strong1099" effect="bold">
+Graphics
+
+</emphasis>
+ class to draw 
+	the two text strings shown in 
+
+<link id="a1089" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ on the two off-screen images.
+
+</para>
+
+
+
+
+<para id="p1070">
+<emphasis id="strong1100" effect="bold">
+Instantiate four Line objects that will be used to draw borders
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+<link id="a1090" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ instantiates four 
+
+<emphasis id="strong1101" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ objects that will ultimately 
+be used to draw the borders around the left and right images shown in 
+
+<link id="a1091" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Define four lines that will be used to draw borders. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">    //First define four points that will be used to define
+    // the ends of the four lines.
+    GM2D02.Point upperLeftPoint = new GM2D02.Point(
+                           new GM2D02.ColMatrix(1.0,1.0));
+    GM2D02.Point upperRightPoint = new GM2D02.Point(
+                    new GM2D02.ColMatrix(osiWidth-1,1.0));
+    GM2D02.Point lowerRightPoint = new GM2D02.Point(
+            new GM2D02.ColMatrix(osiWidth-1,osiHeight-1));
+    GM2D02.Point lowerLeftPoint = new GM2D02.Point(
+                   new GM2D02.ColMatrix(1.0,osiHeight-1));
+    
+    //Now define the four lines based on the endpoints.
+    GM2D02.Line top = new GM2D02.Line(upperLeftPoint,
+                                      upperRightPoint);
+    GM2D02.Line rightSide = new GM2D02.Line(
+                                         upperRightPoint,
+                                         lowerRightPoint);
+    GM2D02.Line bottom = new GM2D02.Line(lowerLeftPoint,
+                                         lowerRightPoint);
+    GM2D02.Line leftSide = new GM2D02.Line(upperLeftPoint,
+                                          lowerLeftPoint);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1072">
+<emphasis id="strong1102" effect="bold">
+Nothing new here
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1073">
+There is nothing in 
+
+<link id="a1092" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ that is new relative to what you learned in the 
+previous module. 
+
+<link id="a1093" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ starts by defining four 
+
+<emphasis id="strong1103" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ objects that will be used 
+to define the ends of the line segments. References to these 
+
+<emphasis id="strong1104" effect="bold">
+Point
+
+</emphasis>
+ 
+objects are passed to the constructor for the 
+
+<emphasis id="strong1105" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ class to 
+instantiate the four 
+
+<emphasis id="strong1106" effect="bold">
+Line
+
+</emphasis>
+ objects.
+
+</para>
+
+
+
+
+<para id="p1074">
+Note that the locations of the points, and hence the positions of the lines 
+were one pixel away from the edges of the canvas towards the center of the 
+canvas. These locations were chosen to ensure that the resulting visual 
+manifestations of the lines would be visible on the canvas.
+
+</para>
+
+
+
+
+<para id="p1075">
+It is also extremely important to understand that the 
+
+<emphasis id="strong1107" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ and
+
+
+<emphasis id="strong1108" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ objects instantiated in 
+
+<link id="a1094" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ are not graphical objects. 
+Rather, they are underlying data objects, which are suitable for use in 
+mathematical operations.
+
+</para>
+
+
+
+
+<para id="p1076">
+<emphasis id="strong1109" effect="bold">
+Draw a visual manifestation of each line
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1077">
+<link id="a1095" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1110" effect="bold">
+draw
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1111" effect="bold">
+GM2D02.Line 
+
+</emphasis>
+class four 
+times in succession for each off-screen image. Note that a reference to 
+the off-screen image is passed as a parameter to the 
+
+<emphasis id="strong1112" effect="bold">
+draw
+
+</emphasis>
+ method each 
+time the method is called on one of the 
+
+<emphasis id="strong1113" effect="bold">
+GM2D02.Line 
+
+</emphasis>
+objects.
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Draw a visual manifestation of each line. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">    //Now draw a visual manifestation of each line
+    // on g2Da.
+    top.draw(g2Da);
+    rightSide.draw(g2Da);
+    bottom.draw(g2Da);
+    leftSide.draw(g2Da);
+    
+    //Now draw a visual manifestation of each of the same
+    // four lines on g2Db
+    top.draw(g2Db);
+    rightSide.draw(g2Db);
+    bottom.draw(g2Db);
+    leftSide.draw(g2Db);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1078">
+As you will see shortly, each of these calls to the 
+
+<emphasis id="strong1114" effect="bold">
+draw
+
+</emphasis>
+ method 
+	causes an object of the standard Java 
+
+<emphasis id="strong1115" effect="bold">
+Line2D.Double
+
+</emphasis>
+ class to be rendered onto the 
+	specified off-screen image. When the off-screen image is ultimately 
+	copied to the canvas object by the overridden 
+
+<emphasis id="strong1116" effect="bold">
+paint
+
+</emphasis>
+ method, this 
+	produces a visual manifestation of the 
+
+<emphasis id="strong1117" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ object. 
+
+</para>
+
+
+
+
+<para id="p1079">
+Once 
+	again, however, it is very important to understand that the 
+
+<emphasis id="strong1118" effect="bold">
+Line2D.Double
+
+</emphasis>
+ 
+	object is a graphical object and the 
+
+<emphasis id="strong1119" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ is an underlying 
+	data object. They are completely independent objects.
+
+</para>
+
+
+
+
+<para id="p1080">
+Also, it is important to understand that the 
+
+<emphasis id="strong1120" effect="bold">
+Line2D.Double
+
+</emphasis>
+ 
+	class is a member of the standard Java library, whereas the 
+
+<emphasis id="strong1121" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ 
+class is a member of my special game math library named 
+
+<emphasis id="strong1122" effect="bold">
+GM2D02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1081">
+<emphasis id="strong1123" effect="bold">
+The draw method of the GM2D02.Line class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1082">
+Now it's time to explain one of the methods that was added to the original 
+game-math library named 
+
+<emphasis id="strong1124" effect="bold">
+GM2D01 
+
+</emphasis>
+to produce the new library named 
+
+<emphasis id="strong1125" effect="bold">
+GM2D02
+
+</emphasis>
+. 
+At this point, I will start switching back and forth between code in the 
+
+<emphasis id="strong1126" effect="bold">
+GM2D02 
+
+</emphasis>
+
+library and code in the program named
+
+
+<emphasis id="strong1127" effect="bold">
+PointLine03
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1083">
+<link id="a1096" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ shows the 
+
+<emphasis id="strong1128" effect="bold">
+draw
+
+</emphasis>
+ method that was called repeatedly on the 
+
+<emphasis id="strong1129" effect="bold">
+
+GM2D02.Line
+
+</emphasis>
+ objects in 
+
+<link id="a1097" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. This code belongs 
+to the 
+
+<emphasis id="strong1130" effect="bold">
+GM2D02 
+
+</emphasis>
+
+library.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. The draw method of the GM2D02.Line class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">    public void draw(Graphics2D g2D){
+      Line2D.Double line = new Line2D.Double(
+                                    getTail().getData(0),
+                                    getTail().getData(1),
+                                    getHead().getData(0),
+                                    getHead().getData(1));
+      g2D.draw(line);
+    }//end draw
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1084">
+<emphasis id="strong1131" effect="bold">
+Construct and render a Line2D.Double object on the graphics context
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+<link id="a1098" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1132" effect="bold">
+getTail
+
+</emphasis>
+ and 
+
+<emphasis id="strong1133" effect="bold">
+getHead
+
+</emphasis>
+ methods to get the x 
+and y coordinate values 
+
+<emphasis id="em1015" effect="italics">
+(relative to the current coordinate frame)
+
+</emphasis>
+ that 
+define the ends of the line segment represented by the 
+
+<emphasis id="strong1134" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ object 
+on which the 
+
+<emphasis id="strong1135" effect="bold">
+draw
+
+</emphasis>
+ method was called. 
+
+</para>
+
+
+
+
+<para id="p1086">
+These four values are passed 
+as parameters to the constructor for the Java standard 
+
+<emphasis id="strong1136" effect="bold">
+Line2D.Double
+
+</emphasis>
+ class to define 
+the endpoints of a 
+
+<emphasis id="strong1137" effect="bold">
+Line2D.Double
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1087">
+Then the 
+
+<emphasis id="strong1138" effect="bold">
+draw
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1139" effect="bold">
+Graphics2D
+
+</emphasis>
+ class is called on the 
+reference to the incoming graphics context parameter to cause the 
+
+<emphasis id="strong1140" effect="bold">
+
+Line2D.Double
+
+</emphasis>
+ object to be rendered onto that graphics context. 
+
+</para>
+
+
+
+
+<para id="p1088">
+In 
+this case, that graphics context is an off-screen graphics context. 
+However, it could just as easily be an on-screen graphics context such as the 
+graphics context that is received as a parameter to an overridden 
+
+<emphasis id="strong1141" effect="bold">
+paint
+
+</emphasis>
+ 
+method.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1142" effect="bold">
+Two different draw methods are involved:
+
+</emphasis>
+
+				
+
+<para id="p1089">
+The code in my custom 
+
+<emphasis id="strong1143" effect="bold">
+draw
+
+</emphasis>
+ method, which is 
+				a member of my custom 
+
+<emphasis id="strong1144" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ class, turns around and calls a completely different 
+				method named 
+
+<emphasis id="strong1145" effect="bold">
+draw
+
+</emphasis>
+, which is a member of the standard Java 
+				
+
+<emphasis id="strong1146" effect="bold">
+Graphics2D
+
+</emphasis>
+ 
+				class.
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1090">
+<emphasis id="strong1147" effect="bold">
+Hallmarks of object-oriented programming
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1091">
+An object of the 
+
+<emphasis id="strong1148" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ class knows how to produce a visual 
+manifestation of itself onto a specified graphics context as illustrated by the 
+borders surrounding the left and right images in 
+
+<link id="a1099" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1092">
+This is one of 
+the hallmarks of object-oriented programming. Objects know how to do 
+useful things for themselves. Later on, we will see other hallmarks such 
+as the ability of an object of the 
+
+<emphasis id="strong1149" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ class to add itself to 
+another object of the same class and return a new vector object that is the sum of the 
+two vectors.
+
+</para>
+
+
+
+
+<para id="p1093">
+<emphasis id="strong1150" effect="bold">
+Draw a visual manifestation of a GM2D02.Point object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1094">
+Returning to the 
+
+<emphasis id="strong1151" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method of the program named
+
+
+<emphasis id="strong1152" effect="bold">
+PointLine03
+
+</emphasis>
+, 
+
+<link id="a1100" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ begins by calling the 
+
+<emphasis id="strong1153" effect="bold">
+translate
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1154" effect="bold">
+Graphics
+
+</emphasis>
+ 
+class on the off-screen image shown in the left side of 
+
+<link id="a1101" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ for the purpose 
+of changing the origin from the upper-left corner of the graphics context to the 
+center of the graphics context.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Draw a visual manifestation of a GM2D02.Point object.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">    g2Da.translate(osiWidth/2.0,osiHeight/2.0);
+    
+    GM2D02.Point origin = new GM2D02.Point(
+                           new GM2D02.ColMatrix(0.0,0.0));
+    origin.draw(g2Da);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1095">
+This is equivalent to changing the coordinate frame described by Kjell 
+	and discussed in the previous module.
+
+</para>
+
+
+
+
+<para id="p1096">
+Then the code in 
+
+<link id="a1102" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ defines a 
+
+<emphasis id="strong1155" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ object located at 
+the origin of the new coordinate frame and calls the 
+
+<emphasis id="strong1156" effect="bold">
+draw
+
+</emphasis>
+ method on that 
+object to produce the visual manifestation of the object in the center of the 
+left image in 
+
+<link id="a1103" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1097">
+Once again, the 
+
+<emphasis id="strong1157" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ object is an 
+underlying data object. The visual manifestation will be produced by an 
+object of the Java standard class named 
+
+<emphasis id="strong1158" effect="bold">
+Ellipse2D.Double
+
+</emphasis>
+, which will be a completely 
+independent object.
+
+</para>
+
+
+
+
+<para id="p1098">
+<emphasis id="strong1159" effect="bold">
+The draw method of the GM2D02.Point class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1099">
+<link id="a1104" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ shows the 
+
+<emphasis id="strong1160" effect="bold">
+draw
+
+</emphasis>
+ method that was added to the 
+
+<emphasis id="strong1161" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ 
+class to produce the updated game-math library. This method draws a small 
+circle around the location of the point on the specified graphics context.
+
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. The draw method of the GM2D02.Point class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">    public void draw(Graphics2D g2D){
+      Ellipse2D.Double circle = 
+                        new Ellipse2D.Double(getData(0)-3,
+                                             getData(1)-3,
+                                             6,
+                                             6);
+      g2D.draw(circle);
+    }//end draw
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1100">
+The logic behind this method is very similar to the logic that I 
+	explained relative to 
+
+<link id="a1105" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. The constructor for the 
+	Java standard 
+
+<emphasis id="strong1162" effect="bold">
+
+	Ellipse2D.Double
+
+</emphasis>
+ class requires four incoming parameters that specify 
+	the coordinates of the upper-left corner of a rectangle followed by the 
+	width and the height of the rectangle. The new object of type 
+
+<emphasis id="strong1163" effect="bold">
+
+	Ellipse2D.Double
+
+</emphasis>
+ represents an 
+	ellipse that is bounded by the four sides of the rectangle. If the 
+	rectangle is square, the ellipse becomes a circle.
+
+</para>
+
+
+
+
+<para id="p1101">
+<emphasis id="em1016" effect="italics">
+(In this case, the rectangle is a 6x6 square, thus producing a circle 
+with a diameter of six pixels.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1102">
+<link id="a1106" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1164" effect="bold">
+draw
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1165" effect="bold">
+Graphics2D
+
+</emphasis>
+ class to 
+render the ellipse 
+
+<emphasis id="em1017" effect="italics">
+(circle)
+
+</emphasis>
+ at the specified location on the graphics context specified by 
+the incoming parameter. Thus the code in 
+
+<link id="a1107" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ produces a visual 
+manifestation of a point at the origin of the current coordinate frame. 
+The visual manifestation consists of a small circle centered on the location of 
+the point, resulting in the small circle at the center of the left image in 
+
+
+<link id="a1108" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1103">
+<emphasis id="strong1166" effect="bold">
+Draw the vertices of a hexagon
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1104">
+Returning once more to the 
+
+<emphasis id="strong1167" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method of the program named
+
+
+<emphasis id="strong1168" effect="bold">
+PointLine03
+
+</emphasis>
+, 
+
+<link id="a1109" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ instantiates six 
+
+<emphasis id="strong1169" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ objects that represent the 
+vertices of a hexagon that is symmetrically located relative to the origin in 
+the current coordinate frame
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Draw the vertices of a hexagon. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">    //First define three constants to make it easier to
+    // write the code.
+    final double aVal = osiWidth/4.0*0.5;
+    final double bVal = osiWidth/4.0*0.866;
+    final double cVal = osiWidth/4.0;
+    //Now define the points.
+    GM2D02.Point point0 = new GM2D02.Point(
+                          new GM2D02.ColMatrix(cVal,0.0));
+    GM2D02.Point point1 = new GM2D02.Point(
+                         new GM2D02.ColMatrix(aVal,bVal));
+    GM2D02.Point point2 = new GM2D02.Point(
+                        new GM2D02.ColMatrix(-aVal,bVal));
+    GM2D02.Point point3 = new GM2D02.Point(
+                         new GM2D02.ColMatrix(-cVal,0.0));
+    GM2D02.Point point4 = new GM2D02.Point(
+                       new GM2D02.ColMatrix(-aVal,-bVal));
+    GM2D02.Point point5 = new GM2D02.Point(
+                        new GM2D02.ColMatrix(aVal,-bVal));
+    
+    //Now draw a visual manifestation of each of the six
+    // points on g2Da.
+    point0.draw(g2Da);
+    point1.draw(g2Da);
+    point2.draw(g2Da);
+    point3.draw(g2Da);
+    point4.draw(g2Da);
+    point5.draw(g2Da);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1105">
+Then 
+
+<link id="a1110" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1170" effect="bold">
+draw
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1171" effect="bold">
+GM2D02.Point 
+
+</emphasis>
+
+	class six times in succession to cause small circles that represent the six 
+	points to be rendered on the specified off-screen image. You can see 
+	those six circles in the left image in 
+
+<link id="a1111" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1106">
+<emphasis id="strong1172" effect="bold">
+Draw six lines connecting the vertices of the hexagon
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1107">
+<link id="a1112" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ instantiates six objects of the 
+
+<emphasis id="strong1173" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ class whose 
+endpoints are specified by the six 
+
+<emphasis id="strong1174" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ objects from 
+
+<link id="a1113" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+, 
+taken in pairs.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. Draw six lines connecting the vertices of the hexagon. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1011" display="block">    GM2D02.Line line01 = new GM2D02.Line(point0,point1);
+    GM2D02.Line line12 = new GM2D02.Line(point1,point2);
+    GM2D02.Line line23 = new GM2D02.Line(point2,point3);
+    GM2D02.Line line34 = new GM2D02.Line(point3,point4);
+    GM2D02.Line line45 = new GM2D02.Line(point4,point5);
+    GM2D02.Line line50 = new GM2D02.Line(point5,point0);
+
+    //Now draw a visual manifestation of each line
+    // on g2Da.
+    line01.draw(g2Da);
+    line12.draw(g2Da);
+    line23.draw(g2Da);
+    line34.draw(g2Da);
+    line45.draw(g2Da);
+    line50.draw(g2Da);</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1108">
+Then 
+
+<link id="a1114" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1175" effect="bold">
+draw
+
+</emphasis>
+ method belonging to the 
+
+<emphasis id="strong1176" effect="bold">
+
+	GM2D02.Line
+
+</emphasis>
+ class six times in succession to cause visible lines to be 
+	rendered on the specified off-screen image. You can see those six 
+	lines in the left image in 
+
+<link id="a1115" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1109">
+That completes the drawing that is performed on the off-screen image shown in 
+the left image in 
+
+<link id="a1116" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Next I will explain the drawing that is 
+performed on the off-screen image that is shown as the right image in 
+
+<link id="a1117" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1110">
+<emphasis id="strong1177" effect="bold">
+Instantiate three objects of type GM2D02.Vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1111">
+According to Kjell, 
+
+<emphasis id="em1018" effect="italics">
+"A vector is a geometrical object that has two 
+properties: 
+
+<emphasis id="length_and_direction" effect="bold">
+
+length and direction
+
+</emphasis>
+
+."
+
+</emphasis>
+ 
+He also tells us, 
+
+<emphasis id="em1019" effect="italics">
+"A vector does not have a position."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+The right image in 
+
+<link id="a1118" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows visual manifestations 
+of three different 
+objects of the 
+
+<emphasis id="strong1178" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ class. One vector is represented as a 
+red line with a small red circle at its head. A second vector is 
+represented as a blue line with a small blue circle at its head. The third 
+vector is shown in three different positions represented by green lines with 
+small green circles at their heads.
+
+</para>
+
+
+
+
+<para id="p1113">
+<link id="a1119" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ instantiates three objects of the 
+
+<emphasis id="strong1179" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ class, 
+which are visually represented by the red, green, and blue lines in 
+
+<link id="a1120" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+References to these three objects are saved in the variables named 
+
+<emphasis id="strong1180" effect="bold">
+vecA
+
+</emphasis>
+,
+
+
+<emphasis id="strong1181" effect="bold">
+vecB
+
+</emphasis>
+, and 
+
+<emphasis id="strong1182" effect="bold">
+vecC
+
+</emphasis>
+ in 
+
+<link id="a1121" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. Instantiate three objects of type GM2D02.Vector. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1012" display="block">    GM2D02.Vector vecA = new GM2D02.Vector(
+                            new GM2D02.ColMatrix(50,100));
+    GM2D02.Vector vecB = new GM2D02.Vector(
+                             new GM2D02.ColMatrix(75,25));
+    GM2D02.Vector vecC = new GM2D02.Vector(
+                           new GM2D02.ColMatrix(125,125));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1114">
+Note that each vector is described by two values in a 
+
+<emphasis id="strong1183" effect="bold">
+
+GM2D02.ColMatrix
+
+</emphasis>
+ object.
+
+</para>
+
+
+	
+
+<para id="p1115">
+<emphasis id="strong1184" effect="bold">
+Call the draw method to draw the vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1116">
+<link id="a1122" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ begins by setting the drawing color to red for the off-screen 
+image on which the visual manifestation of the first 
+
+<emphasis id="strong1185" effect="bold">
+Vector
+
+</emphasis>
+ object will 
+be drawn. Then 
+
+<link id="a1123" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1186" effect="bold">
+draw
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1187" effect="bold">
+
+GM2D02.Vector
+
+</emphasis>
+ class to cause the object referred to by 
+
+<emphasis id="strong1188" effect="bold">
+vecA
+
+</emphasis>
+ to be 
+represented as a 
+
+<emphasis id="em1020" effect="italics">
+(red)
+
+</emphasis>
+ line with its tail at the origin. 
+
+<emphasis id="em1021" effect="italics">
+(Unlike 
+the image on the left side of 
+
+<link id="a1124" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the origin for the image on the right 
+was not translated to the center.)
+
+</emphasis>
+</para>
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. Call the draw method to draw the vector. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1013" display="block">    g2Db.setColor(Color.RED);
+      
+    vecA.draw(g2Db,new GM2D02.Point(
+                              new GM2D02.ColMatrix(0,0)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1117">
+Note that two parameter are passed to the 
+
+<emphasis id="strong1189" effect="bold">
+draw
+
+</emphasis>
+ method in Listing 
+	14:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1076">
+A reference to the off-screen graphics context on which the visual 
+	manifestation of the vector will be drawn.
+
+</item>
+
+
+	
+
+<item id="li1077">
+A new object of the class 
+
+<emphasis id="strong1190" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ that will be used to 
+	determine the position on the off-screen image in which the visual 
+	manifestation will appear.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1118">
+Remember that according to Kjell, a vector doesn't have a position. 
+Hence, there is nothing in the underlying data for a 
+
+<emphasis id="strong1191" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ object 
+that specifies a position. In other words, the visual manifestation of a 
+vector can be placed anywhere in space, and one placement is just as correct as 
+the next. However, if you become heavily involved in the use of vectors, 
+you will learn that certain placements may be preferable to others in some cases 
+so as to better represent the problem being modeled by the use of vectors.
+
+</para>
+
+
+
+
+<para id="p1119">
+<emphasis id="strong1192" effect="bold">
+The draw method of the GM2D02.Vector class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1120">
+Switching once again to the 
+
+<emphasis id="strong1193" effect="bold">
+GM2D02
+
+</emphasis>
+ library, 
+
+<link id="a1125" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ shows the 
+
+<emphasis id="strong1194" effect="bold">
+draw
+
+</emphasis>
+ method that was added to the 
+
+<emphasis id="strong1195" effect="bold">
+
+GM2D02.Vector
+
+</emphasis>
+ class. This method is a little longer than the 
+
+<emphasis id="strong1196" effect="bold">
+draw
+
+</emphasis>
+ 
+methods that I explained earlier for points and lines. This is mainly 
+because:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1078">
+it is necessary to deal with the issue of positioning the visual 
+	manifestation of the 
+
+<emphasis id="strong1197" effect="bold">
+GM2D02.Vector
+
+</emphasis>
+ object, and
+
+</item>
+
+
+	
+
+<item id="li1079">
+it is necessary to embellish the drawing to make it possible to visually 
+	determine which end is the tail and which end is the head.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1121">
+This method renders a visual manifestation of a 
+
+<emphasis id="strong1198" effect="bold">
+GM2D02.Vector 
+
+</emphasis>
+on the 
+specified graphics context, with the tail of the vector located at a point 
+specified by the contents of a 
+
+<emphasis id="strong1199" effect="bold">
+GM2D02.Point
+
+</emphasis>
+ object. A small circle 
+is drawn to visually identify the head of the vector.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Listing_15" effect="bold">
+
+Listing 15
+
+</emphasis>
+
+. The draw method of the GM2D02.Vector class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1014" display="block">    public void draw(Graphics2D g2D,GM2D02.Point tail){
+      Line2D.Double line = new Line2D.Double(
+                       tail.getData(0),
+                       tail.getData(1),
+                       tail.getData(0)+vector.getData(0),
+                       tail.getData(1)+vector.getData(1));
+
+    //Draw a small circle to identify the head.
+      Ellipse2D.Double circle = new Ellipse2D.Double(
+                      tail.getData(0)+vector.getData(0)-2,
+                      tail.getData(1)+vector.getData(1)-2,
+                      4,
+                      4);
+      g2D.draw(circle);
+      g2D.draw(line);
+    }//end draw
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1122">
+<emphasis id="strong1200" effect="bold">
+Why a circle and not an arrowhead?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1123">
+When we draw vectors, 
+
+<emphasis id="em1022" effect="italics">
+(particularly when drawing by hand)
+
+</emphasis>
+, we often 
+draw a small arrowhead at the head of the vector. Remember, a vector has 
+only two properties: 
+
+<emphasis id="em1023" effect="italics">
+length
+
+</emphasis>
+ and 
+
+<emphasis id="em1024" effect="italics">
+
+
+
+<link id="a1126" target-id="length_and_direction">
+
+direction
+
+</link>
+
+
+</emphasis>
+. The 
+arrowhead normally points in the direction indicated by the 
+
+<emphasis id="em1025" effect="italics">
+direction
+
+</emphasis>
+ 
+property. However, there is nothing magic about an arrowhead. 
+Circles are much easier to draw with a computer than arrowheads. As long 
+as you can identify the head of the vector, you can always determine the 
+direction. Although I didn't give a lot of thought to optimization when 
+developing this library, this is one case where I took the approach that is 
+likely to consume the minimum amount of computational resources.
+
+</para>
+
+
+
+
+<para id="p1124">
+In 
+
+<link id="a1127" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the length of each of the lines in the right image indicates the
+
+
+<emphasis id="em1026" effect="italics">
+length
+
+</emphasis>
+ property of the respective vector, and the small circle indicates 
+the head. The orientation relative to the current coordinate frame 
+represents the 
+
+<emphasis id="em1027" effect="italics">
+direction
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1125">
+Beyond that, further explanation of the code in 
+
+<link id="a1128" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ should not be 
+required.
+
+</para>
+
+
+
+
+<para id="p1126">
+<emphasis id="strong1201" effect="bold">
+Three visual manifestations of the same vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1127">
+Returning again to the 
+
+<emphasis id="strong1202" effect="bold">
+drawOffScreen
+
+</emphasis>
+ method of the program named
+
+
+<emphasis id="strong1203" effect="bold">
+PointLine03
+
+</emphasis>
+, 
+
+<link id="a1129" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ produces three visual manifestations at 
+three different positions for the same 
+
+<emphasis id="strong1204" effect="bold">
+Vector
+
+</emphasis>
+ object referred to by the reference variable named 
+
+<emphasis id="strong1205" effect="bold">
+
+vecB
+
+</emphasis>
+. All three of the visual manifestations are colored green in 
+
+
+<link id="a1130" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Listing_16" effect="bold">
+
+Listing 16
+
+</emphasis>
+
+. Three visual manifestations of the same vector. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1015" display="block">    g2Db.setColor(Color.GREEN);
+    vecB.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+    vecB.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                 vecA.getData(0)-10,vecA.getData(1)+15)));
+    vecB.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                 vecA.getData(0)+10,vecA.getData(1)-60)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1128">
+This is a perfectly legitimate thing to do since the underlying data 
+	encapsulated in the 
+
+<emphasis id="strong1206" effect="bold">
+Vector
+
+</emphasis>
+ object does not contain any information 
+	relating to the position of the visual manifestation.
+
+</para>
+
+
+
+
+<para id="p1129">
+In one visual manifestation, 
+
+<link id="a1131" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ causes the tail of 
+
+<emphasis id="strong1207" effect="bold">
+vecB
+
+</emphasis>
+ to 
+coincide with the head of 
+
+<emphasis id="strong1208" effect="bold">
+vecA
+
+</emphasis>
+. This is one of those cases where 
+drawing the vector in one position is preferable to drawing it in a different 
+position. Later on when we get into the topic of vector addition, I will 
+explain that one way to perform graphical addition of vectors is to position the 
+vectors in a tail-to-head relationship as indicated by the red and green vectors 
+in 
+
+<link id="a1132" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The sum of the vectors can then be determined graphically by 
+drawing a line from the tail of the first vector to the head of the last vector 
+as indicated by the blue line in 
+
+<link id="a1133" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The length of the sum 
+
+<emphasis id="em1028" effect="italics">
+(or 
+resultant)
+
+</emphasis>
+ vector is indicated by the length of that line, 
+and the direction of the resultant vector is indicated by the orientation of 
+that line.
+
+</para>
+
+
+
+
+<para id="p1130">
+<emphasis id="strong1209" effect="bold">
+A practical example
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1131">
+This is the solution to a classical problem in a freshman engineering class. 
+Assume that a boat is traveling diagonally across a river with a strong current. 
+Assume that the green vector in 
+
+<link id="a1134" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ represents the speed and direction of 
+the current in the river. Assume that the red vector represents the speed 
+and direction that the boat would travel if there were no current. Because 
+of the effect of the current on the boat, the actual speed and direction of the 
+boat will be given by the blue vector, which is different from the speed and 
+direction indicated by the red vector. If the blue vector is pointing at 
+the desired landing point on the other side of the river, everything is okay. 
+Otherwise, the captain needs to change the speed and/or the direction of the 
+boat to compensate for the effect of the current on the boat.
+
+</para>
+
+
+
+
+<para id="p1132">
+<emphasis id="strong1210" effect="bold">
+Draw the blue vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1133">
+<link id="a1135" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+ produces the blue visual manifestation of the 
+
+<emphasis id="strong1211" effect="bold">
+Vector
+
+</emphasis>
+ object 
+referred to by 
+
+<emphasis id="strong1212" effect="bold">
+vecC 
+
+</emphasis>
+as
+
+<emphasis id="strong1213" effect="bold">
+ 
+
+</emphasis>
+shown in 
+
+<link id="a1136" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1016" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1016">
+
+			
+
+<row id="tr1032">
+
+				
+
+<entry id="th1016">
+<emphasis id="Listing_17" effect="bold">
+
+Listing 17
+
+</emphasis>
+
+. Draw the blue vector. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1016">
+
+			
+
+<row id="tr1033">
+
+				
+
+<entry id="td1016">
+
+
+
+<code id="pre1016" display="block">    g2Db.setColor(Color.BLUE);
+    vecC.draw(g2Db,new GM2D02.Point(
+                              new GM2D02.ColMatrix(0,0)));
+
+  }//end drawOffscreen
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1134">
+<link id="a1137" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+ also signals the end of the method named 
+
+<emphasis id="strong1214" effect="bold">
+drawOffscreen
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1215" effect="bold">
+The MyCanvas class and the overridden paint method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+<link id="a1138" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ shows the entire inner class named 
+
+<emphasis id="strong1216" effect="bold">
+
+MyCanvas
+
+</emphasis>
+ including the 
+overridden 
+
+<emphasis id="strong1217" effect="bold">
+paint
+
+</emphasis>
+ method belonging to that class.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1017" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1017">
+
+			
+
+<row id="tr1034">
+
+				
+
+<entry id="th1017">
+<emphasis id="Listing_18" effect="bold">
+
+Listing 18
+
+</emphasis>
+
+. The MyCanvas class and the overridden paint method. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1017">
+
+			
+
+<row id="tr1035">
+
+				
+
+<entry id="td1017">
+
+
+
+<code id="pre1017" display="block">  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    public void paint(Graphics g){
+      g.drawImage(osiA,0,0,this);
+      g.drawImage(osiB,this.getWidth()/2,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1137">
+The overridden 
+
+<emphasis id="strong1218" effect="bold">
+paint
+
+</emphasis>
+ method will be called when the 
+
+<emphasis id="strong1219" effect="bold">
+JFrame
+
+</emphasis>
+ 
+	and the 
+
+<emphasis id="strong1220" effect="bold">
+Canvas
+
+</emphasis>
+ appear on the screen or when the 
+
+<emphasis id="strong1221" effect="bold">
+repaint
+
+</emphasis>
+ method 
+	is called on the 
+
+<emphasis id="strong1222" effect="bold">
+Canvas
+
+</emphasis>
+ object. 
+
+</para>
+
+
+
+
+<para id="p1138">
+The method is also called when 
+	some screen activity requires the 
+
+<emphasis id="strong1223" effect="bold">
+JFrame
+
+</emphasis>
+ to be redrawn 
+
+<emphasis id="em1029" effect="italics">
+(such as 
+	minimizing and then restoring the 
+
+</emphasis>
+<emphasis id="strong1224" effect="bold">
+<emphasis id="em1030" effect="italics">
+JFrame
+
+</emphasis>
+</emphasis>
+<emphasis id="em1031" effect="italics">
+)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1139">
+The purpose 
+	of the 
+
+<emphasis id="strong1225" effect="bold">
+paint
+
+</emphasis>
+ method in this program is to call the 
+
+<emphasis id="strong1226" effect="bold">
+
+	drawImage
+
+</emphasis>
+ method twice in succession to draw the two 
+	off-screen images on the screen in the side-by-side format shown in 
+
+
+<link id="a1139" target-id="Figure_1">
+
+Figure 
+	1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1140">
+The first parameter to the 
+
+<emphasis id="strong1227" effect="bold">
+drawImage
+
+</emphasis>
+ method is the off-screen image 
+that is to be drawn on the canvas. The second and third parameters specify 
+the location where the upper-left corner of the image will be drawn.
+
+</para>
+
+
+
+
+<para id="p1141">
+The fourth parameter is a reference to an 
+
+<emphasis id="strong1228" effect="bold">
+ImageObserver
+
+</emphasis>
+ object, which 
+is essentially a dummy image observer in this case, because an actual image 
+observer isn't needed. 
+
+<emphasis id="em1032" effect="italics">
+(To learn more about image observers, see
+
+
+<link id="a1140" url="http://www.dickbaldwin.com/java/Java170.htm">
+
+The AWT Package, Graphics- 
+Introduction to Images
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1229" effect="bold">
+End of the program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+<link id="a1141" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ also signals the end of the GUI class and the end of the program 
+named 
+
+<emphasis id="strong1230" effect="bold">
+PointLine03
+
+</emphasis>
+..
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_program_named_PointLine04" effect="bold">
+
+The program named PointLine04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1144">
+A complete listing of this program is provided in 
+
+<link id="a1142" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+. Just like 
+the previous program named 
+
+<emphasis id="strong1231" effect="bold">
+PointLine03
+
+</emphasis>
+, this program produces the screen 
+output shown in 
+
+<link id="a1143" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. However, it produces that output in a 
+significantly different way.
+
+</para>
+
+
+
+
+<para id="p1145">
+This program emphasizes the differences between graphics objects and 
+underlying data objects. It also illustrates the use of the new 
+
+<emphasis id="strong1232" effect="bold">
+setData
+
+</emphasis>
+ 
+methods of the 
+
+<emphasis id="strong1233" effect="bold">
+Point
+
+</emphasis>
+ class and the 
+
+<emphasis id="strong1234" effect="bold">
+Vector
+
+</emphasis>
+ class, along with the 
+new 
+
+<emphasis id="strong1235" effect="bold">
+setTail
+
+</emphasis>
+ and 
+
+<emphasis id="strong1236" effect="bold">
+setHead
+
+</emphasis>
+ methods of the 
+
+<emphasis id="strong1237" effect="bold">
+Line
+
+</emphasis>
+ class. 
+These methods were added to the game-math library when it was updated to the 
+
+<emphasis id="strong1238" effect="bold">
+
+GM2D02
+
+</emphasis>
+ version.
+
+</para>
+
+
+
+
+<para id="p1146">
+<emphasis id="strong1239" effect="bold">
+Dealing with some vulnerabilities
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1147">
+The addition of the new 
+
+<emphasis id="em1033" effect="italics">
+set
+
+</emphasis>
+ methods exposed some vulnerabilities in 
+the original version of the game-math library. I will explain how the code 
+in the library was modified to deal with that issue. In particular, 
+constructors were updated to ensure that existing points, vectors, and lines are 
+not corrupted by using the new 
+
+<emphasis id="em1034" effect="italics">
+set
+
+</emphasis>
+ methods to change the values in the 
+
+<emphasis id="strong1240" effect="bold">
+
+ColMatrix
+
+</emphasis>
+ and/or 
+
+<emphasis id="strong1241" effect="bold">
+Point
+
+</emphasis>
+ objects originally used to construct the 
+points, vectors, and lines. The updated constructors create and save 
+clones of the 
+
+<emphasis id="strong1242" effect="bold">
+ColMatrix
+
+</emphasis>
+ and/or 
+
+<emphasis id="strong1243" effect="bold">
+Point
+
+</emphasis>
+ objects originally used to 
+define the 
+
+<emphasis id="strong1244" effect="bold">
+Point
+
+</emphasis>
+, 
+
+<emphasis id="strong1245" effect="bold">
+Vector
+
+</emphasis>
+, and/or 
+
+<emphasis id="strong1246" effect="bold">
+Line
+
+</emphasis>
+ objects.
+
+</para>
+
+
+
+
+<para id="p1148">
+<emphasis id="strong1247" effect="bold">
+Will explain the code in fragments
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1149">
+As before, I will explain the code in fragments. Some of the code in 
+this program is identical to or very similar to code that I have already 
+explained in the program named 
+
+<emphasis id="strong1248" effect="bold">
+PointLine03
+
+</emphasis>
+. I won't repeat that 
+explanation. Instead, I will concentrate on the differences between the 
+two programs.
+
+</para>
+
+
+
+
+<para id="p1150">
+<emphasis id="strong1249" effect="bold">
+The setData method of the ColMatrix class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1151">
+The new 
+
+<emphasis id="strong1250" effect="bold">
+setData
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1251" effect="bold">
+ColMatrix
+
+</emphasis>
+ class is shown in 
+
+
+<link id="a1144" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. Note that this code is part of the 
+
+<emphasis id="strong1252" effect="bold">
+GM2D02
+
+</emphasis>
+ library. At this 
+point, I will begin switching back and forth between the library and the program 
+named 
+
+<emphasis id="strong1253" effect="bold">
+PointLine04
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1018" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1018">
+
+			
+
+<row id="tr1036">
+
+				
+
+<entry id="th1018">
+<emphasis id="Listing_19" effect="bold">
+
+Listing 19
+
+</emphasis>
+
+. The setData method of the ColMatrix class. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1018">
+
+			
+
+<row id="tr1037">
+
+				
+
+<entry id="td1018">
+
+
+
+<code id="pre1018" display="block">    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1152">
+This is a very simple method, which should not require further 
+	explanation. I am presenting it here mainly for the purpose of leading 
+	into a discussion of the vulnerabilities that this method could expose on 
+
+<emphasis id="strong1254" effect="bold">
+
+	Point
+
+</emphasis>
+ and 
+
+<emphasis id="strong1255" effect="bold">
+Vector
+
+</emphasis>
+ objects instantiated from the original math 
+	class named 
+
+<emphasis id="strong1256" effect="bold">
+GM2D01
+
+</emphasis>
+, 
+
+</para>
+
+
+
+
+<para id="p1153">
+You may recall from the module titled 
+
+<emphasis id="em1035" effect="italics">
+Getting Started 
+
+</emphasis>
+that the 
+constructor for the 
+
+<emphasis id="strong1257" effect="bold">
+Point
+
+</emphasis>
+ class in the original library received and 
+saved a reference to an object of the 
+
+<emphasis id="strong1258" effect="bold">
+ColMatrix
+
+</emphasis>
+ class that contained the 
+two values required to define the 
+
+<emphasis id="strong1259" effect="bold">
+Point
+
+</emphasis>
+. Now that it is possible to 
+change the values stored in an object of the 
+
+<emphasis id="strong1260" effect="bold">
+ColMatrix
+
+</emphasis>
+ class, if such an 
+object is used to instantiate an object of the 
+
+<emphasis id="strong1261" effect="bold">
+Point
+
+</emphasis>
+ class and then the 
+values stored in the 
+
+<emphasis id="strong1262" effect="bold">
+ColMatrix
+
+</emphasis>
+ object are changed, the values that define 
+the 
+
+<emphasis id="strong1263" effect="bold">
+Point
+
+</emphasis>
+ object will change accordingly. That is not good.
+
+</para>
+
+
+
+
+<para id="p1154">
+<emphasis id="strong1264" effect="bold">
+Updated constructor for the Point class in GM2D02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1155">
+Continuing with code in the 
+
+<emphasis id="strong1265" effect="bold">
+GM2D02
+
+</emphasis>
+ library, 
+
+<link id="a1145" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+ shows the updated 
+constructor in the new version of the library.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1019" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1019">
+
+			
+
+<row id="tr1038">
+
+				
+
+<entry id="th1019">
+<emphasis id="Listing_20" effect="bold">
+
+Listing 20
+
+</emphasis>
+
+. Updated constructor for the Point class in GM2D02. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1019">
+
+			
+
+<row id="tr1039">
+
+				
+
+<entry id="td1019">
+
+
+
+<code id="pre1019" display="block">  public static class Point{
+    GM2D02.ColMatrix point;
+    
+    Point(GM2D02.ColMatrix point){//constructor
+      this.point = 
+         new ColMatrix(point.getData(0),point.getData(1));
+    }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1156">
+The new version of the constructor for the
+
+<emphasis id="strong1266" effect="bold">
+ Point
+
+</emphasis>
+ class creates and 
+	saves a clone of the 
+
+<emphasis id="strong1267" effect="bold">
+ColMatrix
+
+</emphasis>
+ object used to define the point to 
+	prevent the point from being corrupted by a later change in the values 
+	stored in the original 
+
+<emphasis id="strong1268" effect="bold">
+ColMatrix
+
+</emphasis>
+ object through the use of its new 
+
+<emphasis id="strong1269" effect="bold">
+
+	setData
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+<para id="p1157">
+<emphasis id="strong1270" effect="bold">
+Updated constructor for the Vector class in GM2D02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1158">
+Because the constructor for the 
+
+<emphasis id="strong1271" effect="bold">
+Vector
+
+</emphasis>
+ class in the original library 
+was essentially the same as the constructor for the 
+
+<emphasis id="strong1272" effect="bold">
+Point
+
+</emphasis>
+ class, the 
+addition of the 
+
+<emphasis id="strong1273" effect="bold">
+setData
+
+</emphasis>
+ method to the 
+
+<emphasis id="strong1274" effect="bold">
+ColMatrix
+
+</emphasis>
+ class created the 
+same vulnerability for objects instantiated from the 
+
+<emphasis id="strong1275" effect="bold">
+Vector
+
+</emphasis>
+ class. 
+Essentially the same correction was made for the constructor for the 
+
+<emphasis id="strong1276" effect="bold">
+Vector
+
+</emphasis>
+ 
+class. You can view the new code in 
+
+<link id="a1146" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1159">
+<emphasis id="strong1277" effect="bold">
+Additional changes to the library
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1160">
+In addition to the changes described above, the following changes were made 
+to the game-math library to update it from version 
+
+<emphasis id="strong1278" effect="bold">
+GM2D01
+
+</emphasis>
+ to 
+
+<emphasis id="strong1279" effect="bold">
+GM2D02
+
+</emphasis>
+. 
+All of the changes were straightforward and shouldn't require an explanation 
+beyond the embedded comments. You can view the new code for all of these 
+changes in 
+
+<link id="a1147" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1080">
+Added a 
+
+<emphasis id="strong1280" effect="bold">
+setData
+
+</emphasis>
+ method for the 
+
+<emphasis id="strong1281" effect="bold">
+Point
+
+</emphasis>
+ class.
+
+</item>
+
+
+	
+
+<item id="li1081">
+Updated the constructor for the 
+
+<emphasis id="strong1282" effect="bold">
+Line
+
+</emphasis>
+ class to deal with the 
+	same kind of vulnerability described above.
+
+</item>
+
+
+	
+
+<item id="li1082">
+Added a 
+
+<emphasis id="strong1283" effect="bold">
+setTail
+
+</emphasis>
+ method for the 
+
+<emphasis id="strong1284" effect="bold">
+Line
+
+</emphasis>
+ class.
+
+</item>
+
+
+	
+
+<item id="li1083">
+Added a 
+
+<emphasis id="strong1285" effect="bold">
+setHead
+
+</emphasis>
+ method for the 
+
+<emphasis id="strong1286" effect="bold">
+Line
+
+</emphasis>
+ class.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1161">
+<emphasis id="strong1287" effect="bold">
+The drawOffscreen method of the program named PointLine04
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1162">
+Most of the differences between the programs named 
+
+<emphasis id="strong1288" effect="bold">
+PointLine03
+
+</emphasis>
+ and 
+
+<emphasis id="strong1289" effect="bold">
+
+PointLine04
+
+</emphasis>
+ occur in the method named 
+
+<emphasis id="strong1290" effect="bold">
+drawOffscreen
+
+</emphasis>
+. I will 
+concentrate my discussion there.
+
+</para>
+
+
+
+
+<para id="p1163">
+Switching now to code in the program named 
+
+<emphasis id="strong1291" effect="bold">
+PointLine04
+
+</emphasis>
+, the 
+
+<emphasis id="strong1292" effect="bold">
+
+drawOffscreen
+
+</emphasis>
+ method begins in 
+
+<link id="a1148" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1020" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1020">
+
+			
+
+<row id="tr1040">
+
+				
+
+<entry id="th1020">
+<emphasis id="Listing_21" effect="bold">
+
+Listing 21
+
+</emphasis>
+
+. The drawOffscreen method of the program named PointLine04.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1020">
+
+			
+
+<row id="tr1041">
+
+				
+
+<entry id="td1020">
+
+
+
+<code id="pre1020" display="block">  void drawOffscreen(Graphics2D g2Da,Graphics2D g2Db){
+
+    //Draw a label on each off-screen image.
+    g2Da.drawString("Off-screen image A",
+                    osiWidth/8,
+                    osiHeight/8);
+    g2Db.drawString("Off-screen image B",
+                    osiWidth/8,
+                    osiHeight/8);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1164">
+As before, the purpose of the 
+
+<emphasis id="strong1293" effect="bold">
+
+drawOffscreen
+
+</emphasis>
+ method is to define points, lines, and vectors and then to 
+	cause a visual manifestation of some of the points, lines, and vectors to be 
+	drawn onto two separate off-screen images. Unlike before, however, this 
+	version of the method uses a minimum number of underlying data objects to 
+	produce the output, thereby emphasizing the differences between graphics 
+	objects and underlying data objects.
+
+</para>
+
+
+
+
+<para id="p1165">
+The code in 
+
+<link id="a1149" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+ is essentially the same as before and doesn't require 
+any explanation.
+
+</para>
+
+
+
+
+<para id="p1166">
+<emphasis id="strong1294" effect="bold">
+Borders
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1167">
+As before, and as shown in 
+
+<link id="a1150" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, this method draws borders on each of the 
+off-screen images by drawing lines parallel to the edges of the off-screen 
+images. Each line is offset by one pixel toward the center of the 
+off-screen image.
+
+</para>
+
+
+
+
+<para id="p1168">
+<emphasis id="strong1295" effect="bold">
+Instantiate a point at the upper-left corner
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1169">
+<link id="a1151" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+ instantiates and saves an underlying data object of type 
+
+<emphasis id="strong1296" effect="bold">
+Point
+
+</emphasis>
+ 
+containing coordinate values for the upper left corner. This object will 
+be used as one endpoint for a 
+
+<emphasis id="em1036" effect="italics">
+moveable
+
+</emphasis>
+ 
+
+<emphasis id="strong1297" effect="bold">
+Line
+
+</emphasis>
+ object from which the top and 
+left borders will be drawn.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1021" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1021">
+
+			
+
+<row id="tr1042">
+
+				
+
+<entry id="th1021">
+<emphasis id="Listing_22" effect="bold">
+
+Listing 22
+
+</emphasis>
+
+. Instantiate a point at the upper-left corner. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1021">
+
+			
+
+<row id="tr1043">
+
+				
+
+<entry id="td1021">
+
+
+
+<code id="pre1021" display="block">    GM2D02.Point upperLeftPoint = new GM2D02.Point(
+                           new GM2D02.ColMatrix(1.0,1.0));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+	
+
+<para id="p1170">
+<emphasis id="strong1298" effect="bold">
+Instantiate a moveable Point object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1171">
+<link id="a1152" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+ instantiates a 
+
+<emphasis id="strong1299" effect="bold">
+Point
+
+</emphasis>
+ object that will be used as an 
+endpoint for a moveable line in all four locations.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<table id="table1022" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1022">
+
+			
+
+<row id="tr1044">
+
+				
+
+<entry id="th1022">
+<emphasis id="Listing_23" effect="bold">
+
+Listing 23
+
+</emphasis>
+
+. Instantiate a moveable Point object. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1022">
+
+			
+
+<row id="tr1045">
+
+				
+
+<entry id="td1022">
+
+
+
+<code id="pre1022" display="block">    GM2D02.Point aPoint = new GM2D02.Point(
+         new GM2D02.ColMatrix(osiWidth-1,
+                              upperLeftPoint.getData(1)));
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1172">
+The location of this point will be modified several times during the 
+	drawing of the border by calling the 
+
+<emphasis id="strong1300" effect="bold">
+setData
+
+</emphasis>
+ method on the point. The 
+	initial location of this point is the upper-right corner. 
+
+<emphasis id="em1037" effect="italics">
+(Recall 
+	that the origin is at the upper-left corner of both off-screen images at 
+	this point in the program.)
+
+</emphasis>
+ The call to the 
+
+<emphasis id="strong1301" effect="bold">
+Point
+
+</emphasis>
+ 
+	constructor causes the y-coordinate to be the same as the y-coordinate for 
+	the 
+
+<emphasis id="strong1302" effect="bold">
+Point
+
+</emphasis>
+ object instantiated in 
+
+<link id="a1153" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1173">
+<emphasis id="strong1303" effect="bold">
+Instantiate a moveable Line object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1174">
+<link id="a1154" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+ instantiates a
+
+<emphasis id="strong1304" effect="bold">
+ Line 
+
+</emphasis>
+object that will be modified several 
+times in succession by calling its 
+
+<emphasis id="strong1305" effect="bold">
+setHead
+
+</emphasis>
+ and 
+
+<emphasis id="strong1306" effect="bold">
+setTail
+
+</emphasis>
+ methods to 
+place it in four different locations.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1023" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1023">
+
+			
+
+<row id="tr1046">
+
+				
+
+<entry id="th1023">
+<emphasis id="Listing_24" effect="bold">
+
+Listing 24
+
+</emphasis>
+
+. Instantiate a moveable Line object. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1023">
+
+			
+
+<row id="tr1047">
+
+				
+
+<entry id="td1023">
+
+
+
+<code id="pre1023" display="block">    GM2D02.Line theLine = new GM2D02.Line(
+                                   upperLeftPoint,aPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1175">
+This 
+
+<emphasis id="strong1307" effect="bold">
+Line
+
+</emphasis>
+ object will be used to draw the top, right, bottom, and 
+	left lines that make up the border. It is used in 
+
+<link id="a1155" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+ to cause a 
+	graphical 
+
+<emphasis id="strong1308" effect="bold">
+Line2D.Double
+
+</emphasis>
+ object to be instantiated and rendered as the 
+	line at the top of both of the off-screen images.
+
+</para>
+
+
+
+
+<para id="p1176">
+<emphasis id="strong1309" effect="bold">
+Relocate the Line to three more locations
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1177">
+<link id="a1156" target-id="Listing_25">
+
+Listing 25
+
+</link>
+
+ calls various methods of the 
+
+<emphasis id="strong1310" effect="bold">
+Point
+
+</emphasis>
+ and 
+
+<emphasis id="strong1311" effect="bold">
+Line
+
+</emphasis>
+ classes
+
+
+<emphasis id="em1038" effect="italics">
+(including 
+
+<emphasis id="strong1312" effect="bold">
+setData
+
+</emphasis>
+, 
+
+<emphasis id="strong1313" effect="bold">
+setTail
+
+</emphasis>
+, and 
+
+<emphasis id="strong1314" effect="bold">
+setHead
+
+</emphasis>
+)
+
+</emphasis>
+ to 
+relocate the 
+
+<emphasis id="strong1315" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ object to three more locations, each parallel to 
+an edge of an off-screen image.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1024" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1024">
+
+			
+
+<row id="tr1048">
+
+				
+
+<entry id="th1024">
+<emphasis id="Listing_25" effect="bold">
+
+Listing 25
+
+</emphasis>
+
+. Relocate the Line to three more locations. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1024">
+
+			
+
+<row id="tr1049">
+
+				
+
+<entry id="td1024">
+
+
+
+<code id="pre1024" display="block">    //Draw right border.
+    //Save the previous head as the new tail.
+    theLine.setTail(theLine.getHead());
+    //Modify the location of aPoint. There's no need to
+    // change the x-coordinate. Just change the
+    // y-coordinate to move the point down the screen in
+    // the positive y direction to the lower-right corner.
+    aPoint.setData(1,osiHeight-1);
+    //Use the new location of aPoint as the new head.
+    theLine.setHead(aPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+    
+    //Draw bottom border. There's no need to change the
+    // y-coordinate in the new point, which is located
+    // at the lower-left corner.
+    theLine.setTail(theLine.getHead());
+    aPoint.setData(0,1.0);
+    theLine.setHead(aPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+
+    //Draw left border to close the rectangular border.
+    theLine.setTail(theLine.getHead());
+    theLine.setHead(upperLeftPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1178">
+<emphasis id="strong1316" effect="bold">
+Draw the border
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1179">
+While the single 
+
+<emphasis id="strong1317" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ object is at each location, 
+
+<emphasis id="strong1318" effect="bold">
+draw
+
+</emphasis>
+ 
+methods are called to cause a 
+
+<emphasis id="strong1319" effect="bold">
+Line2D.Double
+
+</emphasis>
+ object to be instantiated and 
+rendered on each of the off-screen images. This results in four different 
+visual manifestations of the single 
+
+<emphasis id="strong1320" effect="bold">
+GM2D02.Line
+
+</emphasis>
+ object, producing visible 
+lines at the edges of each off-screen image. Although this code is not 
+particularly straightforward, the embedded comments should suffice to explain 
+it.
+
+</para>
+
+
+
+
+<para id="p1180">
+<emphasis id="strong1321" effect="bold">
+Draw the hexagon
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1181">
+Essentially the same process is used to draw the hexagon shown in the left 
+image in 
+
+<link id="a1157" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. You can view the code that does that in 
+
+<link id="a1158" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+. 
+Once you understand the code that I explained above, you should have no 
+difficulty understanding the code that draws the hexagon.
+
+</para>
+
+
+
+
+<para id="p1182">
+<emphasis id="strong1322" effect="bold">
+Draw the vectors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1183">
+A very similar process is used to draw the vectors shown in the right image 
+in 
+
+<link id="a1159" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. You can view the code in 
+
+<link id="a1160" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+. Once again, if you 
+understand the code that I explained above, you should have no difficulty 
+understanding the code that draws the vectors.
+
+</para>
+
+
+
+
+<para id="p1184">
+That ends the explanation of the program named 
+
+<emphasis id="strong1323" effect="bold">
+PointLine04
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Documentation_for_the_GM2D02_library" effect="bold">
+
+Documentation 
+for the GM2D02 library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1185">
+Click 
+
+<link id="a1161" url="GM2D02docs.zip">
+
+here
+
+</link>
+
+ to download a zip file containing 
+standard javadoc documentation for the library named 
+
+<emphasis id="strong1324" effect="bold">
+GM2D02
+
+</emphasis>
+. 
+Extract the contents of the zip file into an empty folder and open the file 
+named 
+
+<emphasis id="strong1325" effect="bold">
+index.html
+
+</emphasis>
+ in your browser to view the documentation.
+
+</para>
+
+
+
+
+<para id="p1186">
+Although the documentation doesn't provide much in the way of explanatory 
+text 
+
+<emphasis id="em1039" effect="italics">
+(see 
+
+<link id="a1162" target-id="Listing_26">
+
+Listing 
+
+</link>
+
+
+</emphasis>
+<link id="a1163" target-id="Listing_26">
+
+26
+
+</link>
+
+
+<emphasis id="em1040" effect="italics">
+ 
+and the explanations given above)
+
+</emphasis>
+, the documentation does provide a good 
+overview of the organization and structure of the library. You may find it 
+helpful in that regard. 
+
+</para>
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Homework_assignment" effect="bold">
+
+Homework assignment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1187">
+Your homework assignment for this module was to study Kjell's 
+
+<emphasis id="em1041" effect="italics">
+CHAPTER 0 -- Points and Lines
+
+</emphasis>
+ plus 
+
+
+<emphasis id="em1042" effect="italics">
+CHAPTER 1 -- Vectors, Points, and Column 
+Matrices
+
+</emphasis>
+ down through the topic titled 
+
+<emphasis id="em1043" effect="italics">
+Variables as Elements
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1188">
+The homework assignment for the next module is to study the Kjell tutorial through 
+
+
+<emphasis id="em1044" effect="italics">
+Chapter 2 -- Column and Row Matrix Addition
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1189">
+In addition to studying the Kjell material, you should read at least the next 
+two modules in this collection and bring your questions about that material to 
+the next classroom session.
+
+</para>
+
+
+
+
+<para id="p1190">
+Finally, you should have begun studying the
+
+
+<link id="a1164" url="http://cnx.org/content/m44992/latest/">
+
+physics material
+
+</link>
+
+ at the 
+beginning of the semester and you should continue studying one physics module per week 
+thereafter. You should also feel free to 
+bring your questions about that material to the classroom for discussion.
+
+
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1191">
+I encourage you to copy the code from 
+
+<link id="a1165" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+, 
+
+<link id="a1166" target-id="Listing_27">
+
+Listing 27
+
+</link>
+
+, and 
+
+<link id="a1167" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+, 
+compile it, and execute it. Experiment with it, making changes, and observing 
+the results of your changes. Make certain that you can explain why your changes 
+behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Summary" effect="bold">
+
+Summary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1192">
+In this module, you learned how to update the game-math library to provide a 
+number of new capabilities including the addition of graphics to the library and 
+the addition of 
+
+<emphasis id="strong1326" effect="bold">
+set
+
+</emphasis>
+ methods for column matrices, points, vectors, and 
+lines.
+
+</para>
+
+
+
+
+<para id="p1193">
+You also saw sample programs that illustrate the use of those new capabilities 
+and you learned how to draw on off-screen images.
+
+</para>
+
+
+
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="Whats_next" effect="bold">
+
+What's next?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1194">
+In the next module, you will learn how to compare column matrices for 
+equality, how to compare two points for equality, how to compare two vectors for 
+equality, how to add one column matrix to another, how to subtract one column 
+matrix from another, and how to get a displacement vector from one point to 
+another.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1195">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1327" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1013" list-type="bulleted">
+
+					
+
+<item id="li1084">
+Module name: GAME2302-0110: Updating the Game Math Library for Graphics
+
+</item>
+
+
+					
+
+<item id="li1085">
+File: Game0110.htm 
+
+</item>
+
+
+					
+
+<item id="li1086">
+Published: 10/14/12
+
+</item>
+
+
+					
+
+<item id="li1087">
+Revised: 02/01/16 
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1328" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1196">
+<emphasis id="strong1329" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1197">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1198">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1199">
+<emphasis id="strong1330" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11011">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1200">
+Complete listings of the programs discussed in this module are shown in 
+
+
+<link id="a1168" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+ through 
+
+<link id="a1169" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+ below.
+
+</para>
+
+
+
+
+
+<para id="p1201">
+<emphasis id="strong1331" effect="bold">
+<emphasis id="Listing_26" effect="bold">
+
+Listing 26
+
+</emphasis>
+
+. Source code for the game-math library class named GM2D02.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1025" display="block">/*GM2D02.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/03/08
+
+The name GM2Dnn is an abbreviation for GameMath1Dnn.
+
+See the file named GM2D01.java for a general description 
+of this game-math library file. This file is an update of 
+GM2D01.
+
+This update added the following new capabilities:
+
+Draw circles around points
+Draw lines
+Draw vectors
+Call a set method to change the values in a
+ ColMatrix object.
+Call a set method to change the values in a
+ Point object.
+Call a set method to change the values in a
+ Vector object.
+Call a set method to change one of the points
+ that defines a line.
+
+Constructors were updated to ensure that existing points,
+vectors, and lines are not corrupted by using the new 
+set methods to change the values in the ColMatrix and/or
+Point objects originally used to construct the points, 
+vectors, and lines.
+
+The updated constructors create and save clones of the 
+ColMatrix and/or Point objects originally used to define 
+the Point, Vector, and/or Line objects.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.geom.*;
+import java.awt.*;
+
+public class GM2D02{
+
+  //An object of this class represents a 2D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix{
+    double[] data = new double[2];
+    
+    ColMatrix(double data0,double data1){//constructor
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    //--------------------------------------------------//
+    
+    public String toString(){
+      return data[0] + "," + data[1];
+    }//end overridden toString method
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return data[index];
+      }//end else
+    }//end getData method
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        this.data[index] = data;
+      }//end else
+    }//end setData method
+    //--------------------------------------------------//
+  }//end class ColMatrix
+  //====================================================//
+  
+  public static class Point{
+    GM2D02.ColMatrix point;
+    
+    Point(GM2D02.ColMatrix point){//constructor
+      //Create and save a clone of the ColMatrix object
+      // used to define the point to prevent the point
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix object
+      // through use of its set method.
+      this.point = 
+         new ColMatrix(point.getData(0),point.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        return point.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        point.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a small circle around the location
+    // of the point on the specified graphics context.
+    public void draw(Graphics2D g2D){
+      Ellipse2D.Double circle = 
+                        new Ellipse2D.Double(getData(0)-3,
+                                             getData(1)-3,
+                                             6,
+                                             6);
+      g2D.draw(circle);
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Point
+  //====================================================//
+  
+  public static class Vector{
+    GM2D02.ColMatrix vector;
+    
+    Vector(GM2D02.ColMatrix vector){//constructor
+      //Create and save a clone of the ColMatrix object
+      // used to define the vector to prevent the vector
+      // from being corrupted by a later change in the
+      // values stored in the original ColMatrix object.
+      this.vector = new ColMatrix(
+                     vector.getData(0),vector.getData(1));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    //--------------------------------------------------//
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)){
+        throw new IndexOutOfBoundsException();
+      }else{
+        return vector.getData(index);
+      }//end else
+    }//end getData
+    //--------------------------------------------------//
+    
+    public void setData(int index,double data){
+      if((index &lt; 0) || (index &gt; 1)){ 
+        throw new IndexOutOfBoundsException();
+      }else{
+        vector.setData(index,data);
+      }//end else
+    }//end setData
+    //--------------------------------------------------//
+    
+    //This method draws a vector on the specified graphics
+    // context, with the tail of the vector located at a
+    // specified point, and with a small circle at the
+    // head.
+    public void draw(Graphics2D g2D,GM2D02.Point tail){
+      Line2D.Double line = new Line2D.Double(
+                       tail.getData(0),
+                       tail.getData(1),
+                       tail.getData(0)+vector.getData(0),
+                       tail.getData(1)+vector.getData(1));
+
+    //Draw a small circle to identify the head.
+      Ellipse2D.Double circle = new Ellipse2D.Double(
+                      tail.getData(0)+vector.getData(0)-2,
+                      tail.getData(1)+vector.getData(1)-2,
+                      4,
+                      4);
+      g2D.draw(circle);
+      g2D.draw(line);
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Vector
+  //====================================================//
+  
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line{
+    GM2D02.Point[] line = new GM2D02.Point[2];
+    
+    Line(GM2D02.Point tail,GM2D02.Point head){
+      //Create and save clones of the points used to
+      // define the line to prevent the line from being 
+      // corrupted by a later change in the coordinate
+      // values of the points.
+      this.line[0] = new Point(new GM2D02.ColMatrix(
+                        tail.getData(0),tail.getData(1)));
+      this.line[1] = new Point(new GM2D02.ColMatrix(
+                        head.getData(0),head.getData(1)));
+    }//end constructor
+    //--------------------------------------------------//
+
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    //--------------------------------------------------//
+
+    public GM2D02.Point getTail(){
+      return line[0];
+    }//end getTail
+    //--------------------------------------------------//
+    
+    public GM2D02.Point getHead(){
+      return line[1];
+    }//end getHead
+    //--------------------------------------------------//
+    
+    public void setTail(GM2D02.Point newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[0] = new Point(new GM2D02.ColMatrix(
+              newPoint.getData(0),newPoint.getData(1)));
+    }//end setTail
+    //--------------------------------------------------//
+    
+    public void setHead(GM2D02.Point newPoint){
+      //Create and save a clone of the new point to
+      // prevent the line from being corrupted by a
+      // later change in the coordinate values of the
+      // point.
+      this.line[1] = new Point(new GM2D02.ColMatrix(
+              newPoint.getData(0),newPoint.getData(1)));
+    }//end setHead
+    //--------------------------------------------------//
+    
+    public void draw(Graphics2D g2D){
+      Line2D.Double line = new Line2D.Double(
+                                    getTail().getData(0),
+                                    getTail().getData(1),
+                                    getHead().getData(0),
+                                    getHead().getData(1));
+      g2D.draw(line);
+    }//end draw
+    //--------------------------------------------------//
+  }//end class Line
+  //====================================================//
+
+}//end class GM2D02
+</code>
+
+
+
+
+
+
+<para id="p1202">
+<emphasis id="strong1332" effect="bold">
+<emphasis id="Listing_27" effect="bold">
+
+ Listing 27
+
+</emphasis>
+
+. Source code for the program named PointLine03.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1026" display="block">/*PointLine03.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/03/08
+
+This program illustrates the use of draw methods that
+were added to the GM2D02 game-math library to produce 
+visual manifestations of point, line, and vector objects 
+instantiated from classes in the game-math library
+named GM2D02.
+
+The program also illustrates drawing on off-screen images
+and then copying those images to a Canvas object in an
+overridden paint method.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+
+class PointLine03{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class PointLine03
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 200;
+  Image osiA;//one off-screen image
+  Image osiB;//another off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth()/2;
+    osiHeight = myCanvas.getHeight();
+
+    //Create two off-screen images and get a graphics
+    // context on each.
+    osiA = createImage(osiWidth,osiHeight);
+    Graphics2D g2Da = (Graphics2D)(osiA.getGraphics());
+    
+    osiB = createImage(osiWidth,osiHeight);
+    Graphics2D g2Db = (Graphics2D)(osiB.getGraphics());
+    
+    //Draw some points, lines, and vectors on the two
+    // off-screen images.
+    drawOffscreen(g2Da,g2Db);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to define points, lines,
+  // and vectors and then to cause a visual manifestation
+  // of some of the points, lines, and vectors to be
+  // drawn onto two separate off-screen images.
+  void drawOffscreen(Graphics2D g2Da,Graphics2D g2Db){
+    
+    //Draw a label on each off-screen image.
+    g2Da.drawString("Off-screen image A",
+                    osiWidth/8,
+                    osiHeight/8);
+    g2Db.drawString("Off-screen image B",
+                    osiWidth/8,
+                    osiHeight/8);
+    
+    //Define four lines that can be used to draw borders
+    // on each of the off-screen images.
+    //First define four points that will be used to define
+    // the ends of the four lines.
+    GM2D02.Point upperLeftPoint = new GM2D02.Point(
+                           new GM2D02.ColMatrix(1.0,1.0));
+    GM2D02.Point upperRightPoint = new GM2D02.Point(
+                    new GM2D02.ColMatrix(osiWidth-1,1.0));
+    GM2D02.Point lowerRightPoint = new GM2D02.Point(
+            new GM2D02.ColMatrix(osiWidth-1,osiHeight-1));
+    GM2D02.Point lowerLeftPoint = new GM2D02.Point(
+                   new GM2D02.ColMatrix(1.0,osiHeight-1));
+    
+    //Now define the four lines based on the endpoints..
+    GM2D02.Line top = new GM2D02.Line(upperLeftPoint,
+                                      upperRightPoint);
+    GM2D02.Line rightSide = new GM2D02.Line(
+                                         upperRightPoint,
+                                         lowerRightPoint);
+    GM2D02.Line bottom = new GM2D02.Line(lowerLeftPoint,
+                                         lowerRightPoint);
+    GM2D02.Line leftSide = new GM2D02.Line(upperLeftPoint,
+                                          lowerLeftPoint);
+    
+    //Now draw a visual manifestation of each line
+    // on g2Da.
+    top.draw(g2Da);
+    rightSide.draw(g2Da);
+    bottom.draw(g2Da);
+    leftSide.draw(g2Da);
+    
+    //Now draw a visual manifestation of each of the same
+    // four lines on g2Db
+    top.draw(g2Db);
+    rightSide.draw(g2Db);
+    bottom.draw(g2Db);
+    leftSide.draw(g2Db);
+    
+    //Translate the origin of g2Da to the center of the
+    // off-screen image.
+    g2Da.translate(osiWidth/2.0,osiHeight/2.0);
+    
+    //Define a point at the new origin and draw a visual
+    // manifestation of the point.
+    GM2D02.Point origin = new GM2D02.Point(
+                           new GM2D02.ColMatrix(0.0,0.0));
+    origin.draw(g2Da);
+    
+    //Define six points that define the vertices of a
+    // hexagon that is symmetrically located relative to
+    // the origin.  Begin at the right and move clockwise
+    // around the origin.
+    //First define three constants to make it easier to
+    // write the code.
+    final double aVal = osiWidth/4.0*0.5;
+    final double bVal = osiWidth/4.0*0.866;
+    final double cVal = osiWidth/4.0;
+    //Now define the points.
+    GM2D02.Point point0 = new GM2D02.Point(
+                          new GM2D02.ColMatrix(cVal,0.0));
+    GM2D02.Point point1 = new GM2D02.Point(
+                         new GM2D02.ColMatrix(aVal,bVal));
+    GM2D02.Point point2 = new GM2D02.Point(
+                        new GM2D02.ColMatrix(-aVal,bVal));
+    GM2D02.Point point3 = new GM2D02.Point(
+                         new GM2D02.ColMatrix(-cVal,0.0));
+    GM2D02.Point point4 = new GM2D02.Point(
+                       new GM2D02.ColMatrix(-aVal,-bVal));
+    GM2D02.Point point5 = new GM2D02.Point(
+                        new GM2D02.ColMatrix(aVal,-bVal));
+    
+    //Now draw a visual manifestation of each of the six
+    // points on g2Da.
+    point0.draw(g2Da);
+    point1.draw(g2Da);
+    point2.draw(g2Da);
+    point3.draw(g2Da);
+    point4.draw(g2Da);
+    point5.draw(g2Da);
+    
+    //Now define six lines using the six points taken in
+    // pairs to define the endpoints of the lines.
+    GM2D02.Line line01 = new GM2D02.Line(point0,point1);
+    GM2D02.Line line12 = new GM2D02.Line(point1,point2);
+    GM2D02.Line line23 = new GM2D02.Line(point2,point3);
+    GM2D02.Line line34 = new GM2D02.Line(point3,point4);
+    GM2D02.Line line45 = new GM2D02.Line(point4,point5);
+    GM2D02.Line line50 = new GM2D02.Line(point5,point0);
+
+    //Now draw a visual manifestation of each line
+    // on g2Da.
+    line01.draw(g2Da);
+    line12.draw(g2Da);
+    line23.draw(g2Da);
+    line34.draw(g2Da);
+    line45.draw(g2Da);
+    line50.draw(g2Da);
+
+    
+    //Now define three vectors and draw visual
+    // manifestations of the vectors on g2Db.
+    GM2D02.Vector vecA = new GM2D02.Vector(
+                            new GM2D02.ColMatrix(50,100));
+    GM2D02.Vector vecB = new GM2D02.Vector(
+                             new GM2D02.ColMatrix(75,25));
+    GM2D02.Vector vecC = new GM2D02.Vector(
+                           new GM2D02.ColMatrix(125,125));
+    
+    //Draw vecA in red with its tail at the origin, which
+    // is still at the upper-left corner of the g2Db
+    // off-screen image
+    g2Db.setColor(Color.RED);
+    vecA.draw(g2Db,new GM2D02.Point(
+                              new GM2D02.ColMatrix(0,0)));
+    
+    //Draw three visual manifestations of vecB.  Cause
+    // the tail of vecB to coincide with the head of vecA
+    // in one of the three visual manifestations. Make all
+    // three of them green.
+    g2Db.setColor(Color.GREEN);
+    vecB.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                       vecA.getData(0),vecA.getData(1))));
+    vecB.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                 vecA.getData(0)-10,vecA.getData(1)+15)));
+    vecB.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                 vecA.getData(0)+10,vecA.getData(1)-60)));
+
+    //Draw vecC in blue with its tail at the origin.
+    g2Db.setColor(Color.BLUE);
+    vecC.draw(g2Db,new GM2D02.Point(
+                              new GM2D02.ColMatrix(0,0)));
+
+  }//end drawOffscreen
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the two
+    // off-screen images on the screen in a side-by-side
+    // format.
+    public void paint(Graphics g){
+      g.drawImage(osiA,0,0,this);
+      g.drawImage(osiB,this.getWidth()/2,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+
+
+
+<para id="p1203">
+<emphasis id="strong1333" effect="bold">
+<emphasis id="Listing_28" effect="bold">
+
+Listing 28
+
+</emphasis>
+
+. Source code for the program named PointLine04.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1027" display="block">/*PointLine04.java 
+Copyright 2008, R.G.Baldwin
+Revised 02/03/08
+
+This program emphasizes the differences between graphics 
+objects and underlying data objects.  It also illustrates 
+the use of the new setData methods of the Point class and 
+the Vector class, along with the new setTail and setHead 
+methods of the Line class. The methods were added to the
+game-math library when it was updated to the GM2D02
+version.
+
+This program produces the same graphic output as that 
+produced by PointLine03, but it produces that output in
+a significantly different way.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.*;
+import javax.swing.*;
+
+class PointLine04{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class PointLine04
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 400;
+  int vSize = 200;
+  Image osiA;//one off-screen image
+  Image osiB;//another off-screen image
+  int osiWidth;//off-screen image width
+  int osiHeight;//off-screen image height
+  MyCanvas myCanvas;//a subclass of Canvas
+  
+  GUI(){//constructor
+    //Set JFrame size, title, and close operation.
+    setSize(hSize,vSize);
+    setTitle("Copyright 2008,R.G.Baldwin");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+    
+    //This object must be visible before you can get an
+    // off-screen image.  It must also be visible before
+    // you can compute the size of the canvas.
+    setVisible(true);
+    osiWidth = myCanvas.getWidth()/2;
+    osiHeight = myCanvas.getHeight();
+
+    //Create two off-screen images and get a graphics
+    // context on each.
+    osiA = createImage(osiWidth,osiHeight);
+    Graphics2D g2Da = (Graphics2D)(osiA.getGraphics());
+    
+    osiB = createImage(osiWidth,osiHeight);
+    Graphics2D g2Db = (Graphics2D)(osiB.getGraphics());
+  
+    //Draw some points, lines, and vectors on the two
+    // off-screen images.
+    drawOffscreen(g2Da,g2Db);
+
+    //Cause the overridden paint method belonging to
+    // myCanvas to be executed.
+    myCanvas.repaint();
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  //The purpose of this method is to define points, lines,
+  // and vectors and then to cause a visual manifestation
+  // of some of the points, lines, and vectors to be
+  // drawn onto two separate off-screen images. The method
+  // uses a minimum number of underlying data objects to 
+  // produce the output, thereby emphasizing the
+  // differences between graphics objects and underlying
+  // data objects.
+  void drawOffscreen(Graphics2D g2Da,Graphics2D g2Db){
+
+    //Draw a label on each off-screen image.
+    g2Da.drawString("Off-screen image A",
+                    osiWidth/8,
+                    osiHeight/8);
+    g2Db.drawString("Off-screen image B",
+                    osiWidth/8,
+                    osiHeight/8);
+    
+    //Draw borders on each of the off-screen images by
+    // drawing lines parallel to the edges of the
+    // off-screen. Each line is offset by one pixel toward
+    // the center of the off-screen image.
+    //First define and save a point at the upper left
+    // corner that will be used as an endpoint of the
+    // top and left borders.
+    GM2D02.Point upperLeftPoint = new GM2D02.Point(
+                           new GM2D02.ColMatrix(1.0,1.0));
+
+    //Define a point that will be used as an endpoint for
+    // all four lines. The location of this point will be
+    // modified several times during the drawing of the
+    // border by calling the set method on the point. The
+    // initial location of this point is the upper-right
+    // corner. Remember, the origin is at the upper-left
+    // corner of the off-screen images at this point in
+    // the program. Make the y-coordinate the same as the
+    // y-coordinate for the upperLeftPoint.
+    GM2D02.Point aPoint = new GM2D02.Point(
+         new GM2D02.ColMatrix(osiWidth-1,
+                              upperLeftPoint.getData(1)));
+
+    //Define a line that will be modified several times in
+    // succession by calling its set methods to draw the
+    // top, right, bottom, and left lines that make up the
+    // border. Use it here to draw the line at the top
+    // of both of the off-screen images.
+    GM2D02.Line theLine = new GM2D02.Line(
+                                   upperLeftPoint,aPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);                    
+
+    //Draw right border.
+    //Save the previous head as the new tail.
+    theLine.setTail(theLine.getHead());
+    //Modify the location of aPoint. There's no need to
+    // change the x-coordinate. Just change the
+    // y-coordinate to move the point down the screen in
+    // the positive y direction to the lower-right corner.
+    aPoint.setData(1,osiHeight-1);
+    //Use the new location of aPoint as the new head.
+    theLine.setHead(aPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+    
+    //Draw bottom border. There's no need to change the
+    // y-coordinate in the new point, which is located
+    // at the lower-left corner.
+    theLine.setTail(theLine.getHead());
+    aPoint.setData(0,1.0);
+    theLine.setHead(aPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+
+    //Draw left border to close the rectangular border.
+    theLine.setTail(theLine.getHead());
+    theLine.setHead(upperLeftPoint);
+    theLine.draw(g2Da);
+    theLine.draw(g2Db);
+
+
+    //Translate the origin of g2Da to the center of the
+    // off-screen image.
+    g2Da.translate(osiWidth/2.0,osiHeight/2.0);
+    
+    //Define a point at the new origin and draw a visual
+    // manifestation of the point.
+    GM2D02.Point origin = new GM2D02.Point(
+                           new GM2D02.ColMatrix(0.0,0.0));
+    origin.draw(g2Da);
+    
+    //Define two points and one line and use them to
+    // define and draw a hexagon that is symmetrically
+    // located relative to the origin.  Begin at the right
+    // and move clockwise around the origin.
+
+    //First establish three constants to make it easier
+    // to write the code.
+    final double aVal = osiWidth/4.0*0.5;
+    final double bVal = osiWidth/4.0*0.866;
+    final double cVal = osiWidth/4.0;
+
+    //The coordinates of the following point are modified
+    // several times in succession to define the vertices
+    // of the hexagon.  Instantiate the point and draw it.
+    GM2D02.Point thePoint = new GM2D02.Point(
+                          new GM2D02.ColMatrix(cVal,0.0));
+    thePoint.draw(g2Da);
+    
+    //Save a clone of thePoint to be used to draw the
+    // first line and the last line that closes the
+    // hexagon.
+    GM2D02.Point startAndEndPoint = new GM2D02.Point(
+              new GM2D02.ColMatrix(
+                thePoint.getData(0),thePoint.getData(1)));
+    
+    //Now call the set method twice to modify the location
+    // of thePoint, Draw thePoint, and use it to
+    // instantiate and draw a line from the starting
+    // location to the new location.
+    thePoint.setData(0,aVal);
+    thePoint.setData(1,bVal);
+    thePoint.draw(g2Da);
+    GM2D02.Line aLine = new GM2D02.Line(
+                               startAndEndPoint,thePoint);
+    aLine.draw(g2Da);
+   
+    //Repeat the process four more times using
+    // startAndEndPoint, thePoint, and aLine to draw the
+    // remaining vertices and lines.
+    //Modify aLine, saving the previous head as the new
+    // tail.
+    aLine.setTail(aLine.getHead());
+    //Modify the location of aPoint and draw it. There's
+    // no need to change the y-coordinate of the point.
+    thePoint.setData(0,-aVal);
+    thePoint.draw(g2Da);
+    //Modify the endpoint of aLine and draw it.
+    aLine.setHead(thePoint);  
+    aLine.draw(g2Da);
+
+    aLine.setTail(aLine.getHead());
+    thePoint.setData(0,-cVal);
+    thePoint.setData(1,0.0);
+    thePoint.draw(g2Da);
+    aLine.setHead(thePoint);
+    aLine.draw(g2Da);
+
+    aLine.setTail(aLine.getHead());
+    thePoint.setData(0,-aVal);
+    thePoint.setData(1,-bVal);
+    thePoint.draw(g2Da);
+    aLine.setHead(thePoint);
+    aLine.draw(g2Da);
+    
+    aLine.setTail(aLine.getHead());
+    thePoint.setData(0,aVal);
+    //No need to change the y-coordinate.
+    thePoint.draw(g2Da);
+    aLine.setHead(thePoint);
+    aLine.draw(g2Da);
+    
+    //Now modify and draw aLine to close the hexagon.
+    aLine.setTail(aLine.getHead());
+    aLine.setHead(startAndEndPoint);
+    aLine.draw(g2Da);
+
+    
+    //Now define a vector, call the set method to modify
+    // it several times, and draw different visual
+    // manifestations of the vector on g2Db.
+    //First define two constants to make it easier to
+    // write the code.
+    final double firstTail = 50;
+    final double firstHead = 100;    
+    
+    GM2D02.Vector vec = new GM2D02.Vector(
+               new GM2D02.ColMatrix(firstTail,firstHead));
+    //Draw vec in red with its tail at the origin, which
+    // is still at the upper-left corner of the g2Db
+    // off-screen image
+    g2Db.setColor(Color.RED);
+    vec.draw(g2Db,new GM2D02.Point(
+                              new GM2D02.ColMatrix(0,0)));
+                            
+    //Call the set method to modify vec.
+    vec.setData(0,75);
+    vec.setData(1,25);
+    //Draw three visual manifestations of vec.  Cause
+    // the tail to coincide with the head of the previous
+    // visual manifestation of vec in one of the three new
+    // visual manifestations. Make all three of them
+    // green.
+    g2Db.setColor(Color.GREEN);
+    vec.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                                   firstTail,firstHead)));
+    vec.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                             firstTail-10,firstHead+15)));
+    vec.draw(g2Db,new GM2D02.Point(new GM2D02.ColMatrix(
+                             firstTail+10,firstHead-60)));
+
+    //Call the set method to modify vec again.
+    vec.setData(0,125);
+    vec.setData(1,125);
+
+    //Draw the modified vec in blue with its tail at the
+    // origin.
+    g2Db.setColor(Color.BLUE);
+    vec.draw(g2Db,new GM2D02.Point(
+                              new GM2D02.ColMatrix(0,0)));
+
+  }//end drawOffScreen
+  //====================================================//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas appear on the
+    // screen or when the repaint method is called on the
+    // Canvas object.
+    //The purpose of this method is to display the two
+    // off-screen images on the screen in a side-by-side
+    // format.
+    public void paint(Graphics g){
+      g.drawImage(osiA,0,0,this);
+      g.drawImage(osiB,this.getWidth()/2,0,this);
+    }//end overridden paint()
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+
+	
+
+
+</section>
+<section id="h11012">
+<title>
+<emphasis id="Exercises" effect="bold">
+
+Exercises
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21004">
+<title>
+<emphasis id="Exercise_1" effect="bold">
+
+Exercise 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1204">
+Using Java and the game-math library named 
+
+<emphasis id="strong1334" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws a horizontal 
+line segment and a vertical line segment representing the x and y axes in a 2D 
+Cartesian coordinate system as shown in 
+
+<link id="a1170" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1205">
+Cause the origin of your reference frame be at the center
+of your drawing.
+
+
+
+</para>
+
+
+
+
+<para id="p1206">
+Cause the positive x direction be to the right.
+
+
+</para>
+
+
+
+
+<para id="p1207">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1208">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1209">
+<emphasis id="Figure_2" effect="bold">
+
+
+<emphasis id="strong1335" effect="bold">
+Figure 2
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1336" effect="bold">
+ Graphic output from Exercise 1.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1210">
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/0110ex01.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Exercise_2" effect="bold">
+
+Exercise 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1211">
+Using Java and the game-math library named 
+
+<emphasis id="strong1337" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws x and y axes in a 2D 
+Cartesian coordinate system as shown in 
+
+<link id="a1171" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1212">
+Cause the origin of your reference frame be at the center
+of your drawing.
+
+
+
+</para>
+
+
+
+
+<para id="p1213">
+Cause the positive x direction be to the right.
+
+
+</para>
+
+
+
+
+<para id="p1214">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1215">
+Then draw small circles that represent the locations of points
+at the following coordinates in the reference frame as shown in 
+
+
+<link id="a1172" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1088">
+x = -30, y = -40
+
+
+</item>
+
+
+	
+
+<item id="li1089">
+x = 30, y = -40
+
+
+</item>
+
+
+	
+
+<item id="li1090">
+x = 30, y = 40
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1216">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1217">
+<emphasis id="Figure_3" effect="bold">
+
+
+<emphasis id="strong1338" effect="bold">
+Figure 3
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1339" effect="bold">
+ Graphic output from Exercise 2.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1218">
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/0110ex02.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Exercise_3" effect="bold">
+
+Exercise 3
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1219">
+Using Java and the game-math library named 
+
+<emphasis id="strong1340" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws x 
+and y axes in a 2D Cartesian coordinate system as shown in 
+
+<link id="a1173" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1220">
+Cause the origin of your reference frame be at the center of your drawing. 
+
+</para>
+
+
+
+
+<para id="p1221">
+Cause the positive x direction be to the right. 
+
+</para>
+
+
+
+
+<para id="p1222">
+Cause the positive y direction be either up or down according to your choice.
+
+
+</para>
+
+
+
+
+<para id="p1223">
+Create six random values in the range 
+from -128 to +127. Use those values as the x and y 
+coordinates for three points in the 2D reference frame.
+
+
+
+<emphasis id="em1045" effect="italics">
+(The code fragment in 
+
+<link id="a1174" target-id="Listing_29">
+
+Listing 29
+
+</link>
+
+ shows how to 
+generate random values in the required range in Java.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1224">
+Display the six values on a text screen labeled in 
+such a way that it is possible to associate the values 
+with the points as shown in 
+
+<link id="a1175" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+
+
+</para>
+
+
+
+
+<para id="p1225">
+Draw three small circles that represent the locations 
+of the points.
+
+
+
+</para>
+
+
+
+
+<para id="p1226">
+Draw three line segments that connect the three points 
+in pairs creating the shape of a triangle.
+
+
+
+</para>
+
+
+
+
+<para id="p1227">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1228">
+<emphasis id="Figure_4" effect="bold">
+
+
+<emphasis id="strong1341" effect="bold">
+Figure 4
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1342" effect="bold">
+ Graphic output from Exercise 3.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1229">
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/0110ex03.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1025" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1025">
+
+			
+
+<row id="tr1050">
+
+				
+
+<entry id="th1025">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Text output from Exercise 3.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1025">
+
+			
+
+<row id="tr1051">
+
+				
+
+<entry id="td1025">
+
+
+
+<code id="pre1028" display="block">
+point0X: -55
+point0Y: 17
+point1X: 9
+point1Y: -37
+point2X: 14
+point2Y: 62</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+	
+
+<table id="table1026" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1026">
+
+			
+
+<row id="tr1052">
+
+				
+
+<entry id="th1026">
+<emphasis id="Listing_29" effect="bold">
+
+Listing 29.
+
+</emphasis>
+
+ Code for generating random values in Java.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1026">
+
+			
+
+<row id="tr1053">
+
+				
+
+<entry id="td1026">
+
+
+
+<code id="pre1029" display="block">
+    //Define three randomly located points.
+    Random generator = new Random(new Date().getTime());
+    point0X = (byte)generator.nextInt();
+    point0Y = (byte)generator.nextInt();
+    point1X = (byte)generator.nextInt();
+    point1Y = (byte)generator.nextInt();
+    point2X = (byte)generator.nextInt();
+    point2Y = (byte)generator.nextInt();
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Exercise_4" effect="bold">
+
+Exercise 4
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1230">
+Using Java and the game-math library named 
+
+<emphasis id="strong1343" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws  three small circles that represent the
+locations of points at the following coordinates in a 2D
+reference frame.
+
+
+
+</para>
+
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+	
+
+<item id="li1091">
+point0X = -30
+
+
+</item>
+
+
+	
+
+<item id="li1092">
+point0Y = 0
+
+
+
+</item>
+
+
+	
+
+<item id="li1093">
+point1X = 30
+
+
+</item>
+
+
+	
+
+<item id="li1094">
+point1Y = 40
+
+
+
+</item>
+
+
+	
+
+<item id="li1095">
+point2X = 30
+
+
+</item>
+
+
+	
+
+<item id="li1096">
+point2Y = -40
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1231">
+Then draw three line segments that extend from
+edge-to-edge of your drawing and intersect the three
+points in pairs as shown in 
+
+<link id="a1176" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+.
+
+
+
+</para>
+
+
+
+
+<para id="p1232">
+Cause the origin of your reference frame be at the center
+of your drawing.
+
+
+
+</para>
+
+
+
+
+<para id="p1233">
+Cause the positive x direction to be to the right.
+
+
+</para>
+
+
+
+
+<para id="p1234">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1235">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1236">
+<emphasis id="Figure_6" effect="bold">
+
+
+<emphasis id="strong1344" effect="bold">
+Figure 6
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1345" effect="bold">
+ Graphic output from Exercise 4.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1237">
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/0110ex04.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Exercise_5" effect="bold">
+
+Exercise 5
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1238">
+Using Java and the game-math library named 
+
+<emphasis id="strong1346" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws 24 vectors tail-to-tail in alternating
+colors of red, green, and blue as shown in 
+
+<link id="a1177" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1239">
+The first vector is red.
+
+
+
+</para>
+
+
+
+
+<para id="p1240">
+The length of each vector is 100 pixels.
+
+
+
+</para>
+
+
+
+
+<para id="p1241">
+The direction of the first vector is +7.5 degrees
+relative to the horizontal. 
+
+</para>
+
+
+
+
+<para id="p1242">
+The direction of each
+successive vector is increased by 15 degrees. 
+
+</para>
+
+
+
+
+<para id="p1243">
+For example,
+the directions of the first four vectors are:
+
+
+
+</para>
+
+
+
+
+<list id="ul1016" list-type="bulleted">
+
+	
+
+<item id="li1097">
+7.5
+
+
+</item>
+
+
+	
+
+<item id="li1098">
+22.5
+
+
+</item>
+
+
+	
+
+<item id="li1099">
+37.5
+
+
+</item>
+
+
+	
+
+<item id="li1100">
+52.5
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1244">
+Draw the symbol of your choice to identify the head of
+each vector.
+
+
+
+</para>
+
+
+
+
+<para id="p1245">
+Draw the axes for a Cartesian coordinate system in the
+reference frame.
+
+
+
+</para>
+
+
+
+
+<para id="p1246">
+Cause the positive x direction to be to the right.
+
+
+</para>
+
+
+
+
+<para id="p1247">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+</para>
+
+
+
+
+<para id="p1248">
+Cause positive angles to be either clockwise or
+counter-clockwise according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1249">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1250">
+<emphasis id="Figure_7" effect="bold">
+
+
+<emphasis id="strong1347" effect="bold">
+Figure 7
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1348" effect="bold">
+ Graphic output from Exercise 5.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1251">
+<media id="media1005" alt="Missing image." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/0110ex05.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Exercise_6" effect="bold">
+
+Exercise 6
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1252">
+Using Java and the game-math library named 
+
+<emphasis id="strong1349" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws 
+24 vectors tail-to-head in alternating colors of red, green, and blue as shown in 
+
+
+<link id="a1178" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1253">
+The first vector is red.
+
+
+
+</para>
+
+
+
+
+<para id="p1254">
+The length of each vector is approximately 17 pixels.
+
+
+
+</para>
+
+
+
+
+<para id="p1255">
+Draw the symbol of your choice to identify the head of
+each vector.
+
+
+
+</para>
+
+
+
+
+<para id="p1256">
+Draw the axes for a Cartesian coordinate system in the
+reference frame.
+
+
+
+</para>
+
+
+
+
+<para id="p1257">
+Cause the positive x direction to be to the right.
+
+
+
+</para>
+
+
+
+
+<para id="p1258">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1259">
+Cause positive angles to be either clockwise or
+counter-clockwise according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1260">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1261">
+<emphasis id="Figure_8" effect="bold">
+
+
+<emphasis id="strong1350" effect="bold">
+Figure 8
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1351" effect="bold">
+ Graphic output from Exercise 6.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1262">
+<media id="media1006" alt="Missing image." display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/0110ex06.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21010">
+<title>
+<emphasis id="Exercise_7" effect="bold">
+
+Exercise 7
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1263">
+Using Java and the game-math library named 
+
+<emphasis id="strong1352" effect="bold">
+GM2D02
+
+</emphasis>
+, or using 
+a different programming environment of your choice, write a program that draws 24 vectors tail-to-head in alternating
+colors of red, green, and blue as shown in 
+
+<link id="a1179" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1264">
+The first vector is red.
+
+
+
+</para>
+
+
+
+
+<para id="p1265">
+Begin with a length of 24 pixels for the first vector and
+reduce the length of each successive vector by one pixel.
+
+
+
+</para>
+
+
+
+
+<para id="p1266">
+Draw the symbol of your choice to identify the head of
+each vector.
+
+
+
+</para>
+
+
+
+
+<para id="p1267">
+Draw the axes for a Cartesian coordinate system in the
+reference frame.
+
+
+
+</para>
+
+
+
+
+<para id="p1268">
+Cause the positive x direction to be to the right.
+
+
+
+</para>
+
+
+
+
+<para id="p1269">
+Cause the positive y direction be either up or down
+according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1270">
+Cause positive angles to be either clockwise or
+counter-clockwise according to your choice.
+
+
+
+</para>
+
+
+
+
+<para id="p1271">
+Cause the program to display your name in some manner.
+
+</para>
+
+
+
+
+<para id="p1272">
+<emphasis id="Figure_9" effect="bold">
+
+
+<emphasis id="strong1353" effect="bold">
+Figure 9
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1354" effect="bold">
+ Graphic output from Exercise 7.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1273">
+<media id="media1007" alt="Missing image." display="block">
+<image id="img1007" mime-type="image/jpeg" src="../../media/0110ex07.jpg" width="301" height="301"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1274">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</content>
+
+
+
+
+</document>

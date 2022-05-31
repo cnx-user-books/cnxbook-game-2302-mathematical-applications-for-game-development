@@ -1,0 +1,8276 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0105: Getting Started</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m44990</md:content-id>
+  <md:title>GAME 2302-0105: Getting Started</md:title>
+  <md:abstract>Examine two sample programs and a sample game-programming math library intended to provide aspiring game programmers with the mathematical skills required for game programming.</md:abstract>
+  <md:uuid>dd2d8388-f624-46e7-95e5-23ce8d6ff64c</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Preview">
+
+Preview
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Points_and_Lines">
+
+Points, lines, and vectors
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Writing_compiling_and_running_Java_programs">
+
+Writing, compiling, and running Java programs
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_program_named_PointLine01">
+
+The program named PointLine01
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="But_wait_theres_something_wrong_here">
+
+But wait, there's something wrong here
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="The_program_named_PointLine02">
+
+The program named PointLine02 and the library named GM2D01
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="The_GM2D01.ColMatrix_class">
+
+The GM2D01.ColMatrix class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="The_GM2D01.Point_class">
+
+The GM2D01.Point class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="The_GM2D01.Vector_class">
+
+The GM2D01.Vector class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="The_GM2D01.Line_class">
+
+The GM2D01.Line class
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="GM2D01_is_purely_mathematical">
+
+The GM2D01 library is purely 
+	mathematical
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Documentation_for_the_library_named_GM2D01">
+
+Documentation 
+		for the GM2D01 library
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Homework_study_assignment">
+
+Homework assignment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1019">
+<link id="a1019" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1020" target-id="Summary">
+
+Summary
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1021" target-id="Whats_next">
+
+What's next?
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1022" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1023" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1024" target-id="Exercises">
+
+Exercises
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1025">
+<link id="a1025" target-id="Exercise_1">
+
+Exercise 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1026">
+<link id="a1026" target-id="Exercise_2">
+
+Exercise 2
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="Exercise_3">
+
+Exercise 3
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<para id="p1000">
+This module is one in a collection of modules designed for teaching 
+
+<emphasis id="em1000" effect="italics">
+
+	GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at Austin 
+	Community College in Austin, TX. 
+
+</para>
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+<emphasis id="strong1000" effect="bold">
+Good math skills are required
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1002">
+In order to be a successful game programmer you must be skilled in 
+technologies other than simply programming. Those technologies include 
+mathematics. My purpose in writing this module is to help you to gain 
+mathematical strengths in addition to your other strengths.
+
+</para>
+
+
+
+
+<para id="p1003">
+This collection is designed to teach you some of the mathematical skills that 
+you will need 
+
+<emphasis id="em1001" effect="italics">
+(in addition to good programming skills)
+
+</emphasis>
+ to become a successful game programmer. In addition to helping 
+you with your math skills, I will also teach you how to incorporate those skills 
+into object-oriented programming using Java. If you are familiar with 
+other object-oriented programming languages such as C#, you should have no 
+difficulty porting this material from Java to those other programming languages.
+
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1001" effect="bold">
+Lots of graphics
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1005">
+Since most computer games make heavy use of either 2D or 3D graphics, you 
+will need skills in the mathematical areas that are required for success in 2D 
+and 3D graphics programming. As a minimum, this includes but is not 
+limited to skills in:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1028">
+<emphasis id="em1002" effect="italics">
+Geometry
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1029">
+<emphasis id="em1003" effect="italics">
+Trigonometry
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1030">
+<emphasis id="strong1002" effect="bold">
+Vectors
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1031">
+<emphasis id="strong1003" effect="bold">
+Matrices
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1032">
+<emphasis id="strong1004" effect="bold">
+2D and 3D transforms
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1033">
+Transformations between coordinate systems
+
+</item>
+
+
+	
+
+<item id="li1034">
+Projections 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1006">
+Game programming requires mathematical skills beyond those 
+required for graphics. This collection will 
+concentrate on items 3, 4, and 5 in the above list. 
+
+<emphasis id="em1004" effect="italics">
+(I will 
+assume that you either already have, or can gain the required skills in geometry 
+and trigonometry on your own. There are many tutorials available 
+on the web to help you in that quest including the 
+
+<emphasis id="strong1005" effect="bold">
+Brief Trigonometry Tutorial
+
+
+</emphasis>
+at 
+
+<link id="a1028" url="http://cnx.org/content/m37435/latest/">
+
+
+http://cnx.org/content/m37435/latest/
+
+</link>
+
+.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1007">
+Insofar as vectors and matrices are concerned, I will frequently refer you to an excellent 
+interactive tutorial titled 
+
+<emphasis id="em1005" effect="italics">
+
+
+
+<link id="a1029" url="http://chortle.ccsu.edu/vectorlessons/vectorindex.html">
+
+Vector Math for 3D Computer Graphics
+
+</link>
+
+
+</emphasis>
+  by Dr. Bradley 
+P. Kjell for the 
+required technical background. I will then teach you how to incorporate 
+the knowledge that you gain from Kjell's tutorial into Java code with a heavy 
+emphasis on object-oriented programming.
+
+</para>
+
+
+
+
+<para id="p1008">
+In the process, I will develop and explain a game-programming math library 
+that you can use to experiment with and to confirm what you learn about vectors 
+and matrices from the Kjell tutorial. The library will start out small and 
+grow as we progress through more and more material in subsequent modules.
+
+</para>
+
+
+
+
+<para id="p1009">
+I will also provide exercises for you to complete on your own at the end of 
+most of the modules. Those exercises will concentrate on the material that you 
+have learned in that module and previous modules.
+
+</para>
+
+
+	
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1010">
+II recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1035">
+<link id="a1030" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Graphics illustration of four points and two lines. 
+
+</item>
+
+
+		
+
+<item id="li1036">
+<link id="a1031" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. First of three views in the construction of a 3D human figure.
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1032" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Second of three views in the construction of a 3D human figure.
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1033" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Third of three views in the construction of a 3D human figure.
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1034" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Screen output from the program named PointLine02. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1035" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Sample output from updated programming-math library. 
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1036" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Graphic output from Exercise 1.
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1037" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Text output from Exercise 2.
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1038" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Text output from Exercise 3.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1044">
+<link id="a1039" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. The controlling class named PointLine01. 
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1040" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Beginning of the class named GUI. 
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1041" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Beginning of the inner class named MyCanvas. 
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1042" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Define two points as two locations in space. 
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1043" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Construct a line segment. 
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1044" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Construct an object that represents a vertical line segment. 
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1045" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Draw the two lines on the screen. 
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1046" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Beginning of the class named PointLine02. 
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1047" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Beginning of the class named GM2D01. 
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1048" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Exercising the Point class.
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1049" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. The static top-level class named Point. 
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1050" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. The static top-level class named Vector. 
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1051" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. The static top-level class named Line.
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1052" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+.  Source code for the program named PointLine01. 
+
+</item>
+
+
+		
+
+<item id="li1058">
+<link id="a1053" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. Source code for the program named PointLine02.
+
+</item>
+
+
+		
+
+<item id="li1059">
+<link id="a1054" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. Source code for the game-programming math library named GM2D01. 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1011">
+In this module, I will introduce you to an excellent interactive tutorial 
+	titled 
+
+<emphasis id="em1006" effect="italics">
+<link id="a1055" url="http://chortle.ccsu.edu/vectorlessons/vectorindex.html">
+
+Vector Math for 3D Computer Graphics
+
+</link>
+
+ 
+
+</emphasis>
+  written by Dr. Bradley P. 
+	Kjell, 
+
+<emphasis id="em1007" effect="italics">
+(which you can also download in zip-file format from a link in the 
+	
+
+<link id="a1056" url="http://cnx.org/content/m44983/latest/">
+
+first module
+
+</link>
+
+ in this 
+	collection)
+
+</emphasis>
+. Then I will present and explain two sample programs and a 
+	sample game-programming math library intended to implement concepts from Dr. 
+	Kjell's tutorial in Java code. 
+
+</para>
+
+
+	
+
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+	
+
+<section id="h21002">
+<title>
+<emphasis id="Points_and_Lines" effect="bold">
+
+Points, lines, and vectors
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1012">
+Your homework assignment from the previous module was to study 
+
+<emphasis id="em1008" effect="italics">
+CHAPTER 0 --
+Points and Lines
+
+</emphasis>
+ and also to study 
+
+<emphasis id="em1009" effect="italics">
+CHAPTER 1 -- Vectors, Points, and 
+Column Matrices down through the topic titled Variables as Elements 
+
+</emphasis>
+in Kjell's tutorial.
+
+</para>
+
+
+
+
+<para id="p1013">
+You may have previously believed that you already knew all there was to know about points and 
+lines. However, I suspect that you found explanations of some subtle 
+issues that you never thought about before when studying those tutorials. In addition, Kjell begins the 
+discussion of vectors and establishes the relationship between a vector and a 
+column matrix in this material. 
+
+</para>
+
+
+
+
+<para id="p1014">
+<emphasis id="strong1006" effect="bold">
+Represent a point with a column matrix
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1015">
+Hopefully you understand what Kjell means by a column matrix and you 
+understand that a column matrix can be used to 
+represent a point in a given coordinate frame. The same point will have different representations in different 
+coordinate frames. 
+
+<emphasis id="em1010" effect="italics">
+(You must know which coordinate frame is being used 
+to represent a point with a column matrix.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Writing_compiling_and_running_Java_programs" effect="bold">
+
+Writing, compiling, and running Java programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1016">
+One of the reasons that I chose Java as the main programming language for 
+this course is that while Java is a very powerful object-oriented programming 
+language, the mechanics of writing, compiling, and running Java programs are 
+very simple.
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="strong1007" effect="bold">
+Confirm your Java installation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1018">
+First you need to confirm that the Java development kit 
+
+<emphasis id="em1011" effect="italics">
+(jdk)
+
+</emphasis>
+ 
+version 1.7 or later is installed on the computer. 
+
+<emphasis id="em1012" effect="italics">
+(The jdk is already 
+installed in the CIT computer labs at the NRG campus of ACC, and perhaps in the 
+labs on other ACC campuses as well.) 
+
+</emphasis>
+If you are working at home, see 
+Oracle's 
+
+
+<link id="a1057" url="http://docs.oracle.com/javase/7/docs/webnotes/install/index.html">
+
+JDK 7 
+and JRE 7 Installation Guide
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1019">
+<emphasis id="strong1008" effect="bold">
+Creating your source code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+Next, you need to use any text editor to create your Java source code files 
+as text files with an extension of .java. 
+
+<emphasis id="em1013" effect="italics">
+(I prefer the free 
+
+</emphasis>
+
+
+
+<link id="a1058" url="http://www.jcreator.com/">
+
+
+<emphasis id="em1014" effect="italics">
+JCreator
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1015" effect="italics">
+ editor because it 
+produces color-coded text and includes some other simple IDE features as well. 
+JCreator is normally installed in the CIT computer labs at the NRG campus of 
+ACC.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1021">
+<emphasis id="strong1009" effect="bold">
+Compiling your source code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1022">
+The name of each source code file should match the name of the Java class 
+defined in the file.
+
+</para>
+
+
+
+
+<para id="p1023">
+Assume that your source code file is named 
+
+<emphasis id="strong1010" effect="bold">
+MyProg.java
+
+</emphasis>
+. You 
+can compile the program by opening a command prompt window in the folder 
+containing the source code file and executing the following command at the 
+prompt:
+
+</para>
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1011" effect="bold">
+Command to compile the source code:
+
+</emphasis>
+
+				
+
+<code id="pre1000" display="block">javac MyProg.java
+</code>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1024">
+<emphasis id="strong1012" effect="bold">
+Running your Java program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1025">
+Once the program is compiled, you can execute it by opening a command prompt 
+window in the folder containing the compiled source code files 
+
+<emphasis id="em1016" effect="italics">
+(files with 
+an extension of .class)
+
+</emphasis>
+ and executing the following command at the prompt:
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1013" effect="bold">
+Command to execute the program:
+
+</emphasis>
+
+				
+
+<code id="pre1001" display="block">java MyProg</code>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1026">
+<emphasis id="strong1014" effect="bold">
+Using a batch file
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1027">
+If you are running under Windows, the easiest approach is to create and use a 
+batch file to compile and run your program. 
+
+<emphasis id="em1017" effect="italics">
+(A batch file is simply a text 
+file with an extension of .bat instead of .txt.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1028">
+Create a text file named 
+
+<emphasis id="strong1015" effect="bold">
+CompileAndRun.bat
+
+</emphasis>
+ containing the text shown in the 
+note-box below.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1016" effect="bold">
+Contents of batch file are shown below:
+
+</emphasis>
+
+				
+
+<code id="pre1002" display="block">
+del *.class
+javac MyProg.java
+java MyProg
+pause
+</code>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1029">
+Place this file in the same folder as your source code files. Then 
+	double-click on the batch file to cause your program to be compiled and 
+	executed.
+
+</para>
+
+
+	
+	
+
+<para id="p1030">
+That's all there is to it.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="strong1017" effect="bold">
+<emphasis id="The_program_named_PointLine01" effect="bold">
+
+The program named PointLine01
+
+</emphasis>
+
+
+</emphasis>
+</title>
+
+
+
+
+<para id="p1031">
+Before we go any further, let's take a look at a simple Java program that 
+illustrates one of the ways that points and lines are represented in Java code.
+
+
+<emphasis id="em1018" effect="italics">
+(See 
+
+<link id="a1059" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="strong1018" effect="bold">
+The Point2D.Double class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1033">
+This program illustrates one implementation of the concepts of 
+
+<emphasis id="em1019" effect="italics">
+point
+
+</emphasis>
+ 
+and 
+
+<emphasis id="em1020" effect="italics">
+line segment
+
+</emphasis>
+ in Java code.
+
+</para>
+
+
+
+
+<para id="p1034">
+Four points 
+
+<emphasis id="em1021" effect="italics">
+(locations in 
+space)
+
+</emphasis>
+ are defined by passing the coordinates of the four points as the x 
+and y parameters to the constructor for the 
+
+<emphasis id="strong1019" effect="bold">
+Point2D.Double
+
+</emphasis>
+ class. 
+This results in four objects of the 
+
+<emphasis id="strong1020" effect="bold">
+Point2D.Double
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<para id="p1035">
+<emphasis id="em1022" effect="italics">
+(
+
+<emphasis id="strong1021" effect="bold">
+Point2D.Double
+
+</emphasis>
+ is a class in the standard Java 
+library.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1036">
+<emphasis id="strong1022" effect="bold">
+The Line2D.Double class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+Two line segments are defined by passing pairs of points as parameters to the 
+constructor for the 
+
+<emphasis id="strong1023" effect="bold">
+Line2D.Double
+
+</emphasis>
+ class. This results in two 
+objects of the 
+
+<emphasis id="strong1024" effect="bold">
+Line2D.Double
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<para id="p1038">
+<emphasis id="em1023" effect="italics">
+(
+
+<emphasis id="strong1025" effect="bold">
+Line2D.Double
+
+</emphasis>
+ is a class in the standard Java library.)
+
+</emphasis>
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1003" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1026" effect="bold">
+Testing:
+
+</emphasis>
+
+				
+
+<para id="p1039">
+All of the programs in this module were tested using JDK 1.7 running under Windows XP. 
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1040">
+<emphasis id="strong1027" effect="bold">
+The draw method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1041">
+The 
+
+<emphasis id="strong1028" effect="bold">
+draw
+
+</emphasis>
+ method belonging to an object of the 
+
+<emphasis id="strong1029" effect="bold">
+Graphics2D
+
+</emphasis>
+ class 
+is used to draw the two line segments on a 
+
+<emphasis id="strong1030" effect="bold">
+Canvas
+
+</emphasis>
+ object for which the 
+origin has been translated to the center of the 
+
+<emphasis id="strong1031" effect="bold">
+Canvas
+
+</emphasis>
+. The result is
+
+<emphasis id="strong1032" effect="bold">
+
+
+
+</emphasis>
+shown in 
+
+<link id="a1060" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="em1024" effect="italics">
+(
+
+<emphasis id="strong1033" effect="bold">
+Graphics2D
+
+</emphasis>
+ and Canvas are classes in the standard Java 
+library.) 
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+<emphasis id="Figure_1" effect="bold">
+
+
+<emphasis id="strong1034" effect="bold">
+Figure 1
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1035" effect="bold">
+ Graphics illustration of four points and two lines.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1044">
+<media id="media1000" alt="Missing image." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/java1700a1.jpg" width="201" height="201"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1045">
+The coordinate values of the points and the selection of point-pairs to 
+specify the ends of the line segments is such that the final rendering is a pair 
+of orthogonal lines that intersect at the origin.
+
+</para>
+
+
+
+
+<para id="p1046">
+<emphasis id="em1025" effect="italics">
+(You could think of these 
+lines as the axes in a Cartesian coordinate system.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1047">
+<emphasis id="strong1036" effect="bold">
+Will explain in fragments
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1048">
+I will present and explain this program in fragments. A complete listing of 
+the program is provided in 
+
+<link id="a1061" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ near the end of the module.
+
+</para>
+
+
+
+
+<para id="p1049">
+<emphasis id="em1026" effect="italics">
+(Use the code in 
+
+<link id="a1062" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ and the 
+instructions provided 
+
+<link id="a1063" target-id="Writing_compiling_and_running_Java_programs">
+
+
+above
+
+</link>
+
+ to write, compile, and run the program. This will be a good way for 
+you to confirm that Java is properly installed on your computer and that you are 
+able to follow the instructions to produce the output shown in 
+
+<link id="a1064" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1050">
+The first 
+code fragment is shown in 
+
+<link id="a1065" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. The controlling class named PointLine01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1003" display="block">class PointLine01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class PointLine01
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1051">
+<link id="a1066" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows the definition of the controlling class, including 
+	the 
+
+<emphasis id="strong1037" effect="bold">
+main
+
+</emphasis>
+ method for the program named 
+
+<emphasis id="strong1038" effect="bold">
+PointLine01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1052">
+The 
+
+<emphasis id="strong1039" effect="bold">
+main
+
+</emphasis>
+ 
+	method simply instantiates a new object of a class named 
+
+<emphasis id="strong1040" effect="bold">
+GUI
+
+</emphasis>
+ and 
+	saves that object's reference in the variable named 
+
+<emphasis id="strong1041" effect="bold">
+guiObj.
+
+</emphasis>
+
+
+
+</para>
+
+
+
+
+<para id="p1053">
+<emphasis id="em1027" effect="italics">
+(GUI is not a class in the standard Java library. It is defined below.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1054">
+The 
+
+<emphasis id="strong1042" effect="bold">
+GUI
+
+</emphasis>
+ object produces the screen image shown in 
+
+<link id="a1067" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1055">
+<emphasis id="strong1043" effect="bold">
+The class named GUI
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1056">
+<link id="a1068" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows the beginning of the class named 
+
+<emphasis id="strong1044" effect="bold">
+GUI
+
+</emphasis>
+, including the 
+constructor for the class.
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Beginning of the class named GUI. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1004" display="block">class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 200;
+  int vSize = 200;
+  
+  GUI(){//constructor
+  
+    //Set JFrame size and title
+    setSize(hSize,vSize);
+    setTitle("R.G.Baldwin");
+    
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    MyCanvas myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    setVisible(true);
+
+  }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1057">
+<link id="a1069" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ begins by declaring and initializing a pair of instance 
+	variables that will be used to specify the size of the 
+
+<emphasis id="strong1045" effect="bold">
+JFrame
+
+</emphasis>
+ shown 
+	in 
+
+<link id="a1070" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1058">
+<emphasis id="em1028" effect="italics">
+(A 
+
+<emphasis id="strong1046" effect="bold">
+JFrame
+
+</emphasis>
+ object in Java might be called a window in 
+other programming environments.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1047" effect="bold">
+The constructor for the class named GUI
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+The constructor begins by using the two instance variables to set the size of 
+the 
+
+<emphasis id="strong1048" effect="bold">
+JFrame
+
+</emphasis>
+ and by setting the title for the 
+
+<emphasis id="strong1049" effect="bold">
+JFrame
+
+</emphasis>
+ to 
+
+<emphasis id="em1029" effect="italics">
+
+R.G.Baldwin
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1050" effect="bold">
+Create a new drawing canvas and add it to the
+    center of the JFrame
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+Then the constructor instantiates a 
+
+<emphasis id="strong1051" effect="bold">
+Canvas
+
+</emphasis>
+ object and adds it to the
+
+
+<emphasis id="strong1052" effect="bold">
+JFrame
+
+</emphasis>
+. Without getting into the details as to why, I will simply tell 
+you that the 
+
+<emphasis id="strong1053" effect="bold">
+Canvas
+
+</emphasis>
+ object fills the entire client area of the frame, 
+which is the area inside of the four borders.
+
+</para>
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1054" effect="bold">
+Define the behavior of the X-button and make the JFrame visible
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1064">
+Finally, the constructor defines the behavior of the X-button in the top 
+right corner of the 
+
+<emphasis id="strong1055" effect="bold">
+JFrame
+
+</emphasis>
+ and causes the 
+
+<emphasis id="strong1056" effect="bold">
+JFrame
+
+</emphasis>
+ to become visible on the 
+screen. 
+
+</para>
+
+
+
+
+<para id="p1065">
+Hopefully, everything that I have discussed so far is familiar to you. 
+If not, you may want to spend some time studying my earlier tutorials in this 
+area. You will find links to many of those tutorials at
+
+
+<link id="a1071" url="http://www.dickbaldwin.com/toc.htm">
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1057" effect="bold">
+Beginning of the inner class named MyCanvas
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+<link id="a1072" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shows the beginning of an inner class 
+definition named 
+
+<emphasis id="strong1058" effect="bold">
+MyCanvas
+
+</emphasis>
+ 
+including the beginning of an overridden 
+
+<emphasis id="strong1059" effect="bold">
+paint
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+<para id="p1068">
+<emphasis id="em1030" effect="italics">
+(The 
+
+<emphasis id="strong1060" effect="bold">
+Canvas
+
+</emphasis>
+ 
+class was extended into the 
+
+<emphasis id="strong1061" effect="bold">
+MyCanvas
+
+</emphasis>
+ class to make it possible to 
+override the 
+
+<emphasis id="strong1062" effect="bold">
+paint
+
+</emphasis>
+ method.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1069">
+This overridden 
+
+<emphasis id="strong1063" effect="bold">
+paint
+
+</emphasis>
+ method will 
+be executed whenever the 
+
+<emphasis id="strong1064" effect="bold">
+JFrame
+
+</emphasis>
+ containing the 
+
+<emphasis id="strong1065" effect="bold">
+Canvas
+
+</emphasis>
+ is displayed 
+on the computer screen, whenever that portion of the screen needs to be 
+repainted, or whenever the 
+
+<emphasis id="strong1066" effect="bold">
+repaint
+
+</emphasis>
+ method is called on the 
+canvas.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Beginning of the inner class named MyCanvas. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1005" display="block">  class MyCanvas extends Canvas{
+
+    public void paint(Graphics g){
+      //Downcast the Graphics object to a Graphics2D
+      // object. The Graphics2D class provides
+      // capabilities that don't exist in the Graphics
+      // class.
+      Graphics2D g2 = (Graphics2D)g;
+      
+      //By default, the origin is at the upper-left corner
+      // of the canvas. This statement translates the
+      // origin to the center of the canvas.  
+      g2.translate(
+                this.getWidth()/2.0,this.getHeight()/2.0);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1070">
+<emphasis id="strong1067" effect="bold">
+An object of the Graphics class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1071">
+The 
+
+<emphasis id="strong1068" effect="bold">
+paint
+
+</emphasis>
+ method always receives an incoming reference to an object of 
+the class 
+
+<emphasis id="strong1069" effect="bold">
+Graphics
+
+</emphasis>
+. As a practical matter, you can think of that object 
+as representing a rectangular area on the screen on which the instructions in 
+the 
+
+<emphasis id="strong1070" effect="bold">
+paint
+
+</emphasis>
+ method will draw lines, images, and other graphic objects.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1004" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1071" effect="bold">
+Incoming reference:
+
+</emphasis>
+
+				
+
+<para id="p1072">
+The paint method actually receives a reference to an object of the class 
+				
+
+<emphasis id="strong1072" effect="bold">
+Graphics2D
+
+</emphasis>
+, but to maintain backward compatibility, Sun elected to pass it in as the superclass type 
+				
+
+<emphasis id="strong1073" effect="bold">
+Graphics
+
+</emphasis>
+.
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1073">
+<emphasis id="strong1074" effect="bold">
+The Graphics2D class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+The 
+
+<emphasis id="strong1075" effect="bold">
+Graphics
+
+</emphasis>
+ class was defined early in the life of the Java 
+programming language, and it is of limited capability. Later on, Sun defined the
+
+
+<emphasis id="strong1076" effect="bold">
+Graphics2D
+
+</emphasis>
+ class as a subclass of 
+
+<emphasis id="strong1077" effect="bold">
+Graphics
+
+</emphasis>
+. Significant new 
+capabilities, 
+
+<emphasis id="em1031" effect="italics">
+(including the ability to deal with coordinate values as real 
+numbers instead of integers)
+
+</emphasis>
+, were included in the 
+
+<emphasis id="strong1078" effect="bold">
+Graphics2D
+
+</emphasis>
+ class. 
+In order to access those new capabilities, however, it is necessary to downcast 
+the incoming reference to type 
+
+<emphasis id="strong1079" effect="bold">
+Graphics2D
+
+</emphasis>
+ as shown by the cast operator 
+
+
+<emphasis id="em1032" effect="italics">
+<emphasis id="strong1080" effect="bold">
+(Graphics2D) 
+
+</emphasis>
+</emphasis>
+in 
+
+<link id="a1073" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1081" effect="bold">
+Translate the origin
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+The last statement in 
+
+<link id="a1074" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ translates the origin from the 
+default position at the upper-left 
+corner of the canvas to the center of the canvas. This is equivalent to creating 
+a new 
+
+<emphasis id="em1033" effect="italics">
+coordinate frame
+
+</emphasis>
+ as explained by Kjell. 
+
+</para>
+
+
+
+
+<para id="p1077">
+The default coordinate 
+frame has the origin at the upper-left corner of the canvas. The new coordinate 
+frame has the origin at the center of the canvas.
+
+</para>
+
+
+
+
+<para id="p1078">
+Note, however, that even though the origin has been translated, the positive 
+vertical direction is still toward the bottom of the canvas.
+
+</para>
+
+
+
+
+<para id="p1079">
+<emphasis id="strong1082" effect="bold">
+Define two points as two locations in space
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1080">
+<link id="a1075" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ defines two points in space by instantiating two objects of the 
+class named 
+
+<emphasis id="strong1083" effect="bold">
+Point2D.Double
+
+</emphasis>
+, and saving references to those objects in 
+variables of the superclass type 
+
+<emphasis id="strong1084" effect="bold">
+Point2D
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+	
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Define two points as two locations in space. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1006" display="block">      Point2D pointA = 
+             new Point2D.Double(-this.getWidth()/2.5,0.0);
+      Point2D pointB = 
+              new Point2D.Double(this.getWidth()/2.5,0.0);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1081">
+<emphasis id="strong1085" effect="bold">
+The left and right ends of the horizontal line
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1082">
+The object referred to as 
+
+<emphasis id="strong1086" effect="bold">
+pointA
+
+</emphasis>
+ represents the location in 2D 
+	space at the left end of the horizontal line shown in 
+
+<link id="a1076" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1083">
+As explained 
+	by Kjell, the values used to represent this location in space are relative 
+	to the current coordinate frame in which the origin is at the center of the 
+	canvas. Had the origin not been translated to the center of the canvas in 
+	
+
+<link id="a1077" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+, a different set of values would have been required to represent 
+	that same location in space.
+
+</para>
+
+
+
+
+<para id="p1084">
+Similarly, the object referred to as 
+
+<emphasis id="strong1087" effect="bold">
+pointB
+
+</emphasis>
+ represents the location in 
+space at the right end of the horizontal line shown in 
+
+<link id="a1078" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1085">
+<emphasis id="strong1088" effect="bold">
+Construct a line segment
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1086">
+<link id="a1079" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ uses the two points described above to construct an object that 
+represents a line segment connecting the two points by instantiating an object 
+of the class named 
+
+<emphasis id="strong1089" effect="bold">
+Line2D.Double
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1087">
+As shown in 
+
+<link id="a1080" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the values of the 
+points relative to the current coordinate frame causes this line segment to be 
+horizontal when the coordinate frame is displayed with the orientation shown in 
+
+
+<link id="a1081" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. On the other hand, a different rendering of the coordinate frame may 
+have caused the line segment to be something other than horizontal.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Construct a line segment. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1007" display="block">      Line2D.Double horizLine = 
+                         new Line2D.Double(pointA,pointB);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1088">
+<emphasis id="strong1090" effect="bold">
+Not the true line segment
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1089">
+The main point here is that the line segment created in 
+
+<link id="a1082" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ 
+
+<emphasis id="em1034" effect="italics">
+
+represents
+
+</emphasis>
+ a line segment between two points in space but it is not the true 
+line segment. According to Kjell, the true line segment has no width, and therefore is not visible 
+to the human eye.
+
+</para>
+
+
+
+
+<para id="p1090">
+The line segment constructed in 
+
+<link id="a1083" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ is simply a 
+visual representation of the 
+true line segment. When rendered on the screen, that line segment could take on 
+an infinite number of appearances depending on how the space is rendered on the 
+screen. It just happens that in the case of 
+
+<link id="a1084" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the rendering of that 
+space on the screen causes the line segment to appear to be parallel to the 
+bottom of a rectangular screen.
+
+</para>
+
+
+
+
+<para id="p1091">
+<emphasis id="strong1091" effect="bold">
+Construct an object that represents a vertical line segment
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1092">
+<link id="a1085" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ uses a similar procedure to construct an object that represents a 
+line segment that is perpendicular to the previous line segment, and which 
+intersects the previous line segment at the origin of the current coordinate 
+frame.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Construct an object that represents a vertical line segment. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1008" display="block">      Point2D pointC = 
+            new Point2D.Double(0.0,-this.getHeight()/2.5);
+      Point2D pointD = 
+             new Point2D.Double(0.0,this.getHeight()/2.5);
+
+      Line2D.Double vertLine = 
+                         new Line2D.Double(pointC,pointD);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1093">
+<emphasis id="strong1092" effect="bold">
+Draw the two lines on the screen
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1094">
+Finally, 
+
+<link id="a1086" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1093" effect="bold">
+draw
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1094" effect="bold">
+Graphics2D
+
+</emphasis>
+ 
+class twice in succession to draw the two lines on the screen as shown in 
+
+
+<link id="a1087" target-id="Figure_1">
+
+Figure 
+1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Draw the two lines on the screen. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1009" display="block">
+      g2.draw(horizLine);
+      g2.draw(vertLine);
+
+    }//end overridden paint()
+  }//end inner class MyCanvas
+}//end class GUI
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1095">
+<link id="a1088" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ also signals the end of the overridden 
+
+<emphasis id="strong1095" effect="bold">
+paint
+
+</emphasis>
+ method, the 
+	end of the inner class named 
+
+<emphasis id="strong1096" effect="bold">
+MyCanvas
+
+</emphasis>
+, and the end of the top-level 
+	class named 
+
+<emphasis id="strong1097" effect="bold">
+GUI
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="But_wait_theres_something_wrong_here" effect="bold">
+
+But wait, there's something wrong here
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1096">
+Kjell describes his points and lines in a very general way that is suitable 
+for use in mathematical operations later on. However, in the above program, I 
+fell into the trap of defining my points and lines using Java classes that are 
+intended primarily for rendering graphics on the screen. That approach is 
+probably not conducive to mathematical operations. We need to step back and take 
+another look at what we are doing here.
+
+</para>
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1098" effect="bold">
+Points, points, and more points
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1098">
+There will be many occasions when you, as a game programmer, will need to 
+define the coordinate values for a point 
+
+<emphasis id="em1035" effect="italics">
+(or a set of points)
+
+</emphasis>
+ that you 
+have no intention of displaying on the screen. Instead, you will use those 
+points for various mathematical operations to produce something else that may or 
+may not be 
+displayed on the screen.
+
+</para>
+
+
+
+
+<para id="p1099">
+<emphasis id="strong1099" effect="bold">
+The Alice ice skater
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1100">
+For example, 
+
+<link id="a1089" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, 
+
+
+<link id="a1090" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, and 
+
+<link id="a1091" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ show three views in the 
+construction of the Ice skater object in the 
+
+<link id="a1092" url="http://www.alice.org/">
+
+
+Alice programming language
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1101">
+<emphasis id="Figure_2" effect="bold">
+
+
+<emphasis id="strong1100" effect="bold">
+Figure 2
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1101" effect="bold">
+ First of three views in the construction of a 3D human figure.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1102">
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/java1700a2.jpg" width="280" height="210"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1103">
+<emphasis id="Figure_3" effect="bold">
+
+
+<emphasis id="strong1102" effect="bold">
+Figure 3
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1103" effect="bold">
+ Second of three views in the construction of a 3D human figure.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1104">
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/java1700a3.jpg" width="280" height="210"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1105">
+<emphasis id="strong1104" effect="bold">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+ Third of three views in the construction of a 3D human figure.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1106">
+<media id="media1003" alt="Missing image." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/java1700a4.jpg" width="280" height="210"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+
+
+
+
+<para id="p1107">
+<emphasis id="strong1105" effect="bold">
+Points as the vertices of triangles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1108">
+The image in 
+
+<link id="a1093" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows a graphical representation of a set of points. 
+These points were 
+used to define the vertices of the set of polygons shown i
+
+<emphasis id="em1036" effect="italics">
+n
+
+
+</emphasis>
+<link id="a1094" target-id="Figure_3">
+
+
+<emphasis id="em1037" effect="italics">
+Figure 3
+
+</emphasis>
+</link>
+
+. The 
+polygons, in turn, were used in the construction of the ice skater object shown 
+in 
+
+<link id="a1095" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1109">
+As you can see, neither the points in 
+
+<link id="a1096" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, nor the lines that 
+comprise the sides of the polygons in i
+
+<emphasis id="em1038" effect="italics">
+n 
+
+</emphasis>
+
+
+
+<link id="a1097" target-id="Figure_3">
+
+
+<emphasis id="em1039" effect="italics">
+Figure 3
+
+</emphasis>
+</link>
+
+ appear in the final 
+rendering of the object in 
+
+<link id="a1098" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1110">
+However, both the points and the 
+polygons were required to support the mathematical operations that ultimately 
+resulted in the ice skater object. 
+
+</para>
+
+
+
+
+<para id="p1111">
+<emphasis id="em1040" effect="italics">
+(Only the image in 
+
+<link id="a1099" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ is typically displayed 
+on the computer screen. I had to do some extra work to cause the points and the 
+lines to be displayed.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1112">
+<emphasis id="strong1106" effect="bold">
+Another look at points and lines
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1113">
+We'll take another look at points and lines, and will introduce column 
+matrices and vectors in the next sample program.
+
+</para>
+
+
+
+
+<para id="p1114">
+<emphasis id="strong1107" effect="bold">
+What is a vector?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1115">
+According to Kjell, 
+
+<emphasis id="em1041" effect="italics">
+"A vector is a geometrical object that has two 
+properties: length and direction."
+
+</emphasis>
+ He also tells us, 
+
+<emphasis id="em1042" effect="italics">
+"A vector does not 
+have a position."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1116">
+In addition, Kjell tells us that we can represent a vector with two real 
+numbers in a 2D system and with three real numbers in a 3D system. 
+
+</para>
+
+
+
+
+<para id="p1117">
+<emphasis id="strong1108" effect="bold">
+Use a column matrix to represent a vector
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1118">
+A column matrix provides a good way to store two real numbers in a computer 
+program. Therefore, in addition to representing a point, a column matrix can 
+also be used to represent a vector. 
+
+</para>
+
+
+
+
+<para id="p1119">
+However, 
+
+<emphasis id="strong1109" effect="bold">
+<emphasis id="em1043" effect="italics">
+the column matrix is not the 
+vector
+
+</emphasis>
+</emphasis>
+. The contents of the column matrix simply represent certain attributes of 
+the vector in a particular reference frame. Different column matrices can be used to 
+represent the same vector in different reference frames, in which case, the contents of 
+the matrices will be different.
+
+</para>
+
+
+
+
+<para id="p1120">
+<emphasis id="strong1110" effect="bold">
+An absolute location in space
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1121">
+The fact that a column matrix can be used to represent both points and 
+vectors can be confusing. However, as you will see later, this is convenient 
+from a programming viewpoint.
+
+</para>
+
+
+
+
+<para id="p1122">
+The two 
+
+<emphasis id="em1044" effect="italics">
+(or three)
+
+</emphasis>
+ real number values 
+contained in the matrix to represent a point specify an absolute location in 
+space relative to the current coordinate frame.
+
+</para>
+
+
+
+
+<para id="p1123">
+<emphasis id="strong1111" effect="bold">
+A vector specifies a displacement
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1124">
+A vector does not have a position. Rather, it has only two properties: length 
+and direction. Kjell tells us that the two 
+
+<emphasis id="em1045" effect="italics">
+(or three)
+
+</emphasis>
+ real number values 
+contained in the matrix to represent a vector 
+
+<emphasis id="em1046" effect="italics">
+(in 2D or 3D)
+
+</emphasis>
+ specify a 
+
+<emphasis id="em1047" effect="italics">
+
+displacement
+
+</emphasis>
+ of a specific distance from an arbitrary point in a specific 
+direction.
+
+</para>
+
+
+
+
+<para id="p1125">
+In 2D, the two values contained in the matrix represent the displacements 
+along a pair of orthogonal axes 
+
+<emphasis id="em1048" effect="italics">
+(call them x and y for simplicity)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1126">
+As 
+you will see in a future module, in the case of 2D, the length of the vector is 
+the length of the hypotenuse of a right triangle formed by the x and y 
+displacement values. 
+
+</para>
+
+
+
+
+<para id="p1127">
+The direction of the vector can be determined from the 
+angle formed by the x-displacement and the line segment that represents the 
+hypotenuse of the right triangle. Similar considerations apply in 3D as well but 
+they are somewhat more complicated.
+
+</para>
+
+
+
+
+<para id="p1128">
+The bottom line is that while a point is an 
+
+<emphasis id="em1049" effect="italics">
+absolute location
+
+</emphasis>
+, a vector is a 
+
+
+<emphasis id="em1050" effect="italics">
+displacement
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1129">
+<emphasis id="strong1112" effect="bold">
+Do we need to draw vectors?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1130">
+It is very common to draw vectors in various engineering disciplines, such as 
+when drawing free-body diagrams in theoretical mechanics. My guess is that it is unusual to 
+draw vectors in the final version of computer games, but I may be wrong. 
+
+
+</para>
+
+
+
+
+<para id="p1131">
+Normally what you will need to draw in a computer game is the result of one or 
+more vectors acting on an object, such as the velocity and acceleration vectors 
+that apply to a speeding vehicle going around a curve. In that case, you might 
+draw the results obtained from using the vector for mathematical computations 
+
+<emphasis id="em1051" effect="italics">
+
+(perhaps the vehicle turns over)
+
+</emphasis>
+ but you probably wouldn't draw the vectors 
+themselves.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_program_named_PointLine02" effect="bold">
+
+The program named PointLine02 and 
+the library named GM2D01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1132">
+The purpose of this program is to introduce you to a game-math library named
+
+
+<emphasis id="strong1113" effect="bold">
+GM2D01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1133">
+<emphasis id="em1052" effect="italics">
+(The class name GM2D01 is an abbreviation for GameMath2D01. 
+Later in this collection, I will develop and present a combination 2D/3D game-math 
+library named GM03. I will develop and present several intermediate 2D and 3D 
+libraries along the way.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1134">
+This program instantiates objects from the following 
+
+<emphasis id="strong1114" effect="bold">
+<emphasis id="em1053" effect="italics">
+static
+
+</emphasis>
+</emphasis>
+ top-level classes 
+belonging to the class named 
+
+<emphasis id="strong1115" effect="bold">
+GM2D01
+
+</emphasis>
+:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1060">
+GM2D01.ColMatrix
+
+</item>
+
+
+	
+
+<item id="li1061">
+GM2D01.Line
+
+</item>
+
+
+	
+
+<item id="li1062">
+GM2D01.Point
+
+</item>
+
+
+	
+
+<item id="li1063">
+GM2D01.Vector
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1135">
+<emphasis id="em1054" effect="italics">
+(See the 
+
+<link id="a1100" target-id="Documentation_for_the_library_named_GM2D01">
+
+
+documentation
+
+</link>
+
+ for the library named 
+
+<emphasis id="strong1116" effect="bold">
+GM2D01
+
+</emphasis>
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+Then the program displays the contents of those objects on the standard 
+output device in two different ways.
+
+</para>
+
+
+
+
+<para id="p1137">
+A complete listing of the program named 
+
+<emphasis id="strong1117" effect="bold">
+PointLine02
+
+</emphasis>
+ is provided in 
+
+
+<link id="a1101" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ near the end of the module and a complete listing of the game-math 
+library named 
+
+<emphasis id="strong1118" effect="bold">
+GM2D01
+
+</emphasis>
+ is provided in 
+
+<link id="a1102" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1138">
+<emphasis id="strong1119" effect="bold">
+Screen output from the program named PointLine02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1139">
+<link id="a1103" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ shows the screen output produced by running this program. I will 
+refer back to the material in 
+
+<link id="a1104" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ in subsequent paragraphs.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Screen output from the program named PointLine02. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1010" display="block">Instantiate and display the contents
+of a new ColMatrix object
+2.5,6.8
+2.5
+6.8
+Bad index
+
+Instantiate and display the contents
+of a new Point object
+3.4,9.7
+3.4
+9.7
+Bad index
+
+Instantiate and display the contents
+of a new Vector object
+-1.9,7.5
+-1.9
+7.5
+Bad index
+
+Instantiate and display the contents
+of a new Line object
+Tail = 1.1,2.2
+Head = 3.3,4.4
+1.1,2.2
+3.3,4.4
+Press any key to continue...
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1140">
+<emphasis id="strong1120" effect="bold">
+The game-math library named GM2D01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1141">
+As mentioned earlier, the name 
+
+<emphasis id="strong1121" effect="bold">
+GM2D01
+
+</emphasis>
+ is an abbreviation for 
+GameMath2D01. 
+
+<emphasis id="em1055" effect="italics">
+(I elected to use the abbreviated name to keep the code from 
+being so long.)
+
+</emphasis>
+ This is a game-math class, which will be expanded over time 
+as I publish sample programs and additional modules in this collection.
+
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1122" effect="bold">
+For educational purposes only
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+The game-math class is provided solely for educational purposes. Although 
+some things were done to optimize the code and make it more efficient, the class was 
+mainly designed and 
+implemented for maximum clarity. Hopefully the use of this library will help you 
+to better understand the programming 
+details of various mathematical operations commonly used in graphics, game, and 
+simulation programming.
+
+</para>
+
+
+
+
+<para id="p1144">
+Each time the library is expanded or modified, it will be given a new name by 
+incrementing the two digits at the end of the class name to make one version 
+distinguishable from the next. No attempt will be made to maintain backward 
+compatibility from one version of the library to the next.
+
+</para>
+
+
+
+
+<para id="p1145">
+<emphasis id="strong1123" effect="bold">
+Static top-level methods
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1146">
+The 
+
+<emphasis id="strong1124" effect="bold">
+GM2D01
+
+</emphasis>
+ class contains several static top-level classes 
+
+<emphasis id="em1056" effect="italics">
+(See
+
+
+<link id="a1105" url="http://www.dickbaldwin.com/java/Java300.htm">
+
+Java 2D Graphics, Nested 
+Top-Level Classes and Interfaces
+
+</link>
+
+ if you are unfamiliar with static top-level 
+classes.)
+
+</emphasis>
+. This organizational approach was chosen primarily for the purpose 
+of gathering the individual classes together under a common naming umbrella 
+while avoiding name conflicts within a single package.
+
+</para>
+
+
+
+
+<para id="p1147">
+For example, as time 
+passes and this library is expanded, my default package may contain class files 
+with the following names, each representing a compiled version of the 
+
+<emphasis id="strong1125" effect="bold">
+
+Point
+
+</emphasis>
+ class in a different version of the overall library.
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1064">
+GM2D01$Point.class
+
+</item>
+
+
+	
+
+<item id="li1065">
+GM2D02$Point.class
+
+</item>
+
+
+	
+
+<item id="li1066">
+GM2D03$Point.class
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1148">
+<emphasis id="strong1126" effect="bold">
+Real numbers represented as type double
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1149">
+All real-number values used in the library are maintained as type 
+
+<emphasis id="strong1127" effect="bold">
+double
+
+</emphasis>
+ 
+because 
+
+<emphasis id="strong1128" effect="bold">
+double
+
+</emphasis>
+ is the default representation for literal real numbers in Java.
+
+</para>
+
+
+
+
+<para id="p1150">
+<emphasis id="strong1129" effect="bold">
+Will explain in fragments
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1151">
+I will explain the code in 
+
+<link id="a1106" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ and 
+
+<link id="a1107" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ in fragments, switching 
+back and forth between the code from the program named 
+
+<emphasis id="strong1130" effect="bold">
+PointLine02
+
+</emphasis>
+ and 
+the library class named 
+
+<emphasis id="strong1131" effect="bold">
+GM2D01
+
+</emphasis>
+ to show how they work together.
+
+</para>
+
+
+
+
+<para id="p1152">
+<emphasis id="strong1132" effect="bold">
+Beginning of the class named PointLine02
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1153">
+<link id="a1108" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ shows the beginning of the class named 
+
+<emphasis id="strong1133" effect="bold">
+PointLine02
+
+</emphasis>
+ including 
+the beginning of the 
+
+<emphasis id="strong1134" effect="bold">
+main
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Beginning of the class named PointLine02. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1011" display="block">class PointLine02{
+  public static void main(String[] args){
+
+    System.out.println(
+                  "Instantiate and display the contents\n"
+                  + "of a new ColMatrix object");
+
+    GM2D01.ColMatrix colMatrix = 
+                            new GM2D01.ColMatrix(2.5,6.8);
+
+    System.out.println(colMatrix);
+    try{
+      System.out.println(colMatrix.getData(0));
+      System.out.println(colMatrix.getData(1));
+      
+      //This statement will throw an exception on purpose
+      System.out.println(colMatrix.getData(2));
+    }catch(Exception e){
+      System.out.println("Bad index");
+    }//end catch
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1154">
+<emphasis id="strong1135" effect="bold">
+The GM2D01.ColMatrix class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1155">
+You learned about a column matrix in the Kjell tutorial. The 
+
+<emphasis id="strong1136" effect="bold">
+GM2D01 
+
+</emphasis>
+
+class contains a class named 
+
+<emphasis id="strong1137" effect="bold">
+ColMatrix
+
+</emphasis>
+. 
+
+<emphasis id="em1057" effect="italics">
+(You will see the code for 
+that class definition later.)
+
+</emphasis>
+ An object of the 
+
+<emphasis id="strong1138" effect="bold">
+ColMatrix
+
+</emphasis>
+ class is 
+intended to represent a column matrix as described by Kjell.
+
+</para>
+
+
+
+
+<para id="p1156">
+The code in 
+
+<link id="a1109" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ instantiates and displays the contents of a new object 
+of the 
+
+<emphasis id="strong1139" effect="bold">
+ColMatrix
+
+</emphasis>
+ class. 
+
+<emphasis id="em1058" effect="italics">
+(Note the syntax required to instantiate an 
+object of a static top-level class belonging to another class as shown in 
+
+
+<link id="a1110" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1157">
+After instantiating the object, the remaining statements in 
+
+<link id="a1111" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ display the numeric contents of the 
+
+<emphasis id="strong1140" effect="bold">
+
+ColMatrix
+
+</emphasis>
+ object using two different approaches. 
+
+</para>
+
+
+
+
+<para id="p1158">
+<emphasis id="strong1141" effect="bold">
+The overridden toString method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1159">
+The first approach causes the overridden 
+
+<emphasis id="strong1142" effect="bold">
+toString
+
+</emphasis>
+ method belonging to 
+the 
+
+<emphasis id="strong1143" effect="bold">
+ColMatrix
+
+</emphasis>
+ class to be executed.
+
+</para>
+
+
+
+
+<para id="p1160">
+<emphasis id="em1059" effect="italics">
+(The overridden 
+
+<emphasis id="strong1144" effect="bold">
+toString
+
+</emphasis>
+ method is executed 
+automatically by the call to the 
+
+<emphasis id="strong1145" effect="bold">
+System.out.println
+
+</emphasis>
+ method, 
+passing the object's reference as a parameter to the 
+
+<emphasis id="strong1146" effect="bold">
+println
+
+</emphasis>
+ 
+method.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1161">
+The overridden 
+
+<emphasis id="strong1147" effect="bold">
+toString
+
+</emphasis>
+ method 
+returns a string that is displayed on the standard output device. That string 
+contains the values of the two real numbers stored in the column matrix.
+
+</para>
+
+
+
+
+<para id="p1162">
+<emphasis id="strong1148" effect="bold">
+The getData method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1163">
+The second approach used to display the data in 
+
+<link id="a1112" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1149" effect="bold">
+
+getData
+
+</emphasis>
+ method on the 
+
+<emphasis id="strong1150" effect="bold">
+ColMatrix
+
+</emphasis>
+ object twice in succession to get the 
+two numeric values stored in the object and to display those two values on the 
+standard output device.
+
+</para>
+
+
+
+
+<para id="p1164">
+As you will see shortly, the 
+
+<emphasis id="strong1151" effect="bold">
+getData
+
+</emphasis>
+ method requires an incoming index 
+value of either 0 or 1 to identify the numeric value that is to be returned. 
+
+
+</para>
+
+
+
+
+<para id="p1165">
+<link id="a1113" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ purposely calls the 
+
+<emphasis id="strong1152" effect="bold">
+getData
+
+</emphasis>
+ method with an index value of 2 to 
+demonstrate that this will cause the method to throw an 
+
+<emphasis id="strong1153" effect="bold">
+
+IndexOutOfBoundsException
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1166">
+<emphasis id="em1060" effect="italics">
+(The text output produced by the code in 
+
+<link id="a1114" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ is shown near the top 
+of 
+
+<link id="a1115" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1167">
+<emphasis id="strong1154" effect="bold">
+Beginning of the class named GM2D01
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1168">
+<link id="a1116" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ shows the beginning of the library class named 
+
+<emphasis id="strong1155" effect="bold">
+GM2D01
+
+</emphasis>
+, 
+including the entire static top-level class named 
+
+<emphasis id="strong1156" effect="bold">
+ColMatrix
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Beginning of the class named GM2D01. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1012" display="block">public class GM2D01{
+  public static class ColMatrix{
+    double[] data = new double[2];
+    
+    ColMatrix(double data0,double data1){//constructor
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    
+    public String toString(){
+      return  data[0] + "," + data[1];
+    }//end overridden toString method
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)) 
+                    throw new IndexOutOfBoundsException();
+      return data[index];
+    }//end getData
+    
+  }//end class ColMatrix
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<section id="h31002">
+<title>
+<emphasis id="The_GM2D01.ColMatrix_class" effect="bold">
+
+The GM2D01.ColMatrix class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1169">
+As mentioned earlier, an object of the 
+
+<emphasis id="strong1157" effect="bold">
+ColMatrix
+
+</emphasis>
+ class represents 
+	a 2D column matrix as described by Kjell. Furthermore, an object of this 
+	class is the fundamental building block for several of the other classes in 
+	the library.
+
+</para>
+
+
+
+
+<para id="p1170">
+<emphasis id="em1061" effect="italics">
+(The static 
+
+<emphasis id="strong1158" effect="bold">
+ColMatrix
+
+</emphasis>
+ class will be expanded in future modules to provide 
+	various matrix arithmetic capabilities.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1171">
+<emphasis id="strong1159" effect="bold">
+Constructor for the ColMatrix class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1172">
+The constructor for the class requires two incoming parameters of type 
+
+<emphasis id="strong1160" effect="bold">
+
+double
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1173">
+<emphasis id="em1062" effect="italics">
+(For this example, the code in 
+
+<link id="a1117" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ passes the values 2.5 
+and 6.8 to the constructor for the class.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1174">
+The two incoming parameter values 
+are stored in the first two elements of a two-element array of type 
+
+<emphasis id="strong1161" effect="bold">
+double
+
+</emphasis>
+ 
+where they can be easily accessed later for whatever purpose they may be needed.
+
+</para>
+
+
+
+
+<para id="p1175">
+<emphasis id="strong1162" effect="bold">
+Overridden toString method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1176">
+<link id="a1118" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ also overrides the 
+
+<emphasis id="strong1163" effect="bold">
+toString
+
+</emphasis>
+ method to construct and return a 
+reference to a 
+
+<emphasis id="strong1164" effect="bold">
+String
+
+</emphasis>
+ object containing the two values stored in the 
+array. 
+
+</para>
+
+
+
+
+<para id="p1177">
+When the 
+
+<emphasis id="strong1165" effect="bold">
+println
+
+</emphasis>
+ method is called for the second time, 
+
+<emphasis id="em1063" effect="italics">
+(near the 
+middle of 
+
+</emphasis>
+ 
+
+<link id="a1119" target-id="Listing_8">
+
+
+<emphasis id="em1064" effect="italics">
+Listing 8
+
+</emphasis>
+</link>
+
+), the overridden
+
+
+<emphasis id="strong1166" effect="bold">
+toString
+
+</emphasis>
+ method is called automatically and the output shown 
+in the third line of text in 
+
+<link id="a1120" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ is produced.
+
+</para>
+
+
+
+
+<para id="p1178">
+<emphasis id="strong1167" effect="bold">
+The getData method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1179">
+Finally, 
+
+<link id="a1121" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ defines a method named 
+
+<emphasis id="strong1168" effect="bold">
+getData
+
+</emphasis>
+. The purpose of this method 
+is to retrieve and to return the individual values stored in the array.
+
+</para>
+
+
+
+
+<para id="p1180">
+The 
+method requires an incoming parameter value of 0 or 1. This value is used as an 
+index to identify the specific data value that is to be returned. If the method 
+receives any other value, it throws an 
+
+<emphasis id="strong1169" effect="bold">
+IndexOutOfBoundsException
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1181">
+As mentioned earlier, the code in 
+
+<link id="a1122" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ calls this method three times in 
+succession. The first two calls get and display the two data values shown at the top 
+of 
+
+<link id="a1123" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. The third call causes the method to throw an exception producing 
+the first 
+
+<emphasis id="em1065" effect="italics">
+"Bad index"
+
+</emphasis>
+ message shown in 
+
+<link id="a1124" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1182">
+<emphasis id="strong1170" effect="bold">
+The Point class
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1183">
+The 
+
+<emphasis id="strong1171" effect="bold">
+GM2D01
+
+</emphasis>
+ class contains a static top-level class named 
+
+<emphasis id="strong1172" effect="bold">
+Point
+
+</emphasis>
+. 
+Recall that Kjell tells us that a 
+
+<emphasis id="em1066" effect="italics">
+point
+
+</emphasis>
+ is simply a location in space. A 
+point can be represented by a pair of coordinate values in a specific coordinate 
+frame. A convenient way to handle the pair of coordinate values in a program is 
+to store them in a column matrix. An object of the 
+
+<emphasis id="strong1173" effect="bold">
+GM2D01.Point
+
+</emphasis>
+ class is 
+intended to represent a point in 2D space.
+
+</para>
+
+
+
+
+<para id="p1184">
+<emphasis id="strong1174" effect="bold">
+Instantiating a Point object
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1185">
+As you will see shortly, the constructor for the 
+
+<emphasis id="strong1175" effect="bold">
+Point
+
+</emphasis>
+ class requires 
+a single incoming parameter, which is a reference to an object of the class 
+
+<emphasis id="strong1176" effect="bold">
+
+ColMatrix
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1186">
+<link id="a1125" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+, 
+
+<emphasis id="em1067" effect="italics">
+(which is a fragment from the 
+
+<emphasis id="strong1177" effect="bold">
+PointLine02
+
+</emphasis>
+ program)
+
+</emphasis>
+, 
+instantiates a new 
+
+<emphasis id="strong1178" effect="bold">
+ColMatrix
+
+</emphasis>
+ object and populates it with the values 3.4 
+and 9.7. Then it instantiates a new 
+
+<emphasis id="strong1179" effect="bold">
+Point
+
+</emphasis>
+ object, passing the 
+aforementioned 
+
+<emphasis id="strong1180" effect="bold">
+ColMatrix
+
+</emphasis>
+ object's reference as a parameter to the 
+
+<emphasis id="strong1181" effect="bold">
+
+Point
+
+</emphasis>
+ constructor.
+
+</para>
+
+
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Exercising the Point class.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1013" display="block">
+//A fragment from the PointLine02 program
+
+    System.out.println(/*blank line*/);
+    System.out.println(
+                  "Instantiate and display the contents\n"
+                  + "of a new Point object");
+
+    colMatrix = new GM2D01.ColMatrix(3.4,9.7);
+    GM2D01.Point point = new GM2D01.Point(colMatrix);
+
+    System.out.println(point);
+    try{
+      System.out.println(point.getData(0));
+      System.out.println(point.getData(1));
+      //This statement will throw an exception on purpose
+      System.out.println(point.getData(-1));
+    }catch(Exception e){
+      System.out.println("Bad index");
+    }//end catch</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1187">
+<emphasis id="strong1182" effect="bold">
+Coding for clarity
+
+</emphasis>
+</para>
+
+
+
+
+
+
+	
+
+<note id="note1005" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1183" effect="bold">
+Coding for clarity:
+
+</emphasis>
+
+				
+
+<para id="p1188">
+Ordinarily I would compress those two statements into a single statement by instantiating an anonymous object of the ColMatrix class in the call to the constructor for the Point class, and I recommend that you do the same 
+				if you know how. However, I elected to separate the code into two statements in this 
+				case to provide clarity and make it somewhat easier for you to understand.
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1189">
+<emphasis id="strong1184" effect="bold">
+Display the values
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1190">
+Following that, the code in 
+
+<link id="a1126" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ displays the coordinate values that 
+represent the point in the same two ways described earlier for the 
+
+<emphasis id="strong1185" effect="bold">
+ColMatrix
+
+</emphasis>
+ 
+object. The screen output is shown in 
+
+<link id="a1127" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="The_GM2D01.Point_class" effect="bold">
+
+The GM2D01.Point class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1191">
+The complete definition of the static top-level class named 
+
+<emphasis id="strong1186" effect="bold">
+Point
+
+</emphasis>
+ is 
+shown in 
+
+<link id="a1128" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+	
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. The static top-level class named Point. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1014" display="block">
+//A fragment from the GM2D01 class
+
+  public static class Point{
+    GM2D01.ColMatrix point;
+    
+    Point(GM2D01.ColMatrix point){
+      this.point = point;
+    }//end constructor
+    
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)) 
+                    throw new IndexOutOfBoundsException();
+      return point.getData(index);
+    }//end getData
+    
+  }//end class Point
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1192">
+<emphasis id="strong1187" effect="bold">
+Less detail in the discussions
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1193">
+By now, you may be getting a little bored with the detail in which I have 
+been discussing and explaining the code so I will be more brief in my 
+explanations from here on.
+
+</para>
+
+
+
+
+<para id="p1194">
+The code in 
+
+<link id="a1129" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ is straightforward and shouldn't require a lot of 
+explanation. Perhaps the most significant thing to note about 
+
+<link id="a1130" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ is that 
+the coordinate values that represent the point are actually stored internally in 
+an object of the type 
+
+<emphasis id="strong1188" effect="bold">
+ColMatrix
+
+</emphasis>
+. That approach will prove to be 
+convenient for certain mathematical operations that will be explained in future 
+modules.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="The_GM2D01.Vector_class" effect="bold">
+
+The GM2D01.Vector class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1195">
+The static top-level class named 
+
+<emphasis id="strong1189" effect="bold">
+Vector
+
+</emphasis>
+ is shown in 
+
+<link id="a1131" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1196">
+<emphasis id="em1068" effect="italics">
+
+(Note that this is a different class from the class named 
+
+<emphasis id="strong1190" effect="bold">
+java.util.Vector
+
+</emphasis>
+ 
+in the standard Java library.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1197">
+You will find the code that exercises this 
+class and produces the output shown in 
+
+<link id="a1132" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ in the complete listing of the 
+program named 
+
+<emphasis id="strong1191" effect="bold">
+PointLine02
+
+</emphasis>
+ in 
+
+<link id="a1133" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. That code is straightforward and 
+shouldn't require an explanation.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. The static top-level class named Vector. 
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1015" display="block">
+//A fragment from the GM2D01 class
+
+  public static class Vector{
+    GM2D01.ColMatrix vector;
+    
+    Vector(GM2D01.ColMatrix vector){
+      this.vector = vector;
+    }//end constructor
+    
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)) 
+                    throw new IndexOutOfBoundsException();
+      return vector.getData(index);
+    }//end getData
+    
+  }//end class Vector
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1198">
+<emphasis id="strong1192" effect="bold">
+Storing a vector in a column matrix
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1199">
+Recall that Kjell tells us that both points and vectors can be conveniently 
+stored in a column matrix. As a result, the code in 
+
+<link id="a1134" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+, 
+
+<emphasis id="em1069" effect="italics">
+(at this 
+stage in the development of the library)
+
+</emphasis>
+, is essentially the same as the 
+code for the 
+
+<emphasis id="strong1193" effect="bold">
+Point
+
+</emphasis>
+ class in 
+
+<link id="a1135" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. The only differences are a few 
+differences in names.
+
+</para>
+
+
+
+
+<para id="p1200">
+You may be wondering why I didn't simply define a single class that can serve 
+both purposes. I probably could have done that. Recall however that this library 
+is being designed for clarity. I believe that 
+such clarity is best served by having consistent names for the kinds of items 
+represented by objects of the classes. Also, it is likely that the definitions 
+of the two classes will be different later when I expand the library to provide 
+additional capabilities.
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="The_GM2D01.Line_class" effect="bold">
+
+The GM2D01.Line class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1201">
+Kjell tells us that a line segment is the straight path between two points, 
+and that it has no thickness. The class named 
+
+<emphasis id="strong1194" effect="bold">
+GM2D01
+
+</emphasis>
+ contains a class 
+named 
+
+<emphasis id="strong1195" effect="bold">
+Line
+
+</emphasis>
+ that is intended to represent a mathematical line segment as described by 
+Kjell.
+
+</para>
+
+
+
+
+<para id="p1202">
+<link id="a1136" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ is a complete listing of the class named 
+
+<emphasis id="strong1196" effect="bold">
+Line
+
+</emphasis>
+. As before, 
+you will find the code that exercises this class and produces the output shown 
+in 
+
+<link id="a1137" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ in the complete listing for the program named 
+
+<emphasis id="strong1197" effect="bold">
+PointLine02
+
+</emphasis>
+ in 
+
+
+<link id="a1138" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. That code is straightforward and shouldn't require an explanation.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. The static top-level class named Line.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1016" display="block">
+//A fragment from the GM2D01 class
+
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line{
+    GM2D01.Point[] line = new GM2D01.Point[2];
+    
+    Line(GM2D01.Point tail,GM2D01.Point head){
+      this.line[0] = tail;
+      this.line[1] = head;
+    }//end constructor
+    
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    
+    public GM2D01.Point getTail(){
+      return line[0];
+    }//end getTail
+    
+    public GM2D01.Point getHead(){
+      return line[1];
+    }//end getTail
+
+  }//end class Line
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1203">
+<emphasis id="strong1198" effect="bold">
+Represent a line segment by two points
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1204">
+Since a line segment is the straight path between two points, a line segment 
+in this library is represented by an object that encapsulates two 
+
+<emphasis id="strong1199" effect="bold">
+Point
+
+</emphasis>
+ objects. One of those points is referred to as the 
+
+<emphasis id="em1070" effect="italics">
+tail
+
+</emphasis>
+ and the other is 
+referred to as the 
+
+<emphasis id="em1071" effect="italics">
+head
+
+</emphasis>
+, simply as a means of distinguishing between 
+the two ends of the line segment.
+
+</para>
+
+
+
+
+<para id="p1205">
+The constructor for the 
+
+<emphasis id="strong1200" effect="bold">
+Line
+
+</emphasis>
+ class requires two points as incoming 
+parameters and stores them in a two-element array of type 
+
+<emphasis id="strong1201" effect="bold">
+GM2D01.Point
+
+</emphasis>
+. 
+Beyond that, the code in 
+
+<link id="a1139" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ is straightforward and shouldn't require 
+further explanation.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="GM2D01_is_purely_mathematical" effect="bold">
+
+The GM2D01 library is purely 
+mathematical
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1206">
+The library named 
+
+<emphasis id="strong1202" effect="bold">
+GM2D01
+
+</emphasis>
+ is purely mathematical. By that, I 
+mean that the library doesn't provide any mechanism for rendering objects of the
+
+
+<emphasis id="strong1203" effect="bold">
+ColMatrix
+
+</emphasis>
+, 
+
+<emphasis id="strong1204" effect="bold">
+Line
+
+</emphasis>
+, 
+
+<emphasis id="strong1205" effect="bold">
+Point
+
+</emphasis>
+, or
+
+
+<emphasis id="strong1206" effect="bold">
+Vector
+
+</emphasis>
+ classes in a visual graphics context. That capability 
+will be added to the next version of the library in the next module.
+
+</para>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Documentation_for_the_library_named_GM2D01" effect="bold">
+
+Documentation for the 
+GM2D01 library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1207">
+Click 
+
+<link id="a1140" url="GM2D01docs.zip">
+
+here
+
+</link>
+
+ to download a zip file containing 
+standard javadoc documentation for the library named 
+
+<emphasis id="strong1207" effect="bold">
+GM2D01
+
+</emphasis>
+. Extract the contents of the zip file into an empty folder and open the file 
+named 
+
+<emphasis id="strong1208" effect="bold">
+index.html
+
+</emphasis>
+ in your browser to view the documentation.
+
+</para>
+
+
+
+
+<para id="p1208">
+Although the documentation doesn't provide much in the way of explanatory 
+text 
+
+<emphasis id="em1072" effect="italics">
+(see 
+
+</emphasis>
+<link id="a1141" target-id="Listing_16">
+
+
+<emphasis id="em1073" effect="italics">
+Listing 16
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1074" effect="italics">
+ and the 
+explanations given above)
+
+</emphasis>
+, the documentation does 
+provide a good overview of the organization and structure of the library. You 
+may find it helpful in that regard. 
+
+</para>
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Homework_study_assignment" effect="bold">
+
+Homework assignment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1209">
+Your homework assignment for this module was to study Kjell's 
+
+<emphasis id="em1075" effect="italics">
+CHAPTER 0 -- Points and Lines
+
+</emphasis>
+ plus 
+
+
+<emphasis id="em1076" effect="italics">
+CHAPTER 1 -- Vectors, Points, and Column Matrices
+
+</emphasis>
+ down through the topic titled 
+
+
+<emphasis id="em1077" effect="italics">
+Variables as Elements
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1210">
+The homework assignment for the next module is 
+to make certain that you have carefully studied that material, and to mentally 
+reflect on how it correlates with what you have learned in this module.
+
+</para>
+
+
+
+
+<para id="p1211">
+In addition to studying the Kjell material, you should read at least the 
+next two modules in this collection and bring your questions about that 
+material to the next classroom session.
+
+</para>
+
+
+
+
+<para id="p1212">
+Finally, you should have begun studying the
+
+
+<link id="a1142" url="http://cnx.org/content/m44992/latest/">
+
+physics material
+
+</link>
+
+ at the 
+beginning of the semester and you should continue studying one physics module per week 
+thereafter. You should also feel free to 
+bring your questions about that material to the classroom for discussion.
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1213">
+I encourage you to copy the code from 
+
+<link id="a1143" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+, 
+
+<link id="a1144" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+, and 
+
+<link id="a1145" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ 
+into your text editor. Compile the code and execute it. Experiment with the 
+code, making changes, and observing the results of your changes. Make sure you 
+understand why your changes produce the results that they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="Summary" effect="bold">
+
+Summary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1214">
+In this and the previous module, I introduced you to an excellent interactive 
+tutorial titled 
+
+<emphasis id="em1078" effect="italics">
+
+
+
+<link id="a1146" url="http://chortle.ccsu.edu/vectorlessons/vectorindex.html">
+
+Vector Math for 3D Computer Graphics
+
+</link>
+
+ 
+
+</emphasis>
+  written by Dr. Bradley P. Kjell. 
+Then I presented and explained two sample programs and a sample game-programming 
+math library intended to represents concepts from Dr. Kjell's tutorial in Java 
+code.
+
+</para>
+
+
+
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="Whats_next" effect="bold">
+
+What's next?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1215">
+While you probably won't have a frequent need to present points, lines, and 
+vectors in graphical form in computer games that you write, it is often very 
+useful to provide graphical representations of these items during the testing 
+and debugging of the program. I will update the programming-math library to make 
+it easy to provide graphical representations of points, lines, and vectors in 
+the next module in this collection. 
+
+</para>
+
+
+
+
+<para id="p1216">
+An example of such graphical output is shown in 
+
+<link id="a1147" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. The image on the 
+left consists of graphical objects that represent points and lines. The image on 
+the right consists of graphical objects that represent vectors. 
+
+<emphasis id="em1079" effect="italics">
+(The head of 
+each vector is represented by a small circle.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1217">
+<emphasis id="Figure_6" effect="bold">
+
+
+<emphasis id="strong1209" effect="bold">
+Figure 6
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1210" effect="bold">
+ Sample output from updated programming-math library.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1218">
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/java1700a5.jpg" width="401" height="201"/>
+</media>
+
+
+</para>
+
+
+
+	
+
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1219">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1006" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1211" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1010" list-type="bulleted">
+
+					
+
+<item id="li1067">
+Module name: GAME 2302-0105: Getting Started
+
+</item>
+
+
+					
+
+<item id="li1068">
+File: Game0105.htm 
+
+</item>
+
+
+					
+
+<item id="li1069">
+Published: 10/13/12
+
+</item>
+
+
+					
+
+<item id="li1070">
+Revised: 02/01/16 
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1007" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1212" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1220">
+<emphasis id="strong1213" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1221">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1222">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1223">
+<emphasis id="strong1214" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11011">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1224">
+Complete listings of the programs discussed above are provided in 
+
+
+<link id="a1148" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+, 
+
+<link id="a1149" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+, and 
+
+<link id="a1150" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ below.
+
+</para>
+
+
+
+
+<para id="p1225">
+<emphasis id="strong1215" effect="bold">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. Source code for the program named PointLine01.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1017" display="block">/*PointLine01.java 
+Copyright 2008, R.G.Baldwin
+
+This program illustrates the implementation of the concept
+of a point and a line segment in Java.
+
+Four points (locations in space) are defined by using the 
+coordinates of the four points as the x and y parameters 
+to the constructor for the Point2D.Double class. This 
+results in four objects of the Point2D.Double class.
+
+Two line segments are defined by using pairs of points 
+as parameters to the Line2D.Double class.  This results 
+in two objects of the Line2D.Double class.
+
+The draw method belonging to an object of the Graphics2D 
+class is used to draw the two line segments on a Canvas 
+object for which the origin has been translated to the 
+center of the Canvas.
+
+The coordinate values of the points and the selection of 
+point-pairs to specify the ends of the line segments is 
+such that the final rendering is a pair of orthogonal 
+lines that intersect at the origin.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+import java.awt.geom.*;
+import java.awt.*;
+import javax.swing.*;
+
+class PointLine01{
+  public static void main(String[] args){
+    GUI guiObj = new GUI();
+  }//end main
+}//end controlling class PointLine01
+//======================================================//
+
+class GUI extends JFrame{
+  //Specify the horizontal and vertical size of a JFrame
+  // object.
+  int hSize = 200;
+  int vSize = 200;
+  
+  GUI(){//constructor
+  
+    //Set JFrame size and title
+    setSize(hSize,vSize);
+    setTitle("R.G.Baldwin");
+    
+    //Create a new drawing canvas and add it to the
+    // center of the JFrame.
+    MyCanvas myCanvas = new MyCanvas();
+    this.getContentPane().add(myCanvas);
+
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    setVisible(true);
+
+  }//end constructor
+  //----------------------------------------------------//
+  
+  
+  //This is an inner class of the GUI class.
+  class MyCanvas extends Canvas{
+    //Override the paint() method. This method will be
+    // called when the JFrame and the Canvas in its
+    // contentPane are displayed on the screen.
+    public void paint(Graphics g){
+      //Downcast the Graphics object to a Graphics2D
+      // object. The Graphics2D class provides
+      // capabilities that don't exist in the Graphics
+      // class.
+      Graphics2D g2 = (Graphics2D)g;
+      
+      //By default, the origin is at the upper-left corner
+      // of the canvas. This statement translates the
+      // origin to the center of the canvas.  
+      g2.translate(
+                this.getWidth()/2.0,this.getHeight()/2.0);
+      
+      //Define two points.
+      Point2D pointA = 
+             new Point2D.Double(-this.getWidth()/2.5,0.0);
+      Point2D pointB = 
+              new Point2D.Double(this.getWidth()/2.5,0.0);
+      //Use the points to construct an object that
+      // represents a line segment that connects the two
+      // points. The values of the points causes this
+      // line segment to be horizontal.
+      Line2D.Double horizLine = 
+                         new Line2D.Double(pointA,pointB);
+      
+      //Use the same procedure to construct an object that
+      // represents a vertical line segment.
+      Point2D pointC = 
+            new Point2D.Double(0.0,-this.getHeight()/2.5);
+      Point2D pointD = 
+             new Point2D.Double(0.0,this.getHeight()/2.5);
+      Line2D.Double vertLine = 
+                         new Line2D.Double(pointC,pointD);
+      
+      //Draw the horizontal and vertical line segments on
+      // the canvas.
+      g2.draw(horizLine);
+      g2.draw(vertLine);
+  
+    }//end overridden paint()
+
+    
+  }//end inner class MyCanvas
+    
+}//end class GUI
+</code>
+
+
+
+
+
+
+
+<para id="p1226">
+<emphasis id="strong1216" effect="bold">
+<emphasis id="Listing_15" effect="bold">
+
+Listing 15
+
+</emphasis>
+
+. Source code for the program named PointLine02.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1018" display="block">/*PointLine02.java 
+Copyright 2008, R.G.Baldwin
+
+The purpose of this program is to introduce the use of a
+game-math class library named GM2D01. The class name 
+GM2D01 is an abbreviation for GameMath2D01.
+
+The program instantiates objects from the following static
+top-level classes belonging to the class named GM2D01 and
+then displays the contents of those objects in two 
+different ways on the standard output device.
+
+ColMatrix
+Point
+Vector
+Line
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+class PointLine02{
+  public static void main(String[] args){
+
+    System.out.println(
+                  "Instantiate and display the contents\n"
+                  + "of a new ColMatrix object");
+    GM2D01.ColMatrix colMatrix = 
+                            new GM2D01.ColMatrix(2.5,6.8);
+    System.out.println(colMatrix);
+    try{
+      System.out.println(colMatrix.getData(0));
+      System.out.println(colMatrix.getData(1));
+      //This statement will throw an exception on purpose
+      System.out.println(colMatrix.getData(2));
+    }catch(Exception e){
+      System.out.println("Bad index");
+    }//end catch
+
+    System.out.println(/*blank line*/);
+    System.out.println(
+                  "Instantiate and display the contents\n"
+                  + "of a new Point object");
+    colMatrix = new GM2D01.ColMatrix(3.4,9.7);
+    GM2D01.Point point = new GM2D01.Point(colMatrix);
+    System.out.println(point);
+    try{
+      System.out.println(point.getData(0));
+      System.out.println(point.getData(1));
+      //This statement will throw an exception on purpose
+      System.out.println(point.getData(-1));
+    }catch(Exception e){
+      System.out.println("Bad index");
+    }//end catch
+    
+    System.out.println(/*blank line*/);
+    System.out.println(
+                  "Instantiate and display the contents\n"
+                  + "of a new Vector object");
+    colMatrix = new GM2D01.ColMatrix(-1.9,7.5);
+    GM2D01.Vector vector = new GM2D01.Vector(colMatrix);
+    System.out.println(vector);
+    try{
+      System.out.println(vector.getData(0));
+      System.out.println(vector.getData(1));
+      //This statement will throw an exception on purpose
+      System.out.println(vector.getData(2));
+    }catch(Exception e){
+      System.out.println("Bad index");
+    }//end catch
+    
+    System.out.println(/*blank line*/);
+    System.out.println(
+                  "Instantiate and display the contents\n"
+                  + "of a new Line object");
+    GM2D01.ColMatrix colMatrixTail = 
+                            new GM2D01.ColMatrix(1.1,2.2);
+    GM2D01.ColMatrix colMatrixHead = 
+                            new GM2D01.ColMatrix(3.3,4.4);
+    
+    GM2D01.Point pointTail = 
+                          new GM2D01.Point(colMatrixTail);
+    GM2D01.Point pointHead = 
+                          new GM2D01.Point(colMatrixHead);
+    
+    GM2D01.Line line = 
+                     new GM2D01.Line(pointTail,pointHead);
+    System.out.println(line);
+
+    pointTail = line.getTail();
+    System.out.println(pointTail);
+    pointHead = line.getHead();
+    System.out.println(pointHead);
+
+  }//end main
+}//end controlling class PointLine02
+</code>
+
+
+
+
+
+<para id="p1227">
+<emphasis id="strong1217" effect="bold">
+<emphasis id="Listing_16" effect="bold">
+
+Listing 16
+
+</emphasis>
+
+. Source code for the game-programming math library named GM2D01.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1019" display="block">/*GM2D01.java 
+Copyright 2008, R.G.Baldwin
+
+The name GM2D01 is an abbreviation for GameMath2D01.
+
+This is a game-math class, which will be expanded over 
+time. The class is provided solely for educational 
+purposes. No effort has been expended to optimize it in
+any way. Rather, it was designed and implemented for
+maximum clarity in order to help students understand
+the programming details of various mathematical operations
+commonly used in game programming.
+
+Each time the class is expanded or modified, it will be
+given a new name by incrementing the two digits at the
+end of the name. No attempt will be made to maintain
+backward compatibility from one version of the class to
+the next.
+
+This class contains a number of static top-level classes.
+This organizational approach was used primarily for the
+purpose of gathering such classes under a single naming
+umbrella while avoiding name conflicts within a single
+package. For example, as time passes, and this library is 
+expanded, my default package may contain class files with 
+the following names:
+
+GM2D01$Point.class
+GM2D02$Point.class
+GM2D03$Point.class
+
+All real-number values used in this class are maintained
+as type double.
+
+Tested using JDK 1.6 under WinXP.
+*********************************************************/
+
+public class GM2D01{
+
+  //An object of this class represents a 2D column matrix.
+  // An object of this class is the fundamental building
+  // block for several of the other classes in the
+  // library.
+  public static class ColMatrix{
+    double[] data = new double[2];
+    
+    ColMatrix(double data0,double data1){
+      data[0] = data0;
+      data[1] = data1;
+    }//end constructor
+    
+    public String toString(){
+      return  data[0] + "," + data[1];
+    }//end overridden toString method
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)) 
+                    throw new IndexOutOfBoundsException();
+      return data[index];
+    }//end getData
+    
+  }//end class ColMatrix
+  //====================================================//
+  
+  public static class Point{
+    GM2D01.ColMatrix point;
+    
+    Point(GM2D01.ColMatrix point){
+      this.point = point;
+    }//end constructor
+    
+    public String toString(){
+      return point.getData(0) + "," + point.getData(1);
+    }//end toString
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)) 
+                    throw new IndexOutOfBoundsException();
+      return point.getData(index);
+    }//end getData
+    
+  }//end class Point
+  //====================================================//
+  
+  public static class Vector{
+    GM2D01.ColMatrix vector;
+    
+    Vector(GM2D01.ColMatrix vector){
+      this.vector = vector;
+    }//end constructor
+    
+    public String toString(){
+      return vector.getData(0) + "," + vector.getData(1);
+    }//end toString
+    
+    public double getData(int index){
+      if((index &lt; 0) || (index &gt; 1)) 
+                    throw new IndexOutOfBoundsException();
+      return vector.getData(index);
+    }//end getData
+    
+  }//end class Vector
+  //====================================================//
+  
+  //A line is defined by two points. One is called the
+  // tail and the other is called the head.
+  public static class Line{
+    GM2D01.Point[] line = new GM2D01.Point[2];
+    
+    Line(GM2D01.Point tail,GM2D01.Point head){
+      this.line[0] = tail;
+      this.line[1] = head;
+    }//end constructor
+    
+    public String toString(){
+      return "Tail = " + line[0].getData(0) + "," 
+             + line[0].getData(1) + "\nHead = " 
+             + line[1].getData(0) + "," 
+             + line[1].getData(1);
+    }//end toString
+    
+    public GM2D01.Point getTail(){
+      return line[0];
+    }//end getTail
+    
+    public GM2D01.Point getHead(){
+      return line[1];
+    }//end getTail
+
+  }//end class Line
+    
+}//end class GM2D01
+</code>
+
+
+	
+
+</section>
+<section id="h11012">
+<title>
+<emphasis id="Exercises" effect="bold">
+
+Exercises
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21007">
+<title>
+<emphasis id="Exercise_1" effect="bold">
+
+Exercise 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1228">
+Without using the game math library, use the programming
+environment of your choice to write a program that draws
+a diagonal line from the upper-left to the
+lower-right corner of a window as shown in 
+
+<link id="a1151" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1229">
+<emphasis id="Figure_7" effect="bold">
+
+
+<emphasis id="strong1218" effect="bold">
+Figure 7
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1219" effect="bold">
+ Graphic output from Exercise 1.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1230">
+<media id="media1005" alt="Missing image." display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/0105ex01.jpg" width="201" height="201"/>
+</media>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Exercise_2" effect="bold">
+
+Exercise 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1231">
+Using Java and the game math library named 
+
+<emphasis id="strong1220" effect="bold">
+GM2D01
+
+</emphasis>
+, write a program that:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1071">
+Creates a new 
+
+<emphasis id="strong1221" effect="bold">
+GM2D01.Point
+
+</emphasis>
+ object with coordinate values of 3.4 and 9.7.
+
+</item>
+
+
+	
+
+<item id="li1072">
+Uses the overridden 
+
+<emphasis id="strong1222" effect="bold">
+toString
+
+</emphasis>
+ method to get and display 
+	the location of the point in 2D space in the format shown by the first line 
+	of text in 
+
+<link id="a1152" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+.
+
+</item>
+
+
+	
+
+<item id="li1073">
+Uses the 
+
+<emphasis id="strong1223" effect="bold">
+getData
+
+</emphasis>
+ method to get and display the location 
+	of the point in 2D space in the format shown by the last two lines of text in
+	
+
+<link id="a1153" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1232">
+Your screen output should display numeric values in the format shown in 
+
+<link id="a1154" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ 
+where each ? character represents a single digit.
+
+</para>
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. Text output from Exercise 2.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1020" display="block">
+?.?,?.?
+?.?
+?.?
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Exercise_3" effect="bold">
+
+Exercise 3
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1233">
+Using Java and the game math library named 
+
+<emphasis id="strong1224" effect="bold">
+GM2D01
+
+</emphasis>
+, write a program that:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1074">
+Represents a line segment using a 
+
+<emphasis id="strong1225" effect="bold">
+GM2D01.Line
+
+</emphasis>
+ object 
+	with the ends of the line segment being located at the following 
+	coordinates:
+
+<list id="ul1013" list-type="bulleted">
+
+		
+
+<item id="li1075">
+x=2.2, y=5.3
+
+</item>
+
+
+		
+
+<item id="li1076">
+x=5.2, y=9.3
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1077">
+Displays the information shown in 
+
+<link id="a1155" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+ to describe the line segment.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1234">
+Your screen output should display numeric values in the format shown in 
+
+
+<link id="a1156" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+ 
+where each ? character represents a single digit. 
+
+<emphasis id="em1080" effect="italics">
+(Note that the number of 
+digits to the right of the decimal point in the last line of text may be greater 
+or less than that shown in 
+
+</emphasis>
+ 
+
+
+<link id="a1157" target-id="Figure_9">
+
+
+<emphasis id="em1081" effect="italics">
+Figure 9
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1082" effect="italics">
+.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9
+
+</emphasis>
+
+. Text output from Exercise 
+				3.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1021" display="block">
+Tail = ?.?,?.?
+Head = ?.?,?.?
+Length = ?.???</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+<para id="p1235">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</content>
+
+
+
+
+</document>

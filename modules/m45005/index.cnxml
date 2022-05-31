@@ -1,0 +1,4530 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>GAME 2302-0350 Units and Dimensional Analysis</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m45005</md:content-id>
+  <md:title>GAME 2302-0350 Units and Dimensional Analysis</md:title>
+  <md:abstract>The purpose of this module is to explain units and dimensional analysis.</md:abstract>
+  <md:uuid>c71911f7-70b2-4525-b8e5-6d2ff86e36c0</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+ 
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Formatting_mathematical_expressions">
+
+Formatting 
+		mathematical expressions
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="What_do_we_mean_by_units">
+
+What do we mean by units?
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="SI_units">
+
+SI units
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Prefixes_for_powers_of_ten">
+
+Prefixes for powers of ten
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="Dimensional_analysis">
+
+Dimensional analysis
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Discussion">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Exercise_on_manually_converting_units">
+
+Manual exercise on converting units
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="Using_JavaScript_to_convert_units">
+
+Using JavaScript to 
+		convert units
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1014">
+<link id="a1014" target-id="More_substantive_JavaScript_examples">
+
+More substantive JavaScript examples
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Free_fall_exercise">
+
+Free fall exercise
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="A_plotting_exercise">
+
+A plotting exercise
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Run_the_program">
+
+Run the scripts
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This module is part of a series of modules designed for teaching the physics 
+component of 
+
+<emphasis id="em1000" effect="italics">
+GAME2302 Mathematical Applications for Game Development
+
+</emphasis>
+ at 
+Austin Community College in Austin, TX. 
+
+<emphasis id="em1001" effect="italics">
+(See
+
+
+<link id="a1019" url="http://cnx.org/content/m44983/latest">
+
+GAME 2302-0100: Introduction
+
+</link>
+
+ 
+for the first module in the course along with a description of the course, 
+course resources, homework assignments, etc.) 
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1001">
+The purpose of this module is to explain units and dimensional analysis.
+
+</para>
+
+
+	
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1019">
+<link id="a1020" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Single-line format. 
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1021" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. SI base units. 
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1022" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Examples of SI derived units. 
+
+</item>
+
+
+	
+
+<item id="li1022">
+<link id="a1023" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. A sampling of SI prefixes. 
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1024" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Screen output for Listing #1. 
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1025" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Screen output for Listing #2. 
+
+</item>
+
+
+	
+
+<item id="li1025">
+<link id="a1026" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Screen output for Listing #3. 
+
+</item>
+
+
+	
+
+<item id="li1026">
+<link id="a1027" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. The trajectory of the falling rock.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1027">
+<link id="a1028" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Convert from paces to miles. 
+
+</item>
+
+
+	
+
+<item id="li1028">
+<link id="a1029" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Free fall exercise. 
+
+</item>
+
+
+	
+
+<item id="li1029">
+<link id="a1030" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. A plotting exercise. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="General_background_information" effect="bold">
+
+General background 
+information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+As a young engineering student many years ago, I was told that when 
+evaluating mathematical expressions, I should always embed the units in the 
+expression, manipulate them algebraically, and confirm that the units that 
+survive until the end of the evaluation are correct relative to the problem 
+specifications.
+
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1000" effect="bold">
+Three good reasons
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1005">
+There are at least three good reasons for following this procedure:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1030">
+It shows what the units of the result are. A common mistake is to get the correct numerical result of a calculation but to write it with the wrong units.
+
+</item>
+
+
+	
+
+<item id="li1031">
+It shows where unit conversions must be performed. If units that should have canceled do not 
+	cancel, we need to go back and perform the necessary conversions. For 
+	example, when a speed in miles per hour is being calculated and the result 
+	comes out with units of miles per second, we should convert seconds to hours.
+
+</item>
+
+
+	
+
+<item id="li1032">
+It helps to locate mistakes. If a velocity (meters per second) is being calculated and the units come out as 
+	seconds per meter, we know to look for an error.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h21002">
+<title>
+<emphasis id="Formatting_mathematical_expressions" effect="bold">
+
+Formatting mathematical 
+expressions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+<emphasis id="strong1001" effect="bold">
+Multiple-line format
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1007">
+We might typically write a fraction as a horizontal line with the numerator 
+above the line and the denominator below the line using superscripts to indicate 
+exponents. The product of two fractions would typically be written in the same 
+format with a multiplication indicator joining the two fractions.
+
+</para>
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1002" effect="bold">
+Single-line format
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+ 
+
+<link id="a1031" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows multiplication and division of 
+fractions in a single-line format similar to how we write expressions in 
+computer programs.
+
+</para>
+
+
+
+	
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Single-line format.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">((3*x^2)/(4*x) * (6/(4*x) = (18*x^2)/(16*x^2) = 18/16</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1010">
+Expressions in this format may be more difficult for people to work with 
+	than the multiple line format described above. With enough time and practice, I might become almost as proficient in 
+	evaluating expressions as shown in 
+
+<link id="a1032" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ as in evaluating expressions in 
+	a multiple-line format, but I'm afraid that I would need a lot of 
+	time and a lot of practice to achieve that proficiency.
+
+</para>
+
+
+
+
+<para id="p1011">
+<emphasis id="strong1003" effect="bold">
+We must work with what we are given
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1012">
+However, we must work with what we are given so the mathematical 
+expressions in this module (and most of the other modules as well) will mostly be 
+presented in a single-line format. The good news is 
+that the single-line format can usually be easily translated into a format that 
+is suitable for evaluation using JavaScript and other programming languages.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="What_do_we_mean_by_units" effect="bold">
+
+What do we mean by units?
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1013">
+Let me try to answer this important question with an example.
+
+</para>
+
+
+
+
+<para id="p1014">
+If you were to walk from your home to your school and count your steps, you 
+might report that the distance from your home to your school is 2112 steps or paces. If 
+you are a male student, this would probably be approximately one mile, using 
+assumptions that I will explain later. If you are a female, it would probably be 
+somewhat less than a mile because your pace would probably be a little shorter 
+than your male friend's pace.
+
+</para>
+
+
+
+
+<para id="p1015">
+<emphasis id="strong1004" effect="bold">
+A pace is a unit of measurement
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1016">
+In this case, the pace would be a unit of measurement. However, it would not 
+be a 
+
+<emphasis id="em1002" effect="italics">
+standard unit
+
+</emphasis>
+ because the length of a pace for one student is often 
+different from the length of a pace for a different student. A male student, for 
+example, typically has a longer pace length than a female student.
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="strong1005" effect="bold">
+Standard units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1018">
+Standard units are units whose value has been set by some official agency 
+that has the authority to set standards. One such standard unit is the mile, 
+which as you may know is equal to 5280 foots (more commonly pronounced feet).
+
+</para>
+
+
+
+
+<para id="p1019">
+A foot (not a feet) is also a standard unit, which you may also know is equal to 12 
+inches. An inch is another standard unit.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="SI_units" effect="bold">
+
+SI units
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+The discrepancy between the pronunciation of the unit 
+
+<emphasis id="strong1006" effect="bold">
+foot
+
+</emphasis>
+ and its plural 
+
+
+<emphasis id="strong1007" effect="bold">
+feet
+
+</emphasis>
+ is an example of the need for more consistency in the use of units. Many 
+physics books use a system of units called 
+
+<emphasis id="strong1008" effect="bold">
+SI units
+
+</emphasis>
+. SI is an 
+abbreviation for a French name, which I am unable to pronounce.
+
+</para>
+
+
+
+
+<para id="p1021">
+I won't attempt to explain much about SI units. You can probably Google SI units and find 
+hundreds of web pages that explain the system in varying levels of detail.
+
+</para>
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1009" effect="bold">
+Tables of SI units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1023">
+Most of those references will probably also provide tables for the units. I will 
+also attempt 
+to provide tables in 
+
+<link id="a1033" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ and 
+
+<link id="a1034" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1024">
+<emphasis id="strong1010" effect="bold">
+Don't ignore the details
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1025">
+Note, however, that you should not ignore the online SI-unit tables altogether. They are 
+likely to contain important information that I won't reproduce here, such as the 
+fact that the meter is a unit of length and its value is 
+
+<emphasis id="em1003" effect="italics">
+the length of the path travelled by light in 
+a vacuum during a time interval of 1/299792458 of a second
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1026">
+<emphasis id="strong1011" effect="bold">
+Base units and derived units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1027">
+When reading about SI units, you will find that they are often divided into base 
+units and derived units. I will put the base units in 
+
+<link id="a1035" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ and some 
+sample derived 
+units in 
+
+<link id="a1036" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. SI base units.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">Base Quantity               Name        Symbol
+
+length                      meter       m
+mass                        kilogram    kg
+time                        second      s
+electric current            ampere      A
+thermodynamic temperature   kelvin      K
+amount of substance         mole        mol
+luminous intensity          candela     cd</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1028">
+Note that the list of derived units in 
+
+<link id="a1037" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ is only a sampling of 
+	different units that can be derived from the base units.
+
+</para>
+
+
+
+
+<para id="p1029">
+<emphasis id="strong1012" effect="bold">
+The exponentiation indicator
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+As is the case throughout these modules, the character "^" that you see used 
+extensively in 
+
+<link id="a1038" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ indicates that the character 
+following the ^ is an exponent. Note also that when the exponent is negative, it 
+is enclosed along with its minus sign in parentheses for clarity.
+
+</para>
+
+
+
+	
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+
+
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Examples of SI derived units.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">area             square meter              m^2
+volume           cubic meter               m^3
+speed, velocity  meter per second          m/s
+acceleration     meter per second squared  m/s^2
+wave number      reciprocal meter          m^(-1)
+mass density     kilogram per cubic meter  kg/m^3
+specific volume  cubic meter per kilogram  m^3/kg
+current density  ampere per square meter   A/m^2</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Prefixes_for_powers_of_ten" effect="bold">
+
+Prefixes for powers of ten
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1031">
+As an alternative to explicitly writing powers of ten, SI uses prefixes for units to indicate power of ten factors. 
+
+<link id="a1039" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ shows some of the powers of ten and the SI prefixes used for them.
+
+</para>
+
+
+
+	
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1003">
+<row id="tr1006">
+<entry id="th1003">
+
+
+
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. A sampling of SI prefixes.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">Prefix-(abbreviation)   Power of Ten
+
+peta-(P)                10^15
+tera-(T)                10^12
+giga-(G)                10^9
+mega-(M)                10^6
+kilo-(k)                10^3
+deci-(d)                10^(-1)
+centi-(c)               10^(-2)
+milli-(m)               10^(-3)
+micro-(Greek letter mu) 10^(-6)
+nano-(n)                10^(-9)
+pico-(p)                10^(-12)
+femto-(f)               10^(-15)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Dimensional_analysis" effect="bold">
+
+Dimensional analysis
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+As typically used in physics, the word 
+
+<emphasis id="em1004" effect="italics">
+dimensions
+
+</emphasis>
+ means basic types of units such as time, length, and mass 
+(see 
+
+<link id="a1040" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+). 
+
+<emphasis id="em1005" effect="italics">
+(This is a different meaning than 
+the common meaning of the word dimensions in computer programming -- such as an 
+array with three dimensions.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1033">
+There are many different units that are used to express length, for example, such as foot, 
+mile, meter, inch, etc.
+
+</para>
+
+
+
+
+<para id="p1034">
+Because they all have dimensions of length, you can convert from one to 
+another. For example one mile is equal to 5280 feet.
+
+</para>
+
+
+
+
+<para id="p1035">
+<emphasis id="strong1013" effect="bold">
+Cannot convert between units of different dimensions
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1036">
+When evaluating mathematical expressions, we can add, subtract, or equate quantities only if they have the same dimensions
+(although they may not necessarily be given in the same units). For example, it is possible to add
+3 meters to 2 inches (after converting units), but it is not possible to add 3 meters to
+2 kilograms.
+
+</para>
+
+
+
+
+<para id="p1037">
+To analyze dimensions, you should treat them as algebraic quantities using 
+the same procedures that we will use in the upcoming exercise on manually 
+converting units.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+ 
+
+<emphasis id="Discussion" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1038">
+Let's work through an exercise manually to determine the distance from your home to 
+your school in miles given that we know the distance in paces. (I will convert 
+this to a JavaScript script later in the module.)
+
+</para>
+
+
+
+
+<para id="p1039">
+As we discussed earlier, you 
+have already determined that the distance from your home to your school is 2112 
+paces. We have also recognized that the length of one of your paces is likely to 
+be different from the length of someone else's paces.
+
+</para>
+
+
+
+
+<section id="h21007">
+<title>
+<emphasis id="Exercise_on_manually_converting_units" effect="bold">
+
+Manual exercise on converting units
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1040">
+This is a somewhat long and tedious explanation, but unless you already have 
+quite a lot of experience in this area, you should probably bear with me as I 
+walk you through it.
+
+</para>
+
+
+
+
+<para id="p1041">
+<emphasis id="strong1014" effect="bold">
+Convert your pace length to standard units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1042">
+First we must convert the length of your pace to standard units, which we 
+can then convert to miles.
+
+</para>
+
+
+
+
+<para id="p1043">
+<emphasis id="strong1015" effect="bold">
+A calibration exercise
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1044">
+Assume that 
+you go into an empty parking lot, mark your starting position, walk 100 
+paces, and then mark your ending position on the pavement. Assume that you 
+then use a measuring tape to measure the distance from the starting position to 
+the ending position and you find that distance to be 3000 inches.
+
+</para>
+
+
+
+
+<para id="p1045">
+From that, we could conclude that for your pace length,
+
+</para>
+
+
+
+
+<para id="p1046">
+<emphasis id="paces_inches" effect="bold">
+
+100 paces = 3000 inches
+
+</emphasis>
+
+
+</para>
+
+
+
+
+<para id="p1047">
+Thus, we have calibrated your pace length in terms of the standard unit inch.
+
+</para>
+
+
+
+
+<para id="p1048">
+<emphasis id="strong1016" effect="bold">
+The plural versus the singular
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1049">
+Note that the use of the plural such as 
+
+<emphasis id="strong1017" effect="bold">
+inches
+
+</emphasis>
+ and the 
+singular such as 
+
+<emphasis id="strong1018" effect="bold">
+inch
+
+</emphasis>
+ has no impact on the results of our 
+computations. we can switch back and forth from the plural to the singular at 
+will as long as it makes sense to do so.
+
+</para>
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1019" effect="bold">
+A conversion factor
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1051">
+If we divide both sides of the above 
+
+<link id="a1041" target-id="paces_inches">
+
+
+equation
+
+</link>
+
+ by 100 paces, we get
+
+</para>
+
+
+
+
+<para id="p1052">
+1 = 3000 inches/100 paces = 30 inches/pace
+
+</para>
+
+
+
+
+<para id="p1053">
+Note that we now have a 1 on the left side and a fraction on the 
+right side.
+
+</para>
+
+
+
+
+<para id="p1054">
+<emphasis id="strong1020" effect="bold">
+Multiplication by 1
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+Multiplying a value by 1 doesn't change the value. This means that 
+if we multiply a term in an algebraic expression by
+
+</para>
+
+
+
+
+<para id="p1056">
+30*inch/pace
+
+</para>
+
+
+
+
+<para id="p1057">
+we 
+won't change the intrinsic value of the term, although we might change the units in which 
+that value is expressed.
+
+</para>
+
+
+
+
+<para id="p1058">
+The term 
+
+</para>
+
+
+
+
+<para id="p1059">
+30*inch/pace 
+
+</para>
+
+
+
+
+<para id="p1060">
+can be used to convert a quantity 
+in units of paces to the same quantity in units of inches.
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1021" effect="bold">
+Move your body forward
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+So now we know that on the average, each time you execute one pace, you have 
+moved your body forward by 30 inches. The next task is to determine how far you 
+have moved your body when you have executed 2112 paces (the distance from home 
+to school measured in paces).
+
+</para>
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1022" effect="bold">
+Convert from paces to inches
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1064">
+We can begin by determining the distance from home to school in inches as 
+follows:
+
+</para>
+
+
+
+
+<para id="p1065">
+distance = (2112*pace) * (30*inch/pace)
+
+</para>
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1023" effect="bold">
+A review of algebra
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+At this point, let's review a little algebra:
+
+</para>
+
+
+
+
+<para id="p1068">
+Given the expression: ((w/x)*(y/z))
+
+</para>
+
+
+
+
+<para id="p1069">
+we can rewrite this as
+
+</para>
+
+
+
+
+<para id="p1070">
+(w*y)/(x*z)
+
+</para>
+
+
+
+
+<para id="p1071">
+Given this expression, we can reverse the process by rearranging and factoring out 
+the terms producing our original expression:
+
+</para>
+
+
+
+
+<para id="p1072">
+((w/x)*(y/z))
+
+</para>
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1024" effect="bold">
+An algebraic manipulation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+We determined earlier that
+
+</para>
+
+
+
+
+<para id="p1075">
+distance = (2112*pace) * (30*inch/pace)
+
+</para>
+
+
+
+
+<para id="p1076">
+Applying the algebraic process shown above to the problem at hand, we can 
+rearrange terms and factor our expression to produce
+
+</para>
+
+
+
+
+<para id="p1077">
+distance = (2112 * 30 * pace * inch)/pace
+
+</para>
+
+
+
+
+<para id="p1078">
+<emphasis id="strong1025" effect="bold">
+The distance in inches
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1079">
+At this point, we have a fraction that contains the unit pace in both the 
+numerator and the denominator. We can cancel those two terms leaving us with
+
+</para>
+
+
+
+
+<para id="p1080">
+distance = (2112 * 30 * inch) = 63360 * inch
+
+</para>
+
+
+
+
+<para id="p1081">
+So good so far. We now know the distance from home to school as expressed in 
+units of inches (even though the original measurement was made in paces and not 
+in inches). The distance hasn't changed. What has changed is the units in 
+which we are expressing that distance.
+
+</para>
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1026" effect="bold">
+Still not what we are looking for
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1083">
+While this is interesting, it still isn't what we are looking 
+for. We want to know the distance in miles. Therefore, we need to convert the 
+distance in inches to the distance in miles.
+
+</para>
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1027" effect="bold">
+How many inches are in a mile?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+At this point, we don't know how many inches are in a mile (but we could 
+calculate it if we wanted to). However, we do know how many inches are in a foot and we know how 
+many feet are in a mile.
+
+</para>
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1028" effect="bold">
+A conversion factor for inches to feet
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1087">
+For starters, lets calculate a factor that we can use to convert from inches to feet. We 
+know that
+
+</para>
+
+
+
+
+<para id="p1088">
+12*inches = 1*foot
+
+</para>
+
+
+
+
+<para id="p1089">
+If we divide each side by 12*inches, we get
+
+</para>
+
+
+
+
+<para id="p1090">
+1 = 1*foot/12*inches
+
+</para>
+
+
+
+
+<para id="p1091">
+Let's refer to this as a conversion factor
+
+</para>
+
+
+
+
+<para id="p1092">
+<emphasis id="strong1029" effect="bold">
+Multiplication by 1
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1093">
+Since the expression on the right side is equal to 1, we can multiply any 
+expression in an equation with the conversion factor
+
+</para>
+
+
+
+
+<para id="p1094">
+1*foot/12*inches
+
+</para>
+
+
+
+
+<para id="p1095">
+without changing the 
+intrinsic value of that expression. (Once again, although we won't be changing 
+the intrinsic value of the expression, we may cause that intrinsic value to be 
+expressed in different units.)
+
+</para>
+
+
+
+
+<para id="p1096">
+We can 
+use this conversion factor to convert a distance value expressed in inches into the value for the 
+same distance expressed in feet.
+
+</para>
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1030" effect="bold">
+A conversion factor for feet to inches
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1098">
+We could also use the reciprocal of the 
+expression to convert a distance value expressed in feet into the value for the 
+same distance expressed in inches. I will have more to say on this later.
+
+</para>
+
+
+
+
+<para id="p1099">
+<emphasis id="strong1031" effect="bold">
+A conversion factor for feet to miles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1100">
+Similarly, we could use the same procedure to show that
+
+</para>
+
+
+
+
+<para id="p1101">
+1 = 1*mile/5280*foot
+
+</para>
+
+
+
+
+<para id="p1102">
+Again, since the expression on the right side is equal to 1, we can multiply 
+any expression in an equation with the expression on the right without changing 
+the intrinsic value of the original expression. This conversion expression can be used to 
+convert from feet to miles. Its reciprocal could be used to convert from miles 
+to feet.
+
+</para>
+
+
+
+
+<para id="p1103">
+<emphasis id="strong1032" effect="bold">
+Back to the problem at hand
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1104">
+We determined earlier that the distance expressed in inches from home to 
+school is
+
+</para>
+
+
+
+
+<para id="p1105">
+distance = 63360 * inch
+
+</para>
+
+
+
+
+<para id="p1106">
+We can probably agree that multiplying the expression on the right as follows 
+would not change the intrinsic value for the distance.
+
+</para>
+
+
+
+
+<para id="p1107">
+distance = 63360 * inch * 1 * 1
+
+</para>
+
+
+
+
+<para id="p1108">
+In fact, we could probably agree that it wouldn't change anything at all.
+
+</para>
+
+
+
+
+<para id="p1109">
+<emphasis id="strong1033" effect="bold">
+Substitute the two conversion factors
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1110">
+Having agreed on that, we can substitute the two conversion factors derived 
+earlier, each of which has a value of 1, for the last two factors in our distance 
+equation.
+
+</para>
+
+
+
+
+<para id="p1111">
+distance = 63360 * inch * (1*foot/12*inch) * (1*mile/5280*foot)
+
+</para>
+
+
+
+
+<para id="p1112">
+<emphasis id="strong1034" effect="bold">
+Rearranging the terms
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1113">
+We can rearrange the terms and rewrite this equation as
+
+</para>
+
+
+
+
+<para id="p1114">
+distance = (63360 * inch * 1*foot * 1 * mile)/(12*inch*5280*foot)
+
+</para>
+
+
+
+
+<para id="p1115">
+<emphasis id="strong1035" effect="bold">
+Canceling like terms
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1116">
+Canceling out like terms in the numerator and denominator leaves us with
+
+</para>
+
+
+
+
+<para id="p1117">
+distance = (63360*mile)/(12*5280)
+
+</para>
+
+
+
+
+<para id="p1118">
+Doing the arithmetic, we get
+
+</para>
+
+
+
+
+<para id="p1119">
+distance = 1*mile
+
+</para>
+
+
+
+
+<para id="p1120">
+<emphasis id="em1006" effect="italics">
+(Obviously, I started out with a set of numbers that were designed to cause 
+the final answer to be one mile, but that was simply for convenience.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1121">
+<emphasis id="strong1036" effect="bold">
+There you have it
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1122">
+You have seen a detailed procedure for converting 
+from a distance expressed in paces (for a specific individual) to the same distance 
+expressed in miles. Obviously, once you understand the overall procedure, you 
+could omit and/or combine some of the steps to simplify the process.
+
+</para>
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Using_JavaScript_to_convert_units" effect="bold">
+
+Using JavaScript to convert 
+units
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1123">
+Let's write, execute, and analyze a script that solves the same problem.
+
+</para>
+
+
+
+
+<para id="p1124">
+The objective of the script is to convert a distance of 2112 paces to a 
+distance in miles where it is given that
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1033">
+100 paces = 3000 inches
+
+</item>
+
+
+	
+
+<item id="li1034">
+12 inches = 1 foot
+
+</item>
+
+
+	
+
+<item id="li1035">
+5280 feet = 1 mile
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1125">
+Please copy the code from 
+
+
+<link id="a1042" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ into an html file and open the file in your browser.
+
+</para>
+
+
+
+
+
+<para id="p1126">
+<emphasis id="strong1037" effect="bold">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Convert from paces to miles.
+
+</emphasis>
+</para>
+
+
+
+
+<code id="pre1004" display="block">&gt;!-- File JavaScript01.html ------------------------------ &gt;
+&gt;html &gt;&gt;body &gt;
+&gt;script language="JavaScript1.3" &gt;
+
+var d  = 2112   //distance, units = paces
+
+document.write(
+"d  = " + d  + " paces" + "&lt;br/&gt;")
+
+var d2 = 3000   //distance, units = inches
+var d3 = 100    //distance, units = paces
+
+var f1 = d2/d3  //factor, units = inches/pace
+document.write(
+"f1 =" + f1 + " inches/pace" + "&lt;br/&gt;")
+
+//pace*inch/pace = inch
+var d  = d *f1  //distance, units = inches
+document.write(
+"d  = " + d  + " inches" + "&lt;br/&gt;")
+
+var f2 = 1/12   //factor, units = feet/inch
+document.write(
+"f2 = " + f2 + " feet/inch" + "&lt;br/&gt;")
+
+//inch*feet/inch = feet
+var d  = d *f2  //distance, units = feet
+document.write(
+"d  = " + d  + " feet" + "&lt;br/&gt;")
+
+var f3 = 1/5280 //factor, units = miles/foot
+document.write(
+"f3 = " + f3 + " miles/foot" + "&lt;br/&gt;")
+
+//feet*mile/feet = mile
+var d  = d *f3  //distance, units = miles
+document.write(
+"d  = " + d  + " mile" + "&lt;br/&gt;")
+
+//Now reverse the process using reciprocals
+//(pace/inch)*(inch/foot)*(foot/mile) = pace/mile
+var f4 =(1/f1)*(1/f2)*(1/f3) //factor, units = paces/mile
+document.write(
+"f4 = " + f4 + " paces/mile" + "&lt;br/&gt;")
+
+//miles*paces/mile = paces
+var d  = d *f4  //distance, units = paces
+document.write(
+"d  = " + d  + " paces" + "&lt;br/&gt;")
+
+document.write("The End")
+
+&gt;/script &gt;
+&gt;/body &gt;&gt;/html &gt;
+</code>
+
+
+
+
+
+
+<para id="p1127">
+<emphasis id="strong1038" effect="bold">
+Screen output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1128">
+When you open the html file in your browser, the text shown in 
+
+<link id="a1043" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ 
+should appear in your browser window.
+
+</para>
+
+
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1004">
+<row id="tr1008">
+<entry id="th1004">
+
+
+
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Screen output for Listing #1.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1005" display="block">d = 2112 paces
+f1 =30 inches/pace
+d = 63360 inches
+f2 = 0.08333333333333333 feet/inch
+d = 5280 feet
+f3 = 0.0001893939393939394 miles/foot
+d = 1 mile
+f4 = 2112 paces/mile
+d = 2112 paces
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1129">
+<emphasis id="strong1039" effect="bold">
+Discuss the output first
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1130">
+Let's begin our discussion with the screen output shown in 
+
+<link id="a1044" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ and then go back and 
+	examine the code that produced that output.
+
+</para>
+
+
+
+
+<para id="p1131">
+<link id="a1045" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ begins with a distance (labeled 
+
+<emphasis id="strong1040" effect="bold">
+d
+
+</emphasis>
+) expressed in units of paces. The 
+value is 2112 paces, which is the distance from your home to your school discussed earlier.
+
+</para>
+
+
+
+
+<para id="p1132">
+<emphasis id="strong1041" effect="bold">
+Convert paces to inches
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1133">
+Then 
+
+<link id="a1046" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ shows the conversion factor (labeled 
+
+<emphasis id="strong1042" effect="bold">
+f1
+
+</emphasis>
+) that can be used to 
+convert a value expressed in paces to a value expressed in inches.
+
+</para>
+
+
+
+
+<para id="p1134">
+That conversion factor is applied to the original distance producing an 
+output consisting of the same distance expressed in inches instead of paces. The 
+distance is now 63360 inches.
+
+</para>
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1043" effect="bold">
+Convert from inches to feet
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+Following that, 
+
+<emphasis id="strong1044" effect="bold">
+f2
+
+</emphasis>
+ shows the conversion factor that can be used to convert a 
+value expressed in inches to the same value expressed in feet.
+
+</para>
+
+
+
+
+<para id="p1137">
+That conversion factor is applied to the current distance value producing an 
+output consisting of the same distance expressed in feet instead of inches. The 
+distance is now 5280 feet.
+
+</para>
+
+
+
+
+<para id="p1138">
+<emphasis id="strong1045" effect="bold">
+Convert from feet to miles
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1139">
+Finally, 
+
+<link id="a1047" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ shows the conversion factor (labeled 
+
+<emphasis id="strong1046" effect="bold">
+f3
+
+</emphasis>
+) that can be used 
+to convert a value expressed in feet to the same value expressed in miles.
+
+</para>
+
+
+
+
+<para id="p1140">
+That conversion factor is applied to the current distance value producing a 
+final output consisting of the same distance expressed in miles instead of feet. 
+That distance is now one mile (obviously I chose the numbers to make it come out 
+that way).
+
+</para>
+
+
+
+
+<para id="p1141">
+That is the number that we were looking for.
+
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1047" effect="bold">
+Reverse the process
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+If a conversion factor X can be used to convert from A-units to B-units, the 
+reciprocal of X can be used to convert from B-units back to A-units.
+
+</para>
+
+
+
+
+<para id="p1144">
+As you will see later, the conversion factor 
+
+<emphasis id="strong1048" effect="bold">
+f4
+
+</emphasis>
+ shown in 
+
+<link id="a1048" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ was 
+computed as the product of the reciprocals of 
+
+<emphasis id="strong1049" effect="bold">
+f1
+
+</emphasis>
+, 
+
+<emphasis id="strong1050" effect="bold">
+f2
+
+</emphasis>
+, and 
+
+<emphasis id="strong1051" effect="bold">
+f3
+
+</emphasis>
+. The result is that 
+the conversion factor labeled 
+
+<emphasis id="strong1052" effect="bold">
+f4
+
+</emphasis>
+ can be used to convert a value expressed in 
+miles to the same value expressed in paces (according to the pace-length for one 
+individual).
+
+</para>
+
+
+
+
+<para id="p1145">
+That conversion factor was applied to the distance expressed in miles to 
+produce the same distance expressed in paces. As you might have guessed, this 
+value of 2112 paces shown near the end of 
+
+<link id="a1049" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ matches the value shown at 
+the beginning of 
+
+<link id="a1050" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1146">
+<emphasis id="strong1053" effect="bold">
+Analysis of the script
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1147">
+Now lets analyze the script code in 
+
+<link id="a1051" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ that produced the text output 
+shown in 
+
+<link id="a1052" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1148">
+<link id="a1053" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ begins by declaring and initializing the variables 
+
+<emphasis id="strong1054" effect="bold">
+d
+
+</emphasis>
+, 
+
+
+<emphasis id="strong1055" effect="bold">
+d2
+
+</emphasis>
+, and 
+
+<emphasis id="strong1056" effect="bold">
+d3
+
+</emphasis>
+, 
+which are respectively,
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1036">
+The home to school distance in paces.
+
+</item>
+
+
+	
+
+<item id="li1037">
+The two values 
+that represent the relationship between paces and inches for one individual.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1149">
+Various values are displayed as the script executes using calls to the
+
+
+<emphasis id="strong1057" effect="bold">
+document.write
+
+</emphasis>
+ method. You should have no difficulty identify 
+the code that displays the values, so I will skip over that code in this 
+discussion.
+
+</para>
+
+
+
+
+<para id="p1150">
+<emphasis id="strong1058" effect="bold">
+Compute, save, and apply the conversion factor f1
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1151">
+Then 
+
+<link id="a1054" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ declares a variable named 
+
+<emphasis id="strong1059" effect="bold">
+f1
+
+</emphasis>
+ and populates it with the value 
+of a conversion factor that can be used to convert paces to inches. This 
+conversion factor is computed from the known relationship between paces and 
+inches mentioned earlier.
+
+</para>
+
+
+
+
+<para id="p1152">
+The conversion factor named 
+
+<emphasis id="strong1060" effect="bold">
+f1
+
+</emphasis>
+ is applied to the distance in paces converting 
+it to a value that represents the same distance in inches (63360 inches).
+
+</para>
+
+
+
+
+<para id="p1153">
+<emphasis id="strong1061" effect="bold">
+Analysis of the units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1154">
+The 
+comment that reads
+
+
+</para>
+
+
+
+
+<para id="p1155">
+//pace*inch/pace = inch
+
+
+</para>
+
+
+
+
+<para id="p1156">
+is an analysis that shows the units that will result from applying 
+the conversion factor to the distance at this point. As you can see, the pace 
+terms will cancel and the result will be in inches.
+
+</para>
+
+
+
+
+<para id="p1157">
+<emphasis id="strong1062" effect="bold">
+Compute, save, and apply the conversion factor f2
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1158">
+Following that, a conversion factor named 
+
+<emphasis id="strong1063" effect="bold">
+f2
+
+</emphasis>
+ is computed that can be used 
+to convert a value expressed in inches to the same value expressed in feet. This 
+conversion factor is based on the known fact that there are 12 inches in a foot.
+
+</para>
+
+
+
+
+<para id="p1159">
+The factor named 
+
+<emphasis id="strong1064" effect="bold">
+f2
+
+</emphasis>
+ is applied to the distance that is now expressed in 
+inches converting it to a new value that expresses the same distance in feet 
+(5280 feet).
+
+</para>
+
+
+
+
+<para id="p1160">
+<emphasis id="strong1065" effect="bold">
+Analysis of the units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1161">
+The comment that reads
+
+</para>
+
+
+
+
+<para id="p1162">
+//inch*feet/inch = feet
+
+</para>
+
+
+
+
+<para id="p1163">
+is an analysis that shows the units that will result from applying 
+the conversion factor to the distance at this point. As you can see, the inch 
+terms will cancel and the result will be in feet.
+
+</para>
+
+
+
+
+<para id="p1164">
+<emphasis id="strong1066" effect="bold">
+Compute, save, and apply the conversion factor f3
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1165">
+Following that, a conversion factor named 
+
+<emphasis id="strong1067" effect="bold">
+f3
+
+</emphasis>
+ is computed that can be used to 
+convert a value expressed in feet to the same value expressed in miles. This 
+conversion factor is based on the known fact that there are 5280 feet in a mile.
+
+</para>
+
+
+
+
+<para id="p1166">
+The factor named 
+
+<emphasis id="strong1068" effect="bold">
+f3
+
+</emphasis>
+ is applied to the distance that is now expressed in 
+feet converting it to a new value that expresses the same distance in miles (1 
+mile).
+
+</para>
+
+
+
+
+<para id="p1167">
+<emphasis id="strong1069" effect="bold">
+Analysis of the units
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1168">
+The comment that reads
+
+</para>
+
+
+
+
+<para id="p1169">
+//feet*mile/feet = mile
+
+</para>
+
+
+
+
+<para id="p1170">
+is an analysis that shows the units that will result from applying the 
+conversion factor to the distance at this point. As you can see, the feet terms 
+will cancel and the result will be in miles.
+
+</para>
+
+
+
+
+<para id="p1171">
+<emphasis id="strong1070" effect="bold">
+That satisfies the specifications
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1172">
+That satisfies the original program specification. However, I mentioned 
+earlier that if a conversion factor X can be used to convert from A-units to 
+B-units, the reciprocal of X can be used to convert from B-units back to 
+A-units.
+
+</para>
+
+
+
+
+<para id="p1173">
+<emphasis id="strong1071" effect="bold">
+Reversing the process
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1174">
+Continuing with 
+
+<link id="a1055" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+, the comment that reads
+
+</para>
+
+
+
+
+<para id="p1175">
+//(pace/inch)*(inch/foot)*(foot/mile) = pace/mile
+
+
+</para>
+
+
+
+
+<para id="p1176">
+shows the units that survive from a product of the reciprocals of 
+
+<emphasis id="strong1072" effect="bold">
+f1
+
+</emphasis>
+, 
+
+<emphasis id="strong1073" effect="bold">
+f2
+
+</emphasis>
+, and 
+
+
+<emphasis id="strong1074" effect="bold">
+f3
+
+</emphasis>
+. As you can see, after canceling out inches and feet, the result of 
+multiplying the reciprocals of those three conversion factors is a new conversion 
+factor that can be used to convert a value expressed in miles to a new value 
+that represents the same distance expressed in paces.
+
+</para>
+
+
+
+
+<para id="p1177">
+That conversion factor is applied to the distance in miles producing an 
+output of 2112, which unsurprisingly, is the distance in paces that we started 
+off with.
+
+</para>
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="More_substantive_JavaScript_examples" effect="bold">
+
+More substantive JavaScript examples
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1178">
+Assume that you drop a rock from a balloon at a height of 10000 feet above 
+the ground, Further assume that the positive direction is up and the negative 
+direction is down.
+
+</para>
+
+
+
+
+<para id="p1179">
+What would be the height of the rock above the ground at the end of ten 
+seconds? What would be the height of the rock at the end of twenty seconds?
+
+</para>
+
+
+
+
+<para id="p1180">
+<emphasis id="strong1075" effect="bold">
+An equation relating distance, acceleration, and time
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1181">
+As you will learn in a future module, the following equation gives the 
+distance that the rock will travel as a function of time assuming that the 
+
+
+<emphasis id="initial_velocity_is_zero" effect="bold">
+
+initial velocity is zero
+
+</emphasis>
+
+. (The assumption 
+is that the rock was simply dropped 
+
+<emphasis id="and_not_thrown" effect="bold">
+
+and not thrown
+
+</emphasis>
+
+.)
+
+</para>
+
+
+
+
+<para id="p1182">
+d = 0.5 * g * t^2
+
+</para>
+
+
+
+
+<para id="p1183">
+where 
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1038">
+d is the distance traveled
+
+</item>
+
+
+	
+
+<item id="li1039">
+g is the acceleration of gravity (approximately -32.2 ft/s^2)
+
+</item>
+
+
+	
+
+<item id="li1040">
+t is time is seconds
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Free_fall_exercise" effect="bold">
+
+Free fall exercise
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1184">
+Please copy the code from 
+
+<link id="a1056" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ into an html file and open it in your 
+browser.
+
+</para>
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1005">
+<row id="tr1010">
+<entry id="th1005">
+
+
+
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Free fall exercise.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1006" display="block">&gt;!-- File JavaScript02.html --&lt;
+&gt;html&lt;&gt;body&lt;
+&gt;script language="JavaScript1.3"&lt;
+
+//Function to compute free-fall distance for a given time
+// in seconds.
+function distance(time){
+  var g = -32.174; //acceleration of gravity in feet/sec^2
+  var d = 0.5 * g * time * time;//(feet/sec^2)*sec^2 = feet
+   return new Number(d.toFixed(0));
+}//end function
+
+//Compute and display height at ten seconds.
+var t1 = 10;//time in seconds
+var d1 = distance(t1);//distance traveled in feet
+var h1 = 10000 + d1;//height in feet
+
+document.write("At " + t1 + " seconds:" +"&lt;br/&gt;");
+document.write("distance traveled = " + d1 +" feet&lt;br/&gt;")
+document.write("height = " + h1 +" feet&lt;br/&gt;")
+
+//Compute and display height at twenty seconds.
+var t2 = 20;//time in seconds
+var d2 = distance(t2);//distance traveled in feet
+var h2 = 10000 + d2;//height in feet
+
+document.write("&lt;br/&gt;At " + t2 + " seconds:" +"&lt;br/&gt;");
+document.write("distance traveled = " + d2 +" feet&lt;br/&gt;")
+document.write("height = " + h2 +" feet&lt;br/&gt;")
+
+document.write("&lt;br/&gt;The End")
+
+&gt;/script&lt;&gt;/body&lt;&gt;/html&lt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1185">
+<emphasis id="strong1076" effect="bold">
+Screen output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1186">
+When you open the html file in your browser, the text shown in 
+
+<link id="a1057" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ 
+should appear in your browser window.
+
+</para>
+
+
+
+	
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1006">
+<row id="tr1012">
+<entry id="th1006">
+
+
+
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Screen output for Listing #2.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1007" display="block">At 10 seconds:
+distance traveled = -1609 feet
+height = 8391 feet
+
+At 20 seconds:
+distance traveled = -6435 feet
+height = 3565 feet
+
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1187">
+As you can see from 
+
+<link id="a1058" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, after ten seconds, the rock will have 
+	traveled a distance of -1609 feet. (The minus sign indicates downward 
+	motion.)
+
+</para>
+
+
+
+
+<para id="p1188">
+Adding this value to the initial height of 10000 feet produces a value of 
+8391 for the height of the rock at the end of 10 seconds.
+
+</para>
+
+
+
+
+<para id="p1189">
+Similarly, 
+
+<link id="a1059" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ gives us 3565 for the height of the rock at 20 seconds.
+
+</para>
+
+
+
+
+<para id="p1190">
+<emphasis id="strong1077" effect="bold">
+Analysis of the code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1191">
+The code in 
+
+<link id="a1060" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ begins by defining a function that computes and returns 
+the distance traveled for a rock falling toward the earth for a given time 
+interval since release assuming that the initial velocity was zero (the rock was 
+simply dropped).
+
+</para>
+
+
+
+
+<para id="p1192">
+This function implements the 
+
+<link id="a1061" target-id="and_not_thrown">
+
+equation
+
+</link>
+
+ shown 
+earlier, and expects to receive the time as an input parameter. It returns the 
+distance traveled during that time interval.
+
+</para>
+
+
+
+
+<para id="p1193">
+Note that the interaction of units is shown in the comments with the result 
+that the returned value is in feet.
+
+</para>
+
+
+
+
+<para id="p1194">
+<emphasis id="strong1078" effect="bold">
+Call the function twice in succession
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1195">
+Then the code calls that function twice in succession for two different time 
+intervals (10 seconds and 20 seconds) to determine the distance traveled during 
+each time interval.
+
+</para>
+
+
+
+
+<para id="p1196">
+In both cases, the distance traveled is added to the initial height of 10000 
+feet to determine the height of the rock at the end of the time interval.
+
+</para>
+
+
+
+
+<para id="p1197">
+Also, in both cases, the time interval, the distance traveled, and the 
+resulting height of the rock above the ground are displayed as shown in 
+
+
+<link id="a1062" target-id="Figure_6">
+
+Figure 
+6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1198">
+Note again that in all cases, the interactions of the various units are shown 
+in the comments.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="A_plotting_exercise" effect="bold">
+
+A plotting exercise
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1199">
+Let's do another exercise and this time plot the results.
+
+</para>
+
+
+
+
+<para id="p1200">
+Please prepare a piece of graph paper to plot a curve defined by several points. 
+Interpret the grid lines such that you can plot values ranging from 0 to 10000 
+feet on the vertical axis and you can plot values ranging from 0 to 30 seconds 
+on the horizontal axis.
+
+</para>
+
+
+
+
+<para id="p1201">
+<emphasis id="strong1079" effect="bold">
+JavaScript code
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1202">
+Copy the code from 
+
+<link id="a1063" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ into an html file and open it in your 
+browser.
+
+</para>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1007">
+<row id="tr1014">
+<entry id="th1007">
+
+
+
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. A plotting exercise.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1008" display="block">&lt;!-- File JavaScript03.html --&lt;
+&lt;html&lt;&lt;body&lt;
+&lt;script language="JavaScript1.3"&lt;
+
+//Function to compute free-fall distance for a given time
+// interval in seconds.
+function distance(time){
+  var g = -32.174; //acceleration of gravity in feet/sec^2
+  var d = 0.5 * g * time * time;//(feet/sec^2)*sec^2 = feet
+    return new Number(d.toFixed(0));
+}//end function
+
+//Compute the height of the rock every two seconds from
+// release until the rock hits the ground.
+var t = 0;//seconds
+while(t &lt;= 30){
+  d = distance(t);//distance traveled in feet
+  h = 10000 + d;//height in feet
+  
+  //Don't allow the height to go negative (underground)
+  if(h &lt; 0){
+    h = 0;
+  }//end if
+  
+  //Display time and height at current time.
+  document.write("time = " + t + 
+                 " height = " + h + "&lt;br/&lt;");
+  t = t + 2;
+}//end while
+
+document.write("&lt;br/&gt;The End")
+
+&lt;/script&lt;&lt;/body&lt;&lt;/html&lt;
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1203">
+<emphasis id="strong1080" effect="bold">
+The screen output
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1204">
+When you open the html file in your browser, the text shown in 
+
+<link id="a1064" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ 
+should appear in your browser window.
+
+</para>
+
+
+
+	
+
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1008">
+<row id="tr1016">
+<entry id="th1008">
+
+
+
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. Screen output for Listing #3.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1008">
+<row id="tr1017">
+<entry id="td1008">
+
+
+
+<code id="pre1009" display="block">time = 0 height = 10000
+time = 2 height = 9936
+time = 4 height = 9743
+time = 6 height = 9421
+time = 8 height = 8970
+time = 10 height = 8391
+time = 12 height = 7683
+time = 14 height = 6847
+time = 16 height = 5882
+time = 18 height = 4788
+time = 20 height = 3565
+time = 22 height = 2214
+time = 24 height = 734
+time = 26 height = 0
+time = 28 height = 0
+time = 30 height = 0
+
+The End </code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+	
+	
+
+<para id="p1205">
+<emphasis id="strong1081" effect="bold">
+Plot the data
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1206">
+Plot the 16 points shown in 
+
+<link id="a1065" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Your horizontal axis 
+should be the time axis and your vertical axis should be the height axis.
+
+</para>
+
+
+
+
+<para id="p1207">
+If we have both done everything correctly, the shape of your curve should be 
+an upside-down parabola with its high point at a value of 10000. (If the word 
+parabola is new to you, don't worry about it. It's not important for the purpose 
+of this module.)
+
+</para>
+
+
+
+
+<para id="p1208">
+<emphasis id="strong1082" effect="bold">
+The graph
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1209">
+<link id="a1066" target-id="Figure_8">
+
+ 
+Figure 8
+
+</link>
+
+ shows an image of the graph that describes the trajectory of the 
+falling rock. As 
+usual, please ignore the lower-case letters scattered throughout the image. They 
+were placed there when the image was used for a different purpose earlier.
+
+</para>
+
+
+
+
+<para id="p1210">
+<emphasis id="Figure_8" effect="bold">
+
+
+<emphasis id="strong1083" effect="bold">
+Figure 8
+
+</emphasis>
+</emphasis>
+
+
+<emphasis id="strong1084" effect="bold">
+ - The trajectory of the falling rock.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1211">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/png" src="../../media/Phy1050a1b.png" width="464" height="600"/>
+</media>
+
+
+</para>
+
+
+
+
+<para id="p1212">
+<emphasis id="strong1085" effect="bold">
+Change in height increases with time
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1213">
+Getting back to the height versus time values shown in 
+
+<link id="a1067" target-id="Figure_7">
+
+
+Figure 7
+
+</link>
+
+ and plotted in 
+
+<link id="a1068" target-id="Figure_8">
+
+ 
+Figure 8
+
+</link>
+
+, the value for 
+height should decrease for each successive time value.
+
+</para>
+
+
+
+
+<para id="p1214">
+Also, the 
+
+<emphasis id="em1007" effect="italics">
+change
+
+</emphasis>
+ in height should increase for each successive time interval until the 
+height goes to zero. The height goes to zero when the rock has landed on the 
+ground somewhere between 24 and 26 seconds. It continues at zero after that.
+
+</para>
+
+
+
+
+<para id="p1215">
+(Note that I put code into the script to prevent the value of height 
+from going negative.)
+
+</para>
+
+
+
+
+<para id="p1216">
+The increase in the 
+
+<emphasis id="em1008" effect="italics">
+change
+
+</emphasis>
+ in the height value during each successive time 
+interval is the result of the time being squared in the equation given
+
+
+<link id="a1069" target-id="initial_velocity_is_zero">
+
+earlier
+
+</link>
+
+. It is also the result of the 
+acceleration of gravity that causes the downward speed of the rock to increase 
+as the rock falls.
+
+</para>
+
+
+
+
+<para id="p1217">
+<emphasis id="strong1086" effect="bold">
+Analysis of the code
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1218">
+<link id="a1070" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ calls a function copied from the previous exercise inside a 
+
+<emphasis id="strong1087" effect="bold">
+
+	while
+
+</emphasis>
+ loop to compute the distance traveled and the resulting 
+	height for a series of time values ranging from 0 to 30 seconds in 
+	two-second intervals.
+
+</para>
+
+
+
+
+<para id="p1219">
+Those values are displayed as shown in 
+
+<link id="a1071" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1220">
+Understanding the code in 
+
+<link id="a1072" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ and 
+
+<link id="a1073" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ is important. However, it 
+is more important at this point that you understand the handling of units as 
+shown in the comments in the code.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the scripts
+
+</emphasis>
+
+
+</title>
+
+
+
+
+	
+
+<para id="p1221">
+I encourage you to run the scripts that I have presented in this lesson to 
+confirm that you get the same results. Copy the code for each script into a 
+	text file with an extension of html. Then open that file in your browser. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1222">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1000" type="">
+
+
+
+
+
+
+
+<emphasis id="strong1088" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+
+
+<item id="li1041">
+Module name: GAME 2302-0350 Units and Dimensional Analysis
+
+</item>
+
+
+
+
+<item id="li1042">
+File: Game0350.htm
+
+
+</item>
+
+
+
+
+<item id="li1043">
+Published: 10/12/12
+
+</item>
+
+
+
+
+<item id="li1044">
+Revised: 02/01/16
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1001" type="">
+
+
+
+
+<emphasis id="strong1089" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1223">
+<emphasis id="strong1090" effect="bold">
+Financial
+
+</emphasis>
+: 
+	Although the Connexions site makes it possible for you to download a PDF 
+	file for this module at no charge, and also makes it possible for you to 
+	purchase a pre-printed version of the PDF file, you should be aware that 
+	some of the HTML elements in this module may not translate well into PDF.
+
+</para>
+
+
+	
+
+<para id="p1224">
+I also want you to know that, I receive no financial compensation from 
+	the Connexions website even if you purchase the PDF version of the module.
+
+</para>
+
+
+	
+
+<para id="p1225">
+In the past, unknown individuals have copied my modules from cnx.org, 
+	converted them to Kindle books, and placed them for sale on Amazon.com 
+	showing me as the author. I neither receive compensation for those sales nor 
+	do I know who does receive compensation. If you purchase such a book, please 
+	be aware that it is a copy of a module that is freely available on cnx.org 
+	and that it was made and published without my prior knowledge.
+
+</para>
+
+
+		
+
+<para id="p1226">
+<emphasis id="strong1091" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer 
+		Information Technology at Austin Community College in Austin, TX.
+		
+
+</para>
+
+
+	
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1227">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

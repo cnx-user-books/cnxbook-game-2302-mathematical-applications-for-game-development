@@ -1,0 +1,49 @@
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+    <md:content-id>col11450</md:content-id>
+    <md:title>GAME 2302 - Mathematical Applications for Game Development</md:title>
+    <md:language>en</md:language>
+    <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</md:license>
+    <md:uuid>2a2fe745-4a3a-4306-9877-d64dc90506ae</md:uuid>
+<md:slug>game-2302-mathematical-applications-for-game-development</md:slug>
+</metadata>
+  <col:content>
+    <col:module document="m45315"/>
+    <col:subcollection>
+      <md:title>Math</md:title>
+      <col:content>
+        <col:module document="m44983"/>
+        <col:module document="m44990"/>
+        <col:module document="m45585"/>
+        <col:module document="m45009"/>
+        <col:module document="m45586"/>
+        <col:module document="m45010"/>
+        <col:module document="m45587"/>
+        <col:module document="m45011"/>
+        <col:module document="m47667"/>
+        <col:module document="m45012"/>
+        <col:module document="m47668"/>
+        <col:module document="m45013"/>
+        <col:module document="m47670"/>
+        <col:module document="m45016"/>
+        <col:module document="m45017"/>
+        <col:module document="m45018"/>
+        <col:module document="m45022"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Physics</md:title>
+      <col:content>
+        <col:module document="m44992"/>
+        <col:module document="m45001"/>
+        <col:module document="m45002"/>
+        <col:module document="m45003"/>
+        <col:module document="m45004"/>
+        <col:module document="m45005"/>
+        <col:module document="m45006"/>
+        <col:module document="m45007"/>
+        <col:module document="m45008"/>
+      </col:content>
+    </col:subcollection>
+  </col:content>
+</col:collection>
